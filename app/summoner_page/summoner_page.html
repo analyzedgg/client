@@ -1,14 +1,6 @@
-<div ng-controller="SummonerPageCtrl">
-    <input type="text" id="usernameInput" ng-model="usernameInput"/>
-    <select ng-model="regionCodeInput" ng-options="region.code as region.name for region in regions"></select>
-    <input type="submit" ng-click="retrievePageData()"/>
+<input type="text" ng-model="usernameInput" />
+<select ng-model="regionCodeInput" ng-options="region.code as region.name for region in regions"></select>
+<input type="submit" ng-click="retrievePageData()"/>
 
-    <div ng-repeat="user in summonerData">
-        <span>Id:</span> <span style="padding-left: 5px;" ng-bind="user.id"></span> <br/>
-        <span>Name:</span> <span style="padding-left: 5px;" ng-bind="user.name"></span> <br/>
-        <span>ProfileIconId:</span> <span style="padding-left: 5px;" ng-bind="user.profileIconId"></span> <br/>
-        <span>RevisionDate:</span> <span style="padding-left: 5px;" ng-bind="user.revisionDate"></span>
-        <pre>{{topThreeChampions | json}}</pre>
-
-    </div>
-</div>
+<pre>{{summonerData | json}}</pre>
+<pre>{{topThreeChampions | json}}</pre>
