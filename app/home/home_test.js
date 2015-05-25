@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('leagueAPIApp.home module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('leagueAPIApp.home'));
 
   describe('view1 controller', function(){
 
