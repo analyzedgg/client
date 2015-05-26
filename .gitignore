@@ -77,3 +77,11 @@ node_modules
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
+
+# Created by https://www.gitignore.io
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
