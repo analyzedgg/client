@@ -1,6 +1,6 @@
-<input type="text" ng-model="usernameInput" />
-<select ng-model="regionCodeInput" ng-options="region.code as region.name for region in regions"></select>
-<input type="submit" ng-click="retrievePageData()"/>
+<input type="text" ng-model="summoner.usernameInput" />
+<select ng-model="summoner.regionCodeInput" ng-options="region.code as region.name for region in summoner.regions"></select>
+<input type="submit" ng-click="summoner.retrievePageData()"/>
 
-<pre>{{summonerData | json}}</pre>
-<pre>{{topThreeChampions | json}}</pre>
+<pre>{{summoner.summonerData | json}}</pre>
+<pre>{{summoner.topThreeChampions | json}}</pre>
