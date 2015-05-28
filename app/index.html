@@ -1,15 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="leagueApp" class="no-js">
+<html lang="en" ng-app="leagueAppDev" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>League </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="app.css">
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- Angular base components !-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+
+    <!-- Bootstrap component !-->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+    <!-- Base app.js !-->
+    <script src="app.js"></script>
+
+    <!-- Summoner page !-->
+    <script src="summoner_page/summoner_page.js"></script>
+
+    <!-- Services !-->
+    <script src="services/summoner_info/summonerInfoService.js"></script>
+    <script src="services/stateService.js"></script>
+    <script>
+        var app = angular.module('leagueAppDev', ['leagueApp', 'ngMockE2E']);
+        app.run(function ($httpBackend, $resource) {
+            $httpBackend.whenGET(/summoner_page\/.*/).passThrough();
+            $httpBackend.whenGET(/test\/.*/).passThrough();
+
+            $httpBackend.whenGET(/api\/.*\/summoner\/[a-zA-Z0-9]/).respond(function (data, status, headers, config) {
+                var summonerName = status.split('/')[3];
+                var test = getJsonResponse(summonerName).then(function (data) {
+                    console.log('resolved de promise met', data);
+                    return data;
+                });
+                console.log(test);
+                return [200, test, {}];
+            });
+
+            function getJsonResponse(name) {
+                return $resource('../test/mocks/summoner_info/' + name + '.json').get().$promise;
+            }
+        });
+
+    </script>
 </head>
 <body>
 <ul class="menu">
@@ -21,23 +63,5 @@
 
 <div>Angular seed app: v<span app-version></span></div>
 
-<!-- In production use:
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
--->
-<!-- Angular base components !-->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-
-<!-- Base app.js !-->
-<script src="app.js"></script>
-
-<!-- Summoner page !-->
-<script src="summoner_page/summoner_page.js"></script>
-
-
-<!-- Services !-->
-<script src="services/summoner_info/summonerInfoService.js"></script>
-<script src="services/stateService.js"></script>
 </body>
 </html>
