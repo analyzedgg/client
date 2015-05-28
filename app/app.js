@@ -1,17 +1,14 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('leagueAPIApp', [
+angular.module('leagueApp', [
     'ngRoute',
     'ngResource',
-    'leagueAPIApp.home',
-    'leagueAPIApp.summoner_page',
-    'leagueAPIApp.service.summonerInfo',
-    'leagueAPIApp.service.statistics',
-    'leagueAPIApp.service.champion',
-    'leagueAPIApp.service.state'
+    'leagueApp.summoner_page',
+    'leagueApp.service.summonerInfo',
+    'leagueApp.service.state'
 ])
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/view1'});
+        $routeProvider.otherwise({redirectTo: '/summoner'});
     }])
 ;

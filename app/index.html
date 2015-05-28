@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="leagueAPIApp" class="no-js">
+<html lang="en" ng-app="leagueApp" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,15 +24,20 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
+<!-- Angular base components !-->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+<!-- Base app.js !-->
 <script src="app.js"></script>
-<script src="home/home.js"></script>
+
+<!-- Summoner page !-->
 <script src="summoner_page/summoner_page.js"></script>
-<script src="components/summoner_info/summonerInfoService.js"></script>
-<script src="components/statistics/statisticsService.js"></script>
-<script src="components/champion/championService.js"></script>
-<script src="components/stateService.js"></script>
+
+
+<!-- Services !-->
+<script src="services/summoner_info/summonerInfoService.js"></script>
+<script src="services/stateService.js"></script>
 </body>
 </html>
