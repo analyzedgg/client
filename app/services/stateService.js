@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueAPIApp.service.state', ['ngResource'])
+angular.module('leagueApp.service.state', ['ngResource'])
 
     .service('StateService', [function () {
         var state = {};
