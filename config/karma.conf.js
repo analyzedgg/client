@@ -1,33 +1,61 @@
-module.exports = function(config){
-  config.set({
+module.exports = function (config) {
+    config.set({
 
-    basePath : '../',
+        basePath: '../',
 
-    files : [
-      '../app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/services/**/*.js',
-      'app/summoner_page*/**/*.js'
-    ],
+        frameworks: ['jasmine'],
 
-    autoWatch : true,
+        files: [
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/angular/angular.js',
+            'bower_components/angular-route/angular-route.js',
+            'bower_components/angular-resource/angular-resource.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'bower_components/bootstrap/dist/js/bootstrap.js',
+            'app/**/*.js',
+            'app/services/**/*.js',
+            'app/summoner_page*/**/*.js'
+        ],
 
-    frameworks: ['jasmine'],
-
-    browsers : ['Chrome'],
-
-    plugins : [
+        plugins: [
+            'karma-jasmine',
+            'karma-junit-reporter',
+            'karma-coverage',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter'
-            ],
+            'karma-phantomjs-launcher',
+            'karma-ng-html2js-preprocessor'
+        ],
 
-    junitReporter : {
-      outputFile: 'test_out/unit.xml',
-      suite: 'unit'
-    }
+        exclude: [
+            'app/**/*Spec.js'
+        ],
 
-  });
+        reporters: ['progress', 'junit', 'coverage'],
+
+        preprocessors: {
+            'app/**/*.js': 'coverage',
+            'app/**/*.html': 'ng-html2js'
+        },
+
+        junitReporter: {
+            outputFile: 'reports/junit/test-results.xml',
+            suite: ''
+        },
+
+        ngHtml2JsPreprocessor: {
+            stripPrefix: 'app/'
+        },
+
+        colors: true,
+
+        autoWatch: true,
+
+        browsers: ['Chrome'],
+
+        captureTimeout: 60000,
+
+        singleRun: false
+
+    });
 };

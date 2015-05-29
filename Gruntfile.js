@@ -142,7 +142,7 @@ module.exports = function (grunt) {
         karma: {
             unit: {
                 configFile: 'config/karma.conf.js',
-                singleRun: true
+                singleRun: false
             }
         }
     });
@@ -164,9 +164,9 @@ module.exports = function (grunt) {
         'clean:server',
         'jshint',
         'connect:test',
-        'karma',
+        'karma'/*,
         'protractor_webdriver',
-        'protractor:e2e'
+        'protractor:e2e'*/
     ]);
 
 };
