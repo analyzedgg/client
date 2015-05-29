@@ -6,6 +6,7 @@ angular.module('leagueApp', [
     'ngResource',
     'leagueApp.summoner_page',
     'leagueApp.service.summonerInfo',
+    'leagueApp.service.matchHistory',
     'leagueApp.service.state'
 ])
     .config(['$routeProvider', function ($routeProvider) {
