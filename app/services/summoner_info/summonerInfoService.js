@@ -6,9 +6,6 @@ angular.module('leagueApp.service.summonerInfo', ['ngResource'])
 summonerInfoService.$inject = ['$resource'];
 
 function summonerInfoService($resource) {
-/*    var summonerInfo = $resource('https://euw.api.pvp.net/api/lol/:region/:version/summoner/by-name/:summonerName', {}, {
-        'get': {method: 'GET', params: {version: 'v1.4', 'api_key': '3c343a96-21ad-41bf-9d65-dd608a65d6ec'}}
-    });   */
     var summonerInfo = $resource('api/:region/summoner/:summonerName', {}, {
         'get': {method: 'GET'}
     });
@@ -26,6 +23,6 @@ function summonerInfoService($resource) {
     }
 
     function handleError(response) {
-        console.log('Call for summoner info failed', response);
+        console.error('Call for summoner info failed', response);
     }
 }

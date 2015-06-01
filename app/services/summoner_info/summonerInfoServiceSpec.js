@@ -1,19 +1,30 @@
 describe('SummonerInfoService', function () {
 
-    var summonerInfoService;
-    beforeEach(module('leagueApp'));
-    beforeEach(inject(function ($provide) {
-        $provide.value('SummonerInfoService', summonerInfoService);
+    var summonerInfoService,
+        httpBackend;
+    beforeEach(module('leagueApp.service.summonerInfo'));
+    beforeEach(inject(function (_SummonerInfoService_, $httpBackend) {
+        summonerInfoService = _SummonerInfoService_;
+        httpBackend = $httpBackend;
+
     }));
 
     //Must
-    describe('the handeling of summoner data', function () {
+    describe('the handling of summoner data', function () {
         it('should retrieve the right information given an used username and region', function () {
-        });
-    });
+            var testSummoner = {
+                "id": 41798732,
+                "name": "Minikoen",
+                "profileIconId": 608,
+                "summonerLevel": 30,
+                "revisionDate": 1432585859000
+            };
 
-    it('should log an error when no information is found given the input', function () {
-    });
-    it('should log the error status of from the response', function () {
+            httpBackend.whenGET('api/euw/summoner/minikoen').respond(testSummoner);
+            summonerInfoService.summoner('euw', 'minikoen').then(function (data) {
+                expect(data).toBe(testSummoner);
+            });
+
+        });
     });
 });
