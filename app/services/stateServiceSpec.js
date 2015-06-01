@@ -1,9 +1,9 @@
 describe('StateService', function () {
 
     var stateService;
-    beforeEach(module('leagueApp'));
-    beforeEach(inject(function ($provide) {
-        $provide.value('StateService', stateService);
+    beforeEach(module('leagueApp.service.state'));
+    beforeEach(inject(function (_StateService_) {
+        stateService = _StateService_;
     }));
 
     //Must
