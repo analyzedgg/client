@@ -1,0 +1,3 @@
+<select ng-model="statistics.chartType"
+        ng-options="chartype.value as chartype.value for chartype in statistics.chartypes"></select>
+<div ac-chart="statistics.chartType" ac-data="statistics.plotData" ac-config="statistics.config" class='chart' style="height: 500px; width: 500px;"></div>
