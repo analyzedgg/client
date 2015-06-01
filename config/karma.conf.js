@@ -27,9 +27,6 @@ module.exports = function (config) {
             'karma-ng-html2js-preprocessor'
         ],
 
-        exclude: [
-            'app/**/*Spec.js'
-        ],
 
         reporters: ['progress', 'junit', 'coverage'],
 
@@ -51,11 +48,11 @@ module.exports = function (config) {
 
         autoWatch: true,
 
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
 
         captureTimeout: 60000,
 
-        singleRun: false
+        singleRun: true
 
     });
 };
