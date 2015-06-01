@@ -40,19 +40,20 @@ function summonerController($scope, summonerInfoService, stateService) {
     };
 
     function getSummonerInfo(region, summonerName) {
-        console.log('Gonna perform the request for summoner info with the follow params:', summonerName, region);
-        var promise =  summonerInfoService.summoner(region, summonerName);
-        promise.then(function(data) {
+        console.debug('Gonna perform the request for summoner info with the follow params:', summonerName, region);
+        var promise = summonerInfoService.summoner(region, summonerName);
+        promise.then(function (data) {
+            console.log('Summoner data', data);
             summoner.summonerData = data;
-            console.log('In de controller', data);
-        }).catch(function(errorResponse) {
+            stateService.setActiveSummoner(data);
+        }).catch(function (errorResponse) {
             summoner.summonerError = summonerName + ' not found on region ' + region;
-            console.log('Error loading summoner info', errorResponse);
+            console.error('Error loading summoner info', errorResponse);
         });
     }
 
     $scope.$watch('summoner.regionCodeInput', function (newRegion, oldRegion) {
-        console.log('Region changed from', oldRegion, 'to', newRegion);
+        console.debug('Region changed from', oldRegion, 'to', newRegion);
         stateService.setActiveRegion(newRegion);
     });
 
