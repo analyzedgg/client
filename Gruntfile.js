@@ -142,7 +142,7 @@ module.exports = function (grunt) {
         karma: {
             unit: {
                 configFile: 'config/karma.conf.js',
-                singleRun: false
+                singleRun: true
             }
         }
     });
