@@ -21,34 +21,53 @@
     <!-- Bootstrap component !-->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
+    <!-- Chart components !-->
+    <script type='text/javascript' src='../bower_components/d3/d3.min.js'></script>
+    <script type='text/javascript' src='../bower_components/angular-charts/dist/angular-charts.js'></script>
+
     <!-- Base app.js !-->
     <script src="app.js"></script>
 
     <!-- Summoner page !-->
     <script src="summoner_page/summoner_page.js"></script>
+    <script src="statistics_page/statistics_page.js"></script>
 
     <!-- Services !-->
     <script src="services/summoner_info/summonerInfoService.js"></script>
-    <script src="services/match_history/"></script>
+    <script src="services/match_history/matchHistoryService.js"></script>
     <script src="services/stateService.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp', 'ngMockE2E']);
+        var app = angular.module('leagueAppDev', ['leagueApp', 'ngMockE2E', 'angularCharts']);
         app.run(function ($httpBackend, $resource) {
             $httpBackend.whenGET(/summoner_page\/.*/).passThrough();
+            $httpBackend.whenGET(/statistics_page\/.*/).passThrough();
             $httpBackend.whenGET(/test\/.*/).passThrough();
 
-            $httpBackend.whenGET(/api\/.*\/summoner\/[a-zA-Z0-9]/).respond(function (data, status, headers, config) {
+            $httpBackend.whenGET(/api\/.*\/summoner\/[a-zA-Z0-9]/).respond(function (data, status) {
                 var summonerName = status.split('/')[3];
-                var test = getJsonResponse(summonerName).then(function (data) {
+                var test = getJsonObjectResponse('summoner_info', summonerName).then(function (data) {
                     console.log('resolved de promise met', data);
                     return data;
                 });
-                console.log(test);
                 return [200, test, {}];
             });
 
-            function getJsonResponse(name) {
-                return $resource('../test/mocks/summoner_info/' + name + '.json').get().$promise;
+            $httpBackend.whenGET(/api\/.*\/matchhistory\/[0-9]/).respond(function(data, status) {
+                var summonerId = status.split('/')[3];
+                var test = getJsonArrayResponse('match_history', summonerId).then(function (data) {
+                    console.log('resolved de promise met', data);
+                    return data;
+                }, function(error) {
+                    console.log('Didn\'t expect this error', error);
+                });
+                return [200, test, {}];
+            });
+
+            function getJsonObjectResponse(desiredFolder, name) {
+                return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').get().$promise;
+            }
+            function getJsonArrayResponse(desiredFolder, name) {
+                return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').query().$promise;
             }
         });
 
@@ -58,11 +77,10 @@
 <ul class="menu">
     <li><a href="#/home">Home</a></li>
     <li><a href="#/summoner">Summoner info</a></li>
+    <li><a href="#/stats">Match history info</a></li>
 </ul>
 
 <div ng-view></div>
-
-<div>Angular seed app: v<span app-version></span></div>
 
 </body>
 </html>

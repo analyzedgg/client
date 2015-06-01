@@ -5,6 +5,7 @@ angular.module('leagueApp', [
     'ngRoute',
     'ngResource',
     'leagueApp.summoner_page',
+    'leagueApp.statistics_page',
     'leagueApp.service.summonerInfo',
     'leagueApp.service.matchHistory',
     'leagueApp.service.state'
