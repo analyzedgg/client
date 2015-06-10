@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics_page', ['ngRoute'])
+angular.module('leagueApp.statistics_page', ['ngRoute', 'highcharts-ng'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/stats', {
@@ -11,46 +11,75 @@ angular.module('leagueApp.statistics_page', ['ngRoute'])
     }])
     .controller('StatisticsPageCtrl', statisticsController);
 
-statisticsController.$inject = ['MatchHistoryService', 'StateService'];
+statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService'];
 
-function statisticsController(matchHistoryService, stateService) {
+function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
-    statistics.chartypes = [{value: 'pie'}, {value: 'bar'}, {value: 'line'}, {value: 'point'}, {value: 'area'}];
+    statistics.chartypes = [{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'}, {value: 'bubble'}];
 
-    statistics.chartType = 'point';
-    statistics.config = {
-        title: 'Leauge Stats',
-        tooltips: true,
-        labels: true,
-        mouseover: function () {
+    //This is not a highcharts object. It just looks a little like one!
+    statistics.chartConfig = {
+
+        options: {
+            //This is the Main Highcharts chart config. Any Highchart options are valid here.
+            //will be overriden by values specified below.
+            chart: {
+                type: 'line'
+            },
+            tooltip: {
+                headerFormat: '<b>{series.name}</b><br>',
+                pointFormat: '{point.x} min, {point.y} cs'
+            }
         },
-        mouseout: function () {
+        //The below properties are watched separately for changes.
+
+        //Series object (optional) - a list of series using normal highcharts series options.
+        series: [],
+        //Title configuration (optional)
+        title: {
+            text: 'CS Per minutes'
         },
-        click: function () {
+        //Boolean to control showng loading status on chart (optional)
+        //Could be a string if you want to show specific loading text.
+        loading: true,
+        //Configuration for the xAxis (optional). Currently only one x axis can be dynamically controlled.
+        //properties currentMin and currentMax provied 2-way binding to the chart's maximimum and minimum
+        xAxis: {
+            currentMin: 0,
+            currentMax: 80,
+            title: {text: 'Minutes'}
         },
-        legend: {
-            display: true,
-            //could be 'left, right'
-            position: 'left'
+        yAxis: {
+            currentMin: 0,
+            currentMax: 500,
+            title: {text: 'CS'}
         },
-        innerRadius: 0, // applicable on pieCharts, can be a percentage like '50%'
-        lineLegend: 'lineEnd' // can be also 'traditional'
+        //Whether to use HighStocks instead of HighCharts (optional). Defaults to false.
+        useHighStocks: false,
+        //size (optional) if left out the chart will default to size of the div or something sensible.
+        size: {
+            width: 400,
+            height: 300
+        },
+        //function (optional)
+        func: function (chart) {
+            //setup some logic for the chart
+        }
     };
 
-    statistics.retrievePageData = function () {
+    function retrievePageData() {
         delete statistics.matchHistoryError;
         var activeRegion = stateService.getActiveRegion();
         var summonerId = stateService.getActiveSummoner().id;
 
         getMatchHistory(activeRegion, summonerId);
-
-    }();
+    }
 
     function getMatchHistory(region, summonerId) {
         console.log('Gonna perform the request for match history with the follow params:', summonerId, region);
         var promise = matchHistoryService.matchHistory(region, summonerId);
         promise.then(function (data) {
-            fillChartWithMatchHistoryData(data);
+            fillChartWithMatchHistoryData(data.response);
         }).catch(function (errorResponse) {
             statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summonerId + ' on the ' + region + 'servers';
             console.error('Error loading summoner info', errorResponse);
@@ -58,18 +87,23 @@ function statisticsController(matchHistoryService, stateService) {
     }
 
     function fillChartWithMatchHistoryData(matchHistory) {
-        var x = [];
-        var data = [];
-        angular.forEach(matchHistory, function (match, index) {
-            var xValue = 'Match ' + (index +1);
-            var yValue = [match.stats.minionKills];
-            var toolTip = 'This match lasted ' + Math.round(match.matchDuration / 60) + ' minutes';
-            x.push(xValue);
-            data.push({x: xValue, y: yValue, "tooltip": toolTip});
-        });
-        statistics.plotData = {
-            "series": x,
-            "data": data
+        var dataSerie = {
+            name: stateService.getActiveSummoner().name
         };
+        var data = [];
+        angular.forEach(matchHistory, function (match) {
+            var xValue = Math.round(match.matchDuration / 60);
+            var yValue = match.stats.minionKills;
+            data.push([xValue, yValue]);
+        });
+        console.log('Done putting all the data in an array', data);
+        dataSerie.data = data;
+        statistics.chartConfig.series.push(dataSerie);
+        statistics.chartConfig.loading = false;
     }
+
+    $scope.$on('summonerSet', function (event, args) {
+        console.log('STATISTICS PAGE. A summoner is selected, lets load its data', event, args);
+        retrievePageData();
+    });
 }

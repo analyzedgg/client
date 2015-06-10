@@ -30,7 +30,6 @@ function summonerController($scope, summonerInfoService, stateService) {
     summoner.usernameInput = 'Minikoen';
 
     summoner.retrievePageData = function () {
-        delete summoner.summonerData;
         delete summoner.summonerError;
         var activeRegion = stateService.getActiveRegion();
         var summonerName = summoner.usernameInput;
@@ -44,8 +43,9 @@ function summonerController($scope, summonerInfoService, stateService) {
         var promise = summonerInfoService.summoner(region, summonerName);
         promise.then(function (data) {
             console.log('Summoner data', data);
-            summoner.summonerData = data;
-            stateService.setActiveSummoner(data);
+            stateService.setActiveSummoner(data.response);
+            $scope.$emit('SummonerSelected');
+            console.log('Broadcasted summonerSelected');
         }).catch(function (errorResponse) {
             summoner.summonerError = summonerName + ' not found on region ' + region;
             console.error('Error loading summoner info', errorResponse);
