@@ -4,6 +4,7 @@
 angular.module('leagueApp', [
     'ngRoute',
     'ngResource',
+    'leagueApp.leagueProjecto',
     'leagueApp.summoner_page',
     'leagueApp.statistics_page',
     'leagueApp.service.summonerInfo',
@@ -11,6 +12,7 @@ angular.module('leagueApp', [
     'leagueApp.service.state'
 ])
     .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/summoner'});
+        $routeProvider.otherwise({redirectTo: '/'});
     }])
+    .constant('BASE_URL', 'http://192.168.178.17:8080')
 ;
