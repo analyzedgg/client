@@ -3,10 +3,10 @@
 angular.module('leagueApp.service.matchHistory', ['ngResource'])
     .service('MatchHistoryService', matchHistoryService);
 
-matchHistoryService.$inject = ['$resource'];
+matchHistoryService.$inject = ['$resource', 'BASE_URL'];
 
-function matchHistoryService($resource) {
-    var matchInfo = $resource('api/:region/matchhistory/:summonerId', {}, {
+function matchHistoryService($resource, BASE_URL) {
+    var matchInfo = $resource(BASE_URL + '/api/:region/matchhistory/:summonerId', {}, {
         'get': {method: 'GET'}
     });
 
