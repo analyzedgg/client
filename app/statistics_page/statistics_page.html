@@ -1,3 +1,6 @@
-<select ng-model="statistics.chartType"
+<select ng-model="statistics.chartConfig.options.chart.type"
         ng-options="chartype.value as chartype.value for chartype in statistics.chartypes"></select>
-<div ac-chart="statistics.chartType" ac-data="statistics.plotData" ac-config="statistics.config" class='chart' style="height: 500px; width: 500px;"></div>
+<!--
+<div ac-chart="statistics.chartType" ac-data="statistics.plotData" ac-config="statistics.config" class='chart' style="height: 500px; width: 500px;"></div>-->
+<highchart id="chart1" config="statistics.chartConfig"></highchart>
+
