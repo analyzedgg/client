@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="app.css">
     <script src="../bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+
     <!-- Angular base components !-->
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-route/angular-route.js"></script>
@@ -22,11 +23,12 @@
     <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
     <!-- Chart components !-->
-    <script type='text/javascript' src='../bower_components/d3/d3.min.js'></script>
-    <script type='text/javascript' src='../bower_components/angular-charts/dist/angular-charts.js'></script>
+    <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
+    <script type="text/javascript" src="../bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
 
     <!-- Base app.js !-->
     <script src="app.js"></script>
+    <script src="leagueProjecto_mainPage.js"></script>
 
     <!-- Summoner page !-->
     <script src="summoner_page/summoner_page.js"></script>
@@ -37,11 +39,12 @@
     <script src="services/match_history/matchHistoryService.js"></script>
     <script src="services/stateService.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp', 'ngMockE2E', 'angularCharts']);
-        app.run(function ($httpBackend, $resource) {
-            $httpBackend.whenGET(/summoner_page\/.*/).passThrough();
-            $httpBackend.whenGET(/statistics_page\/.*/).passThrough();
-            $httpBackend.whenGET(/test\/.*/).passThrough();
+        var app = angular.module('leagueAppDev', ['leagueApp']);//, 'ngMockE2E']);
+  /*      app.run(function ($httpBackend, $resource) {
+            $httpBackend.whenGET(/summoner_page\/.*!/).passThrough();
+            $httpBackend.whenGET(/statistics_page\/.*!/).passThrough();
+            $httpBackend.whenGET(/leagueProjecto_mainPage/).passThrough();
+            $httpBackend.whenGET(/test\/.*!/).passThrough();
 
             $httpBackend.whenGET(/api\/.*\/summoner\/[a-zA-Z0-9]/).respond(function (data, status) {
                 var summonerName = status.split('/')[3];
@@ -69,7 +72,7 @@
             function getJsonArrayResponse(desiredFolder, name) {
                 return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').query().$promise;
             }
-        });
+        });*/
 
     </script>
 </head>
