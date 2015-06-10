@@ -2,60 +2,60 @@
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 2375,
   "stats": {
-    "minionKills": 4
+    "minionKills": 250
   }
 }, {
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 1251,
   "stats": {
-    "minionKills": 3
+    "minionKills": 113
   }
 }, {
   "queueType": "RANKED_TEAM_5x5",
   "matchDuration": 2011,
   "stats": {
-    "minionKills": 138
+    "minionKills": 8
   }
 }, {
   "queueType": "RANKED_TEAM_5x5",
   "matchDuration": 2700,
   "stats": {
-    "minionKills": 232
+    "minionKills": 6
   }
 }, {
   "queueType": "RANKED_TEAM_3x3",
   "matchDuration": 1236,
   "stats": {
-    "minionKills": 69
+    "minionKills": 4
   }
 }, {
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 1440,
   "stats": {
-    "minionKills": 176
+    "minionKills": 211
   }
 }, {
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 1882,
   "stats": {
-    "minionKills": 11
+    "minionKills": 89
   }
 }, {
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 2825,
   "stats": {
-    "minionKills": 15
+    "minionKills": 201
   }
 }, {
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 2526,
   "stats": {
-    "minionKills": 13
+    "minionKills": 89
   }
 }, {
   "queueType": "RANKED_SOLO_5x5",
   "matchDuration": 2217,
   "stats": {
-    "minionKills": 168
+    "minionKills": 112
   }
 }]
