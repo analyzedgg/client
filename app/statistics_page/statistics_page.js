@@ -17,6 +17,23 @@ function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
     statistics.chartypes = [{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'}, {value: 'bubble'}];
 
+    statistics.xAxisPresets = {
+        perMatch: function (data, index) {
+            return index;
+        },
+        matchAverage: function (data) {
+            return Math.round(data.matchDuration / 60);
+        }
+    };
+    statistics.xAxisFilter = statistics.xAxisPresets.matchAverage;
+
+    statistics.yAxisPresets = {
+        cs: function (data) {
+            return data.stats.minionKills;
+        }
+    };
+    statistics.yAxisFilter = statistics.yAxisPresets.cs;
+
     //This is not a highcharts object. It just looks a little like one!
     statistics.chartConfig = {
 
@@ -87,13 +104,15 @@ function statisticsController($scope, matchHistoryService, stateService) {
     }
 
     function fillChartWithMatchHistoryData(matchHistory) {
+        console.log('In fill chart func with', matchHistory);
         var dataSerie = {
             name: stateService.getActiveSummoner().name
         };
         var data = [];
-        angular.forEach(matchHistory, function (match) {
-            var xValue = Math.round(match.matchDuration / 60);
-            var yValue = match.stats.minionKills;
+        angular.forEach(matchHistory, function (match, index) {
+            var xValue = statistics.xAxisFilter(match, index);
+            var yValue = statistics.yAxisFilter(match);
+            console.log('for match', match, xValue, yValue);
             data.push([xValue, yValue]);
         });
         console.log('Done putting all the data in an array', data);
