@@ -1,7 +1,9 @@
 {
-  "id": 41798732,
-  "name": "Minikoen",
-  "profileIconId": 608,
-  "summonerLevel": 30,
-  "revisionDate": 1432585859000
+  "response": {
+    "id": 41798732,
+    "name": "Minikoen",
+    "profileIconId": 608,
+    "summonerLevel": 30,
+    "revisionDate": 1432585859000
+  }
 }
