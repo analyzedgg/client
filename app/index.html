@@ -39,15 +39,15 @@
     <script src="services/match_history/matchHistoryService.js"></script>
     <script src="services/stateService.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp']);//, 'ngMockE2E']);
-  /*      app.run(function ($httpBackend, $resource) {
-            $httpBackend.whenGET(/summoner_page\/.*!/).passThrough();
-            $httpBackend.whenGET(/statistics_page\/.*!/).passThrough();
+        var app = angular.module('leagueAppDev', ['leagueApp', 'ngMockE2E']);
+        app.run(function ($httpBackend, $resource) {
+            $httpBackend.whenGET(/summoner_page/).passThrough();
+            $httpBackend.whenGET(/statistics_page/).passThrough();
             $httpBackend.whenGET(/leagueProjecto_mainPage/).passThrough();
-            $httpBackend.whenGET(/test\/.*!/).passThrough();
+            $httpBackend.whenGET(/test/).passThrough();
 
             $httpBackend.whenGET(/api\/.*\/summoner\/[a-zA-Z0-9]/).respond(function (data, status) {
-                var summonerName = status.split('/')[3];
+                var summonerName = status.split('/')[4];
                 var test = getJsonObjectResponse('summoner_info', summonerName).then(function (data) {
                     console.log('resolved de promise met', data);
                     return data;
@@ -56,8 +56,8 @@
             });
 
             $httpBackend.whenGET(/api\/.*\/matchhistory\/[0-9]/).respond(function(data, status) {
-                var summonerId = status.split('/')[3];
-                var test = getJsonArrayResponse('match_history', summonerId).then(function (data) {
+                var summonerId = status.split('/')[4];
+                var test = getJsonObjectResponse('match_history', summonerId).then(function (data) {
                     console.log('resolved de promise met', data);
                     return data;
                 }, function(error) {
@@ -72,7 +72,7 @@
             function getJsonArrayResponse(desiredFolder, name) {
                 return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').query().$promise;
             }
-        });*/
+        });
 
     </script>
 </head>
