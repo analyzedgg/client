@@ -6,12 +6,12 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         files: [
-            'bower_components/jquery/dist/jquery.js',
-            'bower_components/angular/angular.js',
-            'bower_components/angular-route/angular-route.js',
-            'bower_components/angular-resource/angular-resource.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/bootstrap/dist/js/bootstrap.js',
+            'app/bower_components/jquery/dist/jquery.js',
+            'app/bower_components/angular/angular.js',
+            'app/bower_components/angular-route/angular-route.js',
+            'app/bower_components/angular-resource/angular-resource.js',
+            'app/bower_components/angular-mocks/angular-mocks.js',
+            'app/bower_components/bootstrap/dist/js/bootstrap.js',
             'app/**/*.js',
             'app/services/**/*.js',
             'app/summoner_page*/**/*.js'
