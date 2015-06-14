@@ -15,24 +15,55 @@ statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService']
 
 function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
-    statistics.chartypes = [{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'}, {value: 'bubble'}];
+    //The possible filtering options for the x axis
+    var matchData = {
 
-    statistics.xAxisPresets = {
-        perMatch: function (data, index) {
-            return index;
+    }
+    var xAxisPresets = {
+        byGame: function (data, index) {
+            return index + 1;
         },
-        matchAverage: function (data) {
+        byMinute: function (data) {
             return Math.round(data.matchDuration / 60);
+        },
+        byGameDuration: function (data) {
+            return data.matchDuration;
         }
     };
-    statistics.xAxisFilter = statistics.xAxisPresets.matchAverage;
-
-    statistics.yAxisPresets = {
+    //The possible filtering options for the y axis
+    var yAxisPresets = {
         cs: function (data) {
             return data.stats.minionKills;
+        },
+        averageCs: function (data) {
+            return Math.round(data.stats.minionKills / (data.matchDuration / 60) * 100) / 100;
         }
     };
-    statistics.yAxisFilter = statistics.yAxisPresets.cs;
+
+    //The possible chart options
+    //[{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'});
+
+    statistics.chartPresets = [
+        {
+            name: 'CS per game',
+            type: 'spline',
+            xAxis: xAxisPresets.byGame,
+            yAxis: yAxisPresets.cs,
+            tooltip: {
+                pointFormat: 'Game {point.x}, {point.y} cs.'
+            }
+        },
+        {
+            name: 'Average cs per minute per game',
+            type: 'scatter',
+            xAxis: xAxisPresets.byMinute,
+            yAxis: yAxisPresets.averageCs,
+            tooltip: {
+                pointFormat: '{point.x} minutes played, {point.y} average cs per minute.'
+            }
+        }];//, {name: 'KDA per game'}, {name: 'KDA per CS'}];
+
+    statistics.selectedPreset = statistics.chartPresets[0];
 
     //This is not a highcharts object. It just looks a little like one!
     statistics.chartConfig = {
@@ -40,12 +71,8 @@ function statisticsController($scope, matchHistoryService, stateService) {
         options: {
             //This is the Main Highcharts chart config. Any Highchart options are valid here.
             //will be overriden by values specified below.
-            chart: {
-                type: 'line'
-            },
             tooltip: {
-                headerFormat: '<b>{series.name}</b><br>',
-                pointFormat: '{point.x} min, {point.y} cs'
+                headerFormat: '<b>{series.name}</b><br>'
             }
         },
         //The below properties are watched separately for changes.
@@ -63,12 +90,10 @@ function statisticsController($scope, matchHistoryService, stateService) {
         //properties currentMin and currentMax provied 2-way binding to the chart's maximimum and minimum
         xAxis: {
             currentMin: 0,
-            currentMax: 80,
             title: {text: 'Minutes'}
         },
         yAxis: {
-            currentMin: 0,
-            currentMax: 500,
+            currentMin: 1,
             title: {text: 'CS'}
         },
         //Whether to use HighStocks instead of HighCharts (optional). Defaults to false.
@@ -110,13 +135,14 @@ function statisticsController($scope, matchHistoryService, stateService) {
         };
         var data = [];
         angular.forEach(matchHistory, function (match, index) {
-            var xValue = statistics.xAxisFilter(match, index);
-            var yValue = statistics.yAxisFilter(match);
-            console.log('for match', match, xValue, yValue);
+            var xValue = statistics.selectedPreset.xAxis(match, index);
+            var yValue = statistics.selectedPreset.yAxis(match);
             data.push([xValue, yValue]);
         });
         console.log('Done putting all the data in an array', data);
         dataSerie.data = data;
+        dataSerie.tooltip = statistics.selectedPreset.tooltip;
+        dataSerie.type = statistics.selectedPreset.type;
         statistics.chartConfig.series.push(dataSerie);
         statistics.chartConfig.loading = false;
     }

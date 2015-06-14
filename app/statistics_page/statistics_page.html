@@ -1,24 +1,3 @@
-<select ng-model="statistics.chartConfig.options.chart.type"
-        ng-options="chartype.value as chartype.value for chartype in statistics.chartypes"></select>
-<div id="presets">
-    <div id="xAxis" style="float:left">
-    <b>X axis data</b> <br />
-        <label>
-            <input type="radio" ng-model="statistics.xAxisFilter" ng-value="statistics.xAxisPresets.perMatch">
-            Per match
-        </label><br />
-        <label>
-            <input type="radio" ng-model="statistics.xAxisFilter" ng-value="statistics.xAxisPresets.matchAverage">
-            Average
-        </label>
-    </div>
-    <div id="yAxis" style="float:right">
-        <b>Y axis data</b> <br />
-        <label>
-            <input type="radio" ng-model="statistics.yAxisFilter" ng-value="statistics.yAxisPresets.cs">
-            Creep kills
-        </label>
-    </div>
-</div>
-<highchart id="chart1" config="statistics.chartConfig"></highchart>
-
+<select id="presets" data-ng-model="statistics.selectedPreset" data-ng-options="preset.name for preset in statistics.chartPresets">
+</select>
+<highchart id="chart1" config="statistics.chartConfig" style="width:1000px;height: 400px;"></highchart>

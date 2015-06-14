@@ -6,25 +6,25 @@
     <title>League </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/normalize.css">
-    <link rel="stylesheet" href="../bower_components/html5-boilerplate/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="app.css">
-    <script src="../bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
 
     <!-- Angular base components !-->
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../bower_components/angular-resource/angular-resource.js"></script>
-    <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
 
     <!-- Bootstrap component !-->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
     <!-- Chart components !-->
     <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
-    <script type="text/javascript" src="../bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script type="text/javascript" src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
 
     <!-- Base app.js !-->
     <script src="app.js"></script>
@@ -39,9 +39,9 @@
     <script src="services/match_history/matchHistoryService.js"></script>
     <script src="services/stateService.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp', 'ngMockE2E']);
+        var app = angular.module('leagueAppDev', ['leagueApp']);//, 'ngMockE2E']);
         app.run(function ($httpBackend, $resource) {
-            $httpBackend.whenGET(/summoner_page/).passThrough();
+           /* $httpBackend.whenGET(/summoner_page/).passThrough();
             $httpBackend.whenGET(/statistics_page/).passThrough();
             $httpBackend.whenGET(/leagueProjecto_mainPage/).passThrough();
             $httpBackend.whenGET(/test/).passThrough();
@@ -71,7 +71,7 @@
             }
             function getJsonArrayResponse(desiredFolder, name) {
                 return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').query().$promise;
-            }
+            }*/
         });
 
     </script>
