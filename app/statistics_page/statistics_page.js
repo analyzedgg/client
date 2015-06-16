@@ -73,7 +73,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
             //will be overriden by values specified below.
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br>'
-            }
+            },
         },
         //The below properties are watched separately for changes.
 
@@ -100,8 +100,8 @@ function statisticsController($scope, matchHistoryService, stateService) {
         useHighStocks: false,
         //size (optional) if left out the chart will default to size of the div or something sensible.
         size: {
-            width: 400,
-            height: 300
+            width: 800,
+            height: 600
         },
         //function (optional)
         func: function (chart) {

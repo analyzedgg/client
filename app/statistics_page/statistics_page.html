@@ -1,3 +1,8 @@
-<select id="presets" data-ng-model="statistics.selectedPreset" data-ng-options="preset.name for preset in statistics.chartPresets">
-</select>
-<highchart id="chart1" config="statistics.chartConfig" style="width:1000px;height: 400px;"></highchart>
+<div id="statistics">
+    <div>
+        <select id="presets" data-ng-model="statistics.selectedPreset"
+                data-ng-options="preset.name for preset in statistics.chartPresets">
+        </select>
+        <highchart id="chart1" config="statistics.chartConfig"></highchart>
+    </div>
+</div>

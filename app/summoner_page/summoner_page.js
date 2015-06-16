@@ -16,15 +16,16 @@ summonerController.$inject = ['$scope', 'SummonerInfoService', 'StateService'];
 function summonerController($scope, summonerInfoService, stateService) {
     var summoner = this;
     summoner.regions = [
-        {name: 'West Europe', code: 'euw'},
-        {name: 'North America', code: 'na'},
-        {name: 'Korea', code: 'kr'},
-        {name: 'Brazil', code: 'br'},
-        {name: 'Europe Nordic & East', code: 'eune'},
-        {name: 'Latin America South', code: 'las'},
-        {name: 'Oceania', code: 'oce'},
-        {name: 'Russia', code: 'rus'},
-        {name: 'Turkey', code: 'tr'}
+        {name: 'EUW', code: 'euw'},
+        {name: 'NA', code: 'na'},
+        {name: 'KR', code: 'kr'},
+        {name: 'BR', code: 'br'},
+        {name: 'EUNE', code: 'eune'},
+        {name: 'LAS', code: 'las'},
+        {name: 'LAN', code: 'lan'},
+        {name: 'OCE', code: 'oce'},
+        {name: 'RUS', code: 'rus'},
+        {name: 'TR', code: 'tr'}
     ];
 
     summoner.usernameInput = 'Minikoen';

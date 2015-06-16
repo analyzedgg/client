@@ -1,0 +1,17 @@
+div#summoner-page {
+    background: url("http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_3.jpg") -161px -210px;
+}
+div#summoner-page div#search-form {
+    width: 220px;
+    padding: 100px 0 50px 0;
+    margin: auto;
+}
+
+div#summoner-page div#search-form input[type=text] {
+    width: 150px;
+    margin: 0;
+}
+
+div#summoner-page div#search-form input[type=submit] {
+    width: 100%;
+}
