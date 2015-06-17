@@ -16,9 +16,8 @@ statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService']
 function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
     //The possible filtering options for the x axis
-    var matchData = {
+    statistics.currentSummoners = [];
 
-    }
     var xAxisPresets = {
         byGame: function (data, index) {
             return index + 1;
@@ -73,7 +72,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
             //will be overriden by values specified below.
             tooltip: {
                 headerFormat: '<b>{series.name}</b><br>'
-            },
+            }
         },
         //The below properties are watched separately for changes.
 
@@ -112,43 +111,82 @@ function statisticsController($scope, matchHistoryService, stateService) {
     function retrievePageData() {
         delete statistics.matchHistoryError;
         var activeRegion = stateService.getActiveRegion();
-        var summonerId = stateService.getActiveSummoner().id;
+        var activeSummoner = stateService.getActiveSummoner();
 
-        getMatchHistory(activeRegion, summonerId);
+        if (!summonerInCurrentList(activeSummoner.name)) {
+            getMatchHistory(activeRegion, activeSummoner);
+        }
     }
 
-    function getMatchHistory(region, summonerId) {
-        console.log('Gonna perform the request for match history with the follow params:', summonerId, region);
-        var promise = matchHistoryService.matchHistory(region, summonerId);
+    function getMatchHistory(region, summoner) {
+        console.log('Gonna perform the request for match history with the follow params:', summoner.id, region);
+        var promise = matchHistoryService.matchHistory(region, summoner.id);
         promise.then(function (data) {
-            fillChartWithMatchHistoryData(data.response);
+            statistics.currentSummoners.push({name: summoner.name, matchHistory: data.response});
+            fillChartWithMatchHistoryData();
         }).catch(function (errorResponse) {
-            statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summonerId + ' on the ' + region + 'servers';
+            statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summoner.id + ' on the ' + region + 'servers';
             console.error('Error loading summoner info', errorResponse);
         });
     }
 
-    function fillChartWithMatchHistoryData(matchHistory) {
-        console.log('In fill chart func with', matchHistory);
-        var dataSerie = {
-            name: stateService.getActiveSummoner().name
-        };
-        var data = [];
-        angular.forEach(matchHistory, function (match, index) {
-            var xValue = statistics.selectedPreset.xAxis(match, index);
-            var yValue = statistics.selectedPreset.yAxis(match);
-            data.push([xValue, yValue]);
+    function fillChartWithMatchHistoryData() {
+        console.log('In fill chart func with', statistics.currentSummoners);
+        statistics.chartConfig.loading = true;
+        var dataSeries = [];
+
+        angular.forEach(statistics.currentSummoners, function (summoner) {
+            var dataSerie = {
+                name: summoner.name
+            };
+            var data = [];
+            angular.forEach(summoner.matchHistory, function (match, index) {
+                var xValue = statistics.selectedPreset.xAxis(match, index);
+                var yValue = statistics.selectedPreset.yAxis(match);
+                data.push([xValue, yValue]);
+            });
+            dataSerie.data = data;
+            dataSerie.tooltip = statistics.selectedPreset.tooltip;
+            dataSerie.type = statistics.selectedPreset.type;
+            dataSeries.push(dataSerie);
         });
-        console.log('Done putting all the data in an array', data);
-        dataSerie.data = data;
-        dataSerie.tooltip = statistics.selectedPreset.tooltip;
-        dataSerie.type = statistics.selectedPreset.type;
-        statistics.chartConfig.series.push(dataSerie);
+        console.log('Done putting all the data in an array', dataSeries);
+        setChartSeries(dataSeries);
         statistics.chartConfig.loading = false;
+    }
+
+    //Check if the filled in summoner is already in the current summoners list
+    function summonerInCurrentList(summonerName) {
+        var match = false;
+        angular.forEach(statistics.currentSummoners, function (summoner) {
+            if (angular.equals(summoner.name, summonerName)) {
+                match = true;
+            }
+        });
+        return match;
+    }
+
+    //Sets the data serie for high chart
+    function setChartSeries(series) {
+        statistics.chartConfig.series = series;
+    }
+
+    function resetChartConfig() {
+        //Reset the x and y values
+        delete statistics.chartConfig.xAxis.currentMax;
+        delete statistics.chartConfig.yAxis.currentMax;
+
+        setChartSeries({});
     }
 
     $scope.$on('summonerSet', function (event, args) {
         console.log('STATISTICS PAGE. A summoner is selected, lets load its data', event, args);
         retrievePageData();
+    });
+
+    $scope.$watch('statistics.selectedPreset', function (oldValue, newValue) {
+        console.log('Changed preset from', oldValue, 'to', newValue);
+        resetChartConfig();
+        fillChartWithMatchHistoryData();
     });
 }

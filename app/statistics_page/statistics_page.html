@@ -5,4 +5,9 @@
         </select>
         <highchart id="chart1" config="statistics.chartConfig"></highchart>
     </div>
+    <div>
+        <ul ng-repeat="summoner in statistics.currentSummoners">
+            <li>{{summoner.name}}</li>
+        </ul>
+    </div>
 </div>
