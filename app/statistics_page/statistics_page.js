@@ -36,6 +36,18 @@ function statisticsController($scope, matchHistoryService, stateService) {
         },
         averageCs: function (data) {
             return Math.round(data.stats.minionKills / (data.matchDuration / 60) * 100) / 100;
+        },
+        kills: function (data) {
+            return data.stats.kills;
+        },
+        deaths: function (data) {
+            return data.stats.deaths;
+        },
+        assists: function (data) {
+            return data.stats.assists;
+        },
+        kda: function (data) {
+            return Math.round((data.stats.kills + data.stats.assists) / data.stats.deaths * 100) / 100;
         }
     };
 
@@ -60,7 +72,25 @@ function statisticsController($scope, matchHistoryService, stateService) {
             tooltip: {
                 pointFormat: '{point.x} minutes played, {point.y} average cs per minute.'
             }
-        }];//, {name: 'KDA per game'}, {name: 'KDA per CS'}];
+        },
+        {
+            name: 'KDA per game',
+            type: 'scatter',
+            xAxis: xAxisPresets.byGame,
+            yAxis: yAxisPresets.kda,
+            tooltip: {
+                pointFormat: 'Game {point.x}, {point.y} KDA.'
+            }
+        },
+        {
+            name: 'KDA per CS',
+            type: 'spline',
+            xAxis: yAxisPresets.cs,
+            yAxis: yAxisPresets.kda,
+            tooltip: {
+                pointFormat: '{point.x} CS, {point.y} KDA'
+            }
+        }];
 
     statistics.selectedPreset = statistics.chartPresets[0];
 
@@ -95,16 +125,10 @@ function statisticsController($scope, matchHistoryService, stateService) {
             currentMin: 1,
             title: {text: 'CS'}
         },
-        //Whether to use HighStocks instead of HighCharts (optional). Defaults to false.
-        useHighStocks: false,
         //size (optional) if left out the chart will default to size of the div or something sensible.
         size: {
             width: 800,
             height: 600
-        },
-        //function (optional)
-        func: function (chart) {
-            //setup some logic for the chart
         }
     };
 
@@ -159,7 +183,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
             dataSerie.type = statistics.selectedPreset.type;
             dataSeries.push(dataSerie);
         });
-        console.log('Done putting all the data in an array', dataSeries);
         setChartSeries(dataSeries);
         setChartAxisMaximums(axisMaxValues);
         statistics.chartConfig.loading = false;
@@ -189,13 +212,12 @@ function statisticsController($scope, matchHistoryService, stateService) {
         setChartSeries({});
     }
 
-    $scope.$on('summonerSet', function (event, args) {
-        console.log('STATISTICS PAGE. A summoner is selected, lets load its data', event, args);
+    $scope.$on('summonerSet', function () {
         retrievePageData();
     });
 
     $scope.$watch('statistics.selectedPreset', function (oldValue, newValue) {
-        console.log('Changed preset from', oldValue, 'to', newValue);
+        console.debug('Changed preset from', oldValue, 'to', newValue);
         resetChartConfig();
         fillChartWithMatchHistoryData();
     });
