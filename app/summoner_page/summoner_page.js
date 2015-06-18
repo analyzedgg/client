@@ -43,10 +43,8 @@ function summonerController($scope, summonerInfoService, stateService) {
         console.debug('Gonna perform the request for summoner info with the follow params:', summonerName, region);
         var promise = summonerInfoService.summoner(region, summonerName);
         promise.then(function (data) {
-            console.log('Summoner data', data);
             stateService.setActiveSummoner(data.response);
             $scope.$emit('SummonerSelected');
-            console.log('Broadcasted summonerSelected');
         }).catch(function (errorResponse) {
             summoner.summonerError = summonerName + ' not found on region ' + region;
             console.error('Error loading summoner info', errorResponse);
