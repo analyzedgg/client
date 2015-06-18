@@ -134,6 +134,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         console.log('In fill chart func with', statistics.currentSummoners);
         statistics.chartConfig.loading = true;
         var dataSeries = [];
+        var axisMaxValues = {xAxis: 0, yAxis: 0};
 
         angular.forEach(statistics.currentSummoners, function (summoner) {
             var dataSerie = {
@@ -144,6 +145,14 @@ function statisticsController($scope, matchHistoryService, stateService) {
                 var xValue = statistics.selectedPreset.xAxis(match, index);
                 var yValue = statistics.selectedPreset.yAxis(match);
                 data.push([xValue, yValue]);
+
+                if (xValue > axisMaxValues.xAxis) {
+                    axisMaxValues.xAxis = xValue;
+                }
+
+                if (yValue > axisMaxValues.yAxis) {
+                    axisMaxValues.yAxis = yValue;
+                }
             });
             dataSerie.data = data;
             dataSerie.tooltip = statistics.selectedPreset.tooltip;
@@ -152,6 +161,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         });
         console.log('Done putting all the data in an array', dataSeries);
         setChartSeries(dataSeries);
+        setChartAxisMaximums(axisMaxValues);
         statistics.chartConfig.loading = false;
     }
 
@@ -166,16 +176,16 @@ function statisticsController($scope, matchHistoryService, stateService) {
         return match;
     }
 
-    //Sets the data serie for high chart
     function setChartSeries(series) {
         statistics.chartConfig.series = series;
     }
 
-    function resetChartConfig() {
-        //Reset the x and y values
-        delete statistics.chartConfig.xAxis.currentMax;
-        delete statistics.chartConfig.yAxis.currentMax;
+    function setChartAxisMaximums(axisValues) {
+        statistics.chartConfig.xAxis.currentMax = axisValues.xAxis;
+        statistics.chartConfig.yAxis.currentMax = axisValues.yAxis;
+    }
 
+    function resetChartConfig() {
         setChartSeries({});
     }
 
