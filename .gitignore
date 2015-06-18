@@ -81,7 +81,7 @@ node_modules
 # Created by https://www.gitignore.io
 
 ### Bower ###
-bower_components
+lib
 .bower-cache
 .bower-registry
 .bower-tmp
