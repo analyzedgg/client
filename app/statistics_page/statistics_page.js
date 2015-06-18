@@ -15,39 +15,62 @@ statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService']
 
 function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
-    //The possible filtering options for the x axis
+    //The current summoners which are shown in the chart.
     statistics.currentSummoners = [];
-
+    //The possible filtering options for the x axis.
     var xAxisPresets = {
-        byGame: function (data, index) {
-            return index + 1;
+        byGame: {
+            name: 'Games',
+            value: function (data, index) {
+                return index + 1;
+            }
         },
-        byMinute: function (data) {
-            return Math.round(data.matchDuration / 60);
-        },
-        byGameDuration: function (data) {
-            return data.matchDuration;
+        byMinute: {
+            name: 'Minutes played',
+            value: function (data) {
+                return Math.round((data.matchDuration / 60) * 100) / 100;
+            }
         }
     };
-    //The possible filtering options for the y axis
+    //The possible filtering options for the y axis.
     var yAxisPresets = {
-        cs: function (data) {
-            return data.stats.minionKills;
+        cs: {
+            name: 'CS',
+            value: function (data) {
+                return data.stats.minionKills;
+            }
         },
-        averageCs: function (data) {
-            return Math.round(data.stats.minionKills / (data.matchDuration / 60) * 100) / 100;
+        averageCs: {
+            name: 'Average CS',
+            value: function (data) {
+                return Math.round(data.stats.minionKills / (data.matchDuration / 60) * 100) / 100;
+            }
         },
-        kills: function (data) {
-            return data.stats.kills;
+        kills: {
+            name: 'Kills',
+            value: function (data) {
+                return data.stats.kills;
+            }
         },
-        deaths: function (data) {
-            return data.stats.deaths;
+        deaths: {
+            name: 'Deaths',
+            value: function (data) {
+                return data.stats.deaths;
+            }
         },
-        assists: function (data) {
-            return data.stats.assists;
+        assists: {
+            name: 'Assists',
+            value: function (data) {
+                return data.stats.assists;
+            }
         },
-        kda: function (data) {
-            return Math.round((data.stats.kills + data.stats.assists) / data.stats.deaths * 100) / 100;
+        kda: {
+            name: 'KDA',
+            value: function (data) {
+                var killAssists = data.stats.kills + data.stats.assists;
+                var deaths = data.stats.deaths || 1;
+                return Math.round(((killAssists) / deaths) * 100) / 100;
+            }
         }
     };
 
@@ -75,7 +98,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         },
         {
             name: 'KDA per game',
-            type: 'scatter',
+            type: 'spline',
             xAxis: xAxisPresets.byGame,
             yAxis: yAxisPresets.kda,
             tooltip: {
@@ -84,7 +107,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         },
         {
             name: 'KDA per CS',
-            type: 'spline',
+            type: 'scatter',
             xAxis: yAxisPresets.cs,
             yAxis: yAxisPresets.kda,
             tooltip: {
@@ -96,7 +119,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
     //This is not a highcharts object. It just looks a little like one!
     statistics.chartConfig = {
-
         options: {
             //This is the Main Highcharts chart config. Any Highchart options are valid here.
             //will be overriden by values specified below.
@@ -122,7 +144,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
             title: {text: 'Minutes'}
         },
         yAxis: {
-            currentMin: 1,
+            currentMin: 0,
             title: {text: 'CS'}
         },
         //size (optional) if left out the chart will default to size of the div or something sensible.
@@ -142,6 +164,13 @@ function statisticsController($scope, matchHistoryService, stateService) {
         }
     }
 
+    /**
+     * Retrieve the match data for a given region and summoner from the API.
+     * @param region
+     *      The selected region.
+     * @param summoner
+     *      The selected summoner.
+     */
     function getMatchHistory(region, summoner) {
         console.log('Gonna perform the request for match history with the follow params:', summoner.id, region);
         var promise = matchHistoryService.matchHistory(region, summoner.id);
@@ -154,41 +183,75 @@ function statisticsController($scope, matchHistoryService, stateService) {
         });
     }
 
+    /**
+     * The main function for controlling, transforming and filling the chart.
+     */
     function fillChartWithMatchHistoryData() {
-        console.log('In fill chart func with', statistics.currentSummoners);
+        console.debug('In fill chart func with', statistics.currentSummoners);
         statistics.chartConfig.loading = true;
         var dataSeries = [];
-        var axisMaxValues = {xAxis: 0, yAxis: 0};
+        var axisValues = {xAxisMin: 100, xAxisMax: 0, yAxisMin: 100, yAxisMax: 0};
 
         angular.forEach(statistics.currentSummoners, function (summoner) {
-            var dataSerie = {
+            var dataSet = {
                 name: summoner.name
             };
             var data = [];
             angular.forEach(summoner.matchHistory, function (match, index) {
-                var xValue = statistics.selectedPreset.xAxis(match, index);
-                var yValue = statistics.selectedPreset.yAxis(match);
+                var xValue = statistics.selectedPreset.xAxis.value(match, index);
+                var yValue = statistics.selectedPreset.yAxis.value(match);
                 data.push([xValue, yValue]);
-
-                if (xValue > axisMaxValues.xAxis) {
-                    axisMaxValues.xAxis = xValue;
-                }
-
-                if (yValue > axisMaxValues.yAxis) {
-                    axisMaxValues.yAxis = yValue;
-                }
+                axisValues = calculateAxisValues(axisValues, xValue, yValue);
             });
-            dataSerie.data = data;
-            dataSerie.tooltip = statistics.selectedPreset.tooltip;
-            dataSerie.type = statistics.selectedPreset.type;
-            dataSeries.push(dataSerie);
+            dataSet.data = data;
+            dataSet.tooltip = statistics.selectedPreset.tooltip;
+            dataSet.type = statistics.selectedPreset.type;
+            dataSeries.push(dataSet);
         });
         setChartSeries(dataSeries);
-        setChartAxisMaximums(axisMaxValues);
+        setChartAxisValues(axisValues);
+        setChartTitles();
         statistics.chartConfig.loading = false;
     }
 
-    //Check if the filled in summoner is already in the current summoners list
+    /**
+     * Calculate the new axis minimums and maximums for the chart.
+     * @param axisValues
+     *      The list of current min an max values.
+     * @param xValue
+     *      The match specific xValue.
+     * @param yValue
+     *      The match specific yValue.
+     * @returns
+     *      The updated array axisValues.
+     */
+    function calculateAxisValues(axisValues, xValue, yValue) {
+        if (xValue > axisValues.xAxisMax) {
+            axisValues.xAxisMax = xValue;
+        }
+
+        if (xValue < axisValues.xAxisMin) {
+            axisValues.xAxisMin = xValue;
+        }
+
+        if (yValue > axisValues.yAxisMax) {
+            axisValues.yAxisMax = yValue;
+        }
+
+        if (yValue < axisValues.yAxisMin) {
+            axisValues.yAxisMin = yValue;
+        }
+
+        return axisValues;
+    }
+
+    /**
+     * Check if the filled in summoner is already in the current summoners list.
+     * @param summonerName
+     *      The active summoners name.
+     * @returns {boolean}
+     *      Indicator if the summoner is already in the current summoners list.
+     */
     function summonerInCurrentList(summonerName) {
         var match = false;
         angular.forEach(statistics.currentSummoners, function (summoner) {
@@ -199,16 +262,40 @@ function statisticsController($scope, matchHistoryService, stateService) {
         return match;
     }
 
+    /**
+     * Set the data series for the active chart.
+     * @param series
+     *      The series to use in the chart.
+     */
     function setChartSeries(series) {
         statistics.chartConfig.series = series;
     }
 
-    function setChartAxisMaximums(axisValues) {
-        statistics.chartConfig.xAxis.currentMax = axisValues.xAxis;
-        statistics.chartConfig.yAxis.currentMax = axisValues.yAxis;
+    /**
+     * Set the minimum and maximum values for the axis of the chart.
+     * @param axisValues
+     */
+    function setChartAxisValues(axisValues) {
+        statistics.chartConfig.xAxis.currentMin = axisValues.xAxisMin;
+        statistics.chartConfig.xAxis.currentMax = axisValues.xAxisMax;
+        statistics.chartConfig.yAxis.currentMin = axisValues.yAxisMin;
+        statistics.chartConfig.yAxis.currentMax = axisValues.yAxisMax;
     }
 
-    function resetChartConfig() {
+    /**
+     * Sets the titles for the x and y axis as well as the title of the chart.
+     */
+    function setChartTitles() {
+        console.log(statistics.selectedPreset.xAxis.name);
+        statistics.chartConfig.xAxis.title = {text: statistics.selectedPreset.xAxis.name};
+        statistics.chartConfig.yAxis.title = {text: statistics.selectedPreset.yAxis.name};
+        statistics.chartConfig.title = {text: statistics.selectedPreset.name};
+    }
+
+    /**
+     * Removes the current data series from the charts.
+     */
+    function removeActiveSeries() {
         setChartSeries({});
     }
 
@@ -218,7 +305,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
     $scope.$watch('statistics.selectedPreset', function (oldValue, newValue) {
         console.debug('Changed preset from', oldValue, 'to', newValue);
-        resetChartConfig();
+        removeActiveSeries();
         fillChartWithMatchHistoryData();
     });
 }
