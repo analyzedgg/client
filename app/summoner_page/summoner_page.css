@@ -12,6 +12,14 @@ div#summoner-page div#search-form input[type=text] {
     margin: 0;
 }
 
+div#summoner-page div#search-form button {
+    width: 71px;
+}
+
+div#summoner-page div#search-form ul.dropdown-menu li a {
+    cursor: pointer;
+}
+
 div#summoner-page div#search-form input[type=submit] {
     width: 100%;
 }

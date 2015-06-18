@@ -1,12 +1,19 @@
 <div id="summoner-page">
-    <div id="search-form">
-        <div>
-            <input type="text" ng-model="summoner.usernameInput"/>
-            <select ng-model="summoner.regionCodeInput"
-                    ng-options="region.code as region.name for region in summoner.regions"></select>
+    <form>
+        <div id="search-form">
+            <div class="input-group" role="group" aria-label="">
+                <input autofocus class="form-control" type="text" ng-model="summoner.usernameInput"/>
+
+                <div class="input-group-btn">
+                    <button type="button" dropdown-toggle class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{summoner.regions[summoner.region]}} <span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li ng-repeat="(code, region) in summoner.regions"><a ng-click="summoner.setRegion(code)">{{region}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <input type="submit" ng-click="summoner.retrievePageData()"/>
         </div>
-        <input type="submit" ng-click="summoner.retrievePageData()"/>
-    </div>
+    </form>
     <div>
         <div ng-if="summoner.summonerError">
             <div class="alert alert-warning alert-dismissable" role="alert">

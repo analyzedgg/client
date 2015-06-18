@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.summoner_page', ['ngRoute'])
+angular.module('leagueApp.summoner_page', ['ngRoute', 'ui.bootstrap'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/summoner', {
@@ -15,20 +15,28 @@ summonerController.$inject = ['$scope', 'SummonerInfoService', 'StateService'];
 
 function summonerController($scope, summonerInfoService, stateService) {
     var summoner = this;
-    summoner.regions = [
-        {name: 'EUW', code: 'euw'},
-        {name: 'NA', code: 'na'},
-        {name: 'KR', code: 'kr'},
-        {name: 'BR', code: 'br'},
-        {name: 'EUNE', code: 'eune'},
-        {name: 'LAS', code: 'las'},
-        {name: 'LAN', code: 'lan'},
-        {name: 'OCE', code: 'oce'},
-        {name: 'RUS', code: 'rus'},
-        {name: 'TR', code: 'tr'}
-    ];
 
-    summoner.usernameInput = 'Minikoen';
+    summoner.regions = {
+        'euw': 'EUW',
+        'na': 'NA',
+        'kr': 'KR',
+        'br': 'BR',
+        'eune': 'EUNE',
+        'las': 'LAS',
+        'lan': 'LAN',
+        'oce': 'OCE',
+        'rus': 'RUS',
+        'tr': 'TR'
+    };
+
+    summoner.setRegion = function(region) {
+        stateService.setActiveRegion(region);
+        summoner.region = region;
+    };
+
+    summoner.usernameInput = '';
+    summoner.region = '';
+    summoner.setRegion('euw');
 
     summoner.retrievePageData = function () {
         delete summoner.summonerError;
@@ -36,7 +44,6 @@ function summonerController($scope, summonerInfoService, stateService) {
         var summonerName = summoner.usernameInput;
 
         getSummonerInfo(activeRegion, summonerName);
-
     };
 
     function getSummonerInfo(region, summonerName) {
@@ -51,9 +58,11 @@ function summonerController($scope, summonerInfoService, stateService) {
         });
     }
 
-    $scope.$watch('summoner.regionCodeInput', function (newRegion, oldRegion) {
-        console.debug('Region changed from', oldRegion, 'to', newRegion);
-        stateService.setActiveRegion(newRegion);
-    });
+    //$scope.$watch('summoner.regionCodeInput', function (newRegion, oldRegion) {
+    //    console.debug('Region changed from', oldRegion, 'to', newRegion);
+    //    stateService.setActiveRegion(newRegion);
+    //});
+
+
 
 }
