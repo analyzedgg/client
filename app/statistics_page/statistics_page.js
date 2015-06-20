@@ -30,6 +30,13 @@ function statisticsController($scope, matchHistoryService, stateService) {
             value: function (data) {
                 return Math.round((data.matchDuration / 60) * 100) / 100;
             }
+        },
+        byDate: {
+            name: 'Date',
+            type: 'datetime',
+            value: function (data) {
+                return data.matchCreation;
+            }
         }
     };
     //The possible filtering options for the y axis.
@@ -113,7 +120,19 @@ function statisticsController($scope, matchHistoryService, stateService) {
             tooltip: {
                 pointFormat: '{point.x} CS, {point.y} KDA'
             }
-        }];
+        },
+        {
+            name: 'CS per date',
+            type: 'scatter',
+            xAxis: xAxisPresets.byDate,
+            yAxis: yAxisPresets.cs,
+            tooltip: {
+                pointFormatter: function () {
+                    return this.y + ' CS on ' + new Date(this.x).toDateString();
+                }
+            }
+        }
+    ];
 
     statistics.selectedPreset = statistics.chartPresets[0];
 
@@ -175,7 +194,10 @@ function statisticsController($scope, matchHistoryService, stateService) {
         console.log('Gonna perform the request for match history with the follow params:', summoner.id, region);
         var promise = matchHistoryService.matchHistory(region, summoner.id);
         promise.then(function (data) {
-            statistics.currentSummoners.push({name: summoner.name, matchHistory: data.response});
+            var sortedArray = data.response.sort(function (a, b) {
+                return a.matchCreation - b.matchCreation;
+            });
+            statistics.currentSummoners.push({name: summoner.name, matchHistory: sortedArray});
             fillChartWithMatchHistoryData();
         }).catch(function (errorResponse) {
             statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summoner.id + ' on the ' + region + 'servers';
@@ -190,7 +212,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         console.debug('In fill chart func with', statistics.currentSummoners);
         statistics.chartConfig.loading = true;
         var dataSeries = [];
-        var axisValues = {xAxisMin: 100, xAxisMax: 0, yAxisMin: 100, yAxisMax: 0};
+        var axisValues = {xAxisMin: null, xAxisMax: null, yAxisMin: null, yAxisMax: null};
 
         angular.forEach(statistics.currentSummoners, function (summoner) {
             var dataSet = {
@@ -210,6 +232,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         });
         setChartSeries(dataSeries);
         setChartAxisValues(axisValues);
+        setChartAxisTypes();
         setChartTitles();
         statistics.chartConfig.loading = false;
     }
@@ -226,19 +249,19 @@ function statisticsController($scope, matchHistoryService, stateService) {
      *      The updated array axisValues.
      */
     function calculateAxisValues(axisValues, xValue, yValue) {
-        if (xValue > axisValues.xAxisMax) {
+        if (xValue > axisValues.xAxisMax || axisValues.xAxisMax === null) {
             axisValues.xAxisMax = xValue;
         }
 
-        if (xValue < axisValues.xAxisMin) {
+        if (xValue < axisValues.xAxisMin || axisValues.xAxisMin === null) {
             axisValues.xAxisMin = xValue;
         }
 
-        if (yValue > axisValues.yAxisMax) {
+        if (yValue > axisValues.yAxisMax || axisValues.yAxisMax === null) {
             axisValues.yAxisMax = yValue;
         }
 
-        if (yValue < axisValues.yAxisMin) {
+        if (yValue < axisValues.yAxisMin || axisValues.yAxisMin === null) {
             axisValues.yAxisMin = yValue;
         }
 
@@ -280,6 +303,10 @@ function statisticsController($scope, matchHistoryService, stateService) {
         statistics.chartConfig.xAxis.currentMax = axisValues.xAxisMax;
         statistics.chartConfig.yAxis.currentMin = axisValues.yAxisMin;
         statistics.chartConfig.yAxis.currentMax = axisValues.yAxisMax;
+    }
+
+    function setChartAxisTypes() {
+        statistics.chartConfig.xAxis.type = statistics.selectedPreset.xAxis.type;
     }
 
     /**
