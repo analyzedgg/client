@@ -303,10 +303,21 @@ function statisticsController($scope, matchHistoryService, stateService) {
         statistics.chartConfig.xAxis.currentMax = axisValues.xAxisMax;
         statistics.chartConfig.yAxis.currentMin = axisValues.yAxisMin;
         statistics.chartConfig.yAxis.currentMax = axisValues.yAxisMax;
+        statistics.chartConfig.xAxis.min = axisValues.xAxisMin;
+        statistics.chartConfig.xAxis.max = axisValues.xAxisMax;
+        statistics.chartConfig.yAxis.min = axisValues.yAxisMin;
+        statistics.chartConfig.yAxis.max = axisValues.yAxisMax;
     }
 
+    /**
+     * Set the type of the axis to 'datetime' for example. Defaults to linear.
+     */
     function setChartAxisTypes() {
-        statistics.chartConfig.xAxis.type = statistics.selectedPreset.xAxis.type;
+        statistics.chartConfig.xAxis.type = (statistics.selectedPreset.xAxis.type) ?
+            statistics.selectedPreset.xAxis.type : 'linear';
+
+        statistics.chartConfig.yAxis.type = (statistics.selectedPreset.yAxis.type) ?
+            statistics.selectedPreset.yAxis.type : 'linear';
     }
 
     /**
