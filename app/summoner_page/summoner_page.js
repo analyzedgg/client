@@ -29,14 +29,24 @@ function summonerController($scope, summonerInfoService, stateService) {
         'tr': 'TR'
     };
 
-    summoner.setRegion = function(region) {
-        stateService.setActiveRegion(region);
-        summoner.region = region;
+    summoner.queueTypes = {
+        '': {
+            small: 'All',
+            full: 'All'
+        },
+        'RANKED_SOLO_5x5': {
+            small: 'Solo 5v5',
+            full: 'Ranked 5v5 (solo)'
+        },
+        'RANKED_TEAM_5x5': {
+            small: 'Team 5v5',
+            full: 'Ranked 5v5 (team)'
+        },
+        'RANKED_TEAM_3x3': {
+            small: 'Team 3v3',
+            full: 'Ranked 3v3 (team)'
+        }
     };
-
-    summoner.usernameInput = '';
-    summoner.region = '';
-    summoner.setRegion('euw');
 
     summoner.retrievePageData = function () {
         delete summoner.summonerError;
@@ -58,11 +68,19 @@ function summonerController($scope, summonerInfoService, stateService) {
         });
     }
 
-    //$scope.$watch('summoner.regionCodeInput', function (newRegion, oldRegion) {
-    //    console.debug('Region changed from', oldRegion, 'to', newRegion);
-    //    stateService.setActiveRegion(newRegion);
-    //});
+    summoner.setRegion = function(region) {
+        stateService.setActiveRegion(region);
+        summoner.region = region;
+    };
+
+    summoner.setQueueType = function(queueType) {
+        summoner.queueType = queueType;
+    };
 
 
-
+    // Default values
+    summoner.usernameInput = '';
+    summoner.region = '';
+    summoner.setRegion('euw');
+    summoner.queueType = '';
 }

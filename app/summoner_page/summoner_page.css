@@ -12,8 +12,17 @@ div#summoner-page div#search-form input[type=text] {
     margin: 0;
 }
 
-div#summoner-page div#search-form button {
+div#summoner-page div#search-form button#region-dropdown {
     width: 71px;
+}
+
+div#summoner-page div#search-form button {
+    width: 110px;
+}
+div#summoner-page div#search-form button span.caret {
+    right: 0;
+    position: absolute;
+    margin: 8px 5px;
 }
 
 div#summoner-page div#search-form ul.dropdown-menu li a {
