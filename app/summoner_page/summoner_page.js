@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.summoner_page', ['ngRoute', 'ui.bootstrap'])
+angular.module('leagueApp.summoner_page', ['ngRoute', 'ui.bootstrap', 'isteven-multi-select'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/summoner', {
@@ -29,28 +29,21 @@ function summonerController($scope, summonerInfoService, stateService) {
         'tr': 'TR'
     };
 
-    summoner.queueTypes = {
-        '': {
-            small: 'All',
-            full: 'All'
-        },
-        'RANKED_SOLO_5x5': {
-            small: 'Solo 5v5',
-            full: 'Ranked 5v5 (solo)'
-        },
-        'RANKED_TEAM_5x5': {
-            small: 'Team 5v5',
-            full: 'Ranked 5v5 (team)'
-        },
-        'RANKED_TEAM_3x3': {
-            small: 'Team 3v3',
-            full: 'Ranked 3v3 (team)'
+    summoner.queueTypes = [
+        {
+            key: '',                name: 'All ranked queues',  ticked: true
+        }, {
+            key: 'RANKED_SOLO_5x5', name: 'Ranked 5v5 (solo)',  ticked: false
+        }, {
+            key: 'RANKED_TEAM_5x5', name: 'Ranked 5v5 (team)',  ticked: false
+        }, {
+            key: 'RANKED_TEAM_3x3', name: 'Ranked 3v3 (team)',  ticked: false
         }
-    };
+    ];
 
     summoner.retrievePageData = function () {
         delete summoner.summonerError;
-        var activeRegion = stateService.getActiveRegion();
+        var activeRegion = summoner.region;
         var summonerName = summoner.usernameInput;
 
         getSummonerInfo(activeRegion, summonerName);
@@ -61,6 +54,12 @@ function summonerController($scope, summonerInfoService, stateService) {
         var promise = summonerInfoService.summoner(region, summonerName);
         promise.then(function (data) {
             stateService.setActiveSummoner(data.response);
+
+            var queueType = summoner.queueType[0].key;
+            stateService.setActiveQueueType(queueType);
+            stateService.setActiveRegion()
+
+
             $scope.$emit('SummonerSelected');
         }).catch(function (errorResponse) {
             summoner.summonerError = summonerName + ' not found on region ' + region;
@@ -68,19 +67,8 @@ function summonerController($scope, summonerInfoService, stateService) {
         });
     }
 
-    summoner.setRegion = function(region) {
-        stateService.setActiveRegion(region);
-        summoner.region = region;
-    };
-
-    summoner.setQueueType = function(queueType) {
-        summoner.queueType = queueType;
-    };
-
-
     // Default values
     summoner.usernameInput = '';
-    summoner.region = '';
-    summoner.setRegion('euw');
-    summoner.queueType = '';
+    summoner.region = 'euw';
+    summoner.queueType = summoner.queueTypes[0];
 }

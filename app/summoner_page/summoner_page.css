@@ -16,13 +16,19 @@ div#summoner-page div#search-form button#region-dropdown {
     width: 71px;
 }
 
-div#summoner-page div#search-form button {
-    width: 110px;
+div#summoner-page div#search-form div.select-fullsize {
+    width: 100%;
 }
+
+div#summoner-page div#search-form div.select-fullsize > span.multiSelect > button {
+    width: 100%;
+}
+
+
 div#summoner-page div#search-form button span.caret {
     right: 0;
     position: absolute;
-    margin: 8px 5px;
+    margin: 8px 5px !important; /* !important needed for overriding isteven's caret */
 }
 
 div#summoner-page div#search-form ul.dropdown-menu li a {

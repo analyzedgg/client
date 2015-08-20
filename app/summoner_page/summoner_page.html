@@ -2,29 +2,31 @@
     <form>
         <div id="search-form">
             <div class="input-group" role="group" aria-label="">
-                <input autofocus class="form-control" placeholder="Summoner" type="text" ng-model="summoner.usernameInput"/>
+                <input autofocus class="form-control" placeholder="Summoner" type="text"
+                       ng-model="summoner.usernameInput"/>
 
                 <div class="input-group-btn">
-                    <button id="region-dropdown" type="button" dropdown-toggle class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{summoner.regions[summoner.region]}} <span class="caret"></span></button>
+                    <button id="region-dropdown" type="button" dropdown-toggle class="btn btn-default dropdown-toggle"
+                            data-toggle="dropdown">{{summoner.regions[summoner.region]}} <span class="caret"></span>
+                    </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li ng-repeat="(code, region) in summoner.regions"><a ng-click="summoner.setRegion(code)">{{region}}</a></li>
+                        <li ng-repeat="(code, region) in summoner.regions"><a ng-click="summoner.region = code">{{region}}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="input-group" role="group">
-                <div class="input-group-btn">
-                    <button type="button" dropdown-toggle class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{summoner.champions[summoner.champion]}} <span class="caret"></span></button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li ng-repeat="(key, champion) in summoner.champions"><a ng-click="summoner.setChampion(key)">{{champion}}</a></li>
-                    </ul>
-                </div>
-                <div class="input-group-btn">
-                    <button type="button" dropdown-toggle class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{summoner.queueTypes[summoner.queueType].small}} <span class="caret"></span></button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li ng-repeat="(key, queueType) in summoner.queueTypes"><a ng-click="summoner.setQueueType(key)">{{queueType.full}}</a></li>
-                    </ul>
-                </div>
+
+            <div isteven-multi-select
+                 input-model="summoner.queueTypes"
+                 output-model="summoner.queueType"
+                 item-label="name"
+                 button-label="name"
+                 tick-property="ticked"
+                 selection-mode="single"
+                 helper-elements="none"
+                 class="select-fullsize">
             </div>
+
             <input type="submit" ng-click="summoner.retrievePageData()"/>
         </div>
     </form>

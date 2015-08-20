@@ -16,6 +16,12 @@ angular.module('leagueApp.service.state', ['ngResource'])
             },
             setActiveRegion: function (region) {
                 state.activeRegion = region;
+            },
+            getActiveQueueType: function () {
+                return state.activeQueueType;
+            },
+            setActiveQueueType: function (queueType) {
+                state.queueType = queueType;
             }
         }
     }]);

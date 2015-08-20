@@ -13,6 +13,7 @@
     "html5-boilerplate": "~4.3.0",
     "bootstrap": "3.3.4",
     "jquery": "2.1.4",
-    "highcharts-ng": "0.0.8"
+    "highcharts-ng": "0.0.8",
+    "isteven-angular-multiselect": "4.0.0"
   }
 }

@@ -15,7 +15,10 @@ function summonerInfoService($resource, BASE_URL) {
     };
 
     function summoner(region, summonerName) {
-        return summonerInfo.get({region: region, summonerName: encodeURIComponent(summonerName)}, success, handleError).$promise;
+        return summonerInfo.get({
+            region: region,
+            summonerName: encodeURIComponent(summonerName)
+            }, success, handleError).$promise;
     }
 
     function success(response) {
