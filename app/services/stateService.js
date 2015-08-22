@@ -21,7 +21,13 @@ angular.module('leagueApp.service.state', ['ngResource'])
                 return state.activeQueueType;
             },
             setActiveQueueType: function (queueType) {
-                state.queueType = queueType;
+                state.activeQueueType = queueType;
+            },
+            getActiveChampions: function () {
+                return state.activeChampions;
+            },
+            setActiveChampions: function (champions) {
+                state.activeChampions = champions;
             }
         }
     }]);

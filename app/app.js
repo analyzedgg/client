@@ -9,6 +9,7 @@ angular.module('leagueApp', [
     'leagueApp.statistics_page',
     'leagueApp.service.summonerInfo',
     'leagueApp.service.matchHistory',
+    'leagueApp.service.championInfo',
     'leagueApp.service.state'
 ])
     .config(['$routeProvider', function ($routeProvider) {

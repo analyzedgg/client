@@ -11,9 +11,9 @@ angular.module('leagueApp.summoner_page', ['ngRoute', 'ui.bootstrap', 'isteven-m
     }])
     .controller('SummonerPageCtrl', summonerController);
 
-summonerController.$inject = ['$scope', 'SummonerInfoService', 'StateService'];
+summonerController.$inject = ['$scope', 'SummonerInfoService', 'StateService', 'ChampionInfoService'];
 
-function summonerController($scope, summonerInfoService, stateService) {
+function summonerController($scope, summonerInfoService, stateService, championInfoService) {
     var summoner = this;
 
     summoner.regions = {
@@ -41,6 +41,16 @@ function summonerController($scope, summonerInfoService, stateService) {
         }
     ];
 
+    summoner.champions = [];
+
+    summoner.championSelectLabels = {
+        selectAll       : "Tick all",
+        selectNone      : "Remove filter",
+        reset           : "Undo all",
+        search          : "Search...",
+        nothingSelected : "All champions"
+    };
+
     summoner.retrievePageData = function () {
         delete summoner.summonerError;
         var activeRegion = summoner.region;
@@ -55,10 +65,17 @@ function summonerController($scope, summonerInfoService, stateService) {
         promise.then(function (data) {
             stateService.setActiveSummoner(data.response);
 
-            var queueType = summoner.queueType[0].key;
+            var queueType = summoner.selectedQueueType[0].key;
             stateService.setActiveQueueType(queueType);
-            stateService.setActiveRegion()
 
+            var champions = summoner.selectedChampions;
+            var championList = [];
+            angular.forEach(champions, function(champion) {
+                championList.push(champion.id);
+            });
+            stateService.setActiveChampions(championList);
+
+            stateService.setActiveRegion(region);
 
             $scope.$emit('SummonerSelected');
         }).catch(function (errorResponse) {
@@ -67,8 +84,24 @@ function summonerController($scope, summonerInfoService, stateService) {
         });
     }
 
+    function fillChampionSelect() {
+        var champions = championInfoService.champions();
+        angular.forEach(champions, function (champion) {
+            summoner.champions.push({
+                id: champion.id,
+                name: champion.name,
+                ticked: false
+            });
+        });
+    }
+
+    summoner.init = function () {
+        fillChampionSelect();
+    };
+
     // Default values
     summoner.usernameInput = '';
     summoner.region = 'euw';
-    summoner.queueType = summoner.queueTypes[0];
+    summoner.selectedQueueType = summoner.queueTypes[0];
+    summoner.selectedChampions = [];
 }

@@ -177,22 +177,26 @@ function statisticsController($scope, matchHistoryService, stateService) {
         delete statistics.matchHistoryError;
         var activeRegion = stateService.getActiveRegion();
         var activeSummoner = stateService.getActiveSummoner();
+        var activeQueueType = stateService.getActiveQueueType();
+        var activeChampions = stateService.getActiveChampions();
 
         if (!summonerInCurrentList(activeSummoner.name)) {
-            getMatchHistory(activeRegion, activeSummoner);
+            getMatchHistory(activeRegion, activeSummoner, activeQueueType, activeChampions);
+        } else {
+            console.log('Selection with name [' + activeSummoner.name + '] already exists');
         }
     }
 
     /**
      * Retrieve the match data for a given region and summoner from the API.
-     * @param region
-     *      The selected region.
-     * @param summoner
-     *      The selected summoner.
+     * @param region The selected region.
+     * @param summoner The selected summoner.
+     * @param queueType The selected queue. ('', RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3)
+     * @param champions A list of selected champion IDs.
      */
-    function getMatchHistory(region, summoner) {
-        console.log('Gonna perform the request for match history with the follow params:', summoner.id, region);
-        var promise = matchHistoryService.matchHistory(region, summoner.id);
+    function getMatchHistory(region, summoner, queueType, champions) {
+        console.log('Gonna perform the request for match history with the follow params:', summoner.id, region, queueType, champions);
+        var promise = matchHistoryService.matchHistory(region, summoner.id, queueType, champions);
         promise.then(function (data) {
             var sortedArray = data.response.sort(function (a, b) {
                 return a.matchCreation - b.matchCreation;

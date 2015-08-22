@@ -1,4 +1,4 @@
-<div id="summoner-page">
+<div id="summoner-page" ng-init="summoner.init()">
     <form>
         <div id="search-form">
             <div class="input-group" role="group" aria-label="">
@@ -18,12 +18,26 @@
 
             <div isteven-multi-select
                  input-model="summoner.queueTypes"
-                 output-model="summoner.queueType"
+                 output-model="summoner.selectedQueueType"
                  item-label="name"
                  button-label="name"
                  tick-property="ticked"
                  selection-mode="single"
                  helper-elements="none"
+                 class="select-fullsize">
+            </div>
+
+            <div isteven-multi-select
+                 input-model="summoner.champions"
+                 output-model="summoner.selectedChampions"
+                 item-label="name"
+                 button-label="name"
+                 tick-property="ticked"
+                 selection-mode="multiple"
+                 helper-elements="filter none"
+                 max-height="350px"
+                 max-labels="2"
+                 translation="summoner.championSelectLabels"
                  class="select-fullsize">
             </div>
 

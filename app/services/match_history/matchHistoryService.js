@@ -6,7 +6,7 @@ angular.module('leagueApp.service.matchHistory', ['ngResource'])
 matchHistoryService.$inject = ['$resource', 'BASE_URL'];
 
 function matchHistoryService($resource, BASE_URL) {
-    var matchInfo = $resource(BASE_URL + '/api/:region/matchhistory/:summonerId?queueType=:queueType', {}, {
+    var matchInfo = $resource(BASE_URL + '/api/:region/matchhistory/:summonerId?queue=:queueType&champions=:champions', {}, {
         'get': {method: 'GET'}
     });
 
@@ -14,11 +14,12 @@ function matchHistoryService($resource, BASE_URL) {
         matchHistory: matchHistory
     };
 
-    function matchHistory(region, summonerId, queueType) {
+    function matchHistory(region, summonerId, queueType, champions) {
         return matchInfo.get({
             region: region,
             summonerId: summonerId,
-            queueType: queueType}, success, handleError).$promise;
+            queueType: queueType,
+            champions: champions.join(",")}, success, handleError).$promise;
     }
 
     function success(response) {
