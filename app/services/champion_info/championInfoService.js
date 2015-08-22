@@ -770,12 +770,4 @@ function championInfoService() {
     function champions() {
         return championData;
     }
-
-    function success(response) {
-        //
-    }
-
-    function handleError(response) {
-        console.error('Call for summoner info failed', response);
-    }
 }
