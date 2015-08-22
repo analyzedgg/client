@@ -16,7 +16,7 @@ statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService']
 function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
     //The current summoners which are shown in the chart.
-    statistics.currentSummoners = [];
+    statistics.currentDatasets = [];
     //The possible filtering options for the x axis.
     var xAxisPresets = {
         byGame: {
@@ -175,15 +175,17 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
     function retrievePageData() {
         delete statistics.matchHistoryError;
-        var activeRegion = stateService.getActiveRegion();
-        var activeSummoner = stateService.getActiveSummoner();
-        var activeQueueType = stateService.getActiveQueueType();
-        var activeChampions = stateService.getActiveChampions();
+        var selection = {
+            region: angular.copy(stateService.getActiveRegion()),
+            summoner: angular.copy(stateService.getActiveSummoner()),
+            queueType: angular.copy(stateService.getActiveQueueType()),
+            champions: angular.copy(stateService.getActiveChampions())
+        };
 
-        if (!summonerInCurrentList(activeSummoner.name)) {
-            getMatchHistory(activeRegion, activeSummoner, activeQueueType, activeChampions);
+        if (!selectionInCurrentList(selection)) {
+            getMatchHistory(selection.region, selection.summoner, selection.queueType, selection.champions);
         } else {
-            console.log('Selection with name [' + activeSummoner.name + '] already exists');
+            //console.log('Selection [' + activeSummoner.name + ', ' +', ''] already exists');
         }
     }
 
@@ -201,7 +203,16 @@ function statisticsController($scope, matchHistoryService, stateService) {
             var sortedArray = data.response.sort(function (a, b) {
                 return a.matchCreation - b.matchCreation;
             });
-            statistics.currentSummoners.push({name: summoner.name, matchHistory: sortedArray});
+            statistics.currentDatasets.push(
+                {
+                    selection: {
+                        region: region,
+                        summoner: summoner,
+                        queueType: queueType,
+                        champions: champions
+                    },
+                    matchHistory: sortedArray
+                });
             fillChartWithMatchHistoryData();
         }).catch(function (errorResponse) {
             statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summoner.id + ' on the ' + region + 'servers';
@@ -213,14 +224,14 @@ function statisticsController($scope, matchHistoryService, stateService) {
      * The main function for controlling, transforming and filling the chart.
      */
     function fillChartWithMatchHistoryData() {
-        console.debug('In fill chart func with', statistics.currentSummoners);
+        console.debug('In fill chart func with', statistics.currentDatasets);
         statistics.chartConfig.loading = true;
         var dataSeries = [];
         var axisValues = {xAxisMin: null, xAxisMax: null, yAxisMin: null, yAxisMax: null};
 
-        angular.forEach(statistics.currentSummoners, function (summoner) {
+        angular.forEach(statistics.currentDatasets, function (summoner) {
             var dataSet = {
-                name: summoner.name
+                name: summoner.selection.summoner.name
             };
             var data = [];
             angular.forEach(summoner.matchHistory, function (match, index) {
@@ -274,15 +285,15 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
     /**
      * Check if the filled in summoner is already in the current summoners list.
-     * @param summonerName
-     *      The active summoners name.
+     * @param selection
+     *      The active selection.
      * @returns {boolean}
      *      Indicator if the summoner is already in the current summoners list.
      */
-    function summonerInCurrentList(summonerName) {
+    function selectionInCurrentList(selection) {
         var match = false;
-        angular.forEach(statistics.currentSummoners, function (summoner) {
-            if (angular.equals(summoner.name, summonerName)) {
+        angular.forEach(statistics.currentDatasets, function (dataset) {
+            if (!match && angular.equals(dataset.selection, selection)) {
                 match = true;
             }
         });
