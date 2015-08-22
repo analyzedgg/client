@@ -86,13 +86,20 @@ function summonerController($scope, summonerInfoService, stateService, championI
 
     function fillChampionSelect() {
         var champions = championInfoService.champions();
+        var championList = [];
         angular.forEach(champions, function (champion) {
-            summoner.champions.push({
+            championList.push({
                 id: champion.id,
                 name: champion.name,
                 ticked: false
             });
         });
+        championList = championList.sort(function(a, b) {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+        });
+        summoner.champions = summoner.champions.concat(championList);
     }
 
     summoner.init = function () {
