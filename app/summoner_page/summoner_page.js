@@ -41,7 +41,21 @@ function summonerController($scope, summonerInfoService, stateService, championI
         }
     ];
 
-    summoner.champions = [];
+    summoner.champions = [
+        {
+            id: 'FIGHTER',  name: '<b>Fighter</b>',     ticked: false
+        }, {
+            id: 'ASSASSIN', name: '<b>Assassin</b>',    ticked: false
+        }, {
+            id: 'MAGE',     name: '<b>Mage</b>',        ticked: false
+        }, {
+            id: 'TANK',     name: '<b>Tank</b>',        ticked: false
+        }, {
+            id: 'MARKSMAN', name: '<b>Marksman</b>',    ticked: false
+        }, {
+            id: 'SUPPORT',  name: '<b>Support</b>',     ticked: false
+        }
+    ];
 
     summoner.championSelectLabels = {
         selectAll       : "Tick all",
@@ -51,12 +65,28 @@ function summonerController($scope, summonerInfoService, stateService, championI
         nothingSelected : "All champions"
     };
 
+    summoner.championRoles = {};
+
     summoner.retrievePageData = function () {
         delete summoner.summonerError;
         var activeRegion = summoner.region;
         var summonerName = summoner.usernameInput;
 
         getSummonerInfo(activeRegion, summonerName);
+    };
+
+    summoner.selectChampion = function (selection) {
+        var championsInRole = summoner.championRoles[selection.id];
+        if (championsInRole !== undefined) {
+            // Deselect champion role and select all champions in that role
+            angular.forEach(summoner.champions, function (champion) {
+                if (champion.id === selection.id) {
+                    champion.ticked = false;
+                } else if (championsInRole.indexOf(champion.id) !== -1) {
+                    champion.ticked = true;
+                }
+            });
+        }
     };
 
     function getSummonerInfo(region, summonerName) {
@@ -74,7 +104,6 @@ function summonerController($scope, summonerInfoService, stateService, championI
                 championList.push(champion.id);
             });
             stateService.setActiveChampions(championList);
-
             stateService.setActiveRegion(region);
 
             $scope.$emit('SummonerSelected');
@@ -103,6 +132,7 @@ function summonerController($scope, summonerInfoService, stateService, championI
     }
 
     summoner.init = function () {
+        summoner.championRoles = championInfoService.championRoles;
         fillChampionSelect();
     };
 
