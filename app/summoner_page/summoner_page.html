@@ -16,30 +16,32 @@
                 </div>
             </div>
 
-            <div isteven-multi-select
-                 input-model="summoner.queueTypes"
-                 output-model="summoner.selectedQueueType"
-                 item-label="name"
-                 button-label="name"
-                 tick-property="ticked"
-                 selection-mode="single"
-                 helper-elements="none"
-                 class="select-fullsize">
-            </div>
+            <div>
+                <div isteven-multi-select
+                     input-model="summoner.queueTypes"
+                     output-model="summoner.selectedQueueType"
+                     item-label="name"
+                     button-label="name"
+                     tick-property="ticked"
+                     selection-mode="single"
+                     helper-elements="none"
+                     class="select-fullsize">
+                </div>
 
-            <div isteven-multi-select
-                 input-model="summoner.champions"
-                 output-model="summoner.selectedChampions"
-                 item-label="name"
-                 button-label="name"
-                 tick-property="ticked"
-                 selection-mode="multiple"
-                 helper-elements="filter none"
-                 max-height="350px"
-                 max-labels="2"
-                 translation="summoner.championSelectLabels"
-                 on-item-click="summoner.selectChampion(data)"
-                 class="select-fullsize">
+                <div isteven-multi-select
+                     input-model="summoner.champions"
+                     output-model="summoner.selectedChampions"
+                     item-label="name"
+                     button-label="name"
+                     tick-property="ticked"
+                     selection-mode="multiple"
+                     helper-elements="filter none"
+                     max-height="350px"
+                     max-labels="2"
+                     translation="summoner.championSelectLabels"
+                     on-item-click="summoner.selectChampion(data)"
+                     class="select-fullsize">
+                </div>
             </div>
 
             <input type="submit" ng-click="summoner.retrievePageData()"/>

@@ -15,32 +15,27 @@ statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService']
 
 function statisticsController($scope, matchHistoryService, stateService) {
     var statistics = this;
-    //The current summoners which are shown in the chart.
-    statistics.currentDatasets = [];
-    //The possible filtering options for the x axis.
-    var xAxisPresets = {
-        byGame: {
+
+    var statistic = {
+        game: {
             name: 'Games',
             value: function (data, index) {
                 return index + 1;
             }
         },
-        byMinute: {
+        gameLength: {
             name: 'Minutes played',
             value: function (data) {
                 return Math.round((data.matchDuration / 60) * 100) / 100;
             }
         },
-        byDate: {
+        date: {
             name: 'Date',
             type: 'datetime',
             value: function (data) {
                 return data.matchCreation;
             }
-        }
-    };
-    //The possible filtering options for the y axis.
-    var yAxisPresets = {
+        },
         cs: {
             name: 'CS',
             value: function (data) {
@@ -81,60 +76,179 @@ function statisticsController($scope, matchHistoryService, stateService) {
         }
     };
 
-    //The possible chart options
-    //[{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'});
-
-    statistics.chartPresets = [
+    statistics.xAxisOptions = [
         {
-            name: 'CS per game',
-            type: 'spline',
-            xAxis: xAxisPresets.byGame,
-            yAxis: yAxisPresets.cs,
-            tooltip: {
-                pointFormat: 'Game {point.x}, {point.y} cs.'
-            }
-        },
-        {
-            name: 'Average cs per minute per game',
-            type: 'scatter',
-            xAxis: xAxisPresets.byMinute,
-            yAxis: yAxisPresets.averageCs,
-            tooltip: {
-                pointFormat: '{point.x} minutes played, {point.y} average cs per minute.'
-            }
-        },
-        {
-            name: 'KDA per game',
-            type: 'spline',
-            xAxis: xAxisPresets.byGame,
-            yAxis: yAxisPresets.kda,
-            tooltip: {
-                pointFormat: 'Game {point.x}, {point.y} KDA.'
-            }
-        },
-        {
-            name: 'KDA per CS',
-            type: 'scatter',
-            xAxis: yAxisPresets.cs,
-            yAxis: yAxisPresets.kda,
-            tooltip: {
-                pointFormat: '{point.x} CS, {point.y} KDA'
-            }
-        },
-        {
-            name: 'CS per date',
-            type: 'scatter',
-            xAxis: xAxisPresets.byDate,
-            yAxis: yAxisPresets.cs,
-            tooltip: {
-                pointFormatter: function () {
-                    return this.y + ' CS on ' + new Date(this.x).toDateString();
-                }
-            }
+            data: statistic.game,          title: 'Game', ticked: true
+        }, {
+            data: statistic.date,          title: 'Date', ticked: false
+        }, {
+            data: statistic.gameLength,    title: 'Game length', ticked: false
+        }, {
+            data: statistic.cs,            title: 'Minions killed', ticked: false
+        }, {
+            data: statistic.averageCs,     title: 'Minions killed per minute', ticked: false
+        }, {
+            data: statistic.kills,         title: 'Kills', ticked: false
+        }, {
+            data: statistic.deaths,        title: 'Deaths', ticked: false
+        }, {
+            data: statistic.assists,       title: 'Assists', ticked: false
+        }, {
+            data: statistic.kda,           title: 'KDA ratio', ticked: false
         }
     ];
 
-    statistics.selectedPreset = statistics.chartPresets[0];
+    statistics.yAxisOptions = [
+        {
+            data: statistic.cs,        title: 'Minions killed', ticked: true
+        }, {
+            data: statistic.averageCs, title: 'Minions killed per minute', ticked: false
+        }, {
+            data: statistic.kills,     title: 'Kills', ticked: false
+        }, {
+            data: statistic.deaths,    title: 'Deaths', ticked: false
+        }, {
+            data: statistic.assists,   title: 'Assists', ticked: false
+        }, {
+            data: statistic.kda,       title: 'KDA ratio', ticked: false
+        }
+    ];
+
+    statistics.graphTypeOptions = [
+        {
+            key: 'spline',  title: 'Line',      ticked: true
+        }, {
+            key: 'column',  title: 'Column',    ticked: false
+        }, {
+            key: 'scatter', title: 'Points',    ticked: false
+        }
+    ];
+
+
+    //The current summoners which are shown in the chart.
+    statistics.currentDatasets = [];
+    statistics.xAxisSelections      = statistics.xAxisOptions[0];
+    statistics.yAxisSelection       = statistics.yAxisOptions[0];
+    statistics.graphTypeSelection  = statistics.graphTypeOptions[0];
+
+    //The possible filtering options for the x axis.
+    //var xAxisPresets = {
+    //    byGame: {
+    //        name: 'Games',
+    //        value: function (data, index) {
+    //            return index + 1;
+    //        }
+    //    },
+    //    byMinute: {
+    //        name: 'Minutes played',
+    //        value: function (data) {
+    //            return Math.round((data.matchDuration / 60) * 100) / 100;
+    //        }
+    //    },
+    //    byDate: {
+    //        name: 'Date',
+    //        type: 'datetime',
+    //        value: function (data) {
+    //            return data.matchCreation;
+    //        }
+    //    }
+    //};
+    ////The possible filtering options for the y axis.
+    //var yAxisPresets = {
+    //    cs: {
+    //        name: 'CS',
+    //        value: function (data) {
+    //            return data.stats.minionKills;
+    //        }
+    //    },
+    //    averageCs: {
+    //        name: 'Average CS',
+    //        value: function (data) {
+    //            return Math.round(data.stats.minionKills / (data.matchDuration / 60) * 100) / 100;
+    //        }
+    //    },
+    //    kills: {
+    //        name: 'Kills',
+    //        value: function (data) {
+    //            return data.stats.kills;
+    //        }
+    //    },
+    //    deaths: {
+    //        name: 'Deaths',
+    //        value: function (data) {
+    //            return data.stats.deaths;
+    //        }
+    //    },
+    //    assists: {
+    //        name: 'Assists',
+    //        value: function (data) {
+    //            return data.stats.assists;
+    //        }
+    //    },
+    //    kda: {
+    //        name: 'KDA',
+    //        value: function (data) {
+    //            var killAssists = data.stats.kills + data.stats.assists;
+    //            var deaths = data.stats.deaths || 1;
+    //            return Math.round(((killAssists) / deaths) * 100) / 100;
+    //        }
+    //    }
+    //};
+
+    //The possible chart options
+    //[{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'});
+
+    //statistics.chartPresets = [
+    //    {
+    //        name: 'CS per game',
+    //        type: 'spline',
+    //        xAxis: xAxisPresets.byGame,
+    //        yAxis: yAxisPresets.cs,
+    //        tooltip: {
+    //            pointFormat: 'Game {point.x}, {point.y} cs.'
+    //        }
+    //    },
+    //    {
+    //        name: 'Average cs per minute per game',
+    //        type: 'scatter',
+    //        xAxis: xAxisPresets.byMinute,
+    //        yAxis: yAxisPresets.averageCs,
+    //        tooltip: {
+    //            pointFormat: '{point.x} minutes played, {point.y} average cs per minute.'
+    //        }
+    //    },
+    //    {
+    //        name: 'KDA per game',
+    //        type: 'spline',
+    //        xAxis: xAxisPresets.byGame,
+    //        yAxis: yAxisPresets.kda,
+    //        tooltip: {
+    //            pointFormat: 'Game {point.x}, {point.y} KDA.'
+    //        }
+    //    },
+    //    {
+    //        name: 'KDA per CS',
+    //        type: 'scatter',
+    //        xAxis: yAxisPresets.cs,
+    //        yAxis: yAxisPresets.kda,
+    //        tooltip: {
+    //            pointFormat: '{point.x} CS, {point.y} KDA'
+    //        }
+    //    },
+    //    {
+    //        name: 'CS per date',
+    //        type: 'scatter',
+    //        xAxis: xAxisPresets.byDate,
+    //        yAxis: yAxisPresets.cs,
+    //        tooltip: {
+    //            pointFormatter: function () {
+    //                return this.y + ' CS on ' + new Date(this.x).toDateString();
+    //            }
+    //        }
+    //    }
+    //];
+
+    //statistics.selectedPreset = statistics.chartPresets[0];
 
     //This is not a highcharts object. It just looks a little like one!
     statistics.chartConfig = {
@@ -151,7 +265,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         series: [],
         //Title configuration (optional)
         title: {
-            text: 'CS Per minutes'
+            text: ''
         },
         //Boolean to control showng loading status on chart (optional)
         //Could be a string if you want to show specific loading text.
@@ -184,8 +298,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
         if (!selectionInCurrentList(selection)) {
             getMatchHistory(selection.region, selection.summoner, selection.queueType, selection.champions);
-        } else {
-            //console.log('Selection [' + activeSummoner.name + ', ' +', ''] already exists');
         }
     }
 
@@ -235,14 +347,15 @@ function statisticsController($scope, matchHistoryService, stateService) {
             };
             var data = [];
             angular.forEach(summoner.matchHistory, function (match, index) {
-                var xValue = statistics.selectedPreset.xAxis.value(match, index);
-                var yValue = statistics.selectedPreset.yAxis.value(match);
+                var xValue = statistics.xAxisSelections[0].data.value(match, index);
+                var yValue = statistics.yAxisSelection[0].data.value(match);
+
                 data.push([xValue, yValue]);
                 axisValues = calculateAxisValues(axisValues, xValue, yValue);
             });
             dataSet.data = data;
-            dataSet.tooltip = statistics.selectedPreset.tooltip;
-            dataSet.type = statistics.selectedPreset.type;
+            //dataSet.tooltip = statistics.selectedPreset.tooltip;
+            dataSet.type = statistics.graphTypeSelection[0].key;
             dataSeries.push(dataSet);
         });
         setChartSeries(dataSeries);
@@ -328,21 +441,23 @@ function statisticsController($scope, matchHistoryService, stateService) {
      * Set the type of the axis to 'datetime' for example. Defaults to linear.
      */
     function setChartAxisTypes() {
-        statistics.chartConfig.xAxis.type = (statistics.selectedPreset.xAxis.type) ?
-            statistics.selectedPreset.xAxis.type : 'linear';
+        var xAxis = statistics.xAxisSelections[0].data;
+        var yAxis = statistics.yAxisSelection[0].data;
 
-        statistics.chartConfig.yAxis.type = (statistics.selectedPreset.yAxis.type) ?
-            statistics.selectedPreset.yAxis.type : 'linear';
+        statistics.chartConfig.xAxis.type = (xAxis.type) ? xAxis.type : 'linear';
+        statistics.chartConfig.yAxis.type = (yAxis.type) ? yAxis.type : 'linear';
     }
 
     /**
      * Sets the titles for the x and y axis as well as the title of the chart.
      */
     function setChartTitles() {
-        console.log(statistics.selectedPreset.xAxis.name);
-        statistics.chartConfig.xAxis.title = {text: statistics.selectedPreset.xAxis.name};
-        statistics.chartConfig.yAxis.title = {text: statistics.selectedPreset.yAxis.name};
-        statistics.chartConfig.title = {text: statistics.selectedPreset.name};
+        var xAxis = statistics.xAxisSelections[0].data;
+        var yAxis = statistics.yAxisSelection[0].data;
+
+        statistics.chartConfig.xAxis.title = {text: xAxis.name};
+        statistics.chartConfig.yAxis.title = {text: yAxis.name};
+        //statistics.chartConfig.title = {text: statistics.selectedPreset.name};
     }
 
     /**
@@ -359,6 +474,14 @@ function statisticsController($scope, matchHistoryService, stateService) {
     $scope.$watch('statistics.selectedPreset', function (oldValue, newValue) {
         console.debug('Changed preset from', oldValue, 'to', newValue);
         removeActiveSeries();
-        fillChartWithMatchHistoryData();
+        //fillChartWithMatchHistoryData();
     });
+
+    $scope.$watchGroup(['statistics.xAxisSelections', 'statistics.yAxisSelection', 'statistics.graphTypeSelection'],
+        function (oldValue, newValue) {
+            if (!angular.equals(oldValue, newValue)) {
+                removeActiveSeries();
+                fillChartWithMatchHistoryData();
+            }
+        });
 }

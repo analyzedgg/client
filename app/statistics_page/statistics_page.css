@@ -2,3 +2,20 @@ div#statistics > div {
     width: 800px;
     margin: auto;
 }
+
+div#statistics div#data-select-container > div {
+    margin: 10px 10px 10px 0;
+}
+
+div#statistics div#data-select-container > div.left {
+    float: left;
+}
+
+div#statistics div#data-select-container > div.right {
+    float: right;
+}
+
+div#statistics div#data-select-container > div.text {
+    line-height: 38px;
+    vertical-align: middle;
+}
