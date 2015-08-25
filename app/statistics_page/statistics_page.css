@@ -3,15 +3,13 @@ div#statistics > div {
     margin: auto;
 }
 
-div#statistics div#data-select-container > div {
-    margin: 10px 10px 10px 0;
-}
-
 div#statistics div#data-select-container > div.left {
+    margin: 10px 10px 10px 0;
     float: left;
 }
 
 div#statistics div#data-select-container > div.right {
+    margin: 10px 0 10px 10px;
     float: right;
 }
 
