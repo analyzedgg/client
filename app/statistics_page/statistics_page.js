@@ -102,8 +102,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
         {
             data: statistic.cs, title: 'Minions killed', ticked: true
         }, {
-            data: statistic.date, title: 'Date', ticked: false
-        }, {
             data: statistic.averageCs, title: 'Minions killed per minute', ticked: false
         }, {
             data: statistic.kills, title: 'Kills', ticked: false
