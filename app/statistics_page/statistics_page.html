@@ -9,11 +9,11 @@
 
             <div isteven-multi-select
                  input-model="statistics.yAxisOptions"
-                 output-model="statistics.yAxisSelection"
+                 output-model="statistics.yAxisSelections"
                  item-label="title"
                  button-label="title"
                  tick-property="ticked"
-                 selection-mode="single"
+                 selection-mode="multiple"
                  class="left">
             </div>
 
@@ -21,7 +21,7 @@
 
             <div isteven-multi-select
                  input-model="statistics.xAxisOptions"
-                 output-model="statistics.xAxisSelections"
+                 output-model="statistics.xAxisSelection"
                  item-label="title"
                  button-label="title"
                  selection-mode="single"
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <highchart id="chart1" config="statistics.chartConfig"></highchart>
+        <highchart id="mainChart" config="statistics.chartConfig"></highchart>
     </div>
     <div>
         <ul ng-repeat="summoner in statistics.currentDatasets">

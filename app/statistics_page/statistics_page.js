@@ -78,58 +78,60 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
     statistics.xAxisOptions = [
         {
-            data: statistic.game,          title: 'Game', ticked: true
+            data: statistic.game, title: 'Game', ticked: true
         }, {
-            data: statistic.date,          title: 'Date', ticked: false
+            data: statistic.date, title: 'Date', ticked: false
         }, {
-            data: statistic.gameLength,    title: 'Game length', ticked: false
+            data: statistic.gameLength, title: 'Game length', ticked: false
         }, {
-            data: statistic.cs,            title: 'Minions killed', ticked: false
+            data: statistic.cs, title: 'Minions killed', ticked: false
         }, {
-            data: statistic.averageCs,     title: 'Minions killed per minute', ticked: false
+            data: statistic.averageCs, title: 'Minions killed per minute', ticked: false
         }, {
-            data: statistic.kills,         title: 'Kills', ticked: false
+            data: statistic.kills, title: 'Kills', ticked: false
         }, {
-            data: statistic.deaths,        title: 'Deaths', ticked: false
+            data: statistic.deaths, title: 'Deaths', ticked: false
         }, {
-            data: statistic.assists,       title: 'Assists', ticked: false
+            data: statistic.assists, title: 'Assists', ticked: false
         }, {
-            data: statistic.kda,           title: 'KDA ratio', ticked: false
+            data: statistic.kda, title: 'KDA ratio', ticked: false
         }
     ];
 
     statistics.yAxisOptions = [
         {
-            data: statistic.cs,        title: 'Minions killed', ticked: true
+            data: statistic.cs, title: 'Minions killed', ticked: true
+        }, {
+            data: statistic.date, title: 'Date', ticked: false
         }, {
             data: statistic.averageCs, title: 'Minions killed per minute', ticked: false
         }, {
-            data: statistic.kills,     title: 'Kills', ticked: false
+            data: statistic.kills, title: 'Kills', ticked: false
         }, {
-            data: statistic.deaths,    title: 'Deaths', ticked: false
+            data: statistic.deaths, title: 'Deaths', ticked: false
         }, {
-            data: statistic.assists,   title: 'Assists', ticked: false
+            data: statistic.assists, title: 'Assists', ticked: false
         }, {
-            data: statistic.kda,       title: 'KDA ratio', ticked: false
+            data: statistic.kda, title: 'KDA ratio', ticked: false
         }
     ];
 
     statistics.graphTypeOptions = [
         {
-            key: 'spline',  title: 'Line',      ticked: true
+            key: 'spline', title: 'Line', ticked: true
         }, {
-            key: 'column',  title: 'Column',    ticked: false
+            key: 'column', title: 'Column', ticked: false
         }, {
-            key: 'scatter', title: 'Points',    ticked: false
+            key: 'scatter', title: 'Points', ticked: false
         }
     ];
 
 
     //The current summoners which are shown in the chart.
     statistics.currentDatasets = [];
-    statistics.xAxisSelections      = statistics.xAxisOptions[0];
-    statistics.yAxisSelection       = statistics.yAxisOptions[0];
-    statistics.graphTypeSelection  = statistics.graphTypeOptions[0];
+    statistics.xAxisSelection = statistics.xAxisOptions[0];
+    statistics.yAxisSelections = statistics.yAxisOptions[0];
+    statistics.graphTypeSelection = statistics.graphTypeOptions[0];
 
     //The possible filtering options for the x axis.
     //var xAxisPresets = {
@@ -261,8 +263,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
         },
         //The below properties are watched separately for changes.
 
-        //Series object (optional) - a list of series using normal highcharts series options.
-        series: [],
         //Title configuration (optional)
         title: {
             text: ''
@@ -272,14 +272,8 @@ function statisticsController($scope, matchHistoryService, stateService) {
         loading: true,
         //Configuration for the xAxis (optional). Currently only one x axis can be dynamically controlled.
         //properties currentMin and currentMax provied 2-way binding to the chart's maximimum and minimum
-        xAxis: {
-            currentMin: 0,
-            title: {text: 'Minutes'}
-        },
-        yAxis: {
-            currentMin: 0,
-            title: {text: 'CS'}
-        },
+        xAxis: {},
+        yAxis: {},
         //size (optional) if left out the chart will default to size of the div or something sensible.
         size: {
             width: 800,
@@ -338,30 +332,67 @@ function statisticsController($scope, matchHistoryService, stateService) {
     function fillChartWithMatchHistoryData() {
         console.debug('In fill chart func with', statistics.currentDatasets);
         statistics.chartConfig.loading = true;
-        var dataSeries = [];
-        var axisValues = {xAxisMin: null, xAxisMax: null, yAxisMin: null, yAxisMax: null};
 
-        angular.forEach(statistics.currentDatasets, function (summoner) {
-            var dataSet = {
-                name: summoner.selection.summoner.name
-            };
-            var data = [];
-            angular.forEach(summoner.matchHistory, function (match, index) {
-                var xValue = statistics.xAxisSelections[0].data.value(match, index);
-                var yValue = statistics.yAxisSelection[0].data.value(match);
+        var dataSeries = [],
+            highchartsObj = statistics.chartConfig.getHighcharts(),
+            xAxisSelection = statistics.xAxisSelection[0];
 
-                data.push([xValue, yValue]);
-                axisValues = calculateAxisValues(axisValues, xValue, yValue);
-            });
-            dataSet.data = data;
-            //dataSet.tooltip = statistics.selectedPreset.tooltip;
-            dataSet.type = statistics.graphTypeSelection[0].key;
-            dataSeries.push(dataSet);
+        // Manually remove all previous yAxes since highcharts-ng does not support it yet
+        var axesToRemove = [];
+        angular.forEach(highchartsObj.axes, function (axis) {
+            if (!axis.isXAxis) {
+                axesToRemove.push(axis);
+            }
         });
+        // Immediately removing it from the highchartsObj.axes would alter the axes array which results in skipping axes
+        angular.forEach(axesToRemove, function (axis) {
+            axis.remove();
+        });
+
+
+        // Loop per y-axis selection
+        angular.forEach(statistics.yAxisSelections, function (yAxisSelection, yAxisIndex) {
+            var axisBoundaries = { xAxisMin: null, xAxisMax: null, yAxisMin: null, yAxisMax: null };
+
+            // Loop per data set for creating series
+            angular.forEach(statistics.currentDatasets, function (dataset) {
+                var serie = {
+                        yAxis: yAxisIndex,
+                        name: dataset.selection.summoner.name
+                    },
+                    data = [];
+
+                // Loop per matchHistory data
+                angular.forEach(dataset.matchHistory, function (match, index) {
+                    var xValue = xAxisSelection.data.value(match, index),
+                        yValue = yAxisSelection.data.value(match);
+
+                    data.push([xValue, yValue]);
+                    axisBoundaries = calculateAxisValues(axisBoundaries, xValue, yValue);
+                });
+
+                serie.data = data;
+                //dataSet.tooltip = statistics.selectedPreset.tooltip;
+                serie.type = statistics.graphTypeSelection[0].key;
+                dataSeries.push(serie);
+            });
+
+            // Adding Axis dynamically via highcharts-ng doesn't work unfortunately
+            highchartsObj.addAxis({
+                title: {
+                    text: yAxisSelection.title
+                },
+                min: axisBoundaries.yAxisMin,
+                max: axisBoundaries.yAxisMax,
+                type: (yAxisSelection.data.type) ? yAxisSelection.data.type : 'linear'
+            });
+        });
+
+        // Set type of xAxis chart
+        statistics.chartConfig.xAxis.type = (xAxisSelection.data.type) ? xAxisSelection.data.type : 'linear';
+
         setChartSeries(dataSeries);
-        setChartAxisValues(axisValues);
-        setChartAxisTypes();
-        setChartTitles();
+
         statistics.chartConfig.loading = false;
     }
 
@@ -438,29 +469,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
     }
 
     /**
-     * Set the type of the axis to 'datetime' for example. Defaults to linear.
-     */
-    function setChartAxisTypes() {
-        var xAxis = statistics.xAxisSelections[0].data;
-        var yAxis = statistics.yAxisSelection[0].data;
-
-        statistics.chartConfig.xAxis.type = (xAxis.type) ? xAxis.type : 'linear';
-        statistics.chartConfig.yAxis.type = (yAxis.type) ? yAxis.type : 'linear';
-    }
-
-    /**
-     * Sets the titles for the x and y axis as well as the title of the chart.
-     */
-    function setChartTitles() {
-        var xAxis = statistics.xAxisSelections[0].data;
-        var yAxis = statistics.yAxisSelection[0].data;
-
-        statistics.chartConfig.xAxis.title = {text: xAxis.name};
-        statistics.chartConfig.yAxis.title = {text: yAxis.name};
-        //statistics.chartConfig.title = {text: statistics.selectedPreset.name};
-    }
-
-    /**
      * Removes the current data series from the charts.
      */
     function removeActiveSeries() {
@@ -477,7 +485,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
         //fillChartWithMatchHistoryData();
     });
 
-    $scope.$watchGroup(['statistics.xAxisSelections', 'statistics.yAxisSelection', 'statistics.graphTypeSelection'],
+    $scope.$watchGroup(['statistics.xAxisSelection', 'statistics.yAxisSelections', 'statistics.graphTypeSelection'],
         function (oldValue, newValue) {
             if (!angular.equals(oldValue, newValue)) {
                 removeActiveSeries();
