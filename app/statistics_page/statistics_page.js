@@ -131,70 +131,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
     statistics.yAxisSelections = statistics.yAxisOptions[0];
     statistics.graphTypeSelection = statistics.graphTypeOptions[0];
 
-    //The possible filtering options for the x axis.
-    //var xAxisPresets = {
-    //    byGame: {
-    //        name: 'Games',
-    //        value: function (data, index) {
-    //            return index + 1;
-    //        }
-    //    },
-    //    byMinute: {
-    //        name: 'Minutes played',
-    //        value: function (data) {
-    //            return Math.round((data.matchDuration / 60) * 100) / 100;
-    //        }
-    //    },
-    //    byDate: {
-    //        name: 'Date',
-    //        type: 'datetime',
-    //        value: function (data) {
-    //            return data.matchCreation;
-    //        }
-    //    }
-    //};
-    ////The possible filtering options for the y axis.
-    //var yAxisPresets = {
-    //    cs: {
-    //        name: 'CS',
-    //        value: function (data) {
-    //            return data.stats.minionKills;
-    //        }
-    //    },
-    //    averageCs: {
-    //        name: 'Average CS',
-    //        value: function (data) {
-    //            return Math.round(data.stats.minionKills / (data.matchDuration / 60) * 100) / 100;
-    //        }
-    //    },
-    //    kills: {
-    //        name: 'Kills',
-    //        value: function (data) {
-    //            return data.stats.kills;
-    //        }
-    //    },
-    //    deaths: {
-    //        name: 'Deaths',
-    //        value: function (data) {
-    //            return data.stats.deaths;
-    //        }
-    //    },
-    //    assists: {
-    //        name: 'Assists',
-    //        value: function (data) {
-    //            return data.stats.assists;
-    //        }
-    //    },
-    //    kda: {
-    //        name: 'KDA',
-    //        value: function (data) {
-    //            var killAssists = data.stats.kills + data.stats.assists;
-    //            var deaths = data.stats.deaths || 1;
-    //            return Math.round(((killAssists) / deaths) * 100) / 100;
-    //        }
-    //    }
-    //};
-
     //The possible chart options
     //[{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'});
 
@@ -324,6 +260,30 @@ function statisticsController($scope, matchHistoryService, stateService) {
         });
     }
 
+    function removeYAxes(highchartsObj) {
+        var axesToRemove = [];
+        angular.forEach(highchartsObj.axes, function (axis) {
+            if (!axis.isXAxis) {
+                axesToRemove.push(axis);
+            }
+        });
+        // Immediately removing it from the highchartsObj.axes would alter the axes array which results in skipping axes
+        angular.forEach(axesToRemove, function (axis) {
+            axis.remove();
+        });
+    }
+
+    function addYAxis(highchartsObj, yAxisSelection, axisBoundaries) {
+        highchartsObj.addAxis({
+            title: {
+                text: yAxisSelection.title
+            },
+            min: axisBoundaries.yAxisMin,
+            max: axisBoundaries.yAxisMax,
+            type: (yAxisSelection.data.type) ? yAxisSelection.data.type : 'linear'
+        });
+    }
+
     /**
      * The main function for controlling, transforming and filling the chart.
      */
@@ -336,21 +296,11 @@ function statisticsController($scope, matchHistoryService, stateService) {
             xAxisSelection = statistics.xAxisSelection[0];
 
         // Manually remove all previous yAxes since highcharts-ng does not support it yet
-        var axesToRemove = [];
-        angular.forEach(highchartsObj.axes, function (axis) {
-            if (!axis.isXAxis) {
-                axesToRemove.push(axis);
-            }
-        });
-        // Immediately removing it from the highchartsObj.axes would alter the axes array which results in skipping axes
-        angular.forEach(axesToRemove, function (axis) {
-            axis.remove();
-        });
-
+        removeYAxes(highchartsObj);
 
         // Loop per y-axis selection
         angular.forEach(statistics.yAxisSelections, function (yAxisSelection, yAxisIndex) {
-            var axisBoundaries = { xAxisMin: null, xAxisMax: null, yAxisMin: null, yAxisMax: null };
+            var axisBoundaries = { yAxisMin: null, yAxisMax: null };
 
             // Loop per data set for creating series
             angular.forEach(statistics.currentDatasets, function (dataset) {
@@ -366,7 +316,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
                         yValue = yAxisSelection.data.value(match);
 
                     data.push([xValue, yValue]);
-                    axisBoundaries = calculateAxisValues(axisBoundaries, xValue, yValue);
+                    axisBoundaries = calculateYAxisBoundaries(axisBoundaries, yValue);
                 });
 
                 serie.data = data;
@@ -376,17 +326,10 @@ function statisticsController($scope, matchHistoryService, stateService) {
             });
 
             // Adding Axis dynamically via highcharts-ng doesn't work unfortunately
-            highchartsObj.addAxis({
-                title: {
-                    text: yAxisSelection.title
-                },
-                min: axisBoundaries.yAxisMin,
-                max: axisBoundaries.yAxisMax,
-                type: (yAxisSelection.data.type) ? yAxisSelection.data.type : 'linear'
-            });
+            addYAxis(highchartsObj, yAxisSelection, axisBoundaries);
         });
 
-        // Set type of xAxis chart
+        // Set type of xAxis
         statistics.chartConfig.xAxis.type = (xAxisSelection.data.type) ? xAxisSelection.data.type : 'linear';
 
         setChartSeries(dataSeries);
@@ -398,22 +341,12 @@ function statisticsController($scope, matchHistoryService, stateService) {
      * Calculate the new axis minimums and maximums for the chart.
      * @param axisValues
      *      The list of current min an max values.
-     * @param xValue
-     *      The match specific xValue.
      * @param yValue
      *      The match specific yValue.
      * @returns
      *      The updated array axisValues.
      */
-    function calculateAxisValues(axisValues, xValue, yValue) {
-        if (xValue > axisValues.xAxisMax || axisValues.xAxisMax === null) {
-            axisValues.xAxisMax = xValue;
-        }
-
-        if (xValue < axisValues.xAxisMin || axisValues.xAxisMin === null) {
-            axisValues.xAxisMin = xValue;
-        }
-
+    function calculateYAxisBoundaries(axisValues, yValue) {
         if (yValue > axisValues.yAxisMax || axisValues.yAxisMax === null) {
             axisValues.yAxisMax = yValue;
         }
@@ -452,21 +385,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
     }
 
     /**
-     * Set the minimum and maximum values for the axis of the chart.
-     * @param axisValues
-     */
-    function setChartAxisValues(axisValues) {
-        statistics.chartConfig.xAxis.currentMin = axisValues.xAxisMin;
-        statistics.chartConfig.xAxis.currentMax = axisValues.xAxisMax;
-        statistics.chartConfig.yAxis.currentMin = axisValues.yAxisMin;
-        statistics.chartConfig.yAxis.currentMax = axisValues.yAxisMax;
-        statistics.chartConfig.xAxis.min = axisValues.xAxisMin;
-        statistics.chartConfig.xAxis.max = axisValues.xAxisMax;
-        statistics.chartConfig.yAxis.min = axisValues.yAxisMin;
-        statistics.chartConfig.yAxis.max = axisValues.yAxisMax;
-    }
-
-    /**
      * Removes the current data series from the charts.
      */
     function removeActiveSeries() {
@@ -480,7 +398,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
     $scope.$watch('statistics.selectedPreset', function (oldValue, newValue) {
         console.debug('Changed preset from', oldValue, 'to', newValue);
         removeActiveSeries();
-        //fillChartWithMatchHistoryData();
     });
 
     $scope.$watchGroup(['statistics.xAxisSelection', 'statistics.yAxisSelections', 'statistics.graphTypeSelection'],
