@@ -139,61 +139,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
     statistics.yAxisSelections = statistics.yAxisOptions[0];
     statistics.graphTypeSelection = statistics.graphTypeOptions[0];
 
-    //The possible chart options
-    //[{value: 'line'}, {value: 'spline'}, {value: 'area'}, {value: 'areaspline'}, {value: 'column'}, {value: 'bar'}, {value: 'pie'}, {value: 'scatter'});
-
-    //statistics.chartPresets = [
-    //    {
-    //        name: 'CS per game',
-    //        type: 'spline',
-    //        xAxis: xAxisPresets.byGame,
-    //        yAxis: yAxisPresets.cs,
-    //        tooltip: {
-    //            pointFormat: 'Game {point.x}, {point.y} cs.'
-    //        }
-    //    },
-    //    {
-    //        name: 'Average cs per minute per game',
-    //        type: 'scatter',
-    //        xAxis: xAxisPresets.byMinute,
-    //        yAxis: yAxisPresets.averageCs,
-    //        tooltip: {
-    //            pointFormat: '{point.x} minutes played, {point.y} average cs per minute.'
-    //        }
-    //    },
-    //    {
-    //        name: 'KDA per game',
-    //        type: 'spline',
-    //        xAxis: xAxisPresets.byGame,
-    //        yAxis: yAxisPresets.kda,
-    //        tooltip: {
-    //            pointFormat: 'Game {point.x}, {point.y} KDA.'
-    //        }
-    //    },
-    //    {
-    //        name: 'KDA per CS',
-    //        type: 'scatter',
-    //        xAxis: yAxisPresets.cs,
-    //        yAxis: yAxisPresets.kda,
-    //        tooltip: {
-    //            pointFormat: '{point.x} CS, {point.y} KDA'
-    //        }
-    //    },
-    //    {
-    //        name: 'CS per date',
-    //        type: 'scatter',
-    //        xAxis: xAxisPresets.byDate,
-    //        yAxis: yAxisPresets.cs,
-    //        tooltip: {
-    //            pointFormatter: function () {
-    //                return this.y + ' CS on ' + new Date(this.x).toDateString();
-    //            }
-    //        }
-    //    }
-    //];
-
-    //statistics.selectedPreset = statistics.chartPresets[0];
-
     //This is not a highcharts object. It just looks a little like one!
     statistics.chartConfig = {
         options: {
@@ -401,11 +346,6 @@ function statisticsController($scope, matchHistoryService, stateService) {
 
     $scope.$on('summonerSet', function () {
         retrievePageData();
-    });
-
-    $scope.$watch('statistics.selectedPreset', function (oldValue, newValue) {
-        console.debug('Changed preset from', oldValue, 'to', newValue);
-        removeActiveSeries();
     });
 
     $scope.$watchGroup(['statistics.xAxisSelection', 'statistics.yAxisSelections', 'statistics.graphTypeSelection'],
