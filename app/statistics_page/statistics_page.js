@@ -73,6 +73,12 @@ function statisticsController($scope, matchHistoryService, stateService) {
                 var deaths = data.stats.deaths || 1;
                 return Math.round(((killAssists) / deaths) * 100) / 100;
             }
+        },
+        won: {
+            name: 'Wins',
+            value: function (data) {
+                return data.winner ? 1 : 0;
+            }
         }
     };
 
@@ -111,6 +117,8 @@ function statisticsController($scope, matchHistoryService, stateService) {
             data: statistic.assists, title: 'Assists', ticked: false
         }, {
             data: statistic.kda, title: 'KDA ratio', ticked: false
+        }, {
+            data: statistic.won, title: 'Won', ticked: false
         }
     ];
 
