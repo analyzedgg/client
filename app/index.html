@@ -31,6 +31,7 @@
     <!-- Others -->
     <script src="lib/isteven-angular-multiselect/isteven-multi-select.js"></script>
     <link rel="stylesheet" href="lib/isteven-angular-multiselect/isteven-multi-select.css" />
+    <script src="constants.js"></script>
 
     <!-- Base app.js !-->
     <script src="app.js"></script>
@@ -50,7 +51,7 @@
     <script src="services/champion_info/championInfoService.js"></script>
     <script src="services/stateService.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp']);//, 'ngMockE2E']);
+        var app = angular.module('leagueAppDev', ['leagueApp', 'constants']);//, 'ngMockE2E']);
         app.run(function ($httpBackend, $resource) {
            /* $httpBackend.whenGET(/summoner_page/).passThrough();
             $httpBackend.whenGET(/statistics_page/).passThrough();

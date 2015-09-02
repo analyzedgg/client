@@ -171,6 +171,35 @@ module.exports = function (grunt) {
             },
             exec: {
                 command: 'deploy.bat'
+            },
+            apimocker: {
+                options: {
+                    configFile: 'config/apimocker.conf.json'
+                }
+            },
+            ngconstant: {
+                // Options for all targets
+                options: {
+                    space: '  ',
+                    wrap: '"use strict";\n\n {%= __ngModule %}',
+                    name: 'constants',
+                    dest: '<%= yeoman.app %>/constants.js'
+                },
+                // Environment targets
+                test: {
+                    constants: {
+                        ENV: {
+                            BASE_URL: 'http://localhost:7878'
+                        }
+                    }
+                },
+                live: {
+                    constants: {
+                        ENV: {
+                            BASE_URL: 'http://83.87.19.178:9081'
+                        }
+                    }
+                }
             }
         }
     );
@@ -183,6 +212,23 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'bowerInstall',
+            'ngconstant:live',
+            'apimocker',
+            'connect:livereload',
+            'watch'
+        ]);
+    });
+
+    grunt.registerTask('serveWithMocks', function (target) {
+        if (target === 'dist') {
+            return grunt.task.run(['build', 'connect:dist:keepalive']);
+        }
+
+        grunt.task.run([
+            'clean:server',
+            'bowerInstall',
+            'ngconstant:test',
+            'apimocker',
             'connect:livereload',
             'watch'
         ]);
@@ -192,6 +238,8 @@ module.exports = function (grunt) {
         'clean:server',
         'jshint',
         'connect:test',
+        'ngconstant:test',
+        'apimocker',
         'karma'/*,
          'protractor_webdriver',
          'protractor:e2e'*/

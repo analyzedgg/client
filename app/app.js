@@ -15,5 +15,4 @@ angular.module('leagueApp', [
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.otherwise({redirectTo: '/'});
     }])
-    .constant('BASE_URL', 'http://83.87.19.178:9081')
 ;

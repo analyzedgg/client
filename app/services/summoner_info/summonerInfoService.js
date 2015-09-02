@@ -3,10 +3,10 @@
 angular.module('leagueApp.service.summonerInfo', ['ngResource'])
     .service('SummonerInfoService', summonerInfoService);
 
-summonerInfoService.$inject = ['$resource', 'BASE_URL'];
+summonerInfoService.$inject = ['$resource', 'ENV'];
 
-function summonerInfoService($resource, BASE_URL) {
-    var summonerInfo = $resource(BASE_URL + '/api/:region/summoner/:summonerName', {}, {
+function summonerInfoService($resource, ENV) {
+    var summonerInfo = $resource(ENV.BASE_URL + '/api/:region/summoner/:summonerName', {}, {
         'get': {method: 'GET'}
     });
 

@@ -1,0 +1,18 @@
+{
+  "response": [{
+    "winner": false,
+    "matchDuration": 2915,
+    "stats": {
+      "minionKills": 57,
+      "kills": 1,
+      "deaths": 9,
+      "assists": 15
+    },
+    "role": "DUO_SUPPORT",
+    "lane": "BOTTOM",
+    "championId": 89,
+    "matchCreation": 1430423739782,
+    "queueType": "RANKED_SOLO_5x5"
+  }],
+  "cacheInvalidationDate": 1434783668183
+}
