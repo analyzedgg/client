@@ -87,3 +87,5 @@ lib
 .bower-tmp
 
 reports
+
+src/app/constants.js
