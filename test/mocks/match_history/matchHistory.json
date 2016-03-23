@@ -1,5 +1,5 @@
-{
-  "response": [{
+[
+  {
     "winner": false,
     "matchDuration": 2915,
     "stats": {
@@ -13,6 +13,5 @@
     "championId": 89,
     "matchCreation": 1430423739782,
     "queueType": "RANKED_SOLO_5x5"
-  }],
-  "cacheInvalidationDate": 1434783668183
-}
+  }
+]

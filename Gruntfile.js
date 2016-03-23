@@ -198,7 +198,7 @@ module.exports = function (grunt) {
                 live: {
                     constants: {
                         ENV: {
-                            BASE_URL: 'http://83.87.19.178:9081'
+                            BASE_URL: 'http://localhost:8080'
                         }
                     }
                 }

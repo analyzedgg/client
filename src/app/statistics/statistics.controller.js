@@ -189,8 +189,7 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
         log.info('Gonna perform the request for match history with the follow params:', summoner.id, region);
         var promise = matchHistoryService.matchHistory(region, summoner.id);
         promise.then(function (data) {
-        log.info(data);
-            var sortedArray = data.response.sort(function (a, b) {
+            var sortedArray = data.sort(function (a, b) {
                 return a.matchCreation - b.matchCreation;
             });
             statistics.currentDatasets.push(

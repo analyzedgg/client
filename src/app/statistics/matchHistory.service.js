@@ -7,7 +7,10 @@ matchHistoryService.$inject = ['$resource', '$log', 'ENV'];
 
 function matchHistoryService($resource, log, ENV) {
     var matchInfo = $resource(ENV.BASE_URL + '/api/:region/matchhistory/:summonerId', {}, {
-        'get': {method: 'GET'}
+        'get': {
+            method: 'GET',
+            isArray: true
+        }
     });
 
     return {

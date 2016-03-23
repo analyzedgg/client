@@ -53,8 +53,8 @@ function summonerController($scope, log, summonerInfoService, stateService, cham
     function getSummonerInfo(region, summonerName) {
         log.debug('Gonna perform the request for summoner info with the follow params:', summonerName, region);
         var promise = summonerInfoService.summoner(region, summonerName);
-        promise.then(function (data) {
-            stateService.setActiveSummoner(data.response);
+        promise.then(function (summoner) {
+            stateService.setActiveSummoner(summoner);
             stateService.setActiveRegion(region);
 
             $scope.$emit('SummonerSelected');

@@ -1,9 +1,7 @@
 {
-  "response": {
-    "id": 52477463,
-    "name": "Wagglez",
-    "profileIconId": 785,
-    "summonerLevel": 30,
-    "revisionDate": 1432560320000
-  }
+  "id": 52477463,
+  "name": "Wagglez",
+  "profileIconId": 785,
+  "summonerLevel": 30,
+  "revisionDate": 1432560320000
 }
