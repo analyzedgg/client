@@ -29,5 +29,5 @@ angular.module('leagueApp.service.state', ['ngResource'])
             setActiveChampions: function (champions) {
                 state.activeChampions = champions;
             }
-        }
+        };
     }]);

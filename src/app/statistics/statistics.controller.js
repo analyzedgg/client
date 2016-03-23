@@ -4,17 +4,17 @@ angular.module('leagueApp.statistics_page', ['ngRoute', 'highcharts-ng'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/stats', {
-            templateUrl: 'statistics_page/statistics_page.html',
+            templateUrl: 'app/statistics/statistics.html',
             controller: 'StatisticsPageCtrl',
             controllerAs: 'statistics'
         });
     }])
     .controller('StatisticsPageCtrl', statisticsController);
 
-statisticsController.$inject = ['$scope', 'MatchHistoryService', 'StateService'];
+statisticsController.$inject = ['$scope', '$log', 'MatchHistoryService', 'StateService'];
 
-function statisticsController($scope, matchHistoryService, stateService) {
-    var statistics = this;
+function statisticsController($scope, log, matchHistoryService, stateService) {
+    var statistics = this; // jshint ignore:line
 
     var statistic = {
         game: {
@@ -172,13 +172,11 @@ function statisticsController($scope, matchHistoryService, stateService) {
         delete statistics.matchHistoryError;
         var selection = {
             region: angular.copy(stateService.getActiveRegion()),
-            summoner: angular.copy(stateService.getActiveSummoner()),
-            queueType: angular.copy(stateService.getActiveQueueType()),
-            champions: angular.copy(stateService.getActiveChampions())
+            summoner: angular.copy(stateService.getActiveSummoner())
         };
 
         if (!selectionInCurrentList(selection)) {
-            getMatchHistory(selection.region, selection.summoner, selection.queueType, selection.champions);
+            getMatchHistory(selection.region, selection.summoner);
         }
     }
 
@@ -186,13 +184,12 @@ function statisticsController($scope, matchHistoryService, stateService) {
      * Retrieve the match data for a given region and summoner from the API.
      * @param region The selected region.
      * @param summoner The selected summoner.
-     * @param queueType The selected queue. ('', RANKED_SOLO_5x5, RANKED_TEAM_5x5, RANKED_TEAM_3x3)
-     * @param champions A list of selected champion IDs.
      */
-    function getMatchHistory(region, summoner, queueType, champions) {
-        console.log('Gonna perform the request for match history with the follow params:', summoner.id, region, queueType, champions);
-        var promise = matchHistoryService.matchHistory(region, summoner.id, queueType, champions);
+    function getMatchHistory(region, summoner) {
+        log.info('Gonna perform the request for match history with the follow params:', summoner.id, region);
+        var promise = matchHistoryService.matchHistory(region, summoner.id);
         promise.then(function (data) {
+        log.info(data);
             var sortedArray = data.response.sort(function (a, b) {
                 return a.matchCreation - b.matchCreation;
             });
@@ -200,16 +197,14 @@ function statisticsController($scope, matchHistoryService, stateService) {
                 {
                     selection: {
                         region: region,
-                        summoner: summoner,
-                        queueType: queueType,
-                        champions: champions
+                        summoner: summoner
                     },
                     matchHistory: sortedArray
                 });
             fillChartWithMatchHistoryData();
         }).catch(function (errorResponse) {
             statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summoner.id + ' on the ' + region + 'servers';
-            console.error('Error loading summoner info', errorResponse);
+            log.error('Error loading summoner info', errorResponse);
         });
     }
 
@@ -241,7 +236,7 @@ function statisticsController($scope, matchHistoryService, stateService) {
      * The main function for controlling, transforming and filling the chart.
      */
     function fillChartWithMatchHistoryData() {
-        console.debug('In fill chart func with', statistics.currentDatasets);
+        log.debug('In fill chart func with', statistics.currentDatasets);
         statistics.chartConfig.loading = true;
 
         var dataSeries = [],

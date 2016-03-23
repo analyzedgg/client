@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/css/main.css">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="app/app.css">
+
     <script src="lib/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
 
@@ -24,6 +25,7 @@
     <!-- Bootstrap component !-->
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 
+
     <!-- Chart components !-->
     <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
     <script type="text/javascript" src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
@@ -31,60 +33,43 @@
     <!-- Others -->
     <script src="lib/isteven-angular-multiselect/isteven-multi-select.js"></script>
     <link rel="stylesheet" href="lib/isteven-angular-multiselect/isteven-multi-select.css" />
-    <script src="constants.js"></script>
 
     <!-- Base app.js !-->
-    <script src="app.js"></script>
-    <script src="leagueProjecto_mainPage.js"></script>
+    <script src="app/league.modules.js"></script>
+    <script src="app/main.controller.js"></script>
+    <script src="app/constants.js"></script>
 
     <!-- Summoner page !-->
-    <script src="summoner_page/summoner_page.js"></script>
-    <link rel="stylesheet" href="summoner_page/summoner_page.css">
+    <link rel="stylesheet" href="app/summoner/summoner.css">
+    <script src="app/summoner/summoner.controller.js"></script>
+    <script src="app/summoner//summonerInfo.service.js"></script>
 
     <!-- Statistics page !-->
-    <script src="statistics_page/statistics_page.js"></script>
-    <link rel="stylesheet" href="statistics_page/statistics_page.css">
+    <link rel="stylesheet" href="app/statistics/statistics.css">
+    <script src="app/statistics/statistics.controller.js"></script>
+    <script src="app/statistics/matchHistory.service.js"></script>
+    <script src="app/statistics/championInfo.service.js"></script>
 
-    <!-- Services -->
-    <script src="services/summoner_info/summonerInfoService.js"></script>
-    <script src="services/match_history/matchHistoryService.js"></script>
-    <script src="services/champion_info/championInfoService.js"></script>
-    <script src="services/stateService.js"></script>
+    <!-- Shared -->
+    <script src="app/shared/state.service.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp', 'constants']);//, 'ngMockE2E']);
+        var app = angular.module('leagueAppDev', ['leagueApp', 'constants']); /*, 'ngMockE2E']);
         app.run(function ($httpBackend, $resource) {
-           /* $httpBackend.whenGET(/summoner_page/).passThrough();
-            $httpBackend.whenGET(/statistics_page/).passThrough();
-            $httpBackend.whenGET(/leagueProjecto_mainPage/).passThrough();
+
+            $httpBackend.whenGET(/app/).passThrough();
+            $httpBackend.whenGET(/summoner/).passThrough();
+            $httpBackend.whenGET(/statistics/).passThrough();
+            $httpBackend.whenGET(/leagueProjecto-index/).passThrough();
             $httpBackend.whenGET(/test/).passThrough();
 
-            $httpBackend.whenGET(/api\/.*\/summoner\/[a-zA-Z0-9]/).respond(function (data, status) {
-                var summonerName = status.split('/')[4];
-                var test = getJsonObjectResponse('summoner_info', summonerName).then(function (data) {
-                    console.log('resolved de promise met', data);
-                    return data;
-                });
-                return [200, test, {}];
-            });
-
-            $httpBackend.whenGET(/api\/.*\/matchhistory\/[0-9]/).respond(function(data, status) {
-                var summonerId = status.split('/')[4];
-                var test = getJsonObjectResponse('match_history', summonerId).then(function (data) {
-                    console.log('resolved de promise met', data);
-                    return data;
-                }, function(error) {
-                    console.log('Didn\'t expect this error', error);
-                });
-                return [200, test, {}];
-            });
 
             function getJsonObjectResponse(desiredFolder, name) {
                 return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').get().$promise;
             }
             function getJsonArrayResponse(desiredFolder, name) {
                 return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').query().$promise;
-            }*/
-        });
+            }
+        });*/
 
     </script>
 </head>

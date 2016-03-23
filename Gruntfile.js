@@ -13,7 +13,9 @@ module.exports = function (grunt) {
     grunt.initConfig({
             //Project settings
             yeoman: {
-                app: 'app',
+                src: 'src',
+                app: 'src/app',
+                test: 'test',
                 dist: 'dist'
             },
             gruntfile: {
@@ -26,14 +28,14 @@ module.exports = function (grunt) {
                     tasks: ['bowerInstall']
                 },
                 js: {
-                    files: ['<%= yeoman.app %>/app/**/*.js'],
+                    files: ['<%= yeoman.app %>/**/*.js'],
                     tasks: ['newer:jshint:all'],
                     options: {
                         livereload: true
                     }
                 },
                 protractorTest: {
-                    files: ['test/protractor/**/*.js'],
+                    files: ['<%= yeoman.test %>/**/*.js'],
                     tasks: ['newer:jshint:test', 'connect:test', 'protractor_webdriver', 'protractor:e2e']
                 },
                 styles: {
@@ -63,7 +65,7 @@ module.exports = function (grunt) {
 
                 livereload: {
                     options: {
-                        open: 'http://localhost:' + portNum + '/app/index.html#/summoner',
+                        open: 'http://localhost:' + portNum + '/<%= yeoman.src %>/index.html#/summoner',
                         base: [
                             '.tmp',
                             '<%= yeoman.app %>',
@@ -98,7 +100,7 @@ module.exports = function (grunt) {
                 all: {
                     reporterOutput: 'reports/jshint/jshint.xml',
                     reporter: 'jshint-junit-reporter',
-                    src: ['<%= yeoman.app %>/app/**/*.js']
+                    src: ['<%= yeoman.app %>/**/*.js']
                 }
             },
             // Empties folders to start fresh
@@ -121,7 +123,7 @@ module.exports = function (grunt) {
                 },
                 e2e: {
                     options: {
-                        configFile: 'config/protractor.config.js',
+                        configFile: '<%= yeoman.test %>/protractor.config.js',
                         args: {
                             baseUrl: 'http://localhost:<%= connect.test.options.port %>/',
                             params: {
@@ -141,15 +143,15 @@ module.exports = function (grunt) {
             //Unit test settings
             karma: {
                 unit: {
-                    configFile: 'config/karma.conf.js',
+                    configFile: '<%= yeoman.test %>/karma.conf.js',
                     singleRun: true
                 }
             },
             copy: {
                 app: {
                     files: [
-                        {expand: true, src: ['app/*'], dest: 'dist/', filter: 'isFile'},
-                        {expand: true, src: ['app/**'], dest: 'dist/'}
+                        {expand: true, src: ['<%= yeoman.app %>/*'], dest: '<%= yeoman.dist %>/', filter: 'isFile'},
+                        {expand: true, src: ['<%= yeoman.app %>/**'], dest: '<%= yeoman.dist %>/'}
                     ]
                 }
             },
@@ -162,7 +164,7 @@ module.exports = function (grunt) {
                 app: {
                     files: [{
                         cwd: 'directory',
-                        src: 'dist/**/*',
+                        src: '<%= yeoman.dist %>/**/*',
                         filter: 'isFile',
                         // path on the server
                         dest: '/var/www/league/'
@@ -174,7 +176,7 @@ module.exports = function (grunt) {
             },
             apimocker: {
                 options: {
-                    configFile: 'config/apimocker.conf.json'
+                    configFile: '<%= yeoman.test %>/mocks/apimocker.conf.json'
                 }
             },
             ngconstant: {

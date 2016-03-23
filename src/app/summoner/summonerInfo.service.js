@@ -3,9 +3,9 @@
 angular.module('leagueApp.service.summonerInfo', ['ngResource'])
     .service('SummonerInfoService', summonerInfoService);
 
-summonerInfoService.$inject = ['$resource', 'ENV'];
+summonerInfoService.$inject = ['$resource', '$log', 'ENV'];
 
-function summonerInfoService($resource, ENV) {
+function summonerInfoService($resource, log, ENV) {
     var summonerInfo = $resource(ENV.BASE_URL + '/api/:region/summoner/:summonerName', {}, {
         'get': {method: 'GET'}
     });
@@ -15,6 +15,7 @@ function summonerInfoService($resource, ENV) {
     };
 
     function summoner(region, summonerName) {
+    log.info('Perform with', region, summonerName);
         return summonerInfo.get({
             region: region,
             summonerName: encodeURIComponent(summonerName)
@@ -26,6 +27,6 @@ function summonerInfoService($resource, ENV) {
     }
 
     function handleError(response) {
-        console.error('Call for summoner info failed', response);
+        log.error('Call for summoner info failed', response);
     }
 }

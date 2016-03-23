@@ -12,9 +12,11 @@ module.exports = function (config) {
             'app/lib/angular-resource/angular-resource.js',
             'app/lib/angular-mocks/angular-mocks.js',
             'app/lib/bootstrap/dist/js/bootstrap.js',
+            'app/league.modules.js',
             'app/**/*.js',
-            'app/services/**/*.js',
-            'app/summoner_page*/**/*.js'
+
+            // Test files
+            'test/unit/**/*.spec.js'
         ],
 
         plugins: [

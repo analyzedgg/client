@@ -1,0 +1,30 @@
+<div id="summoner-page" ng-init="summoner.init()">
+    <form>
+        <div id="search-form">
+            <div class="input-group" role="group" aria-label="">
+                <input autofocus class="form-control" placeholder="Summoner" type="text" required
+                       ng-model="summoner.usernameInput"/>
+
+                <div class="input-group-btn">
+                    <button id="region-dropdown" type="button" dropdown-toggle class="btn btn-default dropdown-toggle"
+                            data-toggle="dropdown">{{summoner.regions[summoner.region]}} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li ng-repeat="(code, region) in summoner.regions"><a ng-click="summoner.region = code">{{region}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <input class="btn" type="submit" ng-click="summoner.retrievePageData()" value="Search"/>
+        </div>
+    </form>
+    <div>
+        <div ng-if="summoner.summonerError">
+            <div class="alert alert-warning alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert">x</button>
+                <span ng-bind="summoner.summonerError"></span>
+            </div>
+        </div>
+    </div>
+</div>
