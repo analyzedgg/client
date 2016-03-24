@@ -16,7 +16,6 @@
 
     <!-- Angular base components !-->
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
     <script src="lib/angular-resource/angular-resource.js"></script>
     <script src="lib/angular-mocks/angular-mocks.js"></script>
     <script src="lib/angular-ui/build/angular-ui.js"></script>
@@ -25,57 +24,40 @@
     <!-- Bootstrap component !-->
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 
-
     <!-- Chart components !-->
     <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
     <script type="text/javascript" src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
 
     <!-- Others -->
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="lib/isteven-angular-multiselect/isteven-multi-select.js"></script>
     <link rel="stylesheet" href="lib/isteven-angular-multiselect/isteven-multi-select.css" />
-
-    <!-- Base app.js !-->
-    <script src="app/league.modules.js"></script>
-    <script src="app/main.controller.js"></script>
-    <script src="app/constants.js"></script>
 
     <!-- Summoner page !-->
     <link rel="stylesheet" href="app/summoner/summoner.css">
     <script src="app/summoner/summoner.controller.js"></script>
-    <script src="app/summoner//summonerInfo.service.js"></script>
+    <script src="app/summoner/summonerInfo.service.js"></script>
 
     <!-- Statistics page !-->
-    <link rel="stylesheet" href="app/statistics/statistics.css">
+    <script src="app/statistics/maingraph/maingraph.controller.js"></script>
     <script src="app/statistics/statistics.controller.js"></script>
+    <link rel="stylesheet" href="app/statistics/maingraph/maingraph.css">
     <script src="app/statistics/matchHistory.service.js"></script>
     <script src="app/statistics/championInfo.service.js"></script>
+
+    <!-- Base app.js !-->
+    <script src="app/main.controller.js"></script>
+    <script src="app/constants.js"></script>
 
     <!-- Shared -->
     <script src="app/shared/state.service.js"></script>
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp', 'constants']); /*, 'ngMockE2E']);
-        app.run(function ($httpBackend, $resource) {
-
-            $httpBackend.whenGET(/app/).passThrough();
-            $httpBackend.whenGET(/summoner/).passThrough();
-            $httpBackend.whenGET(/statistics/).passThrough();
-            $httpBackend.whenGET(/leagueProjecto-index/).passThrough();
-            $httpBackend.whenGET(/test/).passThrough();
-
-
-            function getJsonObjectResponse(desiredFolder, name) {
-                return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').get().$promise;
-            }
-            function getJsonArrayResponse(desiredFolder, name) {
-                return $resource('../test/mocks/'+  desiredFolder +'/' + name + '.json').query().$promise;
-            }
-        });*/
-
+        var app = angular.module('leagueAppDev', ['leagueApp', 'constants']);
     </script>
 </head>
 <body>
 
-<div ng-view></div>
+<div ui-view></div>
 
 </body>
 </html>

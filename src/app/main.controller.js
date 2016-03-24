@@ -2,29 +2,46 @@
 
 (function() {
 angular
-    .module('leagueApp.leagueProjecto', ['ngRoute'])
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/', {
-            templateUrl: 'app/leagueProject-index.html',
-            controller: 'LeagueProjectoMainPageCtrl',
-            controllerAs: 'main'
-        });
-    }])
-    .controller('LeagueProjectoMainPageCtrl', mainController);
+    .module('leagueApp', [
+        'ui.router',
+        'ngResource',
+        'leagueApp.summoner',
+        'leagueApp.statistics',
+        'leagueApp.service.summonerInfo',
+        'leagueApp.service.matchHistory',
+        'leagueApp.service.championInfo',
+        'leagueApp.service.state'
+    ])
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
 
-mainController.$inject = ['$scope'];
+        $stateProvider
+            .state('main', {
+                url: '/',
+                templateUrl: 'app/main.html',
+                controller: mainController,
+                controllerAs: 'main'
+            })
+            .state('main.soloStatistics', {
+                url: '{region}/{summonerName}/',
+                templateUrl: 'app/statistics/statistics.html',
+                controller: 'StatisticsCtrl',
+                resolve: {
+                    simpleObj: function(){
+                        return {value: 'simple!'};
+                    }
+                }
+            });
+    })
+    .controller('MainCtrl', mainController);
 
-function mainController($scope) {
+function mainController() {
     var basePage = this; // jshint ignore:line
 
     basePage.template = {
         summonerSelector: 'app/summoner/summoner.html',
         statistics: 'app/statistics/statistics.html'
     };
-
-    $scope.$on('SummonerSelected', function (event, args) {
-        $scope.$broadcast('summonerSet');
-    });
 }
 
 })();

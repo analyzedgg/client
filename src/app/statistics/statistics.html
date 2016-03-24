@@ -1,42 +1,4 @@
-<div id="statistics">
-    <div>
-        <div id="data-select-container">
-            <div class="left text">Show</div>
-
-            <div isteven-multi-select
-                 input-model="statistics.yAxisOptions"
-                 output-model="statistics.yAxisSelections"
-                 item-label="title"
-                 button-label="title"
-                 tick-property="ticked"
-                 selection-mode="multiple"
-                 class="left">
-            </div>
-
-            <div class="left text">per</div>
-
-            <div isteven-multi-select
-                 input-model="statistics.xAxisOptions"
-                 output-model="statistics.xAxisSelection"
-                 item-label="title"
-                 button-label="title"
-                 selection-mode="single"
-                 tick-property="ticked"
-                 class="left">
-            </div>
-
-            <div isteven-multi-select
-                 input-model="statistics.graphTypeOptions"
-                 output-model="statistics.graphTypeSelection"
-                 item-label="title"
-                 button-label="title"
-                 tick-property="ticked"
-                 selection-mode="single"
-                 helper-elements="none"
-                 class="right">
-            </div>
-        </div>
-
-        <highchart id="mainChart" config="statistics.chartConfig"></highchart>
-    </div>
+<div>
+    test
+    <!--  <div ng-include="main.template.statistics" ng-controller="StatisticsPageCtrl as statistics"></div> -->
 </div>

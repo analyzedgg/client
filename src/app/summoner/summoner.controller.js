@@ -1,14 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.summoner_page', ['ngRoute', 'ui.bootstrap', 'isteven-multi-select'])
-
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/summoner', {
-            templateUrl: 'app/summoner/summoner.html',
-            controller: 'SummonerPageCtrl',
-            controllerAs: 'summoner'
-        });
-    }])
+angular.module('leagueApp.summoner', ['ui.bootstrap', 'isteven-multi-select'])
     .controller('SummonerPageCtrl', summonerController);
 
 summonerController.$inject = ['$scope', '$log', 'SummonerInfoService', 'StateService', 'ChampionInfoService'];
