@@ -3,57 +3,34 @@
 angular.module('leagueApp.summoner', ['ui.bootstrap', 'isteven-multi-select'])
     .controller('SummonerPageCtrl', summonerController);
 
-summonerController.$inject = ['$scope', '$log', 'SummonerInfoService', 'StateService', 'ChampionInfoService'];
+summonerController.$inject = ['$location'];
 
-function summonerController($scope, log, summonerInfoService, stateService, championInfoService) {
+function summonerController($location) {
     var summoner = this; // jshint ignore:line
 
-    activate();
+    summoner.regions = {
+        'euw': 'EUW',
+        'na': 'NA',
+        'kr': 'KR',
+        'br': 'BR',
+        'eune': 'EUNE',
+        'las': 'LAS',
+        'lan': 'LAN',
+        'oce': 'OCE',
+        'rus': 'RUS',
+        'tr': 'TR'
+    };
 
-    ///////////////////////
+    // Default values
+    summoner.usernameInput = '';
+    summoner.region = 'euw';
 
-    function activate() {
-        //Controller variables
-        summoner.regions = {
-            'euw': 'EUW',
-            'na': 'NA',
-            'kr': 'KR',
-            'br': 'BR',
-            'eune': 'EUNE',
-            'las': 'LAS',
-            'lan': 'LAN',
-            'oce': 'OCE',
-            'rus': 'RUS',
-            'tr': 'TR'
-        };
+    summoner.submitForm = function() {
+        var region = summoner.region,
+            username = summoner.usernameInput;
 
-        // Default values
-        summoner.usernameInput = '';
-        summoner.region = 'euw';
-
-        summoner.retrievePageData = retrievePageData;
-    }
-
-    function retrievePageData() {
-        delete summoner.summonerError;
-        var activeRegion = summoner.region;
-        var summonerName = summoner.usernameInput;
-
-        getSummonerInfo(activeRegion, summonerName);
-    }
-
-    function getSummonerInfo(region, summonerName) {
-        log.debug('Gonna perform the request for summoner info with the follow params:', summonerName, region);
-        var promise = summonerInfoService.summoner(region, summonerName);
-        promise.then(function (summoner) {
-            stateService.setActiveSummoner(summoner);
-            stateService.setActiveRegion(region);
-
-            $scope.$emit('SummonerSelected');
-        }).catch(function (errorResponse) {
-            summoner.summonerError = summonerName + ' not found on region ' + region;
-            log.error('Error loading summoner info', errorResponse);
-        });
-    }
-
+        if (region && region !== '' && summoner.regions[region] && username && username !== '') {
+            $location.path('/' + region + '/' + username + '/');
+        }
+    };
 }
