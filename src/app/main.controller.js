@@ -7,10 +7,7 @@ angular
         'ngResource',
         'leagueApp.summoner',
         'leagueApp.statistics',
-        'leagueApp.service.summonerInfo',
-        'leagueApp.service.matchHistory',
-        'leagueApp.service.championInfo',
-        'leagueApp.service.state'
+        'leagueApp.service'
     ])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -27,21 +24,22 @@ angular
                 templateUrl: 'app/statistics/statistics.html',
                 controller: 'StatisticsCtrl',
                 resolve: {
-                    simpleObj: function(){
-                        return {value: 'simple!'};
-                    }
+                    matchDetails: ['$stateParams', 'SummonerInfoService', function($stateParams, summonerInfoService) {
+                        var region = $stateParams.region,
+                            summonerName = $stateParams.summonerName;
+                        return summonerInfoService.summoner(region, summonerName);
+                    }]
                 }
             });
     })
     .controller('MainCtrl', mainController);
 
-function mainController() {
-    var basePage = this; // jshint ignore:line
+    function mainController() {
+        var basePage = this; // jshint ignore:line
 
-    basePage.template = {
-        summonerSelector: 'app/summoner/summoner.html',
-        statistics: 'app/statistics/statistics.html'
-    };
-}
-
+        basePage.template = {
+            summonerSelector: 'app/summoner/summoner.html',
+            statistics: 'app/statistics/statistics.html'
+        };
+    }
 })();
