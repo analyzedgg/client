@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.service', [])
+angular.module('leagueApp.service')
     .service('ChampionInfoService', championInfoService);
 
 function championInfoService() {

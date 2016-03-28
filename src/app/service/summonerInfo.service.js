@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.service', ['ngResource'])
+angular.module('leagueApp.service')
     .service('SummonerInfoService', summonerInfoService);
 
 summonerInfoService.$inject = ['$resource', '$log', 'ENV'];
