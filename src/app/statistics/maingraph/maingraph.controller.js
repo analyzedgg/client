@@ -1,22 +1,16 @@
 'use strict';
 
-angular.module('leagueApp.statistics_page', ['highcharts-ng'])
+angular.module('leagueApp.statistics.maingraph', ['highcharts-ng'])
+    .controller('MaingraphCtrl', maingraphController);
 
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/stats', {
-            templateUrl: 'app/statistics/maingraph/maingraph.html',
-            controller: 'StatisticsPageCtrl',
-            controllerAs: 'statistics'
-        });
-    }])
-    .controller('StatisticsPageCtrl', statisticsController);
+maingraphController.$inject = ['$scope', '$log'];
 
-statisticsController.$inject = ['$scope', '$log', 'MatchHistoryService', 'StateService'];
+function maingraphController($scope, log) {
+    var maingraph = this, // jshint ignore:line
+        matchDetails =  $scope.statistics.matchDetails,
+        summoner =      $scope.statistics.selectedSummoner;
 
-function statisticsController($scope, log, matchHistoryService, stateService) {
-    var statistics = this; // jshint ignore:line
-
-    var statistic = {
+    var stat = {
         game: {
             name: 'Games',
             value: function (data, index) {
@@ -82,47 +76,47 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
         }
     };
 
-    statistics.xAxisOptions = [
+    maingraph.xAxisOptions = [
         {
-            data: statistic.game, title: 'Game', ticked: true
+            data: stat.game, title: 'Game', ticked: true
         }, {
-            data: statistic.date, title: 'Date', ticked: false
+            data: stat.date, title: 'Date', ticked: false
         }, {
-            data: statistic.gameLength, title: 'Game length', ticked: false
+            data: stat.gameLength, title: 'Game length', ticked: false
         }, {
-            data: statistic.cs, title: 'Minions killed', ticked: false
+            data: stat.cs, title: 'Minions killed', ticked: false
         }, {
-            data: statistic.averageCs, title: 'Minions killed per minute', ticked: false
+            data: stat.averageCs, title: 'Minions killed per minute', ticked: false
         }, {
-            data: statistic.kills, title: 'Kills', ticked: false
+            data: stat.kills, title: 'Kills', ticked: false
         }, {
-            data: statistic.deaths, title: 'Deaths', ticked: false
+            data: stat.deaths, title: 'Deaths', ticked: false
         }, {
-            data: statistic.assists, title: 'Assists', ticked: false
+            data: stat.assists, title: 'Assists', ticked: false
         }, {
-            data: statistic.kda, title: 'KDA ratio', ticked: false
+            data: stat.kda, title: 'KDA ratio', ticked: false
         }
     ];
 
-    statistics.yAxisOptions = [
+    maingraph.yAxisOptions = [
         {
-            data: statistic.cs, title: 'Minions killed', ticked: true
+            data: stat.cs, title: 'Minions killed', ticked: true
         }, {
-            data: statistic.averageCs, title: 'Minions killed per minute', ticked: false
+            data: stat.averageCs, title: 'Minions killed per minute', ticked: false
         }, {
-            data: statistic.kills, title: 'Kills', ticked: false
+            data: stat.kills, title: 'Kills', ticked: false
         }, {
-            data: statistic.deaths, title: 'Deaths', ticked: false
+            data: stat.deaths, title: 'Deaths', ticked: false
         }, {
-            data: statistic.assists, title: 'Assists', ticked: false
+            data: stat.assists, title: 'Assists', ticked: false
         }, {
-            data: statistic.kda, title: 'KDA ratio', ticked: false
+            data: stat.kda, title: 'KDA ratio', ticked: false
         }, {
-            data: statistic.won, title: 'Won', ticked: false
+            data: stat.won, title: 'Won', ticked: false
         }
     ];
 
-    statistics.graphTypeOptions = [
+    maingraph.graphTypeOptions = [
         {
             key: 'spline', title: 'Line', ticked: true
         }, {
@@ -134,13 +128,13 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
 
 
     //The current summoners which are shown in the chart.
-    statistics.currentDatasets = [];
-    statistics.xAxisSelection = statistics.xAxisOptions[0];
-    statistics.yAxisSelections = statistics.yAxisOptions[0];
-    statistics.graphTypeSelection = statistics.graphTypeOptions[0];
+    maingraph.currentDatasets = [matchDetails];
+    maingraph.xAxisSelection = maingraph.xAxisOptions[0];
+    maingraph.yAxisSelections = maingraph.yAxisOptions[0];
+    maingraph.graphTypeSelection = maingraph.graphTypeOptions[0];
 
     //This is not a highcharts object. It just looks a little like one!
-    statistics.chartConfig = {
+    maingraph.chartConfig = {
         options: {
             //This is the Main Highcharts chart config. Any Highchart options are valid here.
             //will be overriden by values specified below.
@@ -167,45 +161,6 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
             height: 600
         }
     };
-
-    function retrievePageData() {
-        delete statistics.matchHistoryError;
-        var selection = {
-            region: angular.copy(stateService.getActiveRegion()),
-            summoner: angular.copy(stateService.getActiveSummoner())
-        };
-
-        if (!selectionInCurrentList(selection)) {
-            getMatchHistory(selection.region, selection.summoner);
-        }
-    }
-
-    /**
-     * Retrieve the match data for a given region and summoner from the API.
-     * @param region The selected region.
-     * @param summoner The selected summoner.
-     */
-    function getMatchHistory(region, summoner) {
-        log.info('Gonna perform the request for match history with the follow params:', summoner.id, region);
-        var promise = matchHistoryService.matchHistory(region, summoner.id);
-        promise.then(function (data) {
-            var sortedArray = data.sort(function (a, b) {
-                return a.matchCreation - b.matchCreation;
-            });
-            statistics.currentDatasets.push(
-                {
-                    selection: {
-                        region: region,
-                        summoner: summoner
-                    },
-                    matchHistory: sortedArray
-                });
-            fillChartWithMatchHistoryData();
-        }).catch(function (errorResponse) {
-            statistics.matchHistoryError = 'Could not retrieve match history for summoner with id ' + summoner.id + ' on the ' + region + 'servers';
-            log.error('Error loading summoner info', errorResponse);
-        });
-    }
 
     function removeYAxes(highchartsObj) {
         var axesToRemove = [];
@@ -235,30 +190,30 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
      * The main function for controlling, transforming and filling the chart.
      */
     function fillChartWithMatchHistoryData() {
-        log.debug('In fill chart func with', statistics.currentDatasets);
-        statistics.chartConfig.loading = true;
+        log.debug('In fill chart func with', maingraph.currentDatasets);
+        maingraph.chartConfig.loading = true;
 
         var dataSeries = [],
-            highchartsObj = statistics.chartConfig.getHighcharts(),
-            xAxisSelection = statistics.xAxisSelection[0];
+            highchartsObj = maingraph.chartConfig.getHighcharts(),
+            xAxisSelection = maingraph.xAxisSelection[0];
 
         // Manually remove all previous yAxes since highcharts-ng does not support it yet
         removeYAxes(highchartsObj);
 
         // Loop per y-axis selection
-        angular.forEach(statistics.yAxisSelections, function (yAxisSelection, yAxisIndex) {
+        angular.forEach(maingraph.yAxisSelections, function (yAxisSelection, yAxisIndex) {
             var axisBoundaries = { yAxisMin: null, yAxisMax: null };
 
             // Loop per data set for creating series
-            angular.forEach(statistics.currentDatasets, function (dataset) {
+            angular.forEach(maingraph.currentDatasets, function (dataset) {
                 var serie = {
                         yAxis: yAxisIndex,
-                        name: dataset.selection.summoner.name
+                        name: summoner.name
                     },
                     data = [];
 
                 // Loop per matchHistory data
-                angular.forEach(dataset.matchHistory, function (match, index) {
+                angular.forEach(dataset, function (match, index) {
                     var xValue = xAxisSelection.data.value(match, index),
                         yValue = yAxisSelection.data.value(match);
 
@@ -267,8 +222,7 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
                 });
 
                 serie.data = data;
-                //dataSet.tooltip = statistics.selectedPreset.tooltip;
-                serie.type = statistics.graphTypeSelection[0].key;
+                serie.type = maingraph.graphTypeSelection[0].key;
                 dataSeries.push(serie);
             });
 
@@ -277,11 +231,11 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
         });
 
         // Set type of xAxis
-        statistics.chartConfig.xAxis.type = (xAxisSelection.data.type) ? xAxisSelection.data.type : 'linear';
+        maingraph.chartConfig.xAxis.type = (xAxisSelection.data.type) ? xAxisSelection.data.type : 'linear';
 
         setChartSeries(dataSeries);
 
-        statistics.chartConfig.loading = false;
+        maingraph.chartConfig.loading = false;
     }
 
     /**
@@ -306,29 +260,12 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
     }
 
     /**
-     * Check if the filled in summoner is already in the current summoners list.
-     * @param selection
-     *      The active selection.
-     * @returns {boolean}
-     *      Indicator if the summoner is already in the current summoners list.
-     */
-    function selectionInCurrentList(selection) {
-        var match = false;
-        angular.forEach(statistics.currentDatasets, function (dataset) {
-            if (!match && angular.equals(dataset.selection, selection)) {
-                match = true;
-            }
-        });
-        return match;
-    }
-
-    /**
      * Set the data series for the active chart.
      * @param series
      *      The series to use in the chart.
      */
     function setChartSeries(series) {
-        statistics.chartConfig.series = series;
+        maingraph.chartConfig.series = series;
     }
 
     /**
@@ -338,15 +275,12 @@ function statisticsController($scope, log, matchHistoryService, stateService) {
         setChartSeries({});
     }
 
-    $scope.$on('summonerSet', function () {
-        retrievePageData();
-    });
-
-    $scope.$watchGroup(['statistics.xAxisSelection', 'statistics.yAxisSelections', 'statistics.graphTypeSelection'],
+    $scope.$watchGroup(['maingraph.xAxisSelection', 'maingraph.yAxisSelections', 'maingraph.graphTypeSelection'],
         function (oldValue, newValue) {
             if (!angular.equals(oldValue, newValue)) {
                 removeActiveSeries();
                 fillChartWithMatchHistoryData();
             }
-        });
+        }
+    );
 }

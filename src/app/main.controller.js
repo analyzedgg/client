@@ -17,6 +17,7 @@ angular
                 url: '{region}/{summonerName}/',
                 templateUrl: 'app/statistics/statistics.html',
                 controller: 'StatisticsCtrl',
+                controllerAs: 'statistics',
                 resolve: {
                     summoner: ['$stateParams', 'SummonerInfoService', function($stateParams, summonerInfoService) {
                         var region = $stateParams.region,

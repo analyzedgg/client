@@ -1,5 +1,7 @@
 'use strict';
 
 (function() {
-    angular.module('leagueApp.statistics', []);
+    angular.module('leagueApp.statistics', [
+        'leagueApp.statistics.maingraph'
+    ]);
 })();
