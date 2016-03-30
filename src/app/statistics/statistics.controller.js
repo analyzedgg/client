@@ -3,9 +3,9 @@
 angular.module('leagueApp.statistics')
     .controller('StatisticsCtrl', statisticsController);
 
-statisticsController.$inject = ['$scope', '$stateParams', 'summoner', 'matchDetails'];
+statisticsController.$inject = ['$stateParams', 'summoner', 'matchDetails'];
 
-function statisticsController(log, $stateParams, summoner, matchDetails) {
+function statisticsController($stateParams, summoner, matchDetails) {
     var statistics = this; // jshint ignore:line
 
     statistics.matchDetails = matchDetails;
