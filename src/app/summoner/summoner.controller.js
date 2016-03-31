@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('leagueApp.summoner', ['ui.bootstrap', 'isteven-multi-select'])
+angular.module('leagueApp.summoner', ['isteven-multi-select'])
     .controller('SummonerPageCtrl', summonerController);
 
-summonerController.$inject = ['$location', '$stateParams'];
+summonerController.$inject = ['$state', '$stateParams'];
 
-function summonerController($location, $stateParams) {
+function summonerController($state, $stateParams) {
     var summoner = this; // jshint ignore:line
 
     summoner.regions = {
@@ -30,7 +30,7 @@ function summonerController($location, $stateParams) {
             username = summoner.usernameInput;
 
         if (region && region !== '' && summoner.regions[region] && username && username !== '') {
-            $location.path('/' + region + '/' + username + '/');
+            $state.go('main.soloStatistics', {region: region, summonerName: username});
         }
     };
 }

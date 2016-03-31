@@ -14,12 +14,12 @@ angular
                 controllerAs: 'main'
             })
             .state('main.soloStatistics', {
-                url: '{region}/{summonerName}/',
+                url: ':region/:summonerName/',
                 templateUrl: 'app/statistics/statistics.html',
                 controller: 'StatisticsCtrl',
                 controllerAs: 'statistics',
                 resolve: {
-                    summoner: ['$stateParams', 'SummonerInfoService', function($stateParams, summonerInfoService) {
+                    summoner: ['$stateParams', 'SummonerInfoService', '$log', function($stateParams, summonerInfoService, log) {
                         var region = $stateParams.region,
                             summonerName = $stateParams.summonerName;
                         return summonerInfoService.summoner(region, summonerName);
