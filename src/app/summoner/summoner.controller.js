@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.summoner', ['ui.bootstrap', 'ui.router', 'isteven-multi-select'])
+angular.module('leagueApp.summoner', ['ui.bootstrap', 'isteven-multi-select'])
     .controller('SummonerPageCtrl', summonerController);
 
 summonerController.$inject = ['$location', '$stateParams'];
