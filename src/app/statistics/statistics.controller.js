@@ -16,6 +16,7 @@ function statisticsController($stateParams, summoner, matchDetails) {
     statistics.selectedSummoner = summoner;
 
     statistics.template = {
-        maingraph: 'app/statistics/maingraph/maingraph.html'
+        maingraph: 'app/statistics/maingraph/maingraph.html',
+        mostWins: 'app/statistics/mostWins/mostWins.html'
     };
 }

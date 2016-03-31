@@ -73,6 +73,13 @@ function maingraphController($scope, log) {
             value: function (data) {
                 return data.winner ? 1 : 0;
             }
+        },
+        champion: {
+            name: 'Champion',
+            value: function (data) {
+                log.info(data);
+                return data.championId;
+            }
         }
     };
 
@@ -95,7 +102,11 @@ function maingraphController($scope, log) {
             data: stat.assists, title: 'Assists', ticked: false
         }, {
             data: stat.kda, title: 'KDA ratio', ticked: false
-        }
+        }, {
+            data: stat.won, title: 'Won', ticked: false
+        }, {
+                     data: stat.champion, title: 'Champion', ticked: false
+                 }
     ];
 
     maingraph.yAxisOptions = [
@@ -113,6 +124,8 @@ function maingraphController($scope, log) {
             data: stat.kda, title: 'KDA ratio', ticked: false
         }, {
             data: stat.won, title: 'Won', ticked: false
+        }, {
+            data: stat.champion, title: 'Champion', ticked: false
         }
     ];
 
