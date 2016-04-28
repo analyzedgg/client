@@ -3,7 +3,7 @@
 (function() {
     angular.module('leagueApp.statistics', [
         'leagueApp.statistics.maingraph',
-        'leagueApp.statistics.mostWins',
+        'leagueApp.statistics.bestChamp',
         'leagueApp.statistics.bestLane'
     ]);
 })();

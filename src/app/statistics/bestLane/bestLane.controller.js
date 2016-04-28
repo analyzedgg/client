@@ -3,9 +3,9 @@
 angular.module('leagueApp.statistics.bestLane', ['highcharts-ng'])
     .controller('BestLaneCtrl', bestLaneController);
 
-bestLaneController.$inject = ['$scope'];
+bestLaneController.$inject = ['$scope', 'ChampionInfoService'];
 
-function bestLaneController($scope) {
+function bestLaneController($scope, championInfoService) {
     var bestLane = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
 
