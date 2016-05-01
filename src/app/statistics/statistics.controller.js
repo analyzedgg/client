@@ -17,7 +17,7 @@ function statisticsController($stateParams, summoner, matchDetails) {
 
     statistics.template = {
         maingraph: 'app/statistics/maingraph/maingraph.html',
-        mostWins: 'app/statistics/mostWins/mostWins.html',
+        mostWins: 'app/statistics/bestChamp/bestChamp.html',
         bestLane: 'app/statistics/bestLane/bestLane.html'
     };
 }
