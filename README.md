@@ -2,9 +2,9 @@
 This is the frontend for the League API project.
 
 ## Requirements
-1. NPM
+1. NPM (NodeJS)
 2. Bower
-3. Grunt
+3. Grunt + NPM install
 
 ## Usage
 For running against mocks (with apimocker):
