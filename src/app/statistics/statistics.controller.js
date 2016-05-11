@@ -26,6 +26,10 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
         bestLane: 'app/statistics/bestLane/bestLane.html'
     };
 
+    //////////
+
+    init();
+
     function init() {
         statistics.loading = true;
 
@@ -39,6 +43,4 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
             });
         });
     }
-
-    init();
 }
