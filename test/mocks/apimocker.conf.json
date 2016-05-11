@@ -5,7 +5,7 @@
   "staticPath": "",
   "quiet": false,
   "port": "7878",
-  "latency": 50,
+  "latency": 500,
   "logRequestHeaders": false,
   "allowedDomains": ["http://localhost:9005"],
   "allowedHeaders": ["Content-Type", "my-custom-header"],
