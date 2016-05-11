@@ -13,6 +13,7 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
 
     statistics.matchDetails = [];
     statistics.selectedSummoner = {};
+    statistics.loading = false;
 
     statistics.summonerSelection = {
         region: $stateParams.region,
@@ -26,11 +27,15 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
     };
 
     function init() {
+        statistics.loading = true;
+
         summonerInfoService.summoner(region, summonerName).then(function(summoner) {
             statistics.selectedSummoner = summoner;
 
             matchHistoryService.matchHistory(region, summoner.id).then(function(matchHistory) {
                 statistics.matchDetails = matchHistory;
+
+                statistics.loading = false;
             });
         });
     }
