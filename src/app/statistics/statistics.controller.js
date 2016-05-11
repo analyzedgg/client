@@ -3,21 +3,37 @@
 angular.module('leagueApp.statistics')
     .controller('StatisticsCtrl', statisticsController);
 
-statisticsController.$inject = ['$stateParams', 'summoner', 'matchDetails'];
+statisticsController.$inject = ['$stateParams', 'SummonerInfoService', 'MatchHistoryService'];
 
-function statisticsController($stateParams, summoner, matchDetails) {
-    var statistics = this; // jshint ignore:line
+function statisticsController($stateParams, summonerInfoService, matchHistoryService) {
+    var statistics = this;
 
-    statistics.matchDetails = matchDetails;
+    var region = $stateParams.region,
+        summonerName = $stateParams.summonerName;
+
+    statistics.matchDetails = [];
+    statistics.selectedSummoner = {};
+
     statistics.summonerSelection = {
         region: $stateParams.region,
         summonerName: $stateParams.summonerName
     };
-    statistics.selectedSummoner = summoner;
 
     statistics.template = {
         maingraph: 'app/statistics/maingraph/maingraph.html',
         mostWins: 'app/statistics/bestChamp/bestChamp.html',
         bestLane: 'app/statistics/bestLane/bestLane.html'
     };
+
+    function init() {
+        summonerInfoService.summoner(region, summonerName).then(function(summoner) {
+            statistics.selectedSummoner = summoner;
+
+            matchHistoryService.matchHistory(region, summoner.id).then(function(matchHistory) {
+                statistics.matchDetails = matchHistory;
+            });
+        });
+    }
+
+    init();
 }

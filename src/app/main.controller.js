@@ -17,18 +17,7 @@ angular
                 url: ':region/:summonerName/',
                 templateUrl: 'app/statistics/statistics.html',
                 controller: 'StatisticsCtrl',
-                controllerAs: 'statistics',
-                resolve: {
-                    summoner: ['$stateParams', 'SummonerInfoService', '$log', function($stateParams, summonerInfoService, log) {
-                        var region = $stateParams.region,
-                            summonerName = $stateParams.summonerName;
-                        return summonerInfoService.summoner(region, summonerName);
-                    }],
-                    matchDetails: ['$stateParams', 'MatchHistoryService', 'summoner', function($stateParams, matchHistoryService, summoner) {
-                        var region = $stateParams.region;
-                        return matchHistoryService.matchHistory(region, summoner.id);
-                    }]
-                }
+                controllerAs: 'statistics'
             });
     }).controller('MainCtrl', mainController);
 
