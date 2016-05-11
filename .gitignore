@@ -89,3 +89,4 @@ lib
 reports
 
 src/app/constants.js
+target/
