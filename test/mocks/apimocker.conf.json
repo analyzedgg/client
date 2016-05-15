@@ -18,7 +18,8 @@
       },
         "switchResponses": {
           "regioneuwsummonerNameMinikoen": {"httpStatus": 200, "mockFile": "summoner_info/minikoen.json"},
-          "regioneuwsummonerNameWagglez": {"httpStatus": 200, "mockFile": "summoner_info/wagglez.json"}
+          "regioneuwsummonerNameWagglez": {"httpStatus": 200, "mockFile": "summoner_info/wagglez.json"},
+          "regioneuwsummonerNameMinikizzle": {"httpStatus": 200, "mockFile": "summoner_info/minikizzle.json"}
         }
     },
     "api/:region/matchhistory/:summonerId": {

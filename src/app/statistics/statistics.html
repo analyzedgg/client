@@ -1,8 +1,10 @@
-<div class="loading" ng-if="statistics.loading">
+<div class="notification" ng-if="statistics.loading">
     Loading...
 </div>
 
-<div ng-if="statistics.matchDetails.length > 0">
+<div class="notification error" ng-if="statistics.errorMessage" ng-bind="statistics.errorMessage"></div>
+
+<div ng-if="statistics.matchDetails.length >= statistics.minimumGames">
     <div ng-include="statistics.template.bestLane" ng-controller="BestLaneCtrl as bestLane" id="widget-bestLane"></div>
     <div ng-include="statistics.template.mostWins" ng-controller="BestChampCtrl as bestChamp" id="widget-bestChamp"></div>
     <!--<div ng-include="statistics.template.maingraph" ng-controller="MaingraphCtrl as maingraph"></div>-->

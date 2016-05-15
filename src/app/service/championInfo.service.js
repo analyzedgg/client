@@ -1260,7 +1260,7 @@ function championInfoService() {
 
     function activate() {
         championDataById = filterChampionsById();
-    };
+    }
 
     function filterChampionsById() {
         var championList = [];

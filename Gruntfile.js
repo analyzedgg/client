@@ -191,14 +191,16 @@ module.exports = function (grunt) {
                 test: {
                     constants: {
                         ENV: {
-                            BASE_URL: 'http://localhost:7878'
+                            BASE_URL: 'http://localhost:7878',
+                            MINIMUM_RANKED_GAMES: 5
                         }
                     }
                 },
                 live: {
                     constants: {
                         ENV: {
-                            BASE_URL: 'http://localhost:8080'
+                            BASE_URL: 'http://localhost:8080',
+                            MINIMUM_RANKED_GAMES: 5
                         }
                     }
                 }

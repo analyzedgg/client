@@ -1,4 +1,9 @@
-div.loading {
-    font-size: 25px;
+div.notification {
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
+}
+
+div.error {
+    color: #b00;
 }
