@@ -7,7 +7,10 @@ summonerInfoService.$inject = ['$resource', '$log', 'ENV'];
 
 function summonerInfoService($resource, log, ENV) {
     var summonerInfo = $resource(ENV.BASE_URL + '/api/:region/summoner/:summonerName', {}, {
-        'get': {method: 'GET'}
+        'get': {
+            method: 'GET',
+            cache: true
+        }
     });
 
     return {

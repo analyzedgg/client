@@ -9,6 +9,7 @@ function matchHistoryService($resource, log, ENV) {
     var matchInfo = $resource(ENV.BASE_URL + '/api/:region/matchhistory/:summonerId', {}, {
         'get': {
             method: 'GET',
+            cache: true,
             isArray: true
         }
     });
