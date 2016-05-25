@@ -14,7 +14,7 @@ angular
                 controllerAs: 'main'
             })
             .state('main.soloStatistics', {
-                url: ':region/:summonerName/',
+                url: ':region/:summonerName/?min&max',
                 templateUrl: 'app/statistics/statistics.html',
                 controller: 'StatisticsCtrl',
                 controllerAs: 'statistics'
