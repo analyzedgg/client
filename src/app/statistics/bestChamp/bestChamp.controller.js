@@ -6,9 +6,10 @@ angular.module('leagueApp.statistics.bestChamp', ['highcharts-ng'])
 bestChampController.$inject = ['$scope', '$log', 'ChampionInfoService'];
 
 function bestChampController($scope, log, championInfoService) {
-    var mostWins = this, // jshint ignore:line
-        matchDetails = $scope.statistics.matchDetails,
-        summoner = $scope.statistics.selectedSummoner;
+    var bestChamp = this, // jshint ignore:line
+        matchDetails = $scope.statistics.matchDetails;
+
+    bestChamp.chartConfig = {};
 
     var baseChartConfig = {
         options: {
@@ -17,7 +18,7 @@ function bestChampController($scope, log, championInfoService) {
             }
         },
         title: {
-            text: null
+            text: 'Champions played'
         },
         subtitle: {
             text: ''
@@ -43,19 +44,18 @@ function bestChampController($scope, log, championInfoService) {
                 }
             }
         }],
-        loading: false,
-        size: {
-            width: 300,
-            height: 300
-        }
+        loading: false
     };
 
-    function createChartConfig(matchSeries) {
+    //////////
+    init();
+
+    function init() {
         var chartConfig = angular.copy(baseChartConfig);
 
         var winsAndLossesPerChampion = {};
 
-        angular.forEach(matchSeries, function (match) {
+        angular.forEach(matchDetails, function (match) {
             var champName = championInfoService.championById(match.championId).key;
 
             if (!winsAndLossesPerChampion[champName]) {
@@ -97,12 +97,6 @@ function bestChampController($scope, log, championInfoService) {
         chartConfig.series[0].data = champData;
         chartConfig.series[1].data = winsLossesData;
 
-        chartConfig.subtitle.text = 'Last ' + matchSeries.length + ' games';
-
-        return chartConfig;
+        bestChamp.chartConfig = chartConfig;
     }
-
-    mostWins.firstChartConfig = createChartConfig(matchDetails);
-    mostWins.secondChartConfig = createChartConfig(matchDetails.slice(30, 61));
-    mostWins.thirdChartConfig = createChartConfig(matchDetails.slice(50, 61));
 }

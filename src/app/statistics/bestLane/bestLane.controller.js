@@ -3,11 +3,13 @@
 angular.module('leagueApp.statistics.bestLane', ['highcharts-ng'])
     .controller('BestLaneCtrl', bestLaneController);
 
-bestLaneController.$inject = ['$scope', 'ChampionInfoService'];
+bestLaneController.$inject = ['$scope'];
 
-function bestLaneController($scope, championInfoService) {
+function bestLaneController($scope) {
     var bestLane = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
+
+    bestLane.chartConfig = {};
 
     var baseChartConfig = {
         options: {
@@ -16,7 +18,7 @@ function bestLaneController($scope, championInfoService) {
             }
         },
         title: {
-            text: null
+            text: 'Lanes played'
         },
         subtitle: {
             text: ''
@@ -41,20 +43,20 @@ function bestLaneController($scope, championInfoService) {
                     return null;
                 }
             }
-        } ],
-        loading: false,
-        size: {
-            width: 300,
-            height: 300
-        }
+        }],
+        loading: false
     };
 
-    function createChartConfig(matchSeries) {
+    /////////
+
+    init();
+
+    function init() {
         var chartConfig = angular.copy(baseChartConfig);
 
         var winsAndLossesPerLane = {};
 
-        angular.forEach(matchSeries, function(match) {
+        angular.forEach(matchDetails, function (match) {
             var lane = match.lane;
             if (lane === 'BOTTOM') {
                 lane = (match.role === 'DUO_CARRY') ? 'AD CARRY' : 'SUPPORT';
@@ -76,7 +78,7 @@ function bestLaneController($scope, championInfoService) {
 
         var lanesData = [],
             winsLossesData = [];
-        angular.forEach(winsAndLossesPerLane, function(winsAndLosses, lane) {
+        angular.forEach(winsAndLossesPerLane, function (winsAndLosses, lane) {
             lanesData.push({
                 name: lane,
                 y: winsAndLosses.wins + winsAndLosses.losses
@@ -98,12 +100,6 @@ function bestLaneController($scope, championInfoService) {
         chartConfig.series[0].data = lanesData;
         chartConfig.series[1].data = winsLossesData;
 
-        chartConfig.subtitle.text = 'Last ' + matchSeries.length + ' games';
-
-        return chartConfig;
+        bestLane.chartConfig = chartConfig;
     }
-
-    bestLane.firstChartConfig =     createChartConfig(matchDetails);
-    bestLane.secondChartConfig =    createChartConfig(matchDetails.slice(30, 61));
-    bestLane.thirdChartConfig =     createChartConfig(matchDetails.slice(50, 61));
 }
