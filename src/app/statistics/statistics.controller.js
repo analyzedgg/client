@@ -14,34 +14,13 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
         loading: false,
         errorMessage: null,
         minimumGames: ENV.MINIMUM_RANKED_GAMES,
-        slider: {
-            min: ($stateParams.min > 0 && $stateParams.min < 60) ? $stateParams.min : 0,
-            max: ($stateParams.max > 1 && $stateParams.max < 60) ? $stateParams.max : 60,
-            options: {
-                floor: 0,
-                ceil: 60,
-                showTicks: 5,
-                onEnd: function(sliderId, min, max) {
-                    var queryParams = {};
-
-                    if (min > 1) {
-                        queryParams.min = min;
-                    }
-
-                    if (max < 60) {
-                        queryParams.max = max;
-                    }
-
-                    $state.go('.', queryParams);
-                }
-            }
-        },
         summonerSelection: {
             region: $stateParams.region,
             summonerName: $stateParams.summonerName
         },
         template: {
             maingraph: 'app/statistics/maingraph/maingraph.html',
+            matchSlider: 'app/statistics/matchSlider/matchSlider.html',
             mostWins: 'app/statistics/bestChamp/bestChamp.html',
             bestLane: 'app/statistics/bestLane/bestLane.html'
         }
@@ -125,21 +104,6 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
         
         fillSummonerDetails()
             .then(fillMatchDetails)
-            .finally(function() {
-                loader.hide();
-
-                var min = $stateParams.min || 0;
-                var max = $stateParams.max || 60;
-
-                for (var i=0; i<min; i++) {
-                    statistics.matchDetails.shift();
-                }
-                for (var j=0; j<60-max; j++) {
-                    statistics.matchDetails.pop();
-                }
-            });
-
-
-
+            .finally(loader.hide);
     }
 }
