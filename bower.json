@@ -15,6 +15,7 @@
     "jquery": "2.1.4",
     "highcharts-ng": "0.0.8",
     "isteven-angular-multiselect": "4.0.0",
-    "angularjs-slider": "^2.14.0"
+    "angularjs-slider": "^2.14.0",
+    "moment": "^2.13.0"
   }
 }

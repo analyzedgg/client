@@ -18,7 +18,12 @@ function matchSliderController($scope, $state, $stateParams, ENV) {
         ceil: numberOfMatches,
         minRange: ENV.MINIMUM_RANKED_GAMES,
         showTicks: Math.ceil(numberOfMatches / 10),
-        onEnd: onSlideEnd
+        onEnd: onSlideEnd,
+        translate: function(value) {
+            var matchDate = rawMatchDetails[value - 1].matchCreation;
+            var date = moment(matchDate).format("MMM Do YYYY");
+            return date + " (#" + value + ")";
+        }
     };
 
     //////////
