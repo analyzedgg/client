@@ -3,9 +3,9 @@
 angular.module('leagueApp.service')
     .service('MatchHistoryService', matchHistoryService);
 
-matchHistoryService.$inject = ['$resource', '$log', 'ENV'];
+matchHistoryService.$inject = ['$resource', '$log', 'ENV', 'MatchesFilterService'];
 
-function matchHistoryService($resource, log, ENV) {
+function matchHistoryService($resource, log, ENV, MatchesFilterService) {
     var matchInfo = $resource(ENV.BASE_URL + '/api/:region/matchhistory/:summonerId', {}, {
         'get': {
             method: 'GET',
@@ -19,17 +19,15 @@ function matchHistoryService($resource, log, ENV) {
     };
 
     function matchHistory(region, summonerId) {
-    log.info(region, summonerId);
         return matchInfo.get({
             region: region,
-            summonerId: summonerId}, success, handleError).$promise;
-    }
-
-    function success(response) {
-        //
-    }
-
-    function handleError(response) {
-        log.error('Call for match history info failed', response);
+            summonerId: summonerId
+        })
+        .$promise.then(function(rawMatches) {
+            return {
+                raw: rawMatches,
+                filtered: MatchesFilterService.filter(rawMatches)
+            }
+        });
     }
 }

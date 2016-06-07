@@ -9,6 +9,7 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
     var statistics = this; // jshint ignore:line
 
     angular.extend(statistics, {
+        rawMatchDetails: [],
         matchDetails: [],
         selectedSummoner: {},
         loading: false,
@@ -86,7 +87,8 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
         var promise = matchHistoryService.matchHistory(region, summoner.id);
         promise
             .then(function(matchHistory) {
-                statistics.matchDetails = matchHistory;
+                statistics.rawMatchDetails = matchHistory.raw;
+                statistics.matchDetails = matchHistory.filtered;
 
                 if (matchHistory.length < statistics.minimumGames) {
                     errorMessage.show(minGamesError);
