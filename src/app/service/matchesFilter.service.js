@@ -13,7 +13,7 @@ function matchesFilterService($stateParams) {
     // filter functions
     function getMinMax(matches) {
         var minParam = $stateParams.min || 1;
-        var maxParam = $stateParams.max || 60;
+        var maxParam = $stateParams.max || matches.length;
 
         var min = (minParam >= 1 && minParam < maxParam) ? minParam : 1;
         var max = (maxParam <= matches.length && maxParam > minParam) ? maxParam : matches.length;
@@ -30,6 +30,6 @@ function matchesFilterService($stateParams) {
         var limit = getMinMax(matches);
 
         return matches
-            .slice(limit.min, limit.max)
+            .slice(limit.min - 1, limit.max);
     }
 }
