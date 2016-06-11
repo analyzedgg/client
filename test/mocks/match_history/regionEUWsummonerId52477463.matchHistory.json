@@ -1,902 +1,2751 @@
-[
-  {
-    "winner": false,
-    "matchDuration": 2915,
-    "stats": {
-      "minionKills": 57,
-      "kills": 1,
-      "deaths": 9,
-      "assists": 15
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1430423739782,
-    "queueType": "RANKED_SOLO_5x5"
+[{
+  "winner": true,
+  "matchDuration": 2186,
+  "stats": {
+    "minionKills": 193,
+    "kills": 7,
+    "deaths": 4,
+    "assists": 14
   },
-  {
-    "winner": true,
-    "matchDuration": 1567,
-    "stats": {
-      "minionKills": 33,
-      "kills": 2,
-      "deaths": 1,
-      "assists": 13
+  "matchVersion": "6.9.143.539",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 23157357,
+        "summonerName": "Lost in space"
+      }, {
+        "summonerId": 27515308,
+        "summonerName": "GonzaloMugiwara"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 19190836,
+        "summonerName": "Forgof"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1430765996765,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 48934845,
+        "summonerName": "Midnight Runnerr"
+      }, {
+        "summonerId": 26509225,
+        "summonerName": "Haldoue"
+      }, {
+        "summonerId": 40830608,
+        "summonerName": "Sky xLoubibi"
+      }, {
+        "summonerId": 42518861,
+        "summonerName": "Youp Horn"
+      }, {
+        "summonerId": 22806018,
+        "summonerName": "FizzKaliffa"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 1598,
-    "stats": {
-      "minionKills": 35,
-      "kills": 1,
-      "deaths": 8,
-      "assists": 5
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1430768199779,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1463080098788,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2660743996
+}, {
+  "winner": true,
+  "matchDuration": 2151,
+  "stats": {
+    "minionKills": 147,
+    "kills": 6,
+    "deaths": 6,
+    "assists": 14
   },
-  {
-    "winner": false,
-    "matchDuration": 2250,
-    "stats": {
-      "minionKills": 156,
-      "kills": 5,
-      "deaths": 8,
-      "assists": 6
+  "matchVersion": "6.9.142.993",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 85521552,
+        "summonerName": "Maraceyis"
+      }, {
+        "summonerId": 82816831,
+        "summonerName": "bannocks6"
+      }, {
+        "summonerId": 20886249,
+        "summonerName": "Malariaschnitte"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1430854479728,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 21265111,
+        "summonerName": "Perluck"
+      }, {
+        "summonerId": 22809873,
+        "summonerName": "IlIlIlllIlIlIlIl"
+      }, {
+        "summonerId": 35155239,
+        "summonerName": "MaÃ®tre du PÃ©trol"
+      }, {
+        "summonerId": 24877726,
+        "summonerName": "Syriol"
+      }, {
+        "summonerId": 34157261,
+        "summonerName": "Prolifik"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2529,
-    "stats": {
-      "minionKills": 183,
-      "kills": 10,
-      "deaths": 10,
-      "assists": 10
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1431279645183,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "TOP",
+  "championId": 48,
+  "matchCreation": 1462386787332,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2648627158
+}, {
+  "winner": false,
+  "matchDuration": 2031,
+  "stats": {
+    "minionKills": 209,
+    "kills": 9,
+    "deaths": 6,
+    "assists": 5
   },
-  {
-    "winner": true,
-    "matchDuration": 2375,
-    "stats": {
-      "minionKills": 4,
-      "kills": 1,
-      "deaths": 4,
-      "assists": 22
+  "matchVersion": "6.8.141.4819",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 21782030,
+        "summonerName": "kyleD30"
+      }, {
+        "summonerId": 21735622,
+        "summonerName": "jamiead"
+      }, {
+        "summonerId": 19428038,
+        "summonerName": "TyraleÃ³n"
+      }, {
+        "summonerId": 21392180,
+        "summonerName": "hesspa"
+      }, {
+        "summonerId": 41519412,
+        "summonerName": "The Great Beerko"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 267,
-    "matchCreation": 1431369208394,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 52455772,
+        "summonerName": "flashhxo"
+      }, {
+        "summonerId": 67287987,
+        "summonerName": "arsinic30"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1251,
-    "stats": {
-      "minionKills": 3,
-      "kills": 0,
-      "deaths": 2,
-      "assists": 2
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 267,
-    "matchCreation": 1431372309618,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1461766466081,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2637741616
+}, {
+  "winner": true,
+  "matchDuration": 2458,
+  "stats": {
+    "minionKills": 226,
+    "kills": 16,
+    "deaths": 6,
+    "assists": 16
   },
-  {
-    "winner": false,
-    "matchDuration": 2011,
-    "stats": {
-      "minionKills": 138,
-      "kills": 7,
-      "deaths": 6,
-      "assists": 9
+  "matchVersion": "6.9.143.539",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 35571661,
+        "summonerName": "Player1905"
+      }, {
+        "summonerId": 52300040,
+        "summonerName": "zartox75"
+      }, {
+        "summonerId": 38207415,
+        "summonerName": "DeaThinY"
+      }, {
+        "summonerId": 38505110,
+        "summonerName": "Woowkiees"
+      }, {
+        "summonerId": 35749346,
+        "summonerName": "xDentdecaillou"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1431609538015,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 58747798,
+        "summonerName": "SwagMastaGanja"
+      }, {
+        "summonerId": 24265745,
+        "summonerName": "MajorCookie"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2700,
-    "stats": {
-      "minionKills": 232,
-      "kills": 5,
-      "deaths": 8,
-      "assists": 9
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1431612175300,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1463402525878,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2666378278
+}, {
+  "winner": false,
+  "matchDuration": 2562,
+  "stats": {
+    "minionKills": 296,
+    "kills": 10,
+    "deaths": 3,
+    "assists": 8
   },
-  {
-    "winner": false,
-    "matchDuration": 1236,
-    "stats": {
-      "minionKills": 69,
-      "kills": 2,
-      "deaths": 8,
-      "assists": 6
+  "matchVersion": "6.10.144.9736",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 20963592,
+        "summonerName": "Eloycest"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 42437459,
+        "summonerName": "viralmarketeer"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }]
     },
-    "role": "NONE",
-    "lane": "MIDDLE",
-    "championId": 7,
-    "matchCreation": 1431806029611,
-    "queueType": "RANKED_TEAM_3x3"
+    "red": {
+      "players": [{
+        "summonerId": 32828766,
+        "summonerName": "Dottoresepo"
+      }, {
+        "summonerId": 83448507,
+        "summonerName": "HuPau CARRY U"
+      }, {
+        "summonerId": 58569228,
+        "summonerName": "Forza lio"
+      }, {
+        "summonerId": 79437310,
+        "summonerName": "Wendy288"
+      }, {
+        "summonerId": 80536885,
+        "summonerName": "xxxnicll"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1440,
-    "stats": {
-      "minionKills": 176,
-      "kills": 8,
-      "deaths": 1,
-      "assists": 10
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1431974714265,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1464629165493,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2689427460
+}, {
+  "winner": false,
+  "matchDuration": 1966,
+  "stats": {
+    "minionKills": 200,
+    "kills": 4,
+    "deaths": 8,
+    "assists": 1
   },
-  {
-    "winner": true,
-    "matchDuration": 1882,
-    "stats": {
-      "minionKills": 11,
-      "kills": 2,
-      "deaths": 2,
-      "assists": 21
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 50899085,
+        "summonerName": "Vanicxc"
+      }, {
+        "summonerId": 32127815,
+        "summonerName": "Nirnae"
+      }, {
+        "summonerId": 19127084,
+        "summonerName": "SmartestDetactiv"
+      }, {
+        "summonerId": 27847255,
+        "summonerName": "Fuzzy Logic Hott"
+      }, {
+        "summonerId": 52504890,
+        "summonerName": "GoldNeOo"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 267,
-    "matchCreation": 1432143157914,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 25822703,
+        "summonerName": "DragonRampage"
+      }, {
+        "summonerId": 71187618,
+        "summonerName": "blitzysdv"
+      }, {
+        "summonerId": 31996031,
+        "summonerName": "Bamblegluble"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2825,
-    "stats": {
-      "minionKills": 15,
-      "kills": 1,
-      "deaths": 3,
-      "assists": 33
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 267,
-    "matchCreation": 1432145784502,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1460205994769,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2606911498
+}, {
+  "winner": false,
+  "matchDuration": 1740,
+  "stats": {
+    "minionKills": 149,
+    "kills": 4,
+    "deaths": 5,
+    "assists": 0
   },
-  {
-    "winner": true,
-    "matchDuration": 2526,
-    "stats": {
-      "minionKills": 13,
-      "kills": 1,
-      "deaths": 3,
-      "assists": 33
+  "matchVersion": "6.10.144.9736",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 78778647,
+        "summonerName": "Suneclipz"
+      }, {
+        "summonerId": 41050054,
+        "summonerName": "DNA xVoodoo"
+      }, {
+        "summonerId": 44286026,
+        "summonerName": "FuU UniQue"
+      }, {
+        "summonerId": 75668433,
+        "summonerName": "MarshallTeach"
+      }, {
+        "summonerId": 31418694,
+        "summonerName": "Sekofreezy"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 267,
-    "matchCreation": 1432235250715,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 42437459,
+        "summonerName": "viralmarketeer"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2217,
-    "stats": {
-      "minionKills": 168,
-      "kills": 2,
-      "deaths": 7,
-      "assists": 10
-    },
-    "role": "DUO_CARRY",
-    "lane": "BOTTOM",
-    "championId": 22,
-    "matchCreation": 1432403165538,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464634760901,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2689592465
+}, {
+  "winner": true,
+  "matchDuration": 2435,
+  "stats": {
+    "minionKills": 227,
+    "kills": 16,
+    "deaths": 1,
+    "assists": 9
   },
-  {
-    "winner": false,
-    "matchDuration": 2866,
-    "stats": {
-      "minionKills": 255,
-      "kills": 9,
-      "deaths": 5,
-      "assists": 7
+  "matchVersion": "6.11.145.3450",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 45437126,
+        "summonerName": "alehsgp"
+      }, {
+        "summonerId": 30769470,
+        "summonerName": "omgkill2"
+      }, {
+        "summonerId": 30483808,
+        "summonerName": "Luckl507"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 33691765,
+        "summonerName": "xCottonBall"
+      }]
     },
-    "role": "DUO_CARRY",
-    "lane": "BOTTOM",
-    "championId": 81,
-    "matchCreation": 1427557605417,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 50549677,
+        "summonerName": "NiC hi im denre"
+      }, {
+        "summonerId": 19036054,
+        "summonerName": "Freakthrow"
+      }, {
+        "summonerId": 20649638,
+        "summonerName": "dwarfman"
+      }, {
+        "summonerId": 51820947,
+        "summonerName": "Alptrau im Boss"
+      }, {
+        "summonerId": 50868736,
+        "summonerName": "OnlyBone"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2392,
-    "stats": {
-      "minionKills": 165,
-      "kills": 4,
-      "deaths": 5,
-      "assists": 11
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1427575437957,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 161,
+  "matchCreation": 1465239464619,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2700043975
+}, {
+  "winner": true,
+  "matchDuration": 1424,
+  "stats": {
+    "minionKills": 131,
+    "kills": 11,
+    "deaths": 1,
+    "assists": 3
   },
-  {
-    "winner": false,
-    "matchDuration": 2650,
-    "stats": {
-      "minionKills": 204,
-      "kills": 13,
-      "deaths": 7,
-      "assists": 11
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 41790016,
+        "summonerName": "Lee Top"
+      }, {
+        "summonerId": 41764806,
+        "summonerName": "Ripped Ost"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1427656295470,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 27959025,
+        "summonerName": "GA Zeus"
+      }, {
+        "summonerId": 51468379,
+        "summonerName": "Åšky"
+      }, {
+        "summonerId": 52081902,
+        "summonerName": "xProm3theus"
+      }, {
+        "summonerId": 23373614,
+        "summonerName": "Barnstar"
+      }, {
+        "summonerId": 39877067,
+        "summonerName": "huboi"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 3784,
-    "stats": {
-      "minionKills": 329,
-      "kills": 21,
-      "deaths": 10,
-      "assists": 10
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1427659712591,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460399808087,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2610922157
+}, {
+  "winner": false,
+  "matchDuration": 2782,
+  "stats": {
+    "minionKills": 281,
+    "kills": 11,
+    "deaths": 8,
+    "assists": 14
   },
-  {
-    "winner": true,
-    "matchDuration": 2116,
-    "stats": {
-      "minionKills": 221,
-      "kills": 9,
-      "deaths": 2,
-      "assists": 5
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "NONE",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 24626871,
+        "summonerName": "Gadiox"
+      }, {
+        "summonerId": 19432287,
+        "summonerName": "Extel"
+      }, {
+        "summonerId": 28852579,
+        "summonerName": "Tzinch"
+      }, {
+        "summonerId": 19864658,
+        "summonerName": "Ecosys"
+      }, {
+        "summonerId": 20015847,
+        "summonerName": "Midazik"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1429389238181,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 64019007,
+        "summonerName": "Capitan Jarvan"
+      }, {
+        "summonerId": 37296962,
+        "summonerName": "szlokura"
+      }, {
+        "summonerId": 32719470,
+        "summonerName": "JuanJoFireDragon"
+      }, {
+        "summonerId": 44972288,
+        "summonerName": "TheRedBird"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 3674,
-    "stats": {
-      "minionKills": 320,
-      "kills": 8,
-      "deaths": 6,
-      "assists": 5
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1429392037972,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "JUNGLE",
+  "championId": 245,
+  "matchCreation": 1460314076341,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2609400184
+}, {
+  "winner": false,
+  "matchDuration": 2441,
+  "stats": {
+    "minionKills": 233,
+    "kills": 7,
+    "deaths": 7,
+    "assists": 5
   },
-  {
-    "winner": false,
-    "matchDuration": 1893,
-    "stats": {
-      "minionKills": 127,
-      "kills": 4,
-      "deaths": 4,
-      "assists": 11
+  "matchVersion": "6.9.142.993",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 52058276,
+        "summonerName": "sukiangel12"
+      }, {
+        "summonerId": 46677928,
+        "summonerName": "gonso1000"
+      }, {
+        "summonerId": 24396151,
+        "summonerName": "Tahm Butt Clench"
+      }, {
+        "summonerId": 28080977,
+        "summonerName": "Tamikuru"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1430053599955,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 44384244,
+        "summonerName": "daykens"
+      }, {
+        "summonerId": 19517272,
+        "summonerName": "Miriador"
+      }, {
+        "summonerId": 44558707,
+        "summonerName": "SH0 HAI"
+      }, {
+        "summonerId": 23234483,
+        "summonerName": "Joselmaquina"
+      }, {
+        "summonerId": 22509492,
+        "summonerName": "Killing4Ever"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2178,
-    "stats": {
-      "minionKills": 183,
-      "kills": 6,
-      "deaths": 5,
-      "assists": 12
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1430068723569,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1462548269450,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2651476157
+}, {
+  "winner": true,
+  "matchDuration": 3394,
+  "stats": {
+    "minionKills": 356,
+    "kills": 18,
+    "deaths": 10,
+    "assists": 12
   },
-  {
-    "winner": true,
-    "matchDuration": 2301,
-    "stats": {
-      "minionKills": 175,
-      "kills": 5,
-      "deaths": 4,
-      "assists": 15
+  "matchVersion": "6.8.140.5213",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 72182916,
+        "summonerName": "JiiDiX"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 39552976,
+        "summonerName": "Atombarnet "
+      }, {
+        "summonerId": 32798886,
+        "summonerName": "Azn 3D"
+      }, {
+        "summonerId": 29429537,
+        "summonerName": "TheCookieTroll"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1430146169145,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 46840755,
+        "summonerName": "KakuNo"
+      }, {
+        "summonerId": 29843195,
+        "summonerName": "Get Rekt3"
+      }, {
+        "summonerId": 31158651,
+        "summonerName": "MythTeks"
+      }, {
+        "summonerId": 25239309,
+        "summonerName": "22Tarkano22"
+      }, {
+        "summonerId": 34990234,
+        "summonerName": "lm Carry P0tter"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2404,
-    "stats": {
-      "minionKills": 202,
-      "kills": 12,
-      "deaths": 3,
-      "assists": 20
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1430153694452,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1461606885900,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2635388599
+}, {
+  "winner": true,
+  "matchDuration": 1750,
+  "stats": {
+    "minionKills": 165,
+    "kills": 6,
+    "deaths": 2,
+    "assists": 4
   },
-  {
-    "winner": true,
-    "matchDuration": 2661,
-    "stats": {
-      "minionKills": 202,
-      "kills": 17,
-      "deaths": 6,
-      "assists": 16
+  "matchVersion": "6.11.146.4142",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 19808681,
+        "summonerName": "JadenMan"
+      }, {
+        "summonerId": 76417207,
+        "summonerName": "SwÃ¡tcher"
+      }, {
+        "summonerId": 56977208,
+        "summonerName": "Agas Hanzeb"
+      }, {
+        "summonerId": 86051791,
+        "summonerName": "REYON ELEMANI"
+      }, {
+        "summonerId": 27892509,
+        "summonerName": "Teslako"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1430156902812,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 41684450,
+        "summonerName": "MikeMayer"
+      }, {
+        "summonerId": 23407759,
+        "summonerName": "kiecc"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 33691765,
+        "summonerName": "xCottonBall"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2654,
-    "stats": {
-      "minionKills": 186,
-      "kills": 8,
-      "deaths": 6,
-      "assists": 19
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1430160717570,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 161,
+  "matchCreation": 1465327276124,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2701507252
+}, {
+  "winner": false,
+  "matchDuration": 2907,
+  "stats": {
+    "minionKills": 299,
+    "kills": 8,
+    "deaths": 7,
+    "assists": 7
   },
-  {
-    "winner": false,
-    "matchDuration": 2283,
-    "stats": {
-      "minionKills": 178,
-      "kills": 11,
-      "deaths": 7,
-      "assists": 10
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 62247695,
+        "summonerName": "Kockusnus"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1430232592691,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 136022,
+        "summonerName": "Krutz"
+      }, {
+        "summonerId": 46715432,
+        "summonerName": "BettesNLL"
+      }, {
+        "summonerId": 49053510,
+        "summonerName": "VengaNL"
+      }, {
+        "summonerId": 32847087,
+        "summonerName": "Felcar"
+      }, {
+        "summonerId": 52321930,
+        "summonerName": "ArteriusNL"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1672,
-    "stats": {
-      "minionKills": 31,
-      "kills": 1,
-      "deaths": 3,
-      "assists": 19
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1430337092997,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460213683633,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2607131794
+}, {
+  "winner": false,
+  "matchDuration": 2579,
+  "stats": {
+    "minionKills": 241,
+    "kills": 8,
+    "deaths": 6,
+    "assists": 9
   },
-  {
-    "winner": false,
-    "matchDuration": 1889,
-    "stats": {
-      "minionKills": 193,
-      "kills": 4,
-      "deaths": 8,
-      "assists": 4
+  "matchVersion": "6.9.143.539",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 24265745,
+        "summonerName": "MajorCookie"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 29537910,
+        "summonerName": "Peperzout"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 61,
-    "matchCreation": 1430339983516,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 22230777,
+        "summonerName": "Report Rango Pls"
+      }, {
+        "summonerId": 35379380,
+        "summonerName": "LadyIKate"
+      }, {
+        "summonerId": 21330136,
+        "summonerName": "ShoriyeGeTong"
+      }, {
+        "summonerId": 21240540,
+        "summonerName": "Band of the Hawk"
+      }, {
+        "summonerId": 56568027,
+        "summonerName": "Doedelup"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1270,
-    "stats": {
-      "minionKills": 124,
-      "kills": 1,
-      "deaths": 2,
-      "assists": 3
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 61,
-    "matchCreation": 1425240067335,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "TOP",
+  "championId": 48,
+  "matchCreation": 1463405609665,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2666440448
+}, {
+  "winner": false,
+  "matchDuration": 2345,
+  "stats": {
+    "minionKills": 193,
+    "kills": 13,
+    "deaths": 9,
+    "assists": 4
   },
-  {
-    "winner": true,
-    "matchDuration": 2099,
-    "stats": {
-      "minionKills": 163,
-      "kills": 4,
-      "deaths": 1,
-      "assists": 16
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 27631312,
+        "summonerName": "Yaaxouille"
+      }, {
+        "summonerId": 42648989,
+        "summonerName": "BengBer BA"
+      }, {
+        "summonerId": 51662176,
+        "summonerName": "GeGe J"
+      }, {
+        "summonerId": 52182968,
+        "summonerName": "Kaalie"
+      }, {
+        "summonerId": 41611874,
+        "summonerName": "Kaamix"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1425413326640,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 53270708,
+        "summonerName": "Lowrider97"
+      }, {
+        "summonerId": 38689182,
+        "summonerName": "Srwitos"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 19538020,
+        "summonerName": "ciancecht"
+      }, {
+        "summonerId": 24404854,
+        "summonerName": "Wazefuc"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1465,
-    "stats": {
-      "minionKills": 143,
-      "kills": 5,
-      "deaths": 0,
-      "assists": 6
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1425416062657,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1460303211856,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2609142276
+}, {
+  "winner": true,
+  "matchDuration": 2232,
+  "stats": {
+    "minionKills": 205,
+    "kills": 4,
+    "deaths": 7,
+    "assists": 9
   },
-  {
-    "winner": true,
-    "matchDuration": 2229,
-    "stats": {
-      "minionKills": 188,
-      "kills": 12,
-      "deaths": 6,
-      "assists": 6
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 37729974,
+        "summonerName": "Xatherox"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1425499419206,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 41068564,
+        "summonerName": "Armlight"
+      }, {
+        "summonerId": 52295647,
+        "summonerName": "Agent Dirty "
+      }, {
+        "summonerId": 28259511,
+        "summonerName": "Detective Dirty"
+      }, {
+        "summonerId": 58081946,
+        "summonerName": "Ezri3L kill 4ll"
+      }, {
+        "summonerId": 58324009,
+        "summonerName": "Inspector Dirty"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1955,
-    "stats": {
-      "minionKills": 169,
-      "kills": 9,
-      "deaths": 2,
-      "assists": 7
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1425930165092,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1460574017402,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2614000573
+}, {
+  "winner": false,
+  "matchDuration": 1705,
+  "stats": {
+    "minionKills": 152,
+    "kills": 6,
+    "deaths": 4,
+    "assists": 1
   },
-  {
-    "winner": false,
-    "matchDuration": 2509,
-    "stats": {
-      "minionKills": 197,
-      "kills": 5,
-      "deaths": 5,
-      "assists": 3
+  "matchVersion": "6.11.145.3450",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 30421439,
+        "summonerName": "griaa"
+      }, {
+        "summonerId": 29363463,
+        "summonerName": "ElectriicMonkey"
+      }, {
+        "summonerId": 22572324,
+        "summonerName": "Ateph"
+      }, {
+        "summonerId": 23995040,
+        "summonerName": "Gulta"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1425932734016,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 42183788,
+        "summonerName": "MatteoPr0"
+      }, {
+        "summonerId": 19444019,
+        "summonerName": "Baas Ruben"
+      }, {
+        "summonerId": 22347497,
+        "summonerName": "Baas Sander"
+      }, {
+        "summonerId": 22824185,
+        "summonerName": "yonexplayer"
+      }, {
+        "summonerId": 31097124,
+        "summonerName": "Stanzki"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1817,
-    "stats": {
-      "minionKills": 161,
-      "kills": 6,
-      "deaths": 2,
-      "assists": 10
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1426190502581,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464982805502,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2695299512
+}, {
+  "winner": false,
+  "matchDuration": 1811,
+  "stats": {
+    "minionKills": 169,
+    "kills": 5,
+    "deaths": 8,
+    "assists": 3
   },
-  {
-    "winner": true,
-    "matchDuration": 1961,
-    "stats": {
-      "minionKills": 43,
-      "kills": 2,
-      "deaths": 5,
-      "assists": 18
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 32118980,
+        "summonerName": "Neight"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }, {
+        "summonerId": 76661200,
+        "summonerName": "Kimbzrlzysr"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1426193415520,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 20376871,
+        "summonerName": "IS10f3ec46ed0d64"
+      }, {
+        "summonerId": 19201034,
+        "summonerName": "Greiify"
+      }, {
+        "summonerId": 158487,
+        "summonerName": "KamuiSumeragi"
+      }, {
+        "summonerId": 35221805,
+        "summonerName": "Draco Miles X"
+      }, {
+        "summonerId": 48909313,
+        "summonerName": "Rain Blow"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 2323,
-    "stats": {
-      "minionKills": 153,
-      "kills": 9,
-      "deaths": 14,
-      "assists": 13
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1426538599847,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460196400446,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2606322785
+}, {
+  "winner": false,
+  "matchDuration": 2395,
+  "stats": {
+    "minionKills": 236,
+    "kills": 6,
+    "deaths": 5,
+    "assists": 5
   },
-  {
-    "winner": true,
-    "matchDuration": 2266,
-    "stats": {
-      "minionKills": 180,
-      "kills": 7,
-      "deaths": 5,
-      "assists": 13
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 50539939,
+        "summonerName": "CreaTiV0wN"
+      }, {
+        "summonerId": 45959506,
+        "summonerName": "StabbÃ©r"
+      }, {
+        "summonerId": 32255821,
+        "summonerName": "LEV0"
+      }, {
+        "summonerId": 31114925,
+        "summonerName": "WhiteBeardBei"
+      }, {
+        "summonerId": 38452545,
+        "summonerName": "Advent Shepard"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1426623159115,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 30483808,
+        "summonerName": "Luckl507"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }, {
+        "summonerId": 23441537,
+        "summonerName": "P0kkkkkkkk"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2316,
-    "stats": {
-      "minionKills": 221,
-      "kills": 13,
-      "deaths": 3,
-      "assists": 8
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1426626085336,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 103,
+  "matchCreation": 1460192485990,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2606254100
+}, {
+  "winner": false,
+  "matchDuration": 2484,
+  "stats": {
+    "minionKills": 256,
+    "kills": 6,
+    "deaths": 9,
+    "assists": 4
   },
-  {
-    "winner": false,
-    "matchDuration": 2871,
-    "stats": {
-      "minionKills": 237,
-      "kills": 8,
-      "deaths": 5,
-      "assists": 9
+  "matchVersion": "6.9.142.993",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 21696515,
+        "summonerName": "zadien"
+      }, {
+        "summonerId": 19747188,
+        "summonerName": "Best Rename EU"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 30435632,
+        "summonerName": "PhageQuitter"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1426796762381,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 44378112,
+        "summonerName": "Phil3721"
+      }, {
+        "summonerId": 43386809,
+        "summonerName": "Necos"
+      }, {
+        "summonerId": 40882128,
+        "summonerName": "Jaser17"
+      }, {
+        "summonerId": 58989782,
+        "summonerName": "sadowniebla"
+      }, {
+        "summonerId": 49035570,
+        "summonerName": "Higui"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2629,
-    "stats": {
-      "minionKills": 175,
-      "kills": 4,
-      "deaths": 10,
-      "assists": 21
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1427139336696,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1462532759581,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2651163231
+}, {
+  "winner": false,
+  "matchDuration": 2362,
+  "stats": {
+    "minionKills": 180,
+    "kills": 7,
+    "deaths": 7,
+    "assists": 9
   },
-  {
-    "winner": true,
-    "matchDuration": 1222,
-    "stats": {
-      "minionKills": 110,
-      "kills": 6,
-      "deaths": 0,
-      "assists": 3
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 19352861,
+        "summonerName": "kilet"
+      }, {
+        "summonerId": 19367167,
+        "summonerName": "WayneX"
+      }, {
+        "summonerId": 31722873,
+        "summonerName": "sboubfish"
+      }, {
+        "summonerId": 47397104,
+        "summonerName": "xSavie"
+      }, {
+        "summonerId": 52737903,
+        "summonerName": "XxCros96xX"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1427486382566,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 61679550,
+        "summonerName": "Turkish Jobs"
+      }, {
+        "summonerId": 39407448,
+        "summonerName": "MrTomWaits"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1865,
-    "stats": {
-      "minionKills": 177,
-      "kills": 12,
-      "deaths": 2,
-      "assists": 9
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1427488473065,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460228154814,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2607495743
+}, {
+  "winner": false,
+  "matchDuration": 2966,
+  "stats": {
+    "minionKills": 223,
+    "kills": 12,
+    "deaths": 8,
+    "assists": 0
   },
-  {
-    "winner": false,
-    "matchDuration": 2495,
-    "stats": {
-      "minionKills": 227,
-      "kills": 7,
-      "deaths": 9,
-      "assists": 2
+  "matchVersion": "6.10.144.6043",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 36138385,
+        "summonerName": "Dementium II"
+      }, {
+        "summonerId": 82700571,
+        "summonerName": "Californie"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1421700367378,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 84290518,
+        "summonerName": "Rune Eberhardt"
+      }, {
+        "summonerId": 63337677,
+        "summonerName": "PoTheBig"
+      }, {
+        "summonerId": 30791759,
+        "summonerName": "XemaReborn"
+      }, {
+        "summonerId": 81087,
+        "summonerName": "D3vil"
+      }, {
+        "summonerId": 21883197,
+        "summonerName": "kirises"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2412,
-    "stats": {
-      "minionKills": 275,
-      "kills": 10,
-      "deaths": 2,
-      "assists": 6
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1421956833350,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464111368511,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2680157040
+}, {
+  "winner": false,
+  "matchDuration": 2089,
+  "stats": {
+    "minionKills": 190,
+    "kills": 7,
+    "deaths": 8,
+    "assists": 10
   },
-  {
-    "winner": false,
-    "matchDuration": 1694,
-    "stats": {
-      "minionKills": 107,
-      "kills": 1,
-      "deaths": 6,
-      "assists": 5
+  "matchVersion": "6.8.141.4819",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 79959514,
+        "summonerName": "BimboBimboo"
+      }, {
+        "summonerId": 24433347,
+        "summonerName": "Shadowknight179"
+      }, {
+        "summonerId": 70788172,
+        "summonerName": "Elementaryst"
+      }, {
+        "summonerId": 63780979,
+        "summonerName": "SKT T1 MidÃ´suji"
+      }, {
+        "summonerId": 31866157,
+        "summonerName": "Nevori"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1422214505594,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 36368526,
+        "summonerName": "CptObviousNL"
+      }, {
+        "summonerId": 48861461,
+        "summonerName": "MrMarkkk"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 1815,
-    "stats": {
-      "minionKills": 96,
-      "kills": 7,
-      "deaths": 8,
-      "assists": 8
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1422216841915,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1462028918193,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2642405933
+}, {
+  "winner": false,
+  "matchDuration": 2248,
+  "stats": {
+    "minionKills": 193,
+    "kills": 6,
+    "deaths": 3,
+    "assists": 9
   },
-  {
-    "winner": true,
-    "matchDuration": 2075,
-    "stats": {
-      "minionKills": 44,
-      "kills": 4,
-      "deaths": 4,
-      "assists": 21
+  "matchVersion": "6.10.144.6043",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 27408258,
+        "summonerName": "Chiefmasterjeff"
+      }, {
+        "summonerId": 22369004,
+        "summonerName": "iWRS Phinnux"
+      }, {
+        "summonerId": 35370237,
+        "summonerName": "BTS Rapmonster"
+      }, {
+        "summonerId": 22393556,
+        "summonerName": "BoogerBoss"
+      }, {
+        "summonerId": 56278623,
+        "summonerName": "Suc Oh"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1422305681360,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 75498201,
+        "summonerName": "Chryssan"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2575,
-    "stats": {
-      "minionKills": 249,
-      "kills": 16,
-      "deaths": 4,
-      "assists": 10
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1422819616049,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464114939236,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2680261964
+}, {
+  "winner": true,
+  "matchDuration": 1541,
+  "stats": {
+    "minionKills": 174,
+    "kills": 7,
+    "deaths": 2,
+    "assists": 5
   },
-  {
-    "winner": false,
-    "matchDuration": 2358,
-    "stats": {
-      "minionKills": 218,
-      "kills": 5,
-      "deaths": 9,
-      "assists": 3
+  "matchVersion": "6.8.140.5213",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 20263219,
+        "summonerName": "SpiriT ua"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 134,
-    "matchCreation": 1422823953373,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 52209816,
+        "summonerName": "DonskSmurf"
+      }, {
+        "summonerId": 19868194,
+        "summonerName": "IceCubÃª"
+      }, {
+        "summonerId": 20219774,
+        "summonerName": "Skorpion51"
+      }, {
+        "summonerId": 39078075,
+        "summonerName": "HeyaZ"
+      }, {
+        "summonerId": 37100698,
+        "summonerName": "ErdbeerkÃ¤sebrot"
+      }]
+    }
   },
-  {
-    "winner": false,
-    "matchDuration": 1539,
-    "stats": {
-      "minionKills": 23,
-      "kills": 0,
-      "deaths": 4,
-      "assists": 4
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1422900693671,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1461263204853,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2626647875
+}, {
+  "winner": true,
+  "matchDuration": 2490,
+  "stats": {
+    "minionKills": 249,
+    "kills": 9,
+    "deaths": 4,
+    "assists": 6
   },
-  {
-    "winner": false,
-    "matchDuration": 2339,
-    "stats": {
-      "minionKills": 37,
-      "kills": 0,
-      "deaths": 7,
-      "assists": 16
+  "matchVersion": "6.8.141.4819",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 20198403,
+        "summonerName": "b0oBs N s0aP"
+      }, {
+        "summonerId": 50980741,
+        "summonerName": "mcsilvers"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }]
     },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1423510118275,
-    "queueType": "RANKED_SOLO_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 53170068,
+        "summonerName": "Ziumar"
+      }, {
+        "summonerId": 43583287,
+        "summonerName": "resaz1"
+      }, {
+        "summonerId": 46425056,
+        "summonerName": "Car46"
+      }, {
+        "summonerId": 45397442,
+        "summonerName": "xGiupo"
+      }, {
+        "summonerId": 51019638,
+        "summonerName": "wakyee"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1430,
-    "stats": {
-      "minionKills": 112,
-      "kills": 3,
-      "deaths": 0,
-      "assists": 7
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1424115003238,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1462131029970,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2644518564
+}, {
+  "winner": true,
+  "matchDuration": 2066,
+  "stats": {
+    "minionKills": 205,
+    "kills": 6,
+    "deaths": 5,
+    "assists": 12
   },
-  {
-    "winner": true,
-    "matchDuration": 1213,
-    "stats": {
-      "minionKills": 130,
-      "kills": 4,
-      "deaths": 0,
-      "assists": 2
+  "matchVersion": "6.10.144.9736",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 42437459,
+        "summonerName": "viralmarketeer"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 103,
-    "matchCreation": 1424117300140,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 23531074,
+        "summonerName": "mark4HEAVEN"
+      }, {
+        "summonerId": 25243099,
+        "summonerName": "algoritm0"
+      }, {
+        "summonerId": 19252873,
+        "summonerName": "Txinhowow"
+      }, {
+        "summonerId": 27444474,
+        "summonerName": "SmurfM"
+      }, {
+        "summonerId": 21066610,
+        "summonerName": "HÃ³rus"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 2274,
-    "stats": {
-      "minionKills": 210,
-      "kills": 14,
-      "deaths": 2,
-      "assists": 13
-    },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 61,
-    "matchCreation": 1424119054691,
-    "queueType": "RANKED_TEAM_5x5"
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1464632254329,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2689521365
+}, {
+  "winner": true,
+  "matchDuration": 1905,
+  "stats": {
+    "minionKills": 193,
+    "kills": 6,
+    "deaths": 2,
+    "assists": 8
   },
-  {
-    "winner": true,
-    "matchDuration": 1357,
-    "stats": {
-      "minionKills": 114,
-      "kills": 5,
-      "deaths": 2,
-      "assists": 6
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 31540609,
+        "summonerName": "lil hyper"
+      }, {
+        "summonerId": 19890769,
+        "summonerName": "TwistedSins"
+      }, {
+        "summonerId": 29485530,
+        "summonerName": "WantedSmurf"
+      }, {
+        "summonerId": 44947455,
+        "summonerName": "gonzalo99sg"
+      }, {
+        "summonerId": 43179877,
+        "summonerName": "ByDiiAlex"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 101,
-    "matchCreation": 1424527422544,
-    "queueType": "RANKED_TEAM_5x5"
+    "red": {
+      "players": [{
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 76567819,
+        "summonerName": "JinxWrecking"
+      }, {
+        "summonerId": 60517085,
+        "summonerName": "Ziegler"
+      }, {
+        "summonerId": 47290435,
+        "summonerName": "joujou04"
+      }]
+    }
   },
-  {
-    "winner": true,
-    "matchDuration": 1646,
-    "stats": {
-      "minionKills": 26,
-      "kills": 3,
-      "deaths": 1,
-      "assists": 15
-    },
-    "role": "DUO_SUPPORT",
-    "lane": "BOTTOM",
-    "championId": 89,
-    "matchCreation": 1424805941260,
-    "queueType": "RANKED_SOLO_5x5"
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1460203632041,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2606852824
+}, {
+  "winner": true,
+  "matchDuration": 1830,
+  "stats": {
+    "minionKills": 221,
+    "kills": 11,
+    "deaths": 0,
+    "assists": 2
   },
-  {
-    "winner": false,
-    "matchDuration": 1942,
-    "stats": {
-      "minionKills": 137,
-      "kills": 9,
-      "deaths": 5,
-      "assists": 13
+  "matchVersion": "6.7.140.3288",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 58094420,
+        "summonerName": "Verba"
+      }, {
+        "summonerId": 43609985,
+        "summonerName": "FapeV2 Bepo"
+      }, {
+        "summonerId": 30049282,
+        "summonerName": "Timberwoolv"
+      }, {
+        "summonerId": 34197966,
+        "summonerName": "FapeV2 BashWarD"
+      }, {
+        "summonerId": 40635427,
+        "summonerName": "FapeV2 DeanDuplo"
+      }]
     },
-    "role": "SOLO",
-    "lane": "MIDDLE",
-    "championId": 61,
-    "matchCreation": 1424981342075,
-    "queueType": "RANKED_TEAM_5x5"
-  }
-]
+    "red": {
+      "players": [{
+        "summonerId": 41158987,
+        "summonerName": "Nero Horus"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460657222342,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2615365396
+}, {
+  "winner": false,
+  "matchDuration": 2501,
+  "stats": {
+    "minionKills": 225,
+    "kills": 4,
+    "deaths": 11,
+    "assists": 6
+  },
+  "matchVersion": "6.9.142.993",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 50498096,
+        "summonerName": "Reith II"
+      }, {
+        "summonerId": 33923307,
+        "summonerName": "AndrewSupka"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 19884509,
+        "summonerName": "geden1"
+      }, {
+        "summonerId": 79579737,
+        "summonerName": "HalfSack Prodigy"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 30993119,
+        "summonerName": "darcmor"
+      }, {
+        "summonerId": 38739206,
+        "summonerName": "Zarglesss"
+      }, {
+        "summonerId": 38818700,
+        "summonerName": "DunkleHand"
+      }, {
+        "summonerId": 30482332,
+        "summonerName": "HVC HakÃ¹"
+      }, {
+        "summonerId": 30659983,
+        "summonerName": "Silverman"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 24,
+  "matchCreation": 1462560989320,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2652109850
+}, {
+  "winner": false,
+  "matchDuration": 1505,
+  "stats": {
+    "minionKills": 122,
+    "kills": 1,
+    "deaths": 1,
+    "assists": 2
+  },
+  "matchVersion": "6.9.143.539",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 22941105,
+        "summonerName": "Thugstyler"
+      }, {
+        "summonerId": 24265745,
+        "summonerName": "MajorCookie"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 41939231,
+        "summonerName": "TintenfischTadel"
+      }, {
+        "summonerId": 42040139,
+        "summonerName": "Wolvorinedoajob"
+      }, {
+        "summonerId": 34609462,
+        "summonerName": "zGoonStyleZ"
+      }, {
+        "summonerId": 44597789,
+        "summonerName": "Skiller168"
+      }, {
+        "summonerId": 21119418,
+        "summonerName": "Terob"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 48,
+  "matchCreation": 1463409246657,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2666725805
+}, {
+  "winner": false,
+  "matchDuration": 1382,
+  "stats": {
+    "minionKills": 109,
+    "kills": 4,
+    "deaths": 6,
+    "assists": 1
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 72597016,
+        "summonerName": "Illirica"
+      }, {
+        "summonerId": 69897371,
+        "summonerName": "Spacebar AD"
+      }, {
+        "summonerId": 52284581,
+        "summonerName": "kwonteen1999"
+      }, {
+        "summonerId": 68966466,
+        "summonerName": "CN LYY Riven"
+      }, {
+        "summonerId": 42943958,
+        "summonerName": "Tatrop"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 80560657,
+        "summonerName": "GarenCreAtive"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 77777487,
+        "summonerName": "SnakeFakeHD"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1460485517228,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2612397829
+}, {
+  "winner": true,
+  "matchDuration": 1881,
+  "stats": {
+    "minionKills": 224,
+    "kills": 7,
+    "deaths": 8,
+    "assists": 5
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 20941176,
+        "summonerName": "W4rf1re"
+      }, {
+        "summonerId": 43267255,
+        "summonerName": "LSM Janx Moody"
+      }, {
+        "summonerId": 45727675,
+        "summonerName": "tito ruso"
+      }, {
+        "summonerId": 30599067,
+        "summonerName": "Alejandro122126"
+      }, {
+        "summonerId": 41157870,
+        "summonerName": "LSM Yeheven"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 21282666,
+        "summonerName": "MS ÅovaNoob"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 24,
+  "matchCreation": 1460571498606,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2613889411
+}, {
+  "winner": true,
+  "matchDuration": 2460,
+  "stats": {
+    "minionKills": 214,
+    "kills": 6,
+    "deaths": 3,
+    "assists": 10
+  },
+  "matchVersion": "6.8.140.5213",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 83026816,
+        "summonerName": "NotWouterrr"
+      }, {
+        "summonerId": 43764868,
+        "summonerName": "Vador"
+      }, {
+        "summonerId": 62289977,
+        "summonerName": "xMisterp35x"
+      }, {
+        "summonerId": 43205156,
+        "summonerName": "GaurneFranek"
+      }, {
+        "summonerId": 59998019,
+        "summonerName": "Scrinned"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 28861064,
+        "summonerName": "xavier festerr"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1461265209274,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2626698085
+}, {
+  "winner": false,
+  "matchDuration": 2086,
+  "stats": {
+    "minionKills": 174,
+    "kills": 6,
+    "deaths": 6,
+    "assists": 2
+  },
+  "matchVersion": "6.9.143.539",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 39542836,
+        "summonerName": "pompayadevam"
+      }, {
+        "summonerId": 45219790,
+        "summonerName": "HBD Rob2"
+      }, {
+        "summonerId": 35739340,
+        "summonerName": "HBD Pigniere"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 22141283,
+        "summonerName": "IwantToSuppYou"
+      }, {
+        "summonerId": 25574028,
+        "summonerName": "wyrkaN3"
+      }, {
+        "summonerId": 19080378,
+        "summonerName": "IceIceDragon"
+      }, {
+        "summonerId": 19347920,
+        "summonerName": "Ragnarr L"
+      }, {
+        "summonerId": 20836916,
+        "summonerName": "Marco der Killer"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 48,
+  "matchCreation": 1463423913923,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2667264492
+}, {
+  "winner": true,
+  "matchDuration": 1602,
+  "stats": {
+    "minionKills": 169,
+    "kills": 5,
+    "deaths": 2,
+    "assists": 2
+  },
+  "matchVersion": "6.10.144.3817",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 31747286,
+        "summonerName": "Bronchie"
+      }, {
+        "summonerId": 85269026,
+        "summonerName": "THO Aggressor"
+      }, {
+        "summonerId": 42833113,
+        "summonerName": "Das Shkz"
+      }, {
+        "summonerId": 41639830,
+        "summonerName": "xBroych"
+      }, {
+        "summonerId": 21355347,
+        "summonerName": "Schnappeltappel"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 75498201,
+        "summonerName": "Chryssan"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464032493692,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2679324904
+}, {
+  "winner": true,
+  "matchDuration": 1847,
+  "stats": {
+    "minionKills": 183,
+    "kills": 2,
+    "deaths": 0,
+    "assists": 4
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 21404266,
+        "summonerName": "Toxic Riven "
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 32771987,
+        "summonerName": "Zazawie"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 29380063,
+        "summonerName": "IPeaceTarga"
+      }, {
+        "summonerId": 65529175,
+        "summonerName": "NinjaDragon07"
+      }, {
+        "summonerId": 29523219,
+        "summonerName": "lÃ©opold97"
+      }, {
+        "summonerId": 245578,
+        "summonerName": "J0AR"
+      }, {
+        "summonerId": 20624900,
+        "summonerName": "The Crimson Mind"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460401710151,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2610991834
+}, {
+  "winner": true,
+  "matchDuration": 1935,
+  "stats": {
+    "minionKills": 180,
+    "kills": 6,
+    "deaths": 4,
+    "assists": 12
+  },
+  "matchVersion": "6.10.144.3817",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 33788090,
+        "summonerName": "BakaTroll"
+      }, {
+        "summonerId": 49227300,
+        "summonerName": "Nadyel"
+      }, {
+        "summonerId": 26182311,
+        "summonerName": "Darckwhite"
+      }, {
+        "summonerId": 23608626,
+        "summonerName": "FermanStinkt"
+      }, {
+        "summonerId": 20869127,
+        "summonerName": "Critsus"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 75498201,
+        "summonerName": "Chryssan"
+      }, {
+        "summonerId": 81388205,
+        "summonerName": "G0LD04"
+      }, {
+        "summonerId": 29282874,
+        "summonerName": "RÃŽSEN"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1464027457423,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2678922068
+}, {
+  "winner": true,
+  "matchDuration": 2366,
+  "stats": {
+    "minionKills": 221,
+    "kills": 6,
+    "deaths": 5,
+    "assists": 15
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 43607855,
+        "summonerName": "Woscox"
+      }, {
+        "summonerId": 55526849,
+        "summonerName": "Beartrout"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 32083301,
+        "summonerName": "sold mum 4 Skins"
+      }, {
+        "summonerId": 46217243,
+        "summonerName": "sry for afk"
+      }, {
+        "summonerId": 20973509,
+        "summonerName": "Jo0ni"
+      }, {
+        "summonerId": 81377470,
+        "summonerName": "impales92"
+      }, {
+        "summonerId": 22452721,
+        "summonerName": "pitpocket"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1460482609648,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2612334583
+}, {
+  "winner": false,
+  "matchDuration": 2569,
+  "stats": {
+    "minionKills": 284,
+    "kills": 8,
+    "deaths": 8,
+    "assists": 6
+  },
+  "matchVersion": "6.9.143.539",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 29537910,
+        "summonerName": "Peperzout"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 55576981,
+        "summonerName": "Jarizok"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 43687792,
+        "summonerName": "TomTato"
+      }, {
+        "summonerId": 23438507,
+        "summonerName": "ShaunNox"
+      }, {
+        "summonerId": 40818791,
+        "summonerName": "FWKLP"
+      }, {
+        "summonerId": 32137603,
+        "summonerName": "SICK DOU8BLE"
+      }, {
+        "summonerId": 43055938,
+        "summonerName": "White20"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1463398565894,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2666314851
+}, {
+  "winner": true,
+  "matchDuration": 1933,
+  "stats": {
+    "minionKills": 205,
+    "kills": 6,
+    "deaths": 4,
+    "assists": 11
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 23066732,
+        "summonerName": "Comrade ICManiac"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 50977616,
+        "summonerName": "WhoNizzle"
+      }, {
+        "summonerId": 30115469,
+        "summonerName": "MoRaSPAIN"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 25194088,
+        "summonerName": "Ch1k3Nn"
+      }, {
+        "summonerId": 41128781,
+        "summonerName": "Mnr Toelitoes"
+      }, {
+        "summonerId": 38572561,
+        "summonerName": "Bollywolly"
+      }, {
+        "summonerId": 45864184,
+        "summonerName": "ignorancex"
+      }, {
+        "summonerId": 81617383,
+        "summonerName": "Top Dank"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460211192775,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2607061392
+}, {
+  "winner": false,
+  "matchDuration": 2030,
+  "stats": {
+    "minionKills": 172,
+    "kills": 4,
+    "deaths": 7,
+    "assists": 3
+  },
+  "matchVersion": "6.10.144.3817",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 53263397,
+        "summonerName": "Whit3Sky"
+      }, {
+        "summonerId": 27807823,
+        "summonerName": "do play like me"
+      }, {
+        "summonerId": 77847520,
+        "summonerName": "medinamira01"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 22000306,
+        "summonerName": "Yzor"
+      }, {
+        "summonerId": 44629007,
+        "summonerName": "Seyone1"
+      }, {
+        "summonerId": 53283176,
+        "summonerName": "Nazale"
+      }, {
+        "summonerId": 44491922,
+        "summonerName": "dannyBinLaden"
+      }, {
+        "summonerId": 23697898,
+        "summonerName": "MGwarrior"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 245,
+  "matchCreation": 1463775476244,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2673250240
+}, {
+  "winner": false,
+  "matchDuration": 1584,
+  "stats": {
+    "minionKills": 140,
+    "kills": 3,
+    "deaths": 2,
+    "assists": 1
+  },
+  "matchVersion": "6.10.144.6043",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 75498201,
+        "summonerName": "Chryssan"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 33493695,
+        "summonerName": "Crystal Lancer"
+      }, {
+        "summonerId": 40458558,
+        "summonerName": "TamiaMaca"
+      }, {
+        "summonerId": 40199046,
+        "summonerName": "Yeezy911"
+      }, {
+        "summonerId": 42399852,
+        "summonerName": "Pousse De Bambou"
+      }, {
+        "summonerId": 23720760,
+        "summonerName": "Enjoyyyy"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464117690607,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2680305605
+}, {
+  "winner": true,
+  "matchDuration": 1977,
+  "stats": {
+    "minionKills": 180,
+    "kills": 7,
+    "deaths": 4,
+    "assists": 7
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }, {
+        "summonerId": 20136901,
+        "summonerName": "UltraBe"
+      }, {
+        "summonerId": 30752973,
+        "summonerName": "Epsylios"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 39096895,
+        "summonerName": "Auspuffbumser"
+      }, {
+        "summonerId": 52035296,
+        "summonerName": "Nutellamafia"
+      }, {
+        "summonerId": 37327863,
+        "summonerName": "doubleplayer100"
+      }, {
+        "summonerId": 43036531,
+        "summonerName": "xXENGELHARDTIXx"
+      }, {
+        "summonerId": 53967241,
+        "summonerName": "WÃ­zard Ã­n Pyjama"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1460487500714,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2612456997
+}, {
+  "winner": true,
+  "matchDuration": 1764,
+  "stats": {
+    "minionKills": 111,
+    "kills": 5,
+    "deaths": 5,
+    "assists": 14
+  },
+  "matchVersion": "6.10.144.3817",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 20143928,
+        "summonerName": "GrimLF"
+      }, {
+        "summonerId": 20688834,
+        "summonerName": "Siiux"
+      }, {
+        "summonerId": 32228258,
+        "summonerName": "Aguandaur"
+      }, {
+        "summonerId": 31891624,
+        "summonerName": "FNC Olafmeister"
+      }, {
+        "summonerId": 26342018,
+        "summonerName": "OoFeynix"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 75498201,
+        "summonerName": "Chryssan"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 29282874,
+        "summonerName": "RÃŽSEN"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1464029969211,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2679213703
+}, {
+  "winner": true,
+  "matchDuration": 1908,
+  "stats": {
+    "minionKills": 146,
+    "kills": 3,
+    "deaths": 6,
+    "assists": 5
+  },
+  "matchVersion": "6.7.140.3288",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 32470561,
+        "summonerName": "BaDwiLL"
+      }, {
+        "summonerId": 24534724,
+        "summonerName": "WNI"
+      }, {
+        "summonerId": 21957864,
+        "summonerName": "Popy90"
+      }, {
+        "summonerId": 22953277,
+        "summonerName": "TheFreeman00"
+      }, {
+        "summonerId": 19407895,
+        "summonerName": "Regisrobertman"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38574301,
+        "summonerName": "Marinosa"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 26378019,
+        "summonerName": "FadingSundown"
+      }, {
+        "summonerId": 29537910,
+        "summonerName": "Peperzout"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 245,
+  "matchCreation": 1460659992397,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2615456940
+}, {
+  "winner": false,
+  "matchDuration": 2293,
+  "stats": {
+    "minionKills": 186,
+    "kills": 11,
+    "deaths": 9,
+    "assists": 4
+  },
+  "matchVersion": "6.10.144.3817",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }, {
+        "summonerId": 80767370,
+        "summonerName": "Folkon"
+      }, {
+        "summonerId": 20876906,
+        "summonerName": "Djamen"
+      }, {
+        "summonerId": 70967244,
+        "summonerName": "Dowch"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 24131249,
+        "summonerName": "FrostyChilled"
+      }, {
+        "summonerId": 84806885,
+        "summonerName": "Merkligmen23"
+      }, {
+        "summonerId": 51617381,
+        "summonerName": "Frederikbc123"
+      }, {
+        "summonerId": 60178867,
+        "summonerName": "Futureskytn"
+      }, {
+        "summonerId": 36880267,
+        "summonerName": "aminodex"
+      }]
+    }
+  },
+  "lane": "MIDDLE",
+  "championId": 134,
+  "matchCreation": 1463778124589,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2673387878
+}, {
+  "winner": false,
+  "matchDuration": 1673,
+  "stats": {
+    "minionKills": 149,
+    "kills": 2,
+    "deaths": 3,
+    "assists": 0
+  },
+  "matchVersion": "6.8.141.4819",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 204768,
+        "summonerName": "Ruletehfool"
+      }, {
+        "summonerId": 25890575,
+        "summonerName": "Cellendhylll"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 52294574,
+        "summonerName": "WandelendKadaver"
+      }, {
+        "summonerId": 44309523,
+        "summonerName": "B0ER"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 72139476,
+        "summonerName": "Wukongolais"
+      }, {
+        "summonerId": 20647638,
+        "summonerName": "Chillypilly"
+      }, {
+        "summonerId": 34534429,
+        "summonerName": "VebbJ"
+      }, {
+        "summonerId": 25178403,
+        "summonerName": "Doublethrift"
+      }, {
+        "summonerId": 43961007,
+        "summonerName": "Ohokaga"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 117,
+  "matchCreation": 1461769056114,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2637782728
+}, {
+  "winner": false,
+  "matchDuration": 2329,
+  "stats": {
+    "minionKills": 243,
+    "kills": 2,
+    "deaths": 8,
+    "assists": 2
+  },
+  "matchVersion": "6.7.139.3624",
+  "summonerId": 52477463,
+  "role": "SOLO",
+  "teams": {
+    "blue": {
+      "players": [{
+        "summonerId": 22441857,
+        "summonerName": "OKG Democracy"
+      }, {
+        "summonerId": 40148542,
+        "summonerName": "DerBauerBrot"
+      }, {
+        "summonerId": 22502184,
+        "summonerName": "Cu Nho"
+      }, {
+        "summonerId": 22771007,
+        "summonerName": "HosoKasuMoto1"
+      }, {
+        "summonerId": 35257847,
+        "summonerName": "Iamleiko"
+      }]
+    },
+    "red": {
+      "players": [{
+        "summonerId": 75342494,
+        "summonerName": "Akenos Senpai"
+      }, {
+        "summonerId": 41798732,
+        "summonerName": "Minikoen"
+      }, {
+        "summonerId": 52477463,
+        "summonerName": "Wagglez"
+      }, {
+        "summonerId": 38839244,
+        "summonerName": "longdong1"
+      }, {
+        "summonerId": 48537913,
+        "summonerName": "defcom222"
+      }]
+    }
+  },
+  "lane": "TOP",
+  "championId": 24,
+  "matchCreation": 1460208381871,
+  "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+  "matchId": 2606980721
+}]
