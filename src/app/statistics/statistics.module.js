@@ -5,6 +5,7 @@
         'leagueApp.statistics.maingraph',
         'leagueApp.statistics.matchSlider',
         'leagueApp.statistics.bestChamp',
-        'leagueApp.statistics.bestLane'
+        'leagueApp.statistics.bestLane',
+        'leagueApp.statistics.bestPatch'
     ]);
 })();

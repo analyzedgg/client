@@ -23,7 +23,8 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
             maingraph: 'app/statistics/maingraph/maingraph.html',
             matchSlider: 'app/statistics/matchSlider/matchSlider.html',
             mostWins: 'app/statistics/bestChamp/bestChamp.html',
-            bestLane: 'app/statistics/bestLane/bestLane.html'
+            bestLane: 'app/statistics/bestLane/bestLane.html',
+            bestPatch: 'app/statistics/bestPatch/bestPatch.html'
         }
     });
 
