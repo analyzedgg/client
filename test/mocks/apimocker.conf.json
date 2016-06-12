@@ -19,7 +19,8 @@
         "switchResponses": {
           "regioneuwsummonerNameMinikoen": {"httpStatus": 200, "mockFile": "summoner_info/minikoen.json"},
           "regioneuwsummonerNameWagglez": {"httpStatus": 200, "mockFile": "summoner_info/wagglez.json"},
-          "regioneuwsummonerNameMinikizzle": {"httpStatus": 200, "mockFile": "summoner_info/minikizzle.json"}
+          "regioneuwsummonerNameMinikizzle": {"httpStatus": 200, "mockFile": "summoner_info/minikizzle.json"},
+          "regioneuwsummonerNameWandelendKadaver": {"httpStatus": 200, "mockFile": "summoner_info/wandelendkadaver.json"}
         }
     },
     "api/:region/matchhistory/:summonerId": {
