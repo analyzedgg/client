@@ -3,9 +3,9 @@
 angular.module('leagueApp.service')
     .service('MatchesFilterService', matchesFilterService);
 
-matchesFilterService.$inject = ['$stateParams'];
+matchesFilterService.$inject = ['$stateParams', 'ChampionInfoService'];
 
-function matchesFilterService($stateParams) {
+function matchesFilterService($stateParams, championInfoService) {
     return {
         filter: filter
     };
@@ -24,12 +24,24 @@ function matchesFilterService($stateParams) {
         };
     }
     
+    function championFilter(match) {
+        var championName = $stateParams.champion,
+            champion = championInfoService.championByName[championName];
+
+        if (champion) {
+            return match.championId === champion.id;
+        }
+        
+        return true;
+    }
+    
     ////////////////////////////////////////
     
     function filter(matches) {
         var limit = getMinMax(matches);
 
         return matches
-            .slice(limit.min - 1, limit.max);
+            .slice(limit.min - 1, limit.max)
+            .filter(championFilter);
     }
 }

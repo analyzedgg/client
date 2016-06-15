@@ -1253,7 +1253,8 @@ function championInfoService() {
     return {
         champions: champions,
         championRoles: championRoles,
-        championById: championById
+        championById: championById,
+        championByName: championData.data
     };
 
     ////////////////////////////////////////
