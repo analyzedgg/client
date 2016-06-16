@@ -34,7 +34,17 @@ function matchesFilterService($stateParams, championInfoService) {
         
         return true;
     }
-    
+
+    function patchFilter(match) {
+        var patch = $stateParams.patch;
+
+        if (patch) {
+            return match.matchVersion.startsWith(patch);
+        }
+
+        return true;
+    }
+
     ////////////////////////////////////////
     
     function filter(matches) {
@@ -42,6 +52,7 @@ function matchesFilterService($stateParams, championInfoService) {
 
         return matches
             .slice(limit.min - 1, limit.max)
-            .filter(championFilter);
+            .filter(championFilter)
+            .filter(patchFilter);
     }
 }
