@@ -45,6 +45,17 @@ function matchesFilterService($stateParams, championInfoService) {
         return true;
     }
 
+    function winFilter(match) {
+        var win = $stateParams.win;
+
+        if (win) {
+            var winBoolean = win === 'true';
+            return match.winner === winBoolean;
+        }
+
+        return true;
+    }
+
     ////////////////////////////////////////
     
     function filter(matches) {
@@ -53,6 +64,7 @@ function matchesFilterService($stateParams, championInfoService) {
         return matches
             .slice(limit.min - 1, limit.max)
             .filter(championFilter)
-            .filter(patchFilter);
+            .filter(patchFilter)
+            .filter(winFilter);
     }
 }

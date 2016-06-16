@@ -3,9 +3,9 @@
 angular.module('leagueApp.statistics.bestChamp', ['highcharts-ng'])
     .controller('BestChampCtrl', bestChampController);
 
-bestChampController.$inject = ['$scope', '$log', 'ChampionInfoService'];
+bestChampController.$inject = ['$scope', '$state', 'ChampionInfoService'];
 
-function bestChampController($scope, log, championInfoService) {
+function bestChampController($scope, $state, championInfoService) {
     var bestChamp = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
 
@@ -15,6 +15,13 @@ function bestChampController($scope, log, championInfoService) {
         options: {
             chart: {
                 type: "pie"
+            },
+            plotOptions: {
+                series: {
+                    events: {
+                        click: onSeriesClick
+                    }
+                }
             }
         },
         title: {
@@ -46,6 +53,19 @@ function bestChampController($scope, log, championInfoService) {
         }],
         loading: false
     };
+
+    function onSeriesClick(event) {
+        var pointName = event.point.name,
+            filter = {};
+
+        if (pointName === 'Wins' || pointName === 'Losses') {
+            filter = { 'win': pointName === 'Wins' };
+        } else {
+            filter = { 'champion': pointName };
+        }
+
+        $state.go('.', filter);
+    }
 
     //////////
     init();
