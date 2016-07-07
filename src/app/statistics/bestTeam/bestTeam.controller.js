@@ -22,7 +22,7 @@ function bestTeamController($scope) {
                 }
             },
             tooltip: {
-                formatter: function() {
+                formatter: function () {
                     return "<b>" + this.series.name + "</b>: " + +this.y.toFixed(2);
                 }
             }
@@ -84,39 +84,39 @@ function bestTeamController($scope) {
         loading: false
     };
 
-    function getSeriesData(matchesByPatch) {
+    function getSeriesData(sortedMatchesByTeam) {
         var initialData = {
             wins: [], losses: [], kda: [], avgKills: [], avgDeaths: [], avgAssists: []
         };
-        return Object.keys(matchesByPatch).reduce(function (seriesPerPatch, patch) {
+        return sortedMatchesByTeam.reduce(function (seriesPerTeam, teamMatches) {
             var initialSums = {
                 wins: 0, kills: 0, deaths: 0, assists: 0
             };
-            var stats = matchesByPatch[patch].reduce(function (acc, match) {
+            var stats = teamMatches.matches.reduce(function (acc, match) {
                 acc.wins += (match.winner ? 1 : 0);
                 acc.kills += match.stats.kills;
                 acc.deaths += match.stats.deaths;
-                acc.assists += match.stats.kills;
+                acc.assists += match.stats.assists;
 
                 return acc;
             }, initialSums);
 
-            var totalMatches = matchesByPatch[patch].length;
+            var totalMatches = teamMatches.matches.length;
 
-            seriesPerPatch.wins.push(stats.wins);
-            seriesPerPatch.losses.push(totalMatches - stats.wins);
-            seriesPerPatch.kda.push((stats.kills + stats.assists) / stats.deaths);
-            seriesPerPatch.avgKills.push(stats.kills / totalMatches);
-            seriesPerPatch.avgDeaths.push(stats.deaths / totalMatches);
-            seriesPerPatch.avgAssists.push(stats.assists / totalMatches);
+            seriesPerTeam.wins.push(stats.wins);
+            seriesPerTeam.losses.push(totalMatches - stats.wins);
+            seriesPerTeam.kda.push((stats.kills + stats.assists) / stats.deaths);
+            seriesPerTeam.avgKills.push(stats.kills / totalMatches);
+            seriesPerTeam.avgDeaths.push(stats.deaths / totalMatches);
+            seriesPerTeam.avgAssists.push(stats.assists / totalMatches);
 
-            return seriesPerPatch;
+            return seriesPerTeam;
         }, initialData);
     }
 
-    function getPatches(matchesByPatch) {
-        return Object.keys(matchesByPatch).map(function (patch) {
-            return 'Patch ' + patch;
+    function getTeam(sortedMatchesByTeam) {
+        return sortedMatchesByTeam.map(function (teamMatches) {
+            return 'Summoner ' + teamMatches.summonerName;
         });
     }
 
@@ -135,43 +135,47 @@ function bestTeamController($scope) {
     function init() {
         var chartConfig = angular.copy(baseChartConfig);
 
-        var matchesByTeam = matchDetails.reduce(function(matchesByTeam, match) {
+        var matchesByTeam = matchDetails.reduce(function (matchesByTeam, match) {
 
             var team = determineTeam(match);
 
-            match.teams[team].players.filter(function(player) {
+            match.teams[team].players.filter(function (player) {
                 return player.summonerId !== match.summonerId;
-            }).map(function(player) {
+            }).map(function (player) {
                 return player.summonerName;
-            }).forEach(function(summonerName) {
-                matchesByTeam[summonerName] = matchesByTeam[summonerName] || 0;
-                matchesByTeam[summonerName]++;
+            }).forEach(function (summonerName) {
+                var index = matchesByTeam.map(function (m) {
+                    return m.summonerName;
+                }).indexOf(summonerName);
+
+                if (index === -1) {
+                    matchesByTeam.push({
+                        summonerName: summonerName,
+                        matches: [match]
+                    });
+                } else {
+                    matchesByTeam[index].matches.push(match);
+                }
             });
 
             return matchesByTeam;
-        }, {});
+        }, []);
 
-        var test = Object.keys(matchesByTeam).reduce(function(array, summonerName) {
-            array.push({summonerName: summonerName, gamesPlayed: matchesByTeam[summonerName]});
-            return array;
-        }, []).sort(function(a, b) {
-            return b.gamesPlayed - a.gamesPlayed;
-        });
+        var sortedMatchesByTeamWithMatch = matchesByTeam.sort(function (a, b) {
+            return b.matches.length - a.matches.length;
+        }).slice(0, 5);
 
-        console.log(test.slice(0, 20));
+        var categories = getTeam(sortedMatchesByTeamWithMatch);
+        var seriesData = getSeriesData(sortedMatchesByTeamWithMatch);
 
-        //
-        // var categories = getPatches(matchesByPatch);
-        // var seriesData = getSeriesData(matchesByPatch);
-        //
-        // chartConfig.xAxis.categories = categories;
-        // chartConfig.series[0].data = seriesData.wins;
-        // chartConfig.series[1].data = seriesData.losses;
-        // chartConfig.series[2].data = seriesData.kda;
-        // chartConfig.series[3].data = seriesData.avgKills;
-        // chartConfig.series[4].data = seriesData.avgDeaths;
-        // chartConfig.series[5].data = seriesData.avgAssists;
-        //
-        // bestTeam.chartConfig = chartConfig;
+        chartConfig.xAxis.categories = categories;
+        chartConfig.series[0].data = seriesData.wins;
+        chartConfig.series[1].data = seriesData.losses;
+        chartConfig.series[2].data = seriesData.kda;
+        chartConfig.series[3].data = seriesData.avgKills;
+        chartConfig.series[4].data = seriesData.avgDeaths;
+        chartConfig.series[5].data = seriesData.avgAssists;
+
+        bestTeam.chartConfig = chartConfig;
     }
 }
