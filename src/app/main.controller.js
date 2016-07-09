@@ -13,6 +13,10 @@ angular
                 controller: mainController,
                 controllerAs: 'main'
             })
+            .state('main.about', {
+                url: 'about',
+                templateUrl: 'app/about/about.html'
+            })
             .state('main.soloStatistics', {
                 url: ':region/:summonerName/?min&max&champion&patch&win',
                 templateUrl: 'app/statistics/statistics.html',
