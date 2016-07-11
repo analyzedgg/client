@@ -84,6 +84,7 @@ function bestTeamController($scope) {
         loading: false
     };
 
+    // This function generates the data for showing in the graph.
     function getSeriesData(sortedMatchesByTeam) {
         var initialData = {
             wins: [], losses: [], kda: [], avgKills: [], avgDeaths: [], avgAssists: []
@@ -92,6 +93,7 @@ function bestTeamController($scope) {
             var initialSums = {
                 wins: 0, kills: 0, deaths: 0, assists: 0
             };
+            // Sum up all stats
             var stats = teamMatches.matches.reduce(function (acc, match) {
                 acc.wins += (match.winner ? 1 : 0);
                 acc.kills += match.stats.kills;
@@ -103,6 +105,7 @@ function bestTeamController($scope) {
 
             var totalMatches = teamMatches.matches.length;
 
+            // Calculate all stats based on the stats just summed up
             seriesPerTeam.wins.push(stats.wins);
             seriesPerTeam.losses.push(totalMatches - stats.wins);
             seriesPerTeam.kda.push((stats.kills + stats.assists) / stats.deaths);
@@ -135,19 +138,26 @@ function bestTeamController($scope) {
     function init() {
         var chartConfig = angular.copy(baseChartConfig);
 
+        // Reduce all matches into a map where the index is the name of the team and the value a list of matches
         var matchesByTeam = matchDetails.reduce(function (matchesByTeam, match) {
 
+            // Determine on what team the player played in (red or blue)
             var team = determineTeam(match);
 
+            // First get all players who are in the same team as player, but are not the player himself
+            // Then get all summonerNames
+            // Then push all matches into the matchesByTeam map per summonerName
             match.teams[team].players.filter(function (player) {
                 return player.summonerId !== match.summonerId;
             }).map(function (player) {
                 return player.summonerName;
             }).forEach(function (summonerName) {
+                // Get the index of the entry of this summonerName
                 var index = matchesByTeam.map(function (m) {
                     return m.summonerName;
                 }).indexOf(summonerName);
 
+                // Create it if not exist, append if exist
                 if (index === -1) {
                     matchesByTeam.push({
                         summonerName: summonerName,
@@ -161,6 +171,7 @@ function bestTeamController($scope) {
             return matchesByTeam;
         }, []);
 
+        // Sort the map based on most games played and take the last couple
         var sortedMatchesByTeamWithMatch = matchesByTeam.sort(function (a, b) {
             return b.matches.length - a.matches.length;
         }).slice(0, 5);
