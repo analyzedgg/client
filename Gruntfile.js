@@ -150,8 +150,8 @@ module.exports = function (grunt) {
             copy: {
                 app: {
                     files: [
-                        {expand: true, src: ['<%= yeoman.app %>/*'], dest: '<%= yeoman.dist %>/', filter: 'isFile'},
-                        {expand: true, src: ['<%= yeoman.app %>/**'], dest: '<%= yeoman.dist %>/'}
+                        {expand: true, src: ['<%= yeoman.src %>/*'], dest: '<%= yeoman.dist %>/', filter: 'isFile'},
+                        {expand: true, src: ['<%= yeoman.src %>/**'], dest: '<%= yeoman.dist %>/'}
                     ]
                 }
             },
@@ -192,17 +192,27 @@ module.exports = function (grunt) {
                     constants: {
                         ENV: {
                             BASE_URL: 'http://localhost:7878',
-                            MINIMUM_RANKED_GAMES: 5
+                            MINIMUM_RANKED_GAMES: 1
                         }
                     }
                 },
                 live: {
                     constants: {
                         ENV: {
-                            BASE_URL: 'http://localhost:8080',
-                            MINIMUM_RANKED_GAMES: 5
+                            BASE_URL: 'http://40.114.148.250:8080',
+                            MINIMUM_RANKED_GAMES: 1
                         }
                     }
+                }
+            },
+            compress: {
+                main: {
+                    options: {
+                        archive: '<%= yeoman.dist %>/client.zip'
+                    },
+                    files: [
+                        {src: ['**/*'], dest: '/', expand: true, cwd: '<%= yeoman.dist %>/src/'}
+                    ]
                 }
             }
         }
@@ -249,11 +259,11 @@ module.exports = function (grunt) {
          'protractor:e2e'*/
     ]);
 
-    grunt.registerTask('deploy', [
+    grunt.registerTask('build', [
         'clean:dist',
+        'ngconstant:live',
         'copy:app',
-        'exec'
+        'compress'
     ]);
-
 }
 ;
