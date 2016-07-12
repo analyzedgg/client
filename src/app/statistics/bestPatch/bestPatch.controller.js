@@ -96,7 +96,7 @@ function bestPatchController($scope) {
                 acc.wins += (match.winner ? 1 : 0);
                 acc.kills += match.stats.kills;
                 acc.deaths += match.stats.deaths;
-                acc.assists += match.stats.kills;
+                acc.assists += match.stats.assists;
 
                 return acc;
             }, initialSums);
