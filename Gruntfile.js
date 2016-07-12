@@ -155,25 +155,6 @@ module.exports = function (grunt) {
                     ]
                 }
             },
-            scp: {
-                options: {
-                    host: '192.168.178.12',
-                    username: 'pi',
-                    privateKey: ''
-                },
-                app: {
-                    files: [{
-                        cwd: 'directory',
-                        src: '<%= yeoman.dist %>/**/*',
-                        filter: 'isFile',
-                        // path on the server
-                        dest: '/var/www/league/'
-                    }]
-                }
-            },
-            exec: {
-                command: 'deploy.bat'
-            },
             apimocker: {
                 options: {
                     configFile: '<%= yeoman.test %>/mocks/apimocker.conf.json'
