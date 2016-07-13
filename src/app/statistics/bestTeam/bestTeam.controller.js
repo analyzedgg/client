@@ -147,11 +147,26 @@ function bestTeamController($scope) {
             // First get all players who are in the same team as player, but are not the player himself
             // Then get all summonerNames
             // Then push all matches into the matchesByTeam map per summonerName
-            match.teams[team].players.filter(function (player) {
+            var summoners = match.teams[team].players.filter(function (player) {
                 return player.summonerId !== match.summonerId;
             }).map(function (player) {
                 return player.summonerName;
-            }).forEach(function (summonerName) {
+            });
+
+            function getCombinations(summoners) {
+                var teams = [],
+                    f = function (team, summoners) {
+                        for (var i = 0; i < summoners.length; i++) {
+                            var newTeam = team.concat([summoners[i]]);
+                            teams.push(newTeam);
+                            f(newTeam, summoners.slice(i + 1));
+                        }
+                    };
+                f([], summoners);
+                return teams;
+            }
+
+            getCombinations(summoners).forEach(function (summonerName) {
                 // Get the index of the entry of this summonerName
                 var index = matchesByTeam.map(function (m) {
                     return m.summonerName;
