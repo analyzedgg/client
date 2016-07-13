@@ -30,7 +30,8 @@ angular
 
         basePage.template = {
             summonerSelector: 'app/summoner/summoner.html',
-            statistics: 'app/statistics/statistics.html'
+            statistics: 'app/statistics/statistics.html',
+            googleTagManager: 'app/general/googleTagManager.html'
         };
     }
 })();
