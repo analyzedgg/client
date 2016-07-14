@@ -180,7 +180,7 @@ module.exports = function (grunt) {
                 live: {
                     constants: {
                         ENV: {
-                            BASE_URL: 'http://40.114.148.250:8080',
+                            BASE_URL: 'http://40.114.148.250',
                             MINIMUM_RANKED_GAMES: 1
                         }
                     }
