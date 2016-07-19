@@ -1,0 +1,36 @@
+div#summoner-page div#search-form {
+    width: 220px;
+    padding: 100px 0 50px 0;
+    margin: auto;
+}
+
+div#summoner-page div#search-form input[type=text] {
+    width: 150px;
+    margin: 0;
+}
+
+div#summoner-page div#search-form button#region-dropdown {
+    width: 71px;
+}
+
+div#summoner-page div#search-form div.select-fullsize {
+    width: 100%;
+}
+
+div#summoner-page div#search-form div.select-fullsize > span.multiSelect > button {
+    width: 100%;
+}
+
+div#summoner-page div#search-form button span.caret {
+    right: 0;
+    position: absolute;
+    margin: 8px 5px !important; /* !important needed for overriding isteven's caret */
+}
+
+div#summoner-page div#search-form ul.dropdown-menu li a {
+    cursor: pointer;
+}
+
+div#summoner-page div#search-form input[type=submit] {
+    width: 100%;
+}

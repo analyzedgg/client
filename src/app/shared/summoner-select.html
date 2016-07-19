@@ -1,0 +1,24 @@
+<form>
+    <div id="search-form">
+        <div class="input-group" role="group">
+            <input autofocus class="form-control" placeholder="Summoner" type="text" required
+                   ng-model="summoner.usernameInput"/>
+
+            <div class="input-group-btn">
+                <button id="region-dropdown" type="button" dropdown-toggle class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown">
+                    <span ng-bind="summoner.regions[summoner.region]"></span> <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li ng-repeat="(code, region) in summoner.regions">
+                        <a ng-click="summoner.region = code">
+                            <span ng-bind="region"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <input class="btn" type="submit" ng-click="summoner.submitForm()" value="Search"/>
+    </div>
+</form>

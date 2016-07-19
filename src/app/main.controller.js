@@ -13,6 +13,13 @@ angular
                 controller: mainController,
                 controllerAs: 'main'
             })
+            .state('landingspage', {
+                url: '/landingspage',
+                css: 'app/shared/summoner-select.css',
+                templateUrl: 'app/landingspage/landingspage.html',
+                controller: mainController,
+                controllerAs: 'main'
+            })
             .state('main.about', {
                 url: 'about',
                 templateUrl: 'app/about/about.html'
