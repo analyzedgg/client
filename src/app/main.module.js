@@ -7,6 +7,7 @@
             'ngResource',
             'leagueApp.summoner',
             'leagueApp.statistics',
-            'leagueApp.service'
+            'leagueApp.service',
+            'leagueApp.analytics'
         ]);
 })();
