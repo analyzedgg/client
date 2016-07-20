@@ -15,7 +15,6 @@ angular
             })
             .state('landingspage', {
                 url: '/landingspage',
-                css: 'app/shared/summoner-select.css',
                 templateUrl: 'app/landingspage/landingspage.html',
                 controller: mainController,
                 controllerAs: 'main'
