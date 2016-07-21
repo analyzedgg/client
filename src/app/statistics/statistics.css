@@ -1,9 +1,26 @@
-div.notification {
+div#statistics div.sticky-bar {
+    background: #337ab7;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+div#statistics div.sticky-bar div#summoner-select {
+    padding-top: 15px;
+}
+
+div#statistics div.sticky-bar-height {
+    height: 100px;
+    margin-bottom: 50px;
+}
+
+div#statistics div.notification {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
 
-div.error {
+div#statistics div.error {
     color: #b00;
 }
