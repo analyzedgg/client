@@ -118,8 +118,8 @@ function bestTeamController($scope) {
     }
 
     function getTeam(sortedMatchesByTeam) {
-        return sortedMatchesByTeam.map(function (teamMatches) {
-            return 'Summoner ' + teamMatches.summonerName;
+        return sortedMatchesByTeam.map(function (teamMatch) {
+            return teamMatch.teamName;
         });
     }
 
@@ -129,6 +129,23 @@ function bestTeamController($scope) {
             }).length === 1;
 
         return isInTeamBlue ? 'blue' : 'red';
+    }
+
+    function getCombinations(summoners) {
+        var teams = [],
+            f = function (team, summoners) {
+                for (var i = 0; i < summoners.length; i++) {
+                    var newTeam = team.concat([summoners[i]]);
+                    teams.push(newTeam);
+                    f(newTeam, summoners.slice(i + 1));
+                }
+            };
+        f([], summoners);
+        return teams;
+    }
+
+    function getTeamName(summonerNames) {
+        return summonerNames.join(", ");
     }
 
     /////////
@@ -147,20 +164,24 @@ function bestTeamController($scope) {
             // First get all players who are in the same team as player, but are not the player himself
             // Then get all summonerNames
             // Then push all matches into the matchesByTeam map per summonerName
-            match.teams[team].players.filter(function (player) {
+            var summoners = match.teams[team].players.filter(function (player) {
                 return player.summonerId !== match.summonerId;
             }).map(function (player) {
                 return player.summonerName;
-            }).forEach(function (summonerName) {
+            });
+
+            getCombinations(summoners).forEach(function (team) {
+                var teamName = getTeamName(team);
+
                 // Get the index of the entry of this summonerName
                 var index = matchesByTeam.map(function (m) {
-                    return m.summonerName;
-                }).indexOf(summonerName);
+                    return m.teamName;
+                }).indexOf(teamName);
 
                 // Create it if not exist, append if exist
                 if (index === -1) {
                     matchesByTeam.push({
-                        summonerName: summonerName,
+                        teamName: teamName,
                         matches: [match]
                     });
                 } else {
