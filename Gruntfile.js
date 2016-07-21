@@ -173,6 +173,14 @@ module.exports = function (grunt) {
                         }
                     }
                 },
+                local: {
+                    constants: {
+                        ENV: {
+                            BASE_URL: 'http://localhost:8080',
+                            MINIMUM_RANKED_GAMES: 1
+                        }
+                    }
+                },
                 live: {
                     constants: {
                         ENV: {
@@ -203,8 +211,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'bowerInstall',
-            'ngconstant:live',
-            'apimocker',
+            'ngconstant:local',
             'connect:livereload',
             'watch'
         ]);
