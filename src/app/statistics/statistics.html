@@ -12,9 +12,7 @@
         </div>
     </div>
 
-    <div class="notification" ng-if="statistics.loading">
-        Loading...
-    </div>
+    <div class="loading" ng-if="statistics.loading"></div>
 
     <div class="notification error" ng-if="statistics.errorMessage" ng-bind="statistics.errorMessage"></div>
 
