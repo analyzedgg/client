@@ -1,6 +1,11 @@
 form div#search-form {
-    width: 220px;
+    width: 257px;
     margin: auto;
+}
+
+form div#search-form .input-group {
+    float: left;
+    width: 220px;
 }
 
 form div#search-form input[type=text] {
@@ -30,6 +35,11 @@ form div#search-form ul.dropdown-menu li a {
     cursor: pointer;
 }
 
-form div#search-form input[type=submit] {
-    width: 100%;
+form div#search-form input.search-button {
+    margin-top: 1px;
+    background: url('button_search.png');
+    background-size: 30px;
+    width: 32px;
+    height: 32px;
+    float: right;
 }
