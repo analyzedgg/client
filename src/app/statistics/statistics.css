@@ -18,7 +18,11 @@ div#statistics div.sticky-bar div#summoner-select {
 
 div#statistics div.sticky-bar-height {
     height: 60px;
+}
+
+div#statistics .statistics-container {
     margin-bottom: 50px;
+    background: #eee;
 }
 
 div#statistics div.loading {
