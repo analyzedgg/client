@@ -14,7 +14,8 @@ function bestChampController($scope, $state, championInfoService) {
     var baseChartConfig = {
         options: {
             chart: {
-                type: "pie"
+                type: "pie",
+                backgroundColor: null
             },
             plotOptions: {
                 series: {
