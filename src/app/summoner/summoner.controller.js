@@ -30,7 +30,7 @@ function summonerController($state, $stateParams) {
             username = summoner.usernameInput;
 
         if (region && region !== '' && summoner.regions[region] && username && username !== '') {
-            $state.go('soloStatistics', {region: region, summonerName: username});
+            $state.go('soloStatistics', {region: region, summonerName: username}, {inherit: false});
         }
     };
 }

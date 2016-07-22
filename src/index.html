@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>League </title>
+    <title>Analyzed.gg</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
@@ -53,6 +53,9 @@
     <script src="app/service/championInfo.service.js"></script>
     <script src="app/service/matchesFilter.service.js"></script>
 
+    <!-- Analytics -->
+    <script src="app/analytics/analytics.module.js"></script>
+
     <!-- Summoner page !-->
     <link rel="stylesheet" href="app/summoner/summoner.css">
     <script src="app/summoner/summoner.controller.js"></script>
@@ -92,9 +95,6 @@
 <!-- End Google Tag Manager -->
 
 <div ui-view></div>
-
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"eadfe47d068d375297cc2f34c","lid":"8dbcaa462e"}) })</script>
 
 <a href="https://github.com/analyzedgg" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;"
                                              src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
