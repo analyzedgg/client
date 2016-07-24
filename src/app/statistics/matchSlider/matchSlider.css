@@ -1,0 +1,14 @@
+.matchSlider .rz-bar {
+    /*background: #d8e0f3*/
+    background: #cfe2f2;
+}
+
+.matchSlider .rz-bar.rz-selection, .matchSlider .rz-pointer, .matchSlider .rz-ticks .rz-tick.rz-selected {
+    /*background: #0db9f0;*/
+    background: #337AB7;
+}
+
+.matchSlider .rz-pointer.rz-active:after {
+    /*background-color: #451aff;*/
+    background: #fff;
+}
