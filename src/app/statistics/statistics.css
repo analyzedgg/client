@@ -1,9 +1,42 @@
-div.notification {
+div#statistics div.sticky-bar {
+    background: #337ab7;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+div#statistics div.sticky-bar a .landingspage-logo {
+    background: url('logo_100px.png') no-repeat center;
+    background-size: 40px 40px;
+    height: 60px;
+}
+
+div#statistics div.sticky-bar div#summoner-select {
+    padding-top: 13px;
+}
+
+div#statistics div.sticky-bar-height {
+    height: 60px;
+}
+
+div#statistics .statistics-container {
+    margin-bottom: 50px;
+    background: #eee;
+}
+
+div#statistics div.loading {
+    background: url('loading.gif') no-repeat center;
+    background-size: 250px 250px;
+    height: 250px;
+}
+
+div#statistics div.notification {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
 
-div.error {
+div#statistics div.error {
     color: #b00;
 }

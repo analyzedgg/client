@@ -14,7 +14,8 @@ function bestPatchController($scope) {
     var baseChartConfig = {
         options: {
             chart: {
-                type: "column"
+                type: "column",
+                backgroundColor: null
             },
             plotOptions: {
                 column: {

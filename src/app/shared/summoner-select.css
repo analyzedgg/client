@@ -1,0 +1,45 @@
+form div#search-form {
+    width: 257px;
+    margin: auto;
+}
+
+form div#search-form .input-group {
+    float: left;
+    width: 220px;
+}
+
+form div#search-form input[type=text] {
+    width: 150px;
+    margin: 0;
+}
+
+form div#search-form button#region-dropdown {
+    width: 71px;
+}
+
+form div#search-form div.select-fullsize {
+    width: 100%;
+}
+
+form div#search-form div.select-fullsize > span.multiSelect > button {
+    width: 100%;
+}
+
+form div#search-form button span.caret {
+    right: 0;
+    position: absolute;
+    margin: 8px 5px !important; /* !important needed for overriding isteven's caret */
+}
+
+form div#search-form ul.dropdown-menu li a {
+    cursor: pointer;
+}
+
+form div#search-form input.search-button {
+    margin-top: 1px;
+    background: url('button_search.png');
+    background-size: 30px;
+    width: 32px;
+    height: 32px;
+    float: right;
+}

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/css/main.css">
-    <link rel="stylesheet" href="app/main.css">
+    <link rel="stylesheet" href="app/shared/summoner-select.css" />
 
     <script src="lib/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
@@ -35,6 +35,10 @@
     <!-- Chart components !-->
     <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
     <script type="text/javascript" src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="app/statistics/highcharts-theme.js"></script>
+
+    <!-- Landingspage -->
+    <link rel="stylesheet" href="app/landingspage/landingspage.css" />
 
     <!-- Others -->
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
@@ -48,7 +52,7 @@
 
     <!-- Base app.js !-->
     <script src="app/main.module.js"></script>
-    <script src="app/main.controller.js"></script>
+    <script src="app/main.router.js"></script>
     <script src="app/constants.js"></script>
 
     <!-- Services -->
@@ -71,16 +75,15 @@
     <link rel="stylesheet" href="app/statistics/statistics.css">
 
     <!-- Widgets !-->
-    <script src="app/statistics/maingraph/maingraph.controller.js"></script>
-    <link rel="stylesheet" href="app/statistics/maingraph/maingraph.css">
+    <!--<script src="app/statistics/maingraph/maingraph.controller.js"></script>-->
+    <!--<link rel="stylesheet" href="app/statistics/maingraph/maingraph.css">-->
 
     <script src="app/statistics/matchSlider/matchSlider.controller.js"></script>
+    <link rel="stylesheet" href="app/statistics/matchSlider/matchSlider.css">
 
     <script src="app/statistics/bestChamp/bestChamp.controller.js"></script>
-    <link rel="stylesheet" href="app/statistics/bestChamp/bestChamp.css">
 
     <script src="app/statistics/bestLane/bestLane.controller.js"></script>
-    <link rel="stylesheet" href="app/statistics/bestLane/bestLane.css">
 
     <script src="app/statistics/bestPatch/bestPatch.controller.js"></script>
 

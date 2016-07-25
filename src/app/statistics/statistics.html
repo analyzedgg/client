@@ -1,16 +1,36 @@
-<div class="notification" ng-if="statistics.loading">
-    Loading...
-</div>
+<div id="statistics">
+    <div class="sticky-bar-height"></div>
+    <div class="sticky-bar sticky-bar-height">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-1">
+                    <a ui-sref='landingspage'>
+                        <div class="landingspage-logo"></div>
+                    </a>
+                </div>
+                <div class="col-sm-10" id="summoner-select">
+                    <div ng-include="'app/shared/summoner-select.html'" ng-controller="SummonerPageCtrl as summoner"></div>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+        </div>
+    </div>
 
-<div class="notification error" ng-if="statistics.errorMessage" ng-bind="statistics.errorMessage"></div>
+    <div class="loading" ng-if="statistics.loading"></div>
+    <div class="notification error" ng-if="statistics.errorMessage" ng-bind="statistics.errorMessage"></div>
 
-<div ng-if="statistics.matchDetails.length >= statistics.minimumGames">
-    <div ng-include="statistics.template.matchSlider" ng-controller="MatchSliderCtrl as matchSlider"></div>
-
-    <div ng-include="statistics.template.bestLane" ng-controller="BestLaneCtrl as bestLane" id="widget-bestLane"></div>
-    <div ng-include="statistics.template.mostWins" ng-controller="BestChampCtrl as bestChamp" id="widget-bestChamp"></div>
-
-    <div ng-include="statistics.template.bestPatch" ng-controller="BestPatchCtrl as bestPatch" id="widget-bestPatch"></div>
-    <div ng-include="statistics.template.bestTeam" ng-controller="BestTeamCtrl as bestTeam" id="widget-bestTeam"></div>
-    <!--<div ng-include="statistics.template.maingraph" ng-controller="MaingraphCtrl as maingraph"></div>-->
+    <div class="container statistics-container">
+        <div ng-if="statistics.matchDetails.length >= statistics.minimumGames">
+            <div ng-include="statistics.template.matchSlider" ng-controller="MatchSliderCtrl as matchSlider" class="col-sm-12"></div>
+            <div class="row">
+                <div ng-include="statistics.template.bestLane" ng-controller="BestLaneCtrl as bestLane" id="widget-bestLane" class="col-sm-4"></div>
+                <div ng-include="statistics.template.mostWins" ng-controller="BestChampCtrl as bestChamp" id="widget-bestChamp" class="col-sm-4"></div>
+            </div>
+            <div class="row">
+                <div ng-include="statistics.template.bestPatch" ng-controller="BestPatchCtrl as bestPatch" id="widget-bestPatch" class="col-sm-6"></div>
+                <div ng-include="statistics.template.bestTeam" ng-controller="BestTeamCtrl as bestTeam" id="widget-bestTeam" class="col-sm-6"></div>
+            </div>
+            <!--<div ng-include="statistics.template.maingraph" ng-controller="MaingraphCtrl as maingraph"></div>-->
+        </div>
+    </div>
 </div>

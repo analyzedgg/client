@@ -14,7 +14,8 @@ function bestLaneController($scope) {
     var baseChartConfig = {
         options: {
             chart: {
-                type: "pie"
+                type: "pie",
+                backgroundColor: null
             }
         },
         title: {
