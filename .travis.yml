@@ -1,11 +1,11 @@
 --- 
 addons: 
   apt: 
-	sources: 
-      - ubuntu-toolchain-r-test
     packages: 
       - g++-4.8
-	  - gcc-4.8
+      - gcc-4.8
+    sources: 
+      - ubuntu-toolchain-r-test
 before_script: 
   - "npm install -g grunt-cli"
   - "export DISPLAY=:99.0"
