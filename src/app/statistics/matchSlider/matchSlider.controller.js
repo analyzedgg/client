@@ -17,7 +17,6 @@ function matchSliderController($scope, $state, $stateParams, ENV) {
         floor: 1,
         ceil: numberOfMatches,
         minRange: ENV.MINIMUM_RANKED_GAMES,
-        showTicks: Math.ceil(numberOfMatches / 10),
         onEnd: onSlideEnd,
         translate: function(value) {
             var matchDate = rawMatchDetails[value - 1].matchCreation;
