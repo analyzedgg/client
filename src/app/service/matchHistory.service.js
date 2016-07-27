@@ -27,7 +27,7 @@ function matchHistoryService($resource, log, ENV, MatchesFilterService) {
             return {
                 raw: rawMatches,
                 filtered: MatchesFilterService.filter(rawMatches)
-            }
+            };
         });
     }
 }

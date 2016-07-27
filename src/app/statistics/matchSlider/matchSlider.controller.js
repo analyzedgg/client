@@ -3,10 +3,11 @@
 angular.module('leagueApp.statistics.matchSlider', ['rzModule'])
     .controller('MatchSliderCtrl', matchSliderController);
 
-matchSliderController.$inject = ['$scope', '$state', '$stateParams', 'ENV'];
+matchSliderController.$inject = ['$scope', '$state', '$stateParams', 'ENV', '$window'];
 
-function matchSliderController($scope, $state, $stateParams, ENV) {
+function matchSliderController($scope, $state, $stateParams, ENV, $window) {
     var matchSlider = this, // jshint ignore:line
+        moment = $window.moment,
         rawMatchDetails = $scope.statistics.rawMatchDetails;
 
     var numberOfMatches = rawMatchDetails.length;

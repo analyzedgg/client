@@ -24,7 +24,7 @@ function bestPatchController($scope) {
             },
             tooltip: {
                 formatter: function() {
-                    return "<b>" + this.series.name + "</b>: " + +this.y.toFixed(2);
+                    return "<b>" + this.series.name + "</b>: " + (+this.y.toFixed(2));
                 }
             }
         },
