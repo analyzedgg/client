@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestChamp', ['highcharts-ng', 'leagueApp.service'])
+angular.module('leagueApp.statistics.bestChamp')
     .controller('BestChampCtrl', bestChampController);
 
-bestChampController.$inject = ['$scope', '$state', 'ChampionInfoService', 'BaseChartConfigService'];
+bestChampController.$inject = ['$scope', '$state', 'BestChampService', 'BaseChartConfigService'];
 
-function bestChampController($scope, $state, championInfoService, baseChartConfigService) {
+function bestChampController($scope, $state, bestChampService, baseChartConfigService) {
     var bestChamp = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
 
@@ -35,48 +35,9 @@ function bestChampController($scope, $state, championInfoService, baseChartConfi
     init();
 
     function init() {
-        var winsAndLossesPerChampion = {};
+        var seriesData = bestChampService.getSeriesData(matchDetails);
 
-        angular.forEach(matchDetails, function (match) {
-            var champName = championInfoService.championById(match.championId).key;
-
-            if (!winsAndLossesPerChampion[champName]) {
-                winsAndLossesPerChampion[champName] = {
-                    wins: 0,
-                    losses: 0
-                };
-            }
-
-            if (match.winner) {
-                winsAndLossesPerChampion[champName].wins++;
-            } else {
-                winsAndLossesPerChampion[champName].losses++;
-            }
-        });
-
-        var champData = [],
-            winsLossesData = [];
-
-        angular.forEach(winsAndLossesPerChampion, function (winsAndLosses, champName) {
-            champData.push({
-                name: champName,
-                y: winsAndLosses.wins + winsAndLosses.losses
-            });
-
-            winsLossesData.push({
-                name: 'Wins',
-                y: winsAndLosses.wins,
-                color: '#0b0'
-            });
-
-            winsLossesData.push({
-                name: 'Losses',
-                y: winsAndLosses.losses,
-                color: '#b00'
-            });
-        });
-
-        bestChamp.chartConfig.series[0].data = champData;
-        bestChamp.chartConfig.series[1].data = winsLossesData;
+        bestChamp.chartConfig.series[0].data = seriesData[0];
+        bestChamp.chartConfig.series[1].data = seriesData[1];
     }
 }
