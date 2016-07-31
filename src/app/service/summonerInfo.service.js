@@ -18,7 +18,6 @@ function summonerInfoService($resource, log, ENV) {
     };
 
     function summoner(region, summonerName) {
-    log.info('Perform with', region, summonerName);
         return summonerInfo.get({
             region: region,
             summonerName: encodeURIComponent(summonerName)
