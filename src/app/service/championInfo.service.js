@@ -6,6 +6,14 @@ angular.module('leagueApp.service')
 championInfoService.$inject = ['$resource', 'ENV', '$stateParams'];
 
 function championInfoService($resource, ENV, $stateParams) {
+    var unknownChampion = {
+        "tags": [],
+        "id": 0,
+        "title": "Helmet bro",
+        "name": "Unknown",
+        "key": "Unknown"
+    };
+
     var championData = {
         "data": {
             "Aatrox": {
@@ -457,13 +465,13 @@ function championInfoService($resource, ENV, $stateParams) {
                 "name": "Corki",
                 "key": "Corki"
             },
-            "Caitlyn": {
-                "tags": ["Marksman"],
-                "id": 51,
-                "title": "the Sheriff of Piltover",
-                "name": "Caitlyn",
-                "key": "Caitlyn"
-            },
+            /*            "Caitlyn": {
+             "tags": ["Marksman"],
+             "id": 51,
+             "title": "the Sheriff of Piltover",
+             "name": "Caitlyn",
+             "key": "Caitlyn"
+             },*/
             "Azir": {
                 "tags": [
                     "Mage",
@@ -1269,9 +1277,7 @@ function championInfoService($resource, ENV, $stateParams) {
     return {
         champions: champions,
         championById: championById,
-        championByName: function () {
-            return championData.data;
-        }
+        championByName: championByName
     };
 
     ////////////////////////////////////////
@@ -1298,7 +1304,15 @@ function championInfoService($resource, ENV, $stateParams) {
 
     // Returns a specific champion given an id.
     function championById(championId) {
-        return championDataById[championId];
+        var champion = championDataById[championId];
+        if (angular.isUndefined(champion)) {
+            champion = unknownChampion;
+        }
+        return champion;
+    }
+
+    function championByName(championName) {
+        return championData.data[championName];
     }
 
 }
