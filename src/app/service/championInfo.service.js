@@ -3,7 +3,7 @@
 angular.module('leagueApp.service')
     .service('ChampionInfoService', championInfoService);
 
-championInfoService.$inject = ['$resource', '$log', 'ENV', '$stateParams'];
+championInfoService.$inject = ['$resource', 'ENV', '$stateParams'];
 
 function championInfoService($resource, ENV, $stateParams) {
     var championData = {
@@ -1259,8 +1259,7 @@ function championInfoService($resource, ENV, $stateParams) {
     function getChampionData() {
         return championInfo.get({
             region: $stateParams.region
-        })
-            .$promise
+        }).$promise
     }
 
     var championDataById;
