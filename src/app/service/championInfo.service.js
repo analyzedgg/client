@@ -3,7 +3,9 @@
 angular.module('leagueApp.service')
     .service('ChampionInfoService', championInfoService);
 
-function championInfoService() {
+championInfoService.$inject = ['$resource', '$log', 'ENV', '$stateParams'];
+
+function championInfoService($resource, ENV, $stateParams) {
     var championData = {
         "data": {
             "Aatrox": {
@@ -1245,6 +1247,22 @@ function championInfoService() {
         "type": "champion",
         "version": "6.14.2"
     };
+
+    var championInfo = $resource(ENV.BASE_URL + '/api/:region/champions/', {}, {
+        'get': {
+            method: 'GET',
+            cache: true,
+            isArray: false
+        }
+    });
+
+    function getChampionData() {
+        return championInfo.get({
+            region: $stateParams.region
+        })
+            .$promise
+    }
+
     var championDataById;
 
     activate();
@@ -1252,13 +1270,18 @@ function championInfoService() {
     return {
         champions: champions,
         championById: championById,
-        championByName: championData.data
+        championByName: function () {
+            return championData.data;
+        }
     };
 
     ////////////////////////////////////////
 
     function activate() {
-        championDataById = filterChampionsById();
+        getChampionData().then(function (data) {
+            championData = data;
+            championDataById = filterChampionsById();
+        });
     }
 
     function filterChampionsById() {
