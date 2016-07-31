@@ -1,89 +1,15 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestPatch', [])
+angular.module('leagueApp.statistics.bestPatch', ['leagueApp.service'])
     .controller('BestPatchCtrl', bestPatchController);
 
-bestPatchController.$inject = ['$scope'];
+bestPatchController.$inject = ['$scope', 'BaseChartConfigService'];
 
-function bestPatchController($scope) {
+function bestPatchController($scope, baseChartConfigService) {
     var bestPatch = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
 
-    bestPatch.chartConfig = {};
-
-    var baseChartConfig = {
-        options: {
-            chart: {
-                type: "column",
-                backgroundColor: null
-            },
-            plotOptions: {
-                column: {
-                    stacking: 'normal'
-                }
-            },
-            tooltip: {
-                formatter: function() {
-                    return "<b>" + this.series.name + "</b>: " + (+this.y.toFixed(2));
-                }
-            }
-        },
-        title: {
-            text: 'Best patch'
-        },
-        subtitle: {
-            text: ''
-        },
-        series: [{
-            name: 'Won games',
-            data: [],
-            stack: 'totalgames',
-            color: '#0b0'
-        }, {
-            name: 'Lost games',
-            data: [],
-            stack: 'totalgames',
-            color: '#b00'
-        }, {
-            name: 'KDA',
-            data: [],
-            yAxis: 1,
-            stack: '1'
-        }, {
-            name: 'Average kills',
-            data: [],
-            yAxis: 1,
-            stack: '2',
-            visible: false
-        }, {
-            name: 'Average deaths',
-            data: [],
-            yAxis: 1,
-            stack: '3',
-            visible: false
-        }, {
-            name: 'Average assists',
-            data: [],
-            yAxis: 1,
-            stack: '4',
-            visible: false
-        }],
-        xAxis: {
-            categories: []
-        },
-        yAxis: [{
-            min: 0,
-            title: {
-                text: 'Games played'
-            }
-        }, {
-            min: 0,
-            title: {
-                text: 'KDA'
-            }
-        }],
-        loading: false
-    };
+    bestPatch.chartConfig = baseChartConfigService.columnWithWinRateAndKDA('Best patch');
 
     function getSeriesData(matchesByPatch) {
         var initialData = {
@@ -126,8 +52,6 @@ function bestPatchController($scope) {
     init();
 
     function init() {
-        var chartConfig = angular.copy(baseChartConfig);
-
         var matchesByPatch = matchDetails.reduce(function(matchesByPatch, match) {
             var patch = match.matchVersion.split(".").slice(0, 2).join(".");
 
@@ -140,14 +64,12 @@ function bestPatchController($scope) {
         var categories = getPatches(matchesByPatch);
         var seriesData = getSeriesData(matchesByPatch);
 
-        chartConfig.xAxis.categories = categories;
-        chartConfig.series[0].data = seriesData.wins;
-        chartConfig.series[1].data = seriesData.losses;
-        chartConfig.series[2].data = seriesData.kda;
-        chartConfig.series[3].data = seriesData.avgKills;
-        chartConfig.series[4].data = seriesData.avgDeaths;
-        chartConfig.series[5].data = seriesData.avgAssists;
-
-        bestPatch.chartConfig = chartConfig;
+        bestPatch.chartConfig.xAxis.categories = categories;
+        bestPatch.chartConfig.series[0].data = seriesData.wins;
+        bestPatch.chartConfig.series[1].data = seriesData.losses;
+        bestPatch.chartConfig.series[2].data = seriesData.kda;
+        bestPatch.chartConfig.series[3].data = seriesData.avgKills;
+        bestPatch.chartConfig.series[4].data = seriesData.avgDeaths;
+        bestPatch.chartConfig.series[5].data = seriesData.avgAssists;
     }
 }

@@ -1,89 +1,15 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestTeam', [])
+angular.module('leagueApp.statistics.bestTeam', ['leagueApp.service'])
     .controller('BestTeamCtrl', bestTeamController);
 
-bestTeamController.$inject = ['$scope'];
+bestTeamController.$inject = ['$scope', 'BaseChartConfigService'];
 
-function bestTeamController($scope) {
+function bestTeamController($scope, baseChartConfigService) {
     var bestTeam = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
 
-    bestTeam.chartConfig = {};
-
-    var baseChartConfig = {
-        options: {
-            chart: {
-                type: "column",
-                backgroundColor: null
-            },
-            plotOptions: {
-                column: {
-                    stacking: 'normal'
-                }
-            },
-            tooltip: {
-                formatter: function () {
-                    return "<b>" + this.series.name + "</b>: " + (+this.y.toFixed(2));
-                }
-            }
-        },
-        title: {
-            text: 'Best team'
-        },
-        subtitle: {
-            text: ''
-        },
-        series: [{
-            name: 'Won games',
-            data: [],
-            stack: 'totalgames',
-            color: '#0b0'
-        }, {
-            name: 'Lost games',
-            data: [],
-            stack: 'totalgames',
-            color: '#b00'
-        }, {
-            name: 'KDA',
-            data: [],
-            yAxis: 1,
-            stack: '1'
-        }, {
-            name: 'Average kills',
-            data: [],
-            yAxis: 1,
-            stack: '2',
-            visible: false
-        }, {
-            name: 'Average deaths',
-            data: [],
-            yAxis: 1,
-            stack: '3',
-            visible: false
-        }, {
-            name: 'Average assists',
-            data: [],
-            yAxis: 1,
-            stack: '4',
-            visible: false
-        }],
-        xAxis: {
-            categories: []
-        },
-        yAxis: [{
-            min: 0,
-            title: {
-                text: 'Games played'
-            }
-        }, {
-            min: 0,
-            title: {
-                text: 'KDA'
-            }
-        }],
-        loading: false
-    };
+    bestTeam.chartConfig = baseChartConfigService.columnWithWinRateAndKDA('Best team');
 
     // This function generates the data for showing in the graph.
     function getSeriesData(sortedMatchesByTeam) {
@@ -154,8 +80,6 @@ function bestTeamController($scope) {
     init();
 
     function init() {
-        var chartConfig = angular.copy(baseChartConfig);
-
         // Reduce all matches into a map where the index is the name of the team and the value a list of matches
         var matchesByTeam = matchDetails.reduce(function (matchesByTeam, match) {
 
@@ -201,14 +125,12 @@ function bestTeamController($scope) {
         var categories = getTeam(sortedMatchesByTeamWithMatch);
         var seriesData = getSeriesData(sortedMatchesByTeamWithMatch);
 
-        chartConfig.xAxis.categories = categories;
-        chartConfig.series[0].data = seriesData.wins;
-        chartConfig.series[1].data = seriesData.losses;
-        chartConfig.series[2].data = seriesData.kda;
-        chartConfig.series[3].data = seriesData.avgKills;
-        chartConfig.series[4].data = seriesData.avgDeaths;
-        chartConfig.series[5].data = seriesData.avgAssists;
-
-        bestTeam.chartConfig = chartConfig;
+        bestTeam.chartConfig.xAxis.categories = categories;
+        bestTeam.chartConfig.series[0].data = seriesData.wins;
+        bestTeam.chartConfig.series[1].data = seriesData.losses;
+        bestTeam.chartConfig.series[2].data = seriesData.kda;
+        bestTeam.chartConfig.series[3].data = seriesData.avgKills;
+        bestTeam.chartConfig.series[4].data = seriesData.avgDeaths;
+        bestTeam.chartConfig.series[5].data = seriesData.avgAssists;
     }
 }

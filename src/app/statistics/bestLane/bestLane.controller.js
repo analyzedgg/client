@@ -1,60 +1,21 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestLane', ['highcharts-ng'])
+angular.module('leagueApp.statistics.bestLane', ['highcharts-ng', 'leagueApp.service'])
     .controller('BestLaneCtrl', bestLaneController);
 
-bestLaneController.$inject = ['$scope'];
+bestLaneController.$inject = ['$scope', 'BaseChartConfigService'];
 
-function bestLaneController($scope) {
+function bestLaneController($scope, baseChartConfigService) {
     var bestLane = this, // jshint ignore:line
         matchDetails = $scope.statistics.matchDetails;
 
-    bestLane.chartConfig = {};
-
-    var baseChartConfig = {
-        options: {
-            chart: {
-                type: "pie",
-                backgroundColor: null
-            }
-        },
-        title: {
-            text: 'Lanes played'
-        },
-        subtitle: {
-            text: ''
-        },
-        series: [{
-            name: 'Total games',
-            data: [],
-            size: '90%',
-            id: "Lanes",
-            dataLabels: {
-                color: '#ffffff',
-                distance: -40
-            }
-        }, {
-            name: 'Ratio',
-            data: [],
-            size: '100%',
-            innerSize: '90%',
-            id: "WinsLossesPerLane",
-            dataLabels: {
-                formatter: function () {
-                    return null;
-                }
-            }
-        }],
-        loading: false
-    };
+    bestLane.chartConfig = baseChartConfigService.pieWithWinRate('Lanes played', 'Total games');
 
     /////////
 
     init();
 
     function init() {
-        var chartConfig = angular.copy(baseChartConfig);
-
         var winsAndLossesPerLane = {};
 
         angular.forEach(matchDetails, function (match) {
@@ -98,9 +59,7 @@ function bestLaneController($scope) {
             });
         });
 
-        chartConfig.series[0].data = lanesData;
-        chartConfig.series[1].data = winsLossesData;
-
-        bestLane.chartConfig = chartConfig;
+        bestLane.chartConfig.series[0].data = lanesData;
+        bestLane.chartConfig.series[1].data = winsLossesData;
     }
 }
