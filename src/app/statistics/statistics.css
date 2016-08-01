@@ -7,9 +7,18 @@ div#statistics div.sticky-bar {
 }
 
 div#statistics div.sticky-bar a .landingspage-logo {
-    background: url('logo_100px.png') no-repeat center;
-    background-size: 40px 40px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+div#statistics div.sticky-bar div#filter-text {
+    line-height: 60px;
+    color: #fff;
+    text-align: right;
+}
+div#statistics div.sticky-bar div#filter-text a {
+    color: #fff;
 }
 
 div#statistics div.sticky-bar div#summoner-select {
