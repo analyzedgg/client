@@ -3,7 +3,17 @@
 angular.module('leagueApp.service')
     .service('ChampionInfoService', championInfoService);
 
-function championInfoService() {
+championInfoService.$inject = ['$resource', 'ENV', '$stateParams'];
+
+function championInfoService($resource, ENV, $stateParams) {
+    var unknownChampion = {
+        "tags": [],
+        "id": 0,
+        "title": "Helmet bro",
+        "name": "Unknown",
+        "key": "Unknown"
+    };
+
     var championData = {
         "data": {
             "Aatrox": {
@@ -1245,6 +1255,21 @@ function championInfoService() {
         "type": "champion",
         "version": "6.14.2"
     };
+
+    var championInfo = $resource(ENV.BASE_URL + '/api/:region/champions/', {}, {
+        'get': {
+            method: 'GET',
+            cache: true,
+            isArray: false
+        }
+    });
+
+    function getChampionData() {
+        return championInfo.get({
+            region: $stateParams.region
+        }).$promise
+    }
+
     var championDataById;
 
     activate();
@@ -1252,13 +1277,16 @@ function championInfoService() {
     return {
         champions: champions,
         championById: championById,
-        championByName: championData.data
+        championByName: championByName
     };
 
     ////////////////////////////////////////
 
     function activate() {
-        championDataById = filterChampionsById();
+        getChampionData().then(function (data) {
+            championData = data;
+            championDataById = filterChampionsById();
+        });
     }
 
     function filterChampionsById() {
@@ -1276,7 +1304,15 @@ function championInfoService() {
 
     // Returns a specific champion given an id.
     function championById(championId) {
-        return championDataById[championId];
+        var champion = championDataById[championId];
+        if (angular.isUndefined(champion)) {
+            champion = unknownChampion;
+        }
+        return champion;
+    }
+
+    function championByName(championName) {
+        return championData.data[championName];
     }
 
 }
