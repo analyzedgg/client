@@ -465,13 +465,13 @@ function championInfoService($resource, ENV, $stateParams) {
                 "name": "Corki",
                 "key": "Corki"
             },
-            /*            "Caitlyn": {
-             "tags": ["Marksman"],
-             "id": 51,
-             "title": "the Sheriff of Piltover",
-             "name": "Caitlyn",
-             "key": "Caitlyn"
-             },*/
+            "Caitlyn": {
+                "tags": ["Marksman"],
+                "id": 51,
+                "title": "the Sheriff of Piltover",
+                "name": "Caitlyn",
+                "key": "Caitlyn"
+            },
             "Azir": {
                 "tags": [
                     "Mage",
