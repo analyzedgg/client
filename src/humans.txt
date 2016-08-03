@@ -1,0 +1,35 @@
+/* TEAM */
+	Dev: Koen van Dixhoorn
+	GitHub: https://github.com/BloodyHell
+	From: Netherlands
+
+	Dev: Martin Kanters
+	GitHub: https://github.com/MartinKanters
+	From: Netherlands
+
+        Dev: Luc Klaassen
+        GitHub: https://github.com/Luckl
+        From: Netherlands
+
+        Dev: Mike Mol
+        GitHub: https://github.com/MikeMolIS
+        From: Netherlands
+
+        Dev: Sander de Groot
+        GitHub: https://github.com/sdegroot
+        From: Netherlands
+
+        Dev: Mike Hoogesteger
+        GitHub: https://github.com/mi0x
+        From: Netherlands
+/* THANKS */
+
+	Sponsor: Info Support
+	Website: https://www.infosupport.com/
+	From:Veenendaal, Utrecht, Netherlands
+
+
+/* SITE */
+        Language: HTML5
+	Doctype:HTML5
+	IDE: IntelliJ IDEA

@@ -1,9 +1,51 @@
-div.notification {
+div#statistics div.sticky-bar {
+    background: #337ab7;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+}
+
+div#statistics div.sticky-bar a .landingspage-logo {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+div#statistics div.sticky-bar div#filter-text {
+    line-height: 60px;
+    color: #fff;
+    text-align: right;
+}
+div#statistics div.sticky-bar div#filter-text a {
+    color: #fff;
+}
+
+div#statistics div.sticky-bar div#summoner-select {
+    padding-top: 13px;
+}
+
+div#statistics div.sticky-bar-height {
+    height: 60px;
+}
+
+div#statistics .statistics-container {
+    margin-bottom: 50px;
+    background: #eee;
+}
+
+div#statistics div.loading {
+    background: url('loading.gif') no-repeat center;
+    background-size: 250px 250px;
+    height: 250px;
+}
+
+div#statistics div.notification {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
 }
 
-div.error {
+div#statistics div.error {
     color: #b00;
 }

@@ -3,13 +3,28 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Analyzed.gg</title>
-    <meta name="description" content="">
+    <title>Analyzed.gg - League of legends stats and graphs optimized for you!</title>
+    <meta name="description" content="Analyzed.gg provides trends and graphs for League of Legends players to help them improve their ranked experience." />
+    <meta name="keywords" content="league of legends, lol, statistics" />
+    <meta name="author" content="Analyzed.gg">
+    <meta name="robots" content="index, follow" />
+    <meta name="revisit-after" content="3 days" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="http://analyzed.gg/mstile-150x150.png"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="author" href="humans.txt" />
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="lib/html5-boilerplate/css/main.css">
-    <link rel="stylesheet" href="app/main.css">
+    <link rel="stylesheet" href="app/shared/summoner-select.css" />
 
     <script src="lib/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
@@ -27,10 +42,13 @@
     <!-- Chart components !-->
     <script src="http://code.highcharts.com/stock/highstock.src.js"></script>
     <script type="text/javascript" src="lib/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="app/statistics/highcharts-theme.js"></script>
+
+    <!-- Landingspage -->
+    <link rel="stylesheet" href="app/landingspage/landingspage.css" />
 
     <!-- Others -->
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="lib/isteven-angular-multiselect/isteven-multi-select.js"></script>
     <script src="lib/isteven-angular-multiselect/isteven-multi-select.js"></script>
 
     <link rel="stylesheet" type="text/css" href="lib/angularjs-slider/dist/rzslider.css"/>
@@ -40,7 +58,7 @@
 
     <!-- Base app.js !-->
     <script src="app/main.module.js"></script>
-    <script src="app/main.controller.js"></script>
+    <script src="app/main.router.js"></script>
     <script src="app/constants.js"></script>
 
     <!-- Services -->
@@ -49,6 +67,10 @@
     <script src="app/service/matchHistory.service.js"></script>
     <script src="app/service/championInfo.service.js"></script>
     <script src="app/service/matchesFilter.service.js"></script>
+    <script src="app/service/baseChartConfig.service.js"></script>
+
+    <!-- Analytics -->
+    <script src="app/analytics/analytics.module.js"></script>
 
     <!-- Summoner page !-->
     <link rel="stylesheet" href="app/summoner/summoner.css">
@@ -60,19 +82,26 @@
     <link rel="stylesheet" href="app/statistics/statistics.css">
 
     <!-- Widgets !-->
-    <script src="app/statistics/maingraph/maingraph.controller.js"></script>
-    <link rel="stylesheet" href="app/statistics/maingraph/maingraph.css">
+    <!--<script src="app/statistics/maingraph/maingraph.controller.js"></script>-->
+    <!--<link rel="stylesheet" href="app/statistics/maingraph/maingraph.css">-->
 
     <script src="app/statistics/matchSlider/matchSlider.controller.js"></script>
+    <link rel="stylesheet" href="app/statistics/matchSlider/matchSlider.css">
 
+    <script src="app/statistics/bestChamp/bestChamp.module.js"></script>
+    <script src="app/statistics/bestChamp/bestChamp.service.js"></script>
     <script src="app/statistics/bestChamp/bestChamp.controller.js"></script>
-    <link rel="stylesheet" href="app/statistics/bestChamp/bestChamp.css">
 
+    <script src="app/statistics/bestLane/bestLane.module.js"></script>
+    <script src="app/statistics/bestLane/bestLane.service.js"></script>
     <script src="app/statistics/bestLane/bestLane.controller.js"></script>
-    <link rel="stylesheet" href="app/statistics/bestLane/bestLane.css">
 
+    <script src="app/statistics/bestPatch/bestPatch.module.js"></script>
+    <script src="app/statistics/bestPatch/bestPatch.service.js"></script>
     <script src="app/statistics/bestPatch/bestPatch.controller.js"></script>
 
+    <script src="app/statistics/bestTeam/bestTeam.module.js"></script>
+    <script src="app/statistics/bestTeam/bestTeam.service.js"></script>
     <script src="app/statistics/bestTeam/bestTeam.controller.js"></script>
 
     <script>
@@ -91,22 +120,6 @@
 <!-- End Google Tag Manager -->
 
 <div ui-view></div>
-
-<a href="https://github.com/analyzedgg" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;"
-                                             src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
-                                             alt="Fork me on GitHub"
-                                             data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-</a>
-
-<script type="text/javascript">
-    window._urq = window._urq || [];
-    _urq.push(['initSite', 'f544eaf1-08af-40fa-9a29-3edb7b7a0a8a']);
-    (function() {
-        var ur = document.createElement('script'); ur.type = 'text/javascript'; ur.async = true;
-        ur.src = ('https:' == document.location.protocol ? 'https://cdn.userreport.com/userreport.js' : 'http://cdn.userreport.com/userreport.js');
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ur, s);
-    })();
-</script>
 
 </body>
 </html>

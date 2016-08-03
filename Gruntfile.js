@@ -60,18 +60,14 @@ module.exports = function (grunt) {
                     port: portNum,
                     // Change this to '0.0.0.0' to caccess the server from the outside
                     hostname: 'localhost',
-                    livereload: 9113
+                    livereload: 9113,
+                    base: '<%= yeoman.src %>',
+                    keepalive: true
                 },
 
                 livereload: {
                     options: {
-                        open: 'http://localhost:' + portNum + '/<%= yeoman.src %>/index.html#/summoner',
-                        base: [
-                            '.tmp',
-                            '<%= yeoman.app %>',
-                            '*.html',
-                            '' //So test/mocks can be served.
-                        ]
+                        open: 'http://localhost:' + portNum + '/'
                     }
                 },
                 test: {
@@ -177,6 +173,14 @@ module.exports = function (grunt) {
                         }
                     }
                 },
+                local: {
+                    constants: {
+                        ENV: {
+                            BASE_URL: 'http://localhost:8080',
+                            MINIMUM_RANKED_GAMES: 1
+                        }
+                    }
+                },
                 live: {
                     constants: {
                         ENV: {
@@ -207,8 +211,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'bowerInstall',
-            'ngconstant:live',
-            'apimocker',
+            'ngconstant:local',
             'connect:livereload',
             'watch'
         ]);

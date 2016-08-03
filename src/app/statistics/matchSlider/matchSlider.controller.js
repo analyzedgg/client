@@ -3,10 +3,11 @@
 angular.module('leagueApp.statistics.matchSlider', ['rzModule'])
     .controller('MatchSliderCtrl', matchSliderController);
 
-matchSliderController.$inject = ['$scope', '$state', '$stateParams', 'ENV'];
+matchSliderController.$inject = ['$scope', '$state', '$stateParams', 'ENV', '$window'];
 
-function matchSliderController($scope, $state, $stateParams, ENV) {
+function matchSliderController($scope, $state, $stateParams, ENV, $window) {
     var matchSlider = this, // jshint ignore:line
+        moment = $window.moment,
         rawMatchDetails = $scope.statistics.rawMatchDetails;
 
     var numberOfMatches = rawMatchDetails.length;
@@ -17,7 +18,6 @@ function matchSliderController($scope, $state, $stateParams, ENV) {
         floor: 1,
         ceil: numberOfMatches,
         minRange: ENV.MINIMUM_RANKED_GAMES,
-        showTicks: Math.ceil(numberOfMatches / 10),
         onEnd: onSlideEnd,
         translate: function(value) {
             var matchDate = rawMatchDetails[value - 1].matchCreation;

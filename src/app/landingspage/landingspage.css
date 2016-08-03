@@ -1,0 +1,24 @@
+#landingspage #top-bar {
+    background: #337ab7;
+    height: 100px;
+}
+
+#landingspage #summoner-select {
+    background: #EEE url('Logo_AGG_big.png') center no-repeat;
+    background-size: 475px 475px;
+    background-position-y: 50px;
+    height: 625px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#landingspage #summoner-select > div {
+    padding-top: 220px;
+}
+
+#landingspage #text-content {
+    height: 300px;
+    background: #337ab7;
+    color: #fff;
+    font-size: 35px;
+}
