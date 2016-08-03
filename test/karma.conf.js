@@ -6,13 +6,15 @@ module.exports = function (config) {
         frameworks: ['jasmine'],
 
         files: [
-            'app/lib/jquery/dist/jquery.js',
-            'app/lib/angular/angular.js',
-            'app/lib/angular-route/angular-route.js',
-            'app/lib/angular-resource/angular-resource.js',
-            'app/lib/angular-mocks/angular-mocks.js',
-            'app/lib/bootstrap/dist/js/bootstrap.js',
-            'app/**/*.js',
+            'src/lib/jquery/dist/jquery.js',
+            'src/lib/angular/angular.js',
+            'src/lib/angular-ui-router/release/angular-ui-router.js',
+            'src/lib/angular-resource/angular-resource.js',
+            'src/lib/angular-mocks/angular-mocks.js',
+            'src/lib/bootstrap/dist/js/bootstrap.js',
+            'src/lib/highcharts-ng/dist/highcharts-ng.js',
+            'src/app/**/*.module.js',
+            'src/app/**/!(highcharts-theme).js',
 
             // Test files
             'test/unit/**/*.spec.js'
@@ -32,8 +34,8 @@ module.exports = function (config) {
         reporters: ['progress', 'junit', 'coverage'],
 
         preprocessors: {
-            'app/**/*.js': 'coverage',
-            'app/**/*.html': 'ng-html2js'
+            'src/**/*.js': 'coverage',
+            'src/**/*.html': 'ng-html2js'
         },
 
         junitReporter: {
@@ -42,7 +44,7 @@ module.exports = function (config) {
         },
 
         ngHtml2JsPreprocessor: {
-            stripPrefix: 'app/'
+            stripPrefix: 'src/'
         },
 
         colors: true,
