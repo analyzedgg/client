@@ -2,9 +2,9 @@ describe('MatchHistoryService', function () {
 
     var matchHistoryService,
         httpBackend;
-    beforeEach(module('leagueApp.service.MatchHistoryService'));
-    beforeEach(inject(function () {
-        // matchHistoryService = _MatchHistoryService_;
+    beforeEach(module('leagueApp.service'));
+    beforeEach(inject(function (_MatchHistoryService_) {
+        matchHistoryService = _MatchHistoryService_;
         // httpBackend = $httpBackend;
 
         console.log(matchHistoryService, httpBackend);
