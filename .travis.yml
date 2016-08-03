@@ -1,20 +1,11 @@
 --- 
-addons: 
-  apt: 
-    packages: 
-      - g++-4.8
-      - gcc-4.8
-    sources: 
-      - ubuntu-toolchain-r-test
 before_script: 
   - "npm install -g grunt-cli"
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - "sleep 1"
-env: 
-  - CXX=g++-4.8
 language: node_js
 node_js: 
-  - "6"
+  - "0.10"
 notifications: 
   slack: "infosupport:YNi7LZFj8LDqpmlgMHqGuwl7"
