@@ -27,6 +27,11 @@
       "mockFile": "match_history/matchHistory.json",
       "verbs": ["get"],
       "switch": ["region","summonerId"]
+    },
+    "api/:region/champions": {
+      "mockFile": "champions/champions.json",
+      "verbs": ["get"],
+      "switch": ["region"]
     }
   }
 }
