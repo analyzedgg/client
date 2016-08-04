@@ -235,9 +235,9 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'jshint',
-        'connect:test',
+        // 'connect:test',
         'ngconstant:test',
-        'apimocker',
+        // 'apimocker',
         'karma'/*,
          'protractor_webdriver',
          'protractor:e2e'*/

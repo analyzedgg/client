@@ -51,5 +51,5 @@ function bestChampService(championInfoService) {
 
             return [champData, winsLossesData];
         }
-    }
+    };
 }
