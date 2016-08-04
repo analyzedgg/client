@@ -15,15 +15,15 @@ function matchesFilterService($stateParams, championInfoService) {
         var minParam = $stateParams.min || 1;
         var maxParam = $stateParams.max || matches.length;
 
-        var min = (minParam >= 1 && minParam < maxParam) ? minParam : 1;
-        var max = (maxParam <= matches.length && maxParam > minParam) ? maxParam : matches.length;
+        var min = (minParam >= 1 && minParam <= maxParam) ? minParam : 1;
+        var max = (maxParam <= matches.length && maxParam >= minParam) ? maxParam : matches.length;
 
         return {
             min: min,
             max: max
         };
     }
-    
+
     function championFilter(match) {
         var championName = $stateParams.champion,
             champion = championInfoService.championByName(championName);
