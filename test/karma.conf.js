@@ -17,9 +17,13 @@ module.exports = function (config) {
             'src/lib/angular-ui-router/release/angular-ui-router.js',
             'src/lib/highcharts/highstock.src.js',
             'src/lib/highcharts-ng/dist/highcharts-ng.js',
+            'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
             'src/app/constants.js',
             'src/app/**/*.module.js',
             'src/app/**/*.js',
+
+            // Mocks
+            'test/unit/mocks/**/*.json',
 
             // Test files
             'test/unit/**/*.spec.js'
