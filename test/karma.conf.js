@@ -39,7 +39,7 @@ module.exports = function (config) {
         reporters: ['progress', 'junit', 'coverage'],
 
         preprocessors: {
-            'src/**/*.js': 'coverage',
+            'src/!(lib)/**/*.js': 'coverage',
             'src/**/*.html': 'ng-html2js'
         },
 

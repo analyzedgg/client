@@ -1267,7 +1267,7 @@ function championInfoService($resource, ENV, $stateParams) {
     function getChampionData() {
         return championInfo.get({
             region: $stateParams.region
-        }).$promise
+        }).$promise;
     }
 
     var championDataById;
