@@ -39,7 +39,7 @@ function matchesFilterService($stateParams, championInfoService) {
         var patch = $stateParams.patch;
 
         if (patch) {
-            return match.matchVersion.startsWith(patch);
+            return match.matchVersion.substring(0, patch.length) === patch;
         }
 
         return true;
