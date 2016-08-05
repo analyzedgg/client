@@ -1,12 +1,11 @@
---- 
-before_script: 
-  - "npm install -g grunt-cli"
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - "sleep 1"
+before_script:
+- npm install -g grunt-cli
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 1
 language: node_js
-node_js: 
-  - "0.10"
-notifications: 
-  slack: 
-    secure: KzCKngvfD622ifYA7+mlpETebrLrdseXsEkx7Vp5biT1DCvVcXmchaPWnKIdCC6yNMAeb/WUf1EgeE4h8Aly4L0y7aWRnNv0TqJz8BvVnQgrQNhnhQ63/a69uJxfg/8g2L9KzmbD+kTjX4PJiAUIqvhKjqfe93b/wUEX7U+9OCF/j6bnsIWpe8Fd6UQxUVWbB3tRaO7tB/Y/VltIOq1hNLZ38h9Pdx8Irrmke8aT6QOYGQQfBU3NCKW7gQaOtcPORx9Mx0LwXWSYO+aw+WyW5KspmGKVhxcn9dgHoUshfw7GRGr4EEBY8J+OLXpQpZWsos2t5wbuxtuts+rF+TFQl/Y+nl3aGaFbfYnJlAkPkmfUrgkJkx1M6fe1Dhw3u885d9c5gcaMAkQJ6HBT26yudwNtiuPX+rflNIc8EH7YYvjOEoexkzxeOKi7+UE2EwVv9YdJ7FEkqInJUvv7LPx9ZOSSQF4QR00nP7VN/yZ3CJowPJzRjxaJHgG6VLhP6jWrQkPeICpCy1yYRRPItDL6YtuuJr4PEdWtpTCSrWMie39a2qpn2uQdot1gC0wO2n/hfDxamJ0CXVeGFg++QYgLBncAQSazDvlHqrw4P76F+XAKz7JyK+Ad/oiX441/xMJDCxbuROSP2Zkvg86QoM5irOZ+hAq6sz92Pgc/lkXwWTY=
+node_js:
+- '0.10'
+notifications:
+  slack:
+    secure: BeLcjcL6WhOO7PbddRoYdka1RxQjgGVVtvIUZAeGDEeDwsXXtLolMY2gaYTO2iFY02NtyMNCXtFWpZFzjhp68jsyIWrsNVc2qlzqEf5znRntYL8KOizJrn4WNrrvszxXBIqiANytU22sQd9WS/dy6n7DkXeGyGS8/VtObONWS8jZEK/pV1x284JD6nMQplN22fRwCmEkhrLG8OmNA9bMq2m/X6ZvVZr14ZtJ2m3IbMs2JUJtfbcKk+GNN1zhBzUwSRbIOcmNtcH0FbkuczxyE+VtSfVuLlKV4qCHche8KEm7N2kr/fuLZofJBvIMu7Z4h/4JDwz2glCzKsR+OlNCtogqHWqvYmWZ6b+LNhr48FH7N0TDbOiF3DY9RShjc4U3mFDrbOXbZuMTfuhz4psmIak0gt2Pc57tVohJnUyOQqxvI+9rr45Ws4hjEdjBfPALL7xpZmlUOrjG2wWqEe3kaUAgpZ1B+Bk9cAsT+F8N1P8BBcLj2UvuQokQyZkTieISnIrM1jp3ie66t+2+wZDe3MPkf/ikPmoMa/IGT+kCL7pYts7Pj7s4LK8tqtdJFn3hDpzr5lRLtduk2O/hVhhjvc/KR67whQdVDR7Xgw2+OKM9U5ahnQtptJ3xmVO4a3q13cCKLqXKh9AzoSLIvzlkiD/PqnuJd23XkZKnp9yUDCw=
