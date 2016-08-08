@@ -5,6 +5,7 @@
   "devDependencies": {
     "apimocker": "0.4.4",
     "bower": "^1.3.1",
+    "coveralls": "2.11.12",
     "grunt": "0.4.5",
     "grunt-apimocker": "0.0.1",
     "grunt-bower-install": "1.6.0",
@@ -46,6 +47,7 @@
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "test": "grunt test --verbose",
+    "coveralls": "cat ./coverage/report-lcov/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test-single-run": "karma start test/karma.conf.js  --single-run",
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",

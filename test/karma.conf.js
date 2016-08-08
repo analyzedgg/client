@@ -66,7 +66,13 @@ module.exports = function (config) {
 
         captureTimeout: 60000,
 
-        singleRun: true
+        singleRun: true,
 
+        coverageReporter: {
+            dir: './coverage',
+            reporters: [
+                { type: 'lcov', subdir: 'report-lcov' }
+            ]
+        }
     });
 };
