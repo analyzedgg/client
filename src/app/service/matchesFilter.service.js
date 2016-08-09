@@ -28,7 +28,7 @@ function matchesFilterService($stateParams, championInfoService) {
         var championName = $stateParams.champion,
             champion = championInfoService.championByName(championName);
 
-        if (champion) {
+        if (champion && champion.id) {
             return match.championId === champion.id;
         }
         

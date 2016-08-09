@@ -276,7 +276,7 @@ describe('MatchesFilterService', function () {
 
         it('should filter out no matches when the champion name is invalid', function() {
             stateParams.champion = "Gragas";
-            championInfoService.championByName.and.returnValue(null);
+            championInfoService.championByName.and.returnValue({id: 0}); // In the case of 'Helmet bro'
 
             var filteredMatches = matchesFilterService.filter(testMatches);
 
