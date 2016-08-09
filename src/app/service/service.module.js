@@ -3,6 +3,7 @@
 (function() {
     angular
         .module('leagueApp.service', [
-            'ngResource'
+            'ngResource',
+            'constants'
         ]);
 })();

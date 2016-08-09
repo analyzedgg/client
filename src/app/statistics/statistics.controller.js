@@ -20,7 +20,6 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
             summonerName: $stateParams.summonerName
         },
         template: {
-            maingraph: 'app/statistics/maingraph/maingraph.html',
             matchSlider: 'app/statistics/matchSlider/matchSlider.html',
             mostWins: 'app/statistics/bestChamp/bestChamp.html',
             bestLane: 'app/statistics/bestLane/bestLane.html',

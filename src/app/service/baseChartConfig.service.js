@@ -119,5 +119,5 @@ function BaseChartConfigService() {
                 loading: false
             };
         }
-    }
+    };
 }
