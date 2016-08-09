@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/analyzedgg/client.svg?branch=master)](https://travis-ci.org/analyzedgg/client)
+[![Coverage Status](https://coveralls.io/repos/github/analyzedgg/client/badge.svg?branch=master)](https://coveralls.io/github/analyzedgg/client?branch=master)
+
 # League API
 This is the frontend for the League API project.
 

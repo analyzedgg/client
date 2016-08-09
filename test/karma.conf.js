@@ -17,8 +17,14 @@ module.exports = function (config) {
             'src/lib/angular-ui-router/release/angular-ui-router.js',
             'src/lib/highcharts/highstock.src.js',
             'src/lib/highcharts-ng/dist/highcharts-ng.js',
+            'src/lib/angularjs-slider/dist/rzslider.min.js',
+            'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
+            'src/app/constants.js',
             'src/app/**/*.module.js',
             'src/app/**/*.js',
+
+            // Mocks
+            'test/unit/mocks/**/*.json',
 
             // Test files
             'test/unit/**/*.spec.js'
@@ -38,7 +44,7 @@ module.exports = function (config) {
         reporters: ['progress', 'junit', 'coverage'],
 
         preprocessors: {
-            'src/**/*.js': 'coverage',
+            'src/!(lib)/**/*.js': 'coverage',
             'src/**/*.html': 'ng-html2js'
         },
 
@@ -55,12 +61,18 @@ module.exports = function (config) {
 
         autoWatch: true,
 
-        // browsers: ['PhantomJS'],
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
+        // browsers: ['Chrome'],
 
         captureTimeout: 60000,
 
-        singleRun: true
+        singleRun: true,
 
+        coverageReporter: {
+            dir: './coverage',
+            reporters: [
+                { type: 'lcov', subdir: 'report-lcov' }
+            ]
+        }
     });
 };

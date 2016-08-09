@@ -1,0 +1,3402 @@
+[
+  {
+    "winner": true,
+    "matchDuration": 2100,
+    "stats": {
+      "minionKills": 38,
+      "kills": 1,
+      "deaths": 5,
+      "assists": 18
+    },
+    "matchVersion": "6.3.0.240",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 23079190,
+            "summonerName": "TestQuest"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 20880220,
+            "summonerName": "Phillius"
+          },
+          {
+            "summonerId": 78558878,
+            "summonerName": "Sir Bobbington"
+          },
+          {
+            "summonerId": 22188481,
+            "summonerName": "madroff"
+          },
+          {
+            "summonerId": 36278117,
+            "summonerName": "MulleMeckination"
+          },
+          {
+            "summonerId": 71471130,
+            "summonerName": "KrevetkoBlya"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1455825035864,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2526191029
+  },
+  {
+    "winner": true,
+    "matchDuration": 1722,
+    "stats": {
+      "minionKills": 32,
+      "kills": 3,
+      "deaths": 1,
+      "assists": 10
+    },
+    "matchVersion": "6.3.0.240",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 23235827,
+            "summonerName": "Millionz"
+          },
+          {
+            "summonerId": 61107583,
+            "summonerName": "Cata g0d"
+          },
+          {
+            "summonerId": 60902146,
+            "summonerName": "BomberTre"
+          },
+          {
+            "summonerId": 43876102,
+            "summonerName": "Sudalaminkia"
+          },
+          {
+            "summonerId": 46653844,
+            "summonerName": "MAWLIDie"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 75469144,
+            "summonerName": "whose your dady"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1455827713529,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2526198681
+  },
+  {
+    "winner": true,
+    "matchDuration": 2286,
+    "stats": {
+      "minionKills": 46,
+      "kills": 3,
+      "deaths": 4,
+      "assists": 17
+    },
+    "matchVersion": "6.3.0.240",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 302529,
+            "summonerName": "Facilmente"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 46819038,
+            "summonerName": "Sir arlock"
+          },
+          {
+            "summonerId": 44051435,
+            "summonerName": "Xx Le b\u00c3\u00b3 Jeu xX"
+          },
+          {
+            "summonerId": 44097151,
+            "summonerName": "maitre shadock"
+          },
+          {
+            "summonerId": 45950381,
+            "summonerName": "Sexy Chicken"
+          },
+          {
+            "summonerId": 37967394,
+            "summonerName": "iLoveYourMuMMy"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1456342740254,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2534230374
+  },
+  {
+    "winner": true,
+    "matchDuration": 2373,
+    "stats": {
+      "minionKills": 39,
+      "kills": 7,
+      "deaths": 6,
+      "assists": 21
+    },
+    "matchVersion": "6.3.0.240",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 21211318,
+            "summonerName": "Ludmayk"
+          },
+          {
+            "summonerId": 40142822,
+            "summonerName": "Dont like it"
+          },
+          {
+            "summonerId": 61667819,
+            "summonerName": "I am Sexy "
+          },
+          {
+            "summonerId": 57239052,
+            "summonerName": "kurple push"
+          },
+          {
+            "summonerId": 56387065,
+            "summonerName": "AsianSeeker"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 53373476,
+            "summonerName": "Dat Kekslein"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 117,
+    "matchCreation": 1456345743768,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2534518933
+  },
+  {
+    "winner": true,
+    "matchDuration": 1482,
+    "stats": {
+      "minionKills": 28,
+      "kills": 1,
+      "deaths": 3,
+      "assists": 17
+    },
+    "matchVersion": "6.4.0.248",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20323520,
+            "summonerName": "HugZzZ"
+          },
+          {
+            "summonerId": 44782015,
+            "summonerName": "Ilola"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 71281231,
+            "summonerName": "Annie Sama"
+          },
+          {
+            "summonerId": 52356249,
+            "summonerName": "DoubleSuicide"
+          },
+          {
+            "summonerId": 256900,
+            "summonerName": "Couverdepus"
+          },
+          {
+            "summonerId": 38584488,
+            "summonerName": "M\u00c3\u00a1xTriCiCLuM"
+          },
+          {
+            "summonerId": 34097517,
+            "summonerName": "DannSexy"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1456432986378,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2535757706
+  },
+  {
+    "winner": true,
+    "matchDuration": 1969,
+    "stats": {
+      "minionKills": 44,
+      "kills": 2,
+      "deaths": 4,
+      "assists": 14
+    },
+    "matchVersion": "6.4.0.249",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 31318752,
+            "summonerName": "Summoner 99"
+          },
+          {
+            "summonerId": 23519727,
+            "summonerName": "mikeeeeeeeH"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 63758205,
+            "summonerName": "Sqankk"
+          },
+          {
+            "summonerId": 64359609,
+            "summonerName": "Suika Kuma"
+          },
+          {
+            "summonerId": 23006425,
+            "summonerName": "itsigo20"
+          },
+          {
+            "summonerId": 27572153,
+            "summonerName": "Arkonten"
+          },
+          {
+            "summonerId": 22010756,
+            "summonerName": "JonesPwnz"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1456773088163,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2541473223
+  },
+  {
+    "winner": false,
+    "matchDuration": 2797,
+    "stats": {
+      "minionKills": 36,
+      "kills": 5,
+      "deaths": 10,
+      "assists": 12
+    },
+    "matchVersion": "6.4.0.249",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 36357434,
+            "summonerName": "frdanielfr"
+          },
+          {
+            "summonerId": 42212813,
+            "summonerName": "Neykon"
+          },
+          {
+            "summonerId": 52604224,
+            "summonerName": "martinrevilo"
+          },
+          {
+            "summonerId": 24063051,
+            "summonerName": "Pattywack"
+          },
+          {
+            "summonerId": 19884303,
+            "summonerName": "SorenLarsen"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 58950287,
+            "summonerName": "SafariMeneertje"
+          },
+          {
+            "summonerId": 45865178,
+            "summonerName": "OG Gucci Mane"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1456775657427,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2541540851
+  },
+  {
+    "winner": false,
+    "matchDuration": 1315,
+    "stats": {
+      "minionKills": 19,
+      "kills": 0,
+      "deaths": 8,
+      "assists": 4
+    },
+    "matchVersion": "6.4.0.257",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 49230090,
+            "summonerName": "iCynix"
+          },
+          {
+            "summonerId": 57109370,
+            "summonerName": "MIKU SAMA QWQ"
+          },
+          {
+            "summonerId": 19324257,
+            "summonerName": "lzhe"
+          },
+          {
+            "summonerId": 19178734,
+            "summonerName": "TheCzarUze"
+          },
+          {
+            "summonerId": 19378733,
+            "summonerName": "Axel Schwei\u00c3\u0178"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 21976688,
+            "summonerName": "Sepp Schnorcher"
+          },
+          {
+            "summonerId": 71977338,
+            "summonerName": "L0wC"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 24732484,
+            "summonerName": "LE No11e"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1456859669071,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2542587483
+  },
+  {
+    "winner": true,
+    "matchDuration": 1611,
+    "stats": {
+      "minionKills": 31,
+      "kills": 5,
+      "deaths": 2,
+      "assists": 13
+    },
+    "matchVersion": "6.4.0.257",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 78468917,
+            "summonerName": "King Gordy"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 25919818,
+            "summonerName": "ll iNidalee ll"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 34638911,
+            "summonerName": "BonanzaJR"
+          },
+          {
+            "summonerId": 36765181,
+            "summonerName": "Bowser Jun\u00c3\u00aeor"
+          },
+          {
+            "summonerId": 37499597,
+            "summonerName": "Pr\u00c3\u00aencess Peach"
+          },
+          {
+            "summonerId": 36674902,
+            "summonerName": "chemluthha"
+          },
+          {
+            "summonerId": 31079222,
+            "summonerName": "MrPoortato"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1456946311799,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2543896763
+  },
+  {
+    "winner": true,
+    "matchDuration": 1566,
+    "stats": {
+      "minionKills": 26,
+      "kills": 2,
+      "deaths": 4,
+      "assists": 18
+    },
+    "matchVersion": "6.4.0.259",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 24571573,
+            "summonerName": "Gilb3rt"
+          },
+          {
+            "summonerId": 76700827,
+            "summonerName": "Legends of Yasuo"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 48501157,
+            "summonerName": "NapficiousM"
+          },
+          {
+            "summonerId": 33563186,
+            "summonerName": "BigN\u00c3\u00b4XGG"
+          },
+          {
+            "summonerId": 24781991,
+            "summonerName": "Pr0xX"
+          },
+          {
+            "summonerId": 27331484,
+            "summonerName": "I feed top"
+          },
+          {
+            "summonerId": 27340891,
+            "summonerName": "Stop cry1ng"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457107098288,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2546500667
+  },
+  {
+    "winner": true,
+    "matchDuration": 1585,
+    "stats": {
+      "minionKills": 26,
+      "kills": 1,
+      "deaths": 2,
+      "assists": 12
+    },
+    "matchVersion": "6.4.0.259",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 44995316,
+            "summonerName": "Poop Of d00m"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 38604313,
+            "summonerName": "Jarvaspp"
+          },
+          {
+            "summonerId": 22553344,
+            "summonerName": "BobbesTom"
+          },
+          {
+            "summonerId": 37560545,
+            "summonerName": "1up Caprice"
+          },
+          {
+            "summonerId": 22607035,
+            "summonerName": "Freezero"
+          },
+          {
+            "summonerId": 23672257,
+            "summonerName": "Bizzkitt"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457117736624,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2546745735
+  },
+  {
+    "winner": false,
+    "matchDuration": 2768,
+    "stats": {
+      "minionKills": 39,
+      "kills": 5,
+      "deaths": 9,
+      "assists": 25
+    },
+    "matchVersion": "6.4.0.259",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20228284,
+            "summonerName": "H\u00c3 nax"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 28850861,
+            "summonerName": "CiombEnietto"
+          },
+          {
+            "summonerId": 28078032,
+            "summonerName": "PDA Briseide"
+          },
+          {
+            "summonerId": 35744792,
+            "summonerName": "PDA frozen5"
+          },
+          {
+            "summonerId": 34017501,
+            "summonerName": "Thr\u00c3\u00absh Bot"
+          },
+          {
+            "summonerId": 20170954,
+            "summonerName": "GKT Sensual Tore"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457121837028,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2546845736
+  },
+  {
+    "winner": false,
+    "matchDuration": 1370,
+    "stats": {
+      "minionKills": 19,
+      "kills": 4,
+      "deaths": 6,
+      "assists": 8
+    },
+    "matchVersion": "6.4.0.259",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20718129,
+            "summonerName": "My I is he"
+          },
+          {
+            "summonerId": 23078760,
+            "summonerName": "Shad0wBlade"
+          },
+          {
+            "summonerId": 36187274,
+            "summonerName": "Jujindamix22"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 27757680,
+            "summonerName": "lllIIlII"
+          },
+          {
+            "summonerId": 22096000,
+            "summonerName": "WWJLD"
+          },
+          {
+            "summonerId": 37827765,
+            "summonerName": "jammystew2"
+          },
+          {
+            "summonerId": 21137044,
+            "summonerName": "moneyday"
+          },
+          {
+            "summonerId": 23492547,
+            "summonerName": "UnDesiredBeast"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457378280453,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2552182493
+  },
+  {
+    "winner": false,
+    "matchDuration": 2101,
+    "stats": {
+      "minionKills": 32,
+      "kills": 1,
+      "deaths": 7,
+      "assists": 16
+    },
+    "matchVersion": "6.5.0.277",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 30177946,
+            "summonerName": "Juggerland"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 23674329,
+            "summonerName": "peaceklg"
+          },
+          {
+            "summonerId": 23591689,
+            "summonerName": "MeNoodiK"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 47490940,
+            "summonerName": "Ol Ward"
+          },
+          {
+            "summonerId": 22811365,
+            "summonerName": "FiddeZ"
+          },
+          {
+            "summonerId": 20602034,
+            "summonerName": "Gambleofdoom"
+          },
+          {
+            "summonerId": 70089358,
+            "summonerName": "aiDEN v2"
+          },
+          {
+            "summonerId": 20017735,
+            "summonerName": "Suliananas"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457548221243,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2554963465
+  },
+  {
+    "winner": false,
+    "matchDuration": 2003,
+    "stats": {
+      "minionKills": 39,
+      "kills": 5,
+      "deaths": 11,
+      "assists": 14
+    },
+    "matchVersion": "6.5.0.277",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 50735132,
+            "summonerName": "Pwntahmannen"
+          },
+          {
+            "summonerId": 58749736,
+            "summonerName": "Hellbmannen"
+          },
+          {
+            "summonerId": 36216870,
+            "summonerName": "Ezreal \u00c3\u02c6z Real"
+          },
+          {
+            "summonerId": 33368513,
+            "summonerName": "PolackWille"
+          },
+          {
+            "summonerId": 33337251,
+            "summonerName": "Avodis"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 19747188,
+            "summonerName": "Best Rename EU"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457550996064,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2555014899
+  },
+  {
+    "winner": false,
+    "matchDuration": 2276,
+    "stats": {
+      "minionKills": 29,
+      "kills": 3,
+      "deaths": 11,
+      "assists": 10
+    },
+    "matchVersion": "6.5.0.277",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 33511039,
+            "summonerName": "antoine63fr"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 39168394,
+            "summonerName": "Queen Oona"
+          },
+          {
+            "summonerId": 31063830,
+            "summonerName": "Riptide"
+          },
+          {
+            "summonerId": 33405256,
+            "summonerName": "Kaori Miyazono"
+          },
+          {
+            "summonerId": 29606505,
+            "summonerName": "Jhinny Depp"
+          },
+          {
+            "summonerId": 28889997,
+            "summonerName": "Virtue"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1457553595831,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2555066964
+  },
+  {
+    "winner": true,
+    "matchDuration": 2824,
+    "stats": {
+      "minionKills": 57,
+      "kills": 3,
+      "deaths": 6,
+      "assists": 16
+    },
+    "matchVersion": "6.6.138.2102",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 98964,
+            "summonerName": "jenxi"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 21181779,
+            "summonerName": "FaiL Kevana"
+          },
+          {
+            "summonerId": 23108584,
+            "summonerName": "streamover"
+          },
+          {
+            "summonerId": 83367280,
+            "summonerName": "Daight Ageen"
+          },
+          {
+            "summonerId": 83397428,
+            "summonerName": "Awkward  Ageen"
+          },
+          {
+            "summonerId": 60289754,
+            "summonerName": "lady Lover 39"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1459794079947,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2599358452
+  },
+  {
+    "winner": false,
+    "matchDuration": 2600,
+    "stats": {
+      "minionKills": 30,
+      "kills": 3,
+      "deaths": 8,
+      "assists": 24
+    },
+    "matchVersion": "6.6.138.2102",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 25245055,
+            "summonerName": "WinTr\u00c3\u00b6pchen"
+          },
+          {
+            "summonerId": 36794162,
+            "summonerName": "LordSlashingtonV"
+          },
+          {
+            "summonerId": 29622484,
+            "summonerName": "Likrania"
+          },
+          {
+            "summonerId": 41579115,
+            "summonerName": "NextReal"
+          },
+          {
+            "summonerId": 61395274,
+            "summonerName": "HxH Killua Zoldy"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 23667160,
+            "summonerName": "Krakatuzas"
+          },
+          {
+            "summonerId": 52096831,
+            "summonerName": "Teus12"
+          },
+          {
+            "summonerId": 52118150,
+            "summonerName": "jonas4142"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1459879445749,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2600872952
+  },
+  {
+    "winner": false,
+    "matchDuration": 2395,
+    "stats": {
+      "minionKills": 30,
+      "kills": 3,
+      "deaths": 5,
+      "assists": 15
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 50539939,
+            "summonerName": "CreaTiV0wN"
+          },
+          {
+            "summonerId": 45959506,
+            "summonerName": "Stabb\u00c3\u00a9r"
+          },
+          {
+            "summonerId": 32255821,
+            "summonerName": "LEV0"
+          },
+          {
+            "summonerId": 31114925,
+            "summonerName": "WhiteBeardBei"
+          },
+          {
+            "summonerId": 38452545,
+            "summonerName": "Advent Shepard"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 30483808,
+            "summonerName": "Luckl507"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 23441537,
+            "summonerName": "P0kkkkkkkk"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1460192485990,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2606254100
+  },
+  {
+    "winner": false,
+    "matchDuration": 1811,
+    "stats": {
+      "minionKills": 26,
+      "kills": 1,
+      "deaths": 5,
+      "assists": 6
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 32118980,
+            "summonerName": "Neight"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 76661200,
+            "summonerName": "Kimbzrlzysr"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 20376871,
+            "summonerName": "IS10f3ec46ed0d64"
+          },
+          {
+            "summonerId": 19201034,
+            "summonerName": "Greiify"
+          },
+          {
+            "summonerId": 158487,
+            "summonerName": "KamuiSumeragi"
+          },
+          {
+            "summonerId": 35221805,
+            "summonerName": "Draco Miles X"
+          },
+          {
+            "summonerId": 48909313,
+            "summonerName": "Rain Blow"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1460196400446,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2606322785
+  },
+  {
+    "winner": true,
+    "matchDuration": 1905,
+    "stats": {
+      "minionKills": 24,
+      "kills": 2,
+      "deaths": 7,
+      "assists": 19
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 31540609,
+            "summonerName": "lil hyper"
+          },
+          {
+            "summonerId": 19890769,
+            "summonerName": "TwistedSins"
+          },
+          {
+            "summonerId": 29485530,
+            "summonerName": "WantedSmurf"
+          },
+          {
+            "summonerId": 44947455,
+            "summonerName": "gonzalo99sg"
+          },
+          {
+            "summonerId": 43179877,
+            "summonerName": "ByDiiAlex"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 76567819,
+            "summonerName": "JinxWrecking"
+          },
+          {
+            "summonerId": 60517085,
+            "summonerName": "Ziegler"
+          },
+          {
+            "summonerId": 47290435,
+            "summonerName": "joujou04"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1460203632041,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2606852824
+  },
+  {
+    "winner": false,
+    "matchDuration": 1966,
+    "stats": {
+      "minionKills": 44,
+      "kills": 3,
+      "deaths": 7,
+      "assists": 4
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 50899085,
+            "summonerName": "Vanicxc"
+          },
+          {
+            "summonerId": 32127815,
+            "summonerName": "Nirnae"
+          },
+          {
+            "summonerId": 19127084,
+            "summonerName": "SmartestDetactiv"
+          },
+          {
+            "summonerId": 27847255,
+            "summonerName": "Fuzzy Logic Hott"
+          },
+          {
+            "summonerId": 52504890,
+            "summonerName": "GoldNeOo"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 25822703,
+            "summonerName": "DragonRampage"
+          },
+          {
+            "summonerId": 71187618,
+            "summonerName": "blitzysdv"
+          },
+          {
+            "summonerId": 31996031,
+            "summonerName": "Bamblegluble"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1460205994769,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2606911498
+  },
+  {
+    "winner": false,
+    "matchDuration": 2329,
+    "stats": {
+      "minionKills": 298,
+      "kills": 12,
+      "deaths": 5,
+      "assists": 6
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "SOLO",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 22441857,
+            "summonerName": "OKG Democracy"
+          },
+          {
+            "summonerId": 40148542,
+            "summonerName": "DerBauerBrot"
+          },
+          {
+            "summonerId": 22502184,
+            "summonerName": "Cu Nho"
+          },
+          {
+            "summonerId": 22771007,
+            "summonerName": "HosoKasuMoto1"
+          },
+          {
+            "summonerId": 35257847,
+            "summonerName": "Iamleiko"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 75342494,
+            "summonerName": "Akenos Senpai"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38839244,
+            "summonerName": "longdong1"
+          },
+          {
+            "summonerId": 48537913,
+            "summonerName": "defcom222"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 236,
+    "matchCreation": 1460208381871,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2606980721
+  },
+  {
+    "winner": true,
+    "matchDuration": 1933,
+    "stats": {
+      "minionKills": 35,
+      "kills": 3,
+      "deaths": 4,
+      "assists": 16
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 23066732,
+            "summonerName": "Comrade ICManiac"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 30115469,
+            "summonerName": "MoRaSPAIN"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 25194088,
+            "summonerName": "Ch1k3Nn"
+          },
+          {
+            "summonerId": 41128781,
+            "summonerName": "Mnr Toelitoes"
+          },
+          {
+            "summonerId": 38572561,
+            "summonerName": "Bollywolly"
+          },
+          {
+            "summonerId": 45864184,
+            "summonerName": "ignorancex"
+          },
+          {
+            "summonerId": 81617383,
+            "summonerName": "Top Dank"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1460211192775,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2607061392
+  },
+  {
+    "winner": false,
+    "matchDuration": 2907,
+    "stats": {
+      "minionKills": 40,
+      "kills": 3,
+      "deaths": 11,
+      "assists": 19
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 62247695,
+            "summonerName": "Kockusnus"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 136022,
+            "summonerName": "Krutz"
+          },
+          {
+            "summonerId": 46715432,
+            "summonerName": "BettesNLL"
+          },
+          {
+            "summonerId": 49053510,
+            "summonerName": "VengaNL"
+          },
+          {
+            "summonerId": 32847087,
+            "summonerName": "Felcar"
+          },
+          {
+            "summonerId": 52321930,
+            "summonerName": "ArteriusNL"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1460213683633,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2607131794
+  },
+  {
+    "winner": false,
+    "matchDuration": 2362,
+    "stats": {
+      "minionKills": 39,
+      "kills": 4,
+      "deaths": 7,
+      "assists": 24
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 19352861,
+            "summonerName": "kilet"
+          },
+          {
+            "summonerId": 19367167,
+            "summonerName": "WayneX"
+          },
+          {
+            "summonerId": 31722873,
+            "summonerName": "sboubfish"
+          },
+          {
+            "summonerId": 47397104,
+            "summonerName": "xSavie"
+          },
+          {
+            "summonerId": 52737903,
+            "summonerName": "XxCros96xX"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 61679550,
+            "summonerName": "Turkish Jobs"
+          },
+          {
+            "summonerId": 39407448,
+            "summonerName": "MrTomWaits"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 412,
+    "matchCreation": 1460228154814,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2607495743
+  },
+  {
+    "winner": true,
+    "matchDuration": 1424,
+    "stats": {
+      "minionKills": 3,
+      "kills": 0,
+      "deaths": 2,
+      "assists": 10
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 41790016,
+            "summonerName": "Lee Top"
+          },
+          {
+            "summonerId": 41764806,
+            "summonerName": "Ripped Ost"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 27959025,
+            "summonerName": "GA Zeus"
+          },
+          {
+            "summonerId": 51468379,
+            "summonerName": "\u00c5\u0161ky"
+          },
+          {
+            "summonerId": 52081902,
+            "summonerName": "xProm3theus"
+          },
+          {
+            "summonerId": 23373614,
+            "summonerName": "Barnstar"
+          },
+          {
+            "summonerId": 39877067,
+            "summonerName": "huboi"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 16,
+    "matchCreation": 1460399808087,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2610922157
+  },
+  {
+    "winner": true,
+    "matchDuration": 1847,
+    "stats": {
+      "minionKills": 38,
+      "kills": 1,
+      "deaths": 0,
+      "assists": 11
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 21404266,
+            "summonerName": "Toxic Riven "
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 32771987,
+            "summonerName": "Zazawie"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 29380063,
+            "summonerName": "IPeaceTarga"
+          },
+          {
+            "summonerId": 65529175,
+            "summonerName": "NinjaDragon07"
+          },
+          {
+            "summonerId": 29523219,
+            "summonerName": "l\u00c3\u00a9opold97"
+          },
+          {
+            "summonerId": 245578,
+            "summonerName": "J0AR"
+          },
+          {
+            "summonerId": 20624900,
+            "summonerName": "The Crimson Mind"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1460401710151,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2610991834
+  },
+  {
+    "winner": true,
+    "matchDuration": 2366,
+    "stats": {
+      "minionKills": 282,
+      "kills": 12,
+      "deaths": 7,
+      "assists": 9
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 43607855,
+            "summonerName": "Woscox"
+          },
+          {
+            "summonerId": 55526849,
+            "summonerName": "Beartrout"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 32083301,
+            "summonerName": "sold mum 4 Skins"
+          },
+          {
+            "summonerId": 46217243,
+            "summonerName": "sry for afk"
+          },
+          {
+            "summonerId": 20973509,
+            "summonerName": "Jo0ni"
+          },
+          {
+            "summonerId": 81377470,
+            "summonerName": "impales92"
+          },
+          {
+            "summonerId": 22452721,
+            "summonerName": "pitpocket"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 22,
+    "matchCreation": 1460482609648,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2612334583
+  },
+  {
+    "winner": false,
+    "matchDuration": 1382,
+    "stats": {
+      "minionKills": 122,
+      "kills": 3,
+      "deaths": 8,
+      "assists": 3
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 72597016,
+            "summonerName": "Illirica"
+          },
+          {
+            "summonerId": 69897371,
+            "summonerName": "Spacebar AD"
+          },
+          {
+            "summonerId": 52284581,
+            "summonerName": "kwonteen1999"
+          },
+          {
+            "summonerId": 68966466,
+            "summonerName": "CN LYY Riven"
+          },
+          {
+            "summonerId": 42943958,
+            "summonerName": "Tatrop"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 80560657,
+            "summonerName": "GarenCreAtive"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 77777487,
+            "summonerName": "SnakeFakeHD"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 236,
+    "matchCreation": 1460485517228,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2612397829
+  },
+  {
+    "winner": true,
+    "matchDuration": 1977,
+    "stats": {
+      "minionKills": 44,
+      "kills": 2,
+      "deaths": 4,
+      "assists": 15
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 20136901,
+            "summonerName": "UltraBe"
+          },
+          {
+            "summonerId": 30752973,
+            "summonerName": "Epsylios"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 39096895,
+            "summonerName": "Auspuffbumser"
+          },
+          {
+            "summonerId": 52035296,
+            "summonerName": "Nutellamafia"
+          },
+          {
+            "summonerId": 37327863,
+            "summonerName": "doubleplayer100"
+          },
+          {
+            "summonerId": 43036531,
+            "summonerName": "xXENGELHARDTIXx"
+          },
+          {
+            "summonerId": 53967241,
+            "summonerName": "W\u00c3\u00adzard \u00c3\u00adn Pyjama"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 12,
+    "matchCreation": 1460487500714,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2612456997
+  },
+  {
+    "winner": true,
+    "matchDuration": 1881,
+    "stats": {
+      "minionKills": 45,
+      "kills": 3,
+      "deaths": 5,
+      "assists": 14
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20941176,
+            "summonerName": "W4rf1re"
+          },
+          {
+            "summonerId": 43267255,
+            "summonerName": "LSM Janx Moody"
+          },
+          {
+            "summonerId": 45727675,
+            "summonerName": "tito ruso"
+          },
+          {
+            "summonerId": 30599067,
+            "summonerName": "Alejandro122126"
+          },
+          {
+            "summonerId": 41157870,
+            "summonerName": "LSM Yeheven"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 21282666,
+            "summonerName": "MS \u00c5\u0081ovaNoob"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1460571498606,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2613889411
+  },
+  {
+    "winner": true,
+    "matchDuration": 2232,
+    "stats": {
+      "minionKills": 36,
+      "kills": 1,
+      "deaths": 4,
+      "assists": 27
+    },
+    "matchVersion": "6.7.139.3624",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 37729974,
+            "summonerName": "Xatherox"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41068564,
+            "summonerName": "Armlight"
+          },
+          {
+            "summonerId": 52295647,
+            "summonerName": "Agent Dirty "
+          },
+          {
+            "summonerId": 28259511,
+            "summonerName": "Detective Dirty"
+          },
+          {
+            "summonerId": 58081946,
+            "summonerName": "Ezri3L kill 4ll"
+          },
+          {
+            "summonerId": 58324009,
+            "summonerName": "Inspector Dirty"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1460574017402,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2614000573
+  },
+  {
+    "winner": true,
+    "matchDuration": 1830,
+    "stats": {
+      "minionKills": 16,
+      "kills": 0,
+      "deaths": 2,
+      "assists": 11
+    },
+    "matchVersion": "6.7.140.3288",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 58094420,
+            "summonerName": "Verba"
+          },
+          {
+            "summonerId": 43609985,
+            "summonerName": "FapeV2 Bepo"
+          },
+          {
+            "summonerId": 30049282,
+            "summonerName": "Timberwoolv"
+          },
+          {
+            "summonerId": 34197966,
+            "summonerName": "FapeV2 BashWarD"
+          },
+          {
+            "summonerId": 40635427,
+            "summonerName": "FapeV2 DeanDuplo"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41158987,
+            "summonerName": "Nero Horus"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 50977616,
+            "summonerName": "WhoNizzle"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 16,
+    "matchCreation": 1460657222342,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2615365396
+  },
+  {
+    "winner": true,
+    "matchDuration": 1908,
+    "stats": {
+      "minionKills": 192,
+      "kills": 9,
+      "deaths": 5,
+      "assists": 4
+    },
+    "matchVersion": "6.7.140.3288",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 32470561,
+            "summonerName": "BaDwiLL"
+          },
+          {
+            "summonerId": 24534724,
+            "summonerName": "WNI"
+          },
+          {
+            "summonerId": 21957864,
+            "summonerName": "Popy90"
+          },
+          {
+            "summonerId": 22953277,
+            "summonerName": "TheFreeman00"
+          },
+          {
+            "summonerId": 19407895,
+            "summonerName": "Regisrobertman"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 26378019,
+            "summonerName": "FadingSundown"
+          },
+          {
+            "summonerId": 29537910,
+            "summonerName": "Peperzout"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 236,
+    "matchCreation": 1460659992397,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2615456940
+  },
+  {
+    "winner": true,
+    "matchDuration": 1541,
+    "stats": {
+      "minionKills": 131,
+      "kills": 2,
+      "deaths": 1,
+      "assists": 3
+    },
+    "matchVersion": "6.8.140.5213",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 20263219,
+            "summonerName": "SpiriT ua"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 52209816,
+            "summonerName": "DonskSmurf"
+          },
+          {
+            "summonerId": 19868194,
+            "summonerName": "IceCub\u00c3\u00aa"
+          },
+          {
+            "summonerId": 20219774,
+            "summonerName": "Skorpion51"
+          },
+          {
+            "summonerId": 39078075,
+            "summonerName": "HeyaZ"
+          },
+          {
+            "summonerId": 37100698,
+            "summonerName": "Erdbeerk\u00c3\u00a4sebrot"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 81,
+    "matchCreation": 1461263204853,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2626647875
+  },
+  {
+    "winner": true,
+    "matchDuration": 2460,
+    "stats": {
+      "minionKills": 303,
+      "kills": 6,
+      "deaths": 4,
+      "assists": 6
+    },
+    "matchVersion": "6.8.140.5213",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 83026816,
+            "summonerName": "NotWouterrr"
+          },
+          {
+            "summonerId": 43764868,
+            "summonerName": "Vador"
+          },
+          {
+            "summonerId": 62289977,
+            "summonerName": "xMisterp35x"
+          },
+          {
+            "summonerId": 43205156,
+            "summonerName": "GaurneFranek"
+          },
+          {
+            "summonerId": 59998019,
+            "summonerName": "Scrinned"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 28861064,
+            "summonerName": "xavier festerr"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 236,
+    "matchCreation": 1461265209274,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2626698085
+  },
+  {
+    "winner": false,
+    "matchDuration": 2089,
+    "stats": {
+      "minionKills": 23,
+      "kills": 1,
+      "deaths": 7,
+      "assists": 15
+    },
+    "matchVersion": "6.8.141.4819",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 79959514,
+            "summonerName": "BimboBimboo"
+          },
+          {
+            "summonerId": 24433347,
+            "summonerName": "Shadowknight179"
+          },
+          {
+            "summonerId": 70788172,
+            "summonerName": "Elementaryst"
+          },
+          {
+            "summonerId": 63780979,
+            "summonerName": "SKT T1 Mid\u00c3\u00b4suji"
+          },
+          {
+            "summonerId": 31866157,
+            "summonerName": "Nevori"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 36368526,
+            "summonerName": "CptObviousNL"
+          },
+          {
+            "summonerId": 48861461,
+            "summonerName": "MrMarkkk"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1462028918193,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2642405933
+  },
+  {
+    "winner": true,
+    "matchDuration": 2490,
+    "stats": {
+      "minionKills": 42,
+      "kills": 2,
+      "deaths": 4,
+      "assists": 17
+    },
+    "matchVersion": "6.8.141.4819",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20198403,
+            "summonerName": "b0oBs N s0aP"
+          },
+          {
+            "summonerId": 50980741,
+            "summonerName": "mcsilvers"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 53170068,
+            "summonerName": "Ziumar"
+          },
+          {
+            "summonerId": 43583287,
+            "summonerName": "resaz1"
+          },
+          {
+            "summonerId": 46425056,
+            "summonerName": "Car46"
+          },
+          {
+            "summonerId": 45397442,
+            "summonerName": "xGiupo"
+          },
+          {
+            "summonerId": 51019638,
+            "summonerName": "wakyee"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1462131029970,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2644518564
+  },
+  {
+    "winner": true,
+    "matchDuration": 2151,
+    "stats": {
+      "minionKills": 32,
+      "kills": 0,
+      "deaths": 4,
+      "assists": 25
+    },
+    "matchVersion": "6.9.142.993",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 85521552,
+            "summonerName": "Maraceyis"
+          },
+          {
+            "summonerId": 82816831,
+            "summonerName": "bannocks6"
+          },
+          {
+            "summonerId": 20886249,
+            "summonerName": "Malariaschnitte"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 21265111,
+            "summonerName": "Perluck"
+          },
+          {
+            "summonerId": 22809873,
+            "summonerName": "IlIlIlllIlIlIlIl"
+          },
+          {
+            "summonerId": 35155239,
+            "summonerName": "Ma\u00c3\u00aetre du P\u00c3\u00a9trol"
+          },
+          {
+            "summonerId": 24877726,
+            "summonerName": "Syriol"
+          },
+          {
+            "summonerId": 34157261,
+            "summonerName": "Prolifik"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 16,
+    "matchCreation": 1462386787332,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2648627158
+  },
+  {
+    "winner": true,
+    "matchDuration": 2186,
+    "stats": {
+      "minionKills": 23,
+      "kills": 1,
+      "deaths": 3,
+      "assists": 19
+    },
+    "matchVersion": "6.9.143.539",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 23157357,
+            "summonerName": "Lost in space"
+          },
+          {
+            "summonerId": 27515308,
+            "summonerName": "GonzaloMugiwara"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 19190836,
+            "summonerName": "Forgof"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 48934845,
+            "summonerName": "Midnight Runnerr"
+          },
+          {
+            "summonerId": 26509225,
+            "summonerName": "Haldoue"
+          },
+          {
+            "summonerId": 40830608,
+            "summonerName": "Sky xLoubibi"
+          },
+          {
+            "summonerId": 42518861,
+            "summonerName": "Youp Horn"
+          },
+          {
+            "summonerId": 22806018,
+            "summonerName": "FizzKaliffa"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 40,
+    "matchCreation": 1463080098788,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2660743996
+  },
+  {
+    "winner": true,
+    "matchDuration": 1935,
+    "stats": {
+      "minionKills": 26,
+      "kills": 0,
+      "deaths": 4,
+      "assists": 22
+    },
+    "matchVersion": "6.10.144.3817",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 33788090,
+            "summonerName": "BakaTroll"
+          },
+          {
+            "summonerId": 49227300,
+            "summonerName": "Nadyel"
+          },
+          {
+            "summonerId": 26182311,
+            "summonerName": "Darckwhite"
+          },
+          {
+            "summonerId": 23608626,
+            "summonerName": "FermanStinkt"
+          },
+          {
+            "summonerId": 20869127,
+            "summonerName": "Critsus"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 75498201,
+            "summonerName": "Chryssan"
+          },
+          {
+            "summonerId": 81388205,
+            "summonerName": "G0LD04"
+          },
+          {
+            "summonerId": 29282874,
+            "summonerName": "R\u00c3\u017dSEN"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1464027457423,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2678922068
+  },
+  {
+    "winner": true,
+    "matchDuration": 1764,
+    "stats": {
+      "minionKills": 22,
+      "kills": 2,
+      "deaths": 4,
+      "assists": 27
+    },
+    "matchVersion": "6.10.144.3817",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20143928,
+            "summonerName": "GrimLF"
+          },
+          {
+            "summonerId": 20688834,
+            "summonerName": "Siiux"
+          },
+          {
+            "summonerId": 32228258,
+            "summonerName": "Aguandaur"
+          },
+          {
+            "summonerId": 31891624,
+            "summonerName": "FNC Olafmeister"
+          },
+          {
+            "summonerId": 26342018,
+            "summonerName": "OoFeynix"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 75498201,
+            "summonerName": "Chryssan"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 29282874,
+            "summonerName": "R\u00c3\u017dSEN"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 432,
+    "matchCreation": 1464029969211,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2679213703
+  },
+  {
+    "winner": true,
+    "matchDuration": 1602,
+    "stats": {
+      "minionKills": 29,
+      "kills": 1,
+      "deaths": 4,
+      "assists": 8
+    },
+    "matchVersion": "6.10.144.3817",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 31747286,
+            "summonerName": "Bronchie"
+          },
+          {
+            "summonerId": 85269026,
+            "summonerName": "THO Aggressor"
+          },
+          {
+            "summonerId": 42833113,
+            "summonerName": "Das Shkz"
+          },
+          {
+            "summonerId": 41639830,
+            "summonerName": "xBroych"
+          },
+          {
+            "summonerId": 21355347,
+            "summonerName": "Schnappeltappel"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 75498201,
+            "summonerName": "Chryssan"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52294574,
+            "summonerName": "WandelendKadaver"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 12,
+    "matchCreation": 1464032493692,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2679324904
+  },
+  {
+    "winner": false,
+    "matchDuration": 2966,
+    "stats": {
+      "minionKills": 26,
+      "kills": 0,
+      "deaths": 9,
+      "assists": 14
+    },
+    "matchVersion": "6.10.144.6043",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 36138385,
+            "summonerName": "Dementium II"
+          },
+          {
+            "summonerId": 82700571,
+            "summonerName": "Californie"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 84290518,
+            "summonerName": "Rune Eberhardt"
+          },
+          {
+            "summonerId": 63337677,
+            "summonerName": "PoTheBig"
+          },
+          {
+            "summonerId": 30791759,
+            "summonerName": "XemaReborn"
+          },
+          {
+            "summonerId": 81087,
+            "summonerName": "D3vil"
+          },
+          {
+            "summonerId": 21883197,
+            "summonerName": "kirises"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 432,
+    "matchCreation": 1464111368511,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2680157040
+  },
+  {
+    "winner": false,
+    "matchDuration": 2248,
+    "stats": {
+      "minionKills": 35,
+      "kills": 2,
+      "deaths": 6,
+      "assists": 17
+    },
+    "matchVersion": "6.10.144.6043",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 27408258,
+            "summonerName": "Chiefmasterjeff"
+          },
+          {
+            "summonerId": 22369004,
+            "summonerName": "iWRS Phinnux"
+          },
+          {
+            "summonerId": 35370237,
+            "summonerName": "BTS Rapmonster"
+          },
+          {
+            "summonerId": 22393556,
+            "summonerName": "BoogerBoss"
+          },
+          {
+            "summonerId": 56278623,
+            "summonerName": "Suc Oh"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 75498201,
+            "summonerName": "Chryssan"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 201,
+    "matchCreation": 1464114939236,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2680261964
+  },
+  {
+    "winner": false,
+    "matchDuration": 1584,
+    "stats": {
+      "minionKills": 21,
+      "kills": 1,
+      "deaths": 4,
+      "assists": 4
+    },
+    "matchVersion": "6.10.144.6043",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 75498201,
+            "summonerName": "Chryssan"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 33493695,
+            "summonerName": "Crystal Lancer"
+          },
+          {
+            "summonerId": 40458558,
+            "summonerName": "TamiaMaca"
+          },
+          {
+            "summonerId": 40199046,
+            "summonerName": "Yeezy911"
+          },
+          {
+            "summonerId": 42399852,
+            "summonerName": "Pousse De Bambou"
+          },
+          {
+            "summonerId": 23720760,
+            "summonerName": "Enjoyyyy"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 12,
+    "matchCreation": 1464117690607,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2680305605
+  },
+  {
+    "winner": false,
+    "matchDuration": 2562,
+    "stats": {
+      "minionKills": 27,
+      "kills": 2,
+      "deaths": 10,
+      "assists": 22
+    },
+    "matchVersion": "6.10.144.9736",
+    "summonerId": 41798732,
+    "role": "DUO_SUPPORT",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 20963592,
+            "summonerName": "Eloycest"
+          },
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 42437459,
+            "summonerName": "viralmarketeer"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 32828766,
+            "summonerName": "Dottoresepo"
+          },
+          {
+            "summonerId": 83448507,
+            "summonerName": "HuPau CARRY U"
+          },
+          {
+            "summonerId": 58569228,
+            "summonerName": "Forza lio"
+          },
+          {
+            "summonerId": 79437310,
+            "summonerName": "Wendy288"
+          },
+          {
+            "summonerId": 80536885,
+            "summonerName": "xxxnicll"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 267,
+    "matchCreation": 1464629165493,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2689427460
+  },
+  {
+    "winner": true,
+    "matchDuration": 2066,
+    "stats": {
+      "minionKills": 192,
+      "kills": 11,
+      "deaths": 4,
+      "assists": 11
+    },
+    "matchVersion": "6.10.144.9736",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 42437459,
+            "summonerName": "viralmarketeer"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 23531074,
+            "summonerName": "mark4HEAVEN"
+          },
+          {
+            "summonerId": 25243099,
+            "summonerName": "algoritm0"
+          },
+          {
+            "summonerId": 19252873,
+            "summonerName": "Txinhowow"
+          },
+          {
+            "summonerId": 27444474,
+            "summonerName": "SmurfM"
+          },
+          {
+            "summonerId": 21066610,
+            "summonerName": "H\u00c3\u00b3rus"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 51,
+    "matchCreation": 1464632254329,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2689521365
+  },
+  {
+    "winner": false,
+    "matchDuration": 1740,
+    "stats": {
+      "minionKills": 161,
+      "kills": 4,
+      "deaths": 8,
+      "assists": 0
+    },
+    "matchVersion": "6.10.144.9736",
+    "summonerId": 41798732,
+    "role": "DUO_CARRY",
+    "teams": {
+      "blue": {
+        "players": [
+          {
+            "summonerId": 78778647,
+            "summonerName": "Suneclipz"
+          },
+          {
+            "summonerId": 41050054,
+            "summonerName": "DNA xVoodoo"
+          },
+          {
+            "summonerId": 44286026,
+            "summonerName": "FuU UniQue"
+          },
+          {
+            "summonerId": 75668433,
+            "summonerName": "MarshallTeach"
+          },
+          {
+            "summonerId": 31418694,
+            "summonerName": "Sekofreezy"
+          }
+        ]
+      },
+      "red": {
+        "players": [
+          {
+            "summonerId": 52477463,
+            "summonerName": "Wagglez"
+          },
+          {
+            "summonerId": 42437459,
+            "summonerName": "viralmarketeer"
+          },
+          {
+            "summonerId": 44309523,
+            "summonerName": "B0ER"
+          },
+          {
+            "summonerId": 38574301,
+            "summonerName": "Marinosa"
+          },
+          {
+            "summonerId": 41798732,
+            "summonerName": "Minikoen"
+          }
+        ]
+      }
+    },
+    "lane": "BOTTOM",
+    "championId": 236,
+    "matchCreation": 1464634760901,
+    "queueType": "TEAM_BUILDER_DRAFT_RANKED_5x5",
+    "matchId": 2689592465
+  }
+]
