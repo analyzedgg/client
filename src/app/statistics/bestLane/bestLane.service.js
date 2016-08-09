@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestLane')
+angular.module('analyzedggApp.statistics.bestLane')
     .service('BestLaneService', bestLaneService);
 
 function bestLaneService() {

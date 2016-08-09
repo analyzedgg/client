@@ -21,7 +21,7 @@ describe('MatchHistoryService', function () {
         };
 
 
-    beforeEach(module('leagueApp.service'));
+    beforeEach(module('analyzedggApp.service'));
     beforeEach(module(function ($provide) {
         $provide.value('MatchesFilterService', matchesFilterService);
     }));

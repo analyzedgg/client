@@ -2,7 +2,7 @@
 
 (function() {
     angular
-        .module('leagueApp.analytics', [
+        .module('analyzedggApp.analytics', [
         ])
         .run(function ($rootScope, $window, $location, $log) {
             $rootScope.$watch(function() {

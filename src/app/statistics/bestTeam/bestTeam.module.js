@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    angular.module('leagueApp.statistics.bestTeam', [
+    angular.module('analyzedggApp.statistics.bestTeam', [
         'highcharts-ng',
-        'leagueApp.service']);
+        'analyzedggApp.service']);
 })();

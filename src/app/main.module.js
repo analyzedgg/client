@@ -2,12 +2,12 @@
 
 (function() {
     angular
-        .module('leagueApp', [
+        .module('analyzedggApp', [
             'ui.router',
             'ngResource',
-            'leagueApp.summoner',
-            'leagueApp.statistics',
-            'leagueApp.service',
-            'leagueApp.analytics'
+            'analyzedggApp.summoner',
+            'analyzedggApp.statistics',
+            'analyzedggApp.service',
+            'analyzedggApp.analytics'
         ]);
 })();

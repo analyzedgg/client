@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics')
+angular.module('analyzedggApp.statistics')
     .controller('StatisticsCtrl', statisticsController);
 
 statisticsController.$inject = ['$stateParams', 'SummonerInfoService', 'MatchHistoryService', 'ENV', '$q', '$state'];

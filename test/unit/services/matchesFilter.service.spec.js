@@ -212,7 +212,7 @@ describe('MatchesFilterService', function () {
         stateParams = {};
 
 
-    beforeEach(module('leagueApp.service'));
+    beforeEach(module('analyzedggApp.service'));
     beforeEach(module(function ($provide) {
         stateParams.min = undefined;
         stateParams.max = undefined;

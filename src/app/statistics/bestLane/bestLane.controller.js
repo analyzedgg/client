@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestLane')
+angular.module('analyzedggApp.statistics.bestLane')
     .controller('BestLaneCtrl', bestLaneController);
 
 bestLaneController.$inject = ['$scope', 'BestLaneService', 'BaseChartConfigService'];

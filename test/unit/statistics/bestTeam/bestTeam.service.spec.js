@@ -4,7 +4,7 @@ describe('BestTeamService', function () {
     var bestTeamService,
         matchDetails = getJSONFixture('matchDetails/matchDetails.json');
 
-    beforeEach(module('leagueApp.statistics.bestTeam'));
+    beforeEach(module('analyzedggApp.statistics.bestTeam'));
     beforeEach(inject(function (_BestTeamService_) {
         bestTeamService = _BestTeamService_;
     }));

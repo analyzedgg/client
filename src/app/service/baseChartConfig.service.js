@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.service')
+angular.module('analyzedggApp.service')
     .service('BaseChartConfigService', BaseChartConfigService);
 
 function BaseChartConfigService() {
