@@ -19,6 +19,7 @@ module.exports = function (config) {
             'src/lib/highcharts-ng/dist/highcharts-ng.js',
             'src/lib/angularjs-slider/dist/rzslider.min.js',
             'src/lib/moment/min/moment.min.js',
+            'src/lib/moment-timezone/builds/moment-timezone-with-data.min.js',
             'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
             'src/app/constants.js',
             'src/app/**/*.module.js',

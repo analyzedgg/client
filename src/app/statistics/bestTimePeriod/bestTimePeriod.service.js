@@ -7,8 +7,8 @@ bestTimePeriodService.$inject = ['$window'];
 
 function bestTimePeriodService($window) {
     return {
-        calculate: function (matchDetails) {
-            var winLossPerPeriod = getWinLossPerPeriod(matchDetails);
+        calculate: function (matchDetails, timezone) {
+            var winLossPerPeriod = getWinLossPerPeriod(matchDetails, timezone);
 
             var bestTimePeriod = {};
 
@@ -37,7 +37,7 @@ function bestTimePeriodService($window) {
         }
     };
 
-    function getWinLossPerPeriod(matchDetails) {
+    function getWinLossPerPeriod(matchDetails, timezone) {
         var winLossPerPeriod = {
             morning: {
                 wins: 0,
@@ -57,8 +57,9 @@ function bestTimePeriodService($window) {
             }
         };
 
+        timezone = timezone ? timezone : $window.moment.tz.guess();
         angular.forEach(matchDetails, function (match) {
-            var matchCreation = parseInt($window.moment(match.matchCreation).format('H'));
+            var matchCreation = parseInt($window.moment.tz(match.matchCreation, timezone).format('H'));
             var period;
 
             if (matchCreation >= 7 && matchCreation < 12) {

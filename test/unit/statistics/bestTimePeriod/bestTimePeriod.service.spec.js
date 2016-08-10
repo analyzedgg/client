@@ -10,7 +10,7 @@ describe('BestTimePeriodService', function () {
     }));
 
     it('should return the morning period information', function(){
-        var morningPeriod = bestTimePeriodService.calculate(matchDetails).morning;
+        var morningPeriod = bestTimePeriodService.calculate(matchDetails, "Europe/Amsterdam").morning;
 
         expect(morningPeriod.name).toBe("morning");
         expect(morningPeriod.amountOfMatches).toBe(1);
@@ -19,7 +19,7 @@ describe('BestTimePeriodService', function () {
     });
 
     it('should return the afternoon period information', function(){
-        var afternoonPeriod = bestTimePeriodService.calculate(matchDetails).afternoon;
+        var afternoonPeriod = bestTimePeriodService.calculate(matchDetails, "Europe/Amsterdam").afternoon;
 
         expect(afternoonPeriod.name).toBe("afternoon");
         expect(afternoonPeriod.amountOfMatches).toBe(8);
@@ -28,7 +28,7 @@ describe('BestTimePeriodService', function () {
     });
 
     it('should return the evening period information', function(){
-        var eveningPeriod = bestTimePeriodService.calculate(matchDetails).evening;
+        var eveningPeriod = bestTimePeriodService.calculate(matchDetails, "Europe/Amsterdam").evening;
 
         expect(eveningPeriod.name).toBe("evening");
         expect(eveningPeriod.amountOfMatches).toBe(41);
@@ -37,7 +37,7 @@ describe('BestTimePeriodService', function () {
     });
 
     it('should return the night period information', function(){
-        var nightPeriod = bestTimePeriodService.calculate(matchDetails).night;
+        var nightPeriod = bestTimePeriodService.calculate(matchDetails, "Europe/Amsterdam").night;
 
         expect(nightPeriod.name).toBe("night");
         expect(nightPeriod.amountOfMatches).toBe(0);
@@ -46,7 +46,7 @@ describe('BestTimePeriodService', function () {
     });
 
     it('should return the highest period', function(){
-        var bestPeriod = bestTimePeriodService.calculate(matchDetails).bestPeriod;
+        var bestPeriod = bestTimePeriodService.calculate(matchDetails, "Europe/Amsterdam").bestPeriod;
         expect(bestPeriod).toBe("evening");
     });
 
