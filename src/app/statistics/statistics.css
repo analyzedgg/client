@@ -49,3 +49,12 @@ div#statistics div.notification {
 div#statistics div.error {
     color: #b00;
 }
+
+div#statistics span.time-period-text {
+    font-size: 1.5em;
+}
+
+div#statistics img.time-period-image {
+    margin-top: -10px;
+    margin-right: 4px;
+}
