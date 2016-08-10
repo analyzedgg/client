@@ -21,16 +21,6 @@ describe('ChampionInfoService', function () {
 
     //Must
     describe('the handling of champion data', function() {
-        it('should retrieve the list of champions by id', function() {
-            httpBackend.whenGET(ENV.BASE_URL + '/api/euw/champions').respond(championList);
-            httpBackend.flush();
-
-            var champions = championInfoService.champions();
-
-            expect(champions[1].name).toBe('Annie');
-            expect(champions[126].name).toBe('Jayce');
-        });
-
         it('should retrieve the list of champions by name', function() {
             httpBackend.whenGET(ENV.BASE_URL + '/api/euw/champions').respond(championList);
             httpBackend.flush();
