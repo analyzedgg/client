@@ -1,3 +1,11 @@
+h1.title {
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-weight: bold;
+    margin: 0px;
+}
+
 #landingspage #top-bar {
     opacity: 0.5;
     background-color: #000000;
@@ -7,8 +15,8 @@
 }
 
 .header {
-    position:relative;
-    z-index:1;
+    position: relative;
+    z-index: 1;
     padding-top: 20px;
     opacity: 1;
 }
@@ -43,10 +51,7 @@ body {
     background: #FFFFFF;
     color: #000;
     font-size: 35px;
-    font-family: "Assassin", sans-serif;
-}
+    font-family: "Cinzel", serif;
 
-@font-face {
-    font-family: "Assassin";
-    src: url(Assassin.ttf)
+    background-image: url('heimer_AGG.png');
 }
