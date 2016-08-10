@@ -6,6 +6,7 @@
         'leagueApp.statistics.bestChamp',
         'leagueApp.statistics.bestLane',
         'leagueApp.statistics.bestPatch',
-        'leagueApp.statistics.bestTeam'
+        'leagueApp.statistics.bestTeam',
+        'leagueApp.statistics.bestTimePeriod'
     ]);
 })();
