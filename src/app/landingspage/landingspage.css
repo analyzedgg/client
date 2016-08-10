@@ -1,10 +1,28 @@
 #landingspage #top-bar {
-    background: #337ab7;
+    opacity: 0.5;
+    background-color: #000000;
+    border-bottom: groove;
+    border-bottom-color: #ffffff;
     height: 100px;
 }
 
+.header {
+    position:relative;
+    z-index:1;
+    padding-top: 20px;
+    opacity: 1;
+}
+
+body {
+    background: url(achtergrond.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #landingspage #summoner-select {
-    background: #EEE url('Logo_AGG_big.png') center no-repeat;
+    background: url('Logo_AGG_big.png') center no-repeat;
     background-size: 475px 475px;
     background-position-y: 50px;
     height: 625px;
@@ -17,8 +35,18 @@
 }
 
 #landingspage #text-content {
+    text-align: center;
     height: 300px;
-    background: #337ab7;
-    color: #fff;
+    border: groove;
+    border-color: #333333;
+    border-bottom: 0px;
+    background: #FFFFFF;
+    color: #000;
     font-size: 35px;
+    font-family: "Assassin", sans-serif;
+}
+
+@font-face {
+    font-family: "Assassin";
+    src: url(Assassin.ttf)
 }

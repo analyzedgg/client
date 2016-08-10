@@ -1,10 +1,18 @@
 div#statistics div.sticky-bar {
-    background: #337ab7;
     top: 0;
     width: 100%;
     z-index: 100;
     position: fixed;
 }
+
+.header-statistics {
+    opacity: 0.5;
+    background-color: #000000;
+    border-bottom: groove;
+    border-bottom-color: #ffffff;
+    height: 100px;
+}
+
 
 div#statistics div.sticky-bar a .landingspage-logo {
     width: 40px;
@@ -25,8 +33,8 @@ div#statistics div.sticky-bar div#summoner-select {
     padding-top: 13px;
 }
 
-div#statistics div.sticky-bar-height {
-    height: 60px;
+.margin-25 {
+    margin-top: 25px;
 }
 
 div#statistics .statistics-container {
@@ -37,6 +45,7 @@ div#statistics .statistics-container {
 div#statistics div.loading {
     background: url('loading.gif') no-repeat center;
     background-size: 250px 250px;
+    margin-top: 50px;
     height: 250px;
 }
 
