@@ -21,4 +21,4 @@ after_success:
    - "npm run coveralls"
    - "grunt build"
    - export SSHPASS=$DEPLOY_PASS
-   - sshpass -e scp dist/client.zip $DEPLOY_USER@$DEPLOY_HOST:/tmp
+   - sshpass -e scp dist/client.zip $DEPLOY_USER@$DEPLOY_HOST:/tmp -o stricthostkeychecking=no
