@@ -18,7 +18,6 @@ env:
   matrix:
     secure: U+FSUPwrtFgFRIsnQ6CTF1i6/6S83/bjOOsOFdFc0ePfB2IJebYu1VcoNlodGztxwygHJyKV3eDBaRKuVQCFLA2I7yo5N5cABGnZZBFA+JFD34bQWXjvI5CTpj5toZY1ifrNTLzON1gO8p2iejGKVNHSFEJn84iKC+5nholW/LCghdpUuBhD4qainjt92rGQ7L62n4e2XXGaP3PYtgUBiei89lO6COXQjKmnnnDcrm2m8wJWpVt6RiybnVGA7dtuGOw3mQUkVPxROULBS6JasVZboTw9qXEtFEh4hvF2RJllpTkHDNca+eiIE9uZW7UiqZag17SIFjnsFbKzt3IUjt5G5Pp78oPhVlbNgOkxs259YEwcgZ+MXnUcGFJ3QOuyMfWf42O5aihnWVHEB0cF/Ye1nSkiHM51fpej3ONeVM6G7VnAFQLDImS4d9YFigg3vHyj/8lN6CgXotO2CtZVUoiP/+kh2xPZjZkJHfiNTQF4B8OdgBF2pPwHex7QLWYWGBJVshx/za045DIIcO093CmFs0EMSGEzA5SzkC5SRNIwtiYhB18bhBt6wvijpJeLNvYwSDicbl3Ku5NdP/1XKYBXRgUMM/z8eiZLn8+iE0hyvf7pXVpF4YyeyqCwB0jqTJMZE1c0Y6yNNyVMbge8UGLSib7GdINsZo6yAEolALE=
 after_success: 
-   - "npm run coveralls"
    - "grunt build"
    - export SSHPASS=$DEPLOY_PASS
-   - sshpass -e scp dist/client.zip $DEPLOY_USER@$DEPLOY_HOST:/tmp -o stricthostkeychecking=no
+   - sshpass -e scp -o stricthostkeychecking=no dist/client.zip $DEPLOY_USER@$DEPLOY_HOST:/tmp
