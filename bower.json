@@ -17,6 +17,7 @@
     "isteven-angular-multiselect": "4.0.0",
     "angularjs-slider": "^2.14.0",
     "moment": "^2.13.0",
-    "highcharts": "^4.2.6"
+    "highcharts": "^4.2.6",
+    "moment-timezone": "^0.5.5"
   }
 }

@@ -6,6 +6,7 @@
         'analyzedggApp.statistics.bestChamp',
         'analyzedggApp.statistics.bestLane',
         'analyzedggApp.statistics.bestPatch',
-        'analyzedggApp.statistics.bestTeam'
+        'analyzedggApp.statistics.bestTeam',
+        'analyzedggApp.statistics.bestTimePeriod'
     ]);
 })();
