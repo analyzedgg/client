@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestTimePeriod')
+angular.module('analyzedggApp.statistics.bestTimePeriod')
     .service('BestTimePeriodService', bestTimePeriodService);
 
 bestTimePeriodService.$inject = ['$window'];
