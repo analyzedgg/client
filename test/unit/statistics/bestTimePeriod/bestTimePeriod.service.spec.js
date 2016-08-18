@@ -4,7 +4,7 @@ describe('BestTimePeriodService', function () {
     var bestTimePeriodService,
         matchDetails = getJSONFixture('matchDetails/matchDetails.json');
 
-    beforeEach(module('leagueApp.statistics.bestTimePeriod'));
+    beforeEach(module('analyzedggApp.statistics.bestTimePeriod'));
     beforeEach(inject(function (_BestTimePeriodService_) {
         bestTimePeriodService = _BestTimePeriodService_;
     }));

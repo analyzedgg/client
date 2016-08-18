@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.service')
+angular.module('analyzedggApp.service')
     .service('ChampionInfoService', championInfoService);
 
 championInfoService.$inject = ['$resource', '$log', 'ENV', '$stateParams'];

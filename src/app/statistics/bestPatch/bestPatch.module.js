@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    angular.module('leagueApp.statistics.bestPatch', [
+    angular.module('analyzedggApp.statistics.bestPatch', [
         'highcharts-ng',
-        'leagueApp.service']);
+        'analyzedggApp.service']);
 })();

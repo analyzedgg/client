@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestPatch')
+angular.module('analyzedggApp.statistics.bestPatch')
     .service('BestPatchService', bestPatchService);
 
 function bestPatchService() {

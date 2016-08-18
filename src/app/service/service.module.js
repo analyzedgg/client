@@ -2,7 +2,7 @@
 
 (function() {
     angular
-        .module('leagueApp.service', [
+        .module('analyzedggApp.service', [
             'ngResource',
             'constants'
         ]);

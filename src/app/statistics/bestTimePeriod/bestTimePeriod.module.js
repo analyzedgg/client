@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    angular.module('leagueApp.statistics.bestTimePeriod', [
-        'leagueApp.service'
+    angular.module('analyzedggApp.statistics.bestTimePeriod', [
+        'analyzedggApp.service'
     ]);
 })();

@@ -1,12 +1,12 @@
 'use strict';
 
 (function() {
-    angular.module('leagueApp.statistics', [
-        'leagueApp.statistics.matchSlider',
-        'leagueApp.statistics.bestChamp',
-        'leagueApp.statistics.bestLane',
-        'leagueApp.statistics.bestPatch',
-        'leagueApp.statistics.bestTeam',
-        'leagueApp.statistics.bestTimePeriod'
+    angular.module('analyzedggApp.statistics', [
+        'analyzedggApp.statistics.matchSlider',
+        'analyzedggApp.statistics.bestChamp',
+        'analyzedggApp.statistics.bestLane',
+        'analyzedggApp.statistics.bestPatch',
+        'analyzedggApp.statistics.bestTeam',
+        'analyzedggApp.statistics.bestTimePeriod'
     ]);
 })();

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.summoner', ['isteven-multi-select'])
+angular.module('analyzedggApp.summoner', ['isteven-multi-select'])
     .controller('SummonerPageCtrl', summonerController);
 
 summonerController.$inject = ['$state', '$stateParams'];

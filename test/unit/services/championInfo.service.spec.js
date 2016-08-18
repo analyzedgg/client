@@ -9,7 +9,7 @@ describe('ChampionInfoService', function () {
             region: 'euw'
         };
 
-    beforeEach(module('leagueApp.service'));
+    beforeEach(module('analyzedggApp.service'));
     beforeEach(module(function($provide) {
         $provide.value('$stateParams', mockedStateParams)
     }));

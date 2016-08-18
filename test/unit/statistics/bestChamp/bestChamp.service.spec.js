@@ -13,7 +13,7 @@ describe('BestChampService', function () {
             }
         };
 
-    beforeEach(module('leagueApp.statistics.bestChamp'));
+    beforeEach(module('analyzedggApp.statistics.bestChamp'));
     beforeEach(module(function ($provide) {
         $provide.value('ChampionInfoService', championInfoService);
     }));
