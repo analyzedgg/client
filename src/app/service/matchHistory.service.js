@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.service')
+angular.module('analyzedggApp.service')
     .service('MatchHistoryService', matchHistoryService);
 
 matchHistoryService.$inject = ['$resource', '$log', 'ENV', 'MatchesFilterService'];

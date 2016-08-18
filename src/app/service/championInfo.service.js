@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.service')
+angular.module('analyzedggApp.service')
     .service('ChampionInfoService', championInfoService);
 
 championInfoService.$inject = ['$resource', '$log', 'ENV', '$stateParams'];
@@ -1270,12 +1270,9 @@ function championInfoService($resource, $log, ENV, $stateParams) {
         }).$promise;
     }
 
-    var championDataById;
-
     activate();
 
     return {
-        champions: champions,
         championById: championById,
         championByName: championByName
     };
@@ -1287,33 +1284,19 @@ function championInfoService($resource, $log, ENV, $stateParams) {
             championData = data;
         }).catch(function(error) {
             $log.warn('Server returned a failure for the champions endpoint, falling back on cached', error);
-        }).finally(function() {
-            championDataById = filterChampionsById();
         });
-    }
-
-    function filterChampionsById() {
-        var championList = [];
-        angular.forEach(championData.data, function (champ) {
-            championList[champ.id] = champ;
-        });
-        return championList;
-    }
-
-    // Returns all the champions.
-    function champions() {
-        return championDataById;
     }
 
     // Returns a specific champion given an id.
     function championById(championId) {
-        var champion = championDataById[championId];
+        var foundChampion = null;
+        Object.keys(championData.data).forEach(function(key) {
+            if (foundChampion === null && championData.data[key].id === championId) {
+                foundChampion = championData.data[key];
+            }
+        });
 
-        if (angular.isDefined(champion)) {
-            return champion;
-        }
-
-        return unknownChampion;
+        return (foundChampion !== null) ? foundChampion : unknownChampion;
     }
 
     function championByName(championName) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics')
+angular.module('analyzedggApp.statistics')
     .controller('StatisticsCtrl', statisticsController);
 
 statisticsController.$inject = ['$stateParams', 'SummonerInfoService', 'MatchHistoryService', 'ENV', '$q', '$state'];
@@ -24,7 +24,8 @@ function statisticsController($stateParams, summonerInfoService, matchHistorySer
             mostWins: 'app/statistics/bestChamp/bestChamp.html',
             bestLane: 'app/statistics/bestLane/bestLane.html',
             bestPatch: 'app/statistics/bestPatch/bestPatch.html',
-            bestTeam: 'app/statistics/bestTeam/bestTeam.html'
+            bestTeam: 'app/statistics/bestTeam/bestTeam.html',
+            bestTimePeriod: 'app/statistics/bestTimePeriod/bestTimePeriod.html'
         }
     });
 

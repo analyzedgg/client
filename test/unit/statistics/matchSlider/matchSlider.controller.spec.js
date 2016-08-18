@@ -25,7 +25,7 @@ describe('MatchSliderCtrl', function () {
         },
         mockedDependencies = {};
 
-    beforeEach(module('leagueApp.statistics.matchSlider'));
+    beforeEach(module('analyzedggApp.statistics.matchSlider'));
     beforeEach(inject(function (_$controller_) {
         $controller = _$controller_;
 

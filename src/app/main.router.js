@@ -2,7 +2,7 @@
 
 (function() {
 angular
-    .module('leagueApp')
+    .module('analyzedggApp')
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
 

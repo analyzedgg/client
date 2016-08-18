@@ -34,8 +34,11 @@
         <div ng-if="statistics.matchDetails.length >= statistics.minimumGames">
             <div ng-include="statistics.template.matchSlider" ng-controller="MatchSliderCtrl as matchSlider" class="col-sm-12"></div>
             <div class="row">
-                <div ng-include="statistics.template.bestLane" ng-controller="BestLaneCtrl as bestLane" id="widget-bestLane" class="col-sm-4"></div>
-                <div ng-include="statistics.template.mostWins" ng-controller="BestChampCtrl as bestChamp" id="widget-bestChamp" class="col-sm-4"></div>
+                <div ng-include="statistics.template.bestTimePeriod" ng-controller="BestTimePeriodCtrl as bestTimePeriod" id="widget-bestTimePeriod" class="col-sm-12 text-center"></div>
+            </div>
+            <div class="row">
+                <div ng-include="statistics.template.bestLane" ng-controller="BestLaneCtrl as bestLane" id="widget-bestLane" class="col-sm-6"></div>
+                <div ng-include="statistics.template.mostWins" ng-controller="BestChampCtrl as bestChamp" id="widget-bestChamp" class="col-sm-6"></div>
             </div>
             <div class="row">
                 <div ng-include="statistics.template.bestPatch" ng-controller="BestPatchCtrl as bestPatch" id="widget-bestPatch" class="col-sm-6"></div>

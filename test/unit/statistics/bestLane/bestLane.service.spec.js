@@ -4,7 +4,7 @@ describe('BestLaneService', function () {
     var bestLaneService,
         matchDetails = getJSONFixture('matchDetails/matchDetails.json');
 
-    beforeEach(module('leagueApp.statistics.bestLane'));
+    beforeEach(module('analyzedggApp.statistics.bestLane'));
     beforeEach(inject(function (_BestLaneService_) {
         bestLaneService = _BestLaneService_;
     }));

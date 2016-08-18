@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics.bestChamp')
+angular.module('analyzedggApp.statistics.bestChamp')
     .service('BestChampService', bestChampService);
 
 bestChampService.$inject = ['ChampionInfoService'];

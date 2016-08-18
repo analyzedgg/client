@@ -11,7 +11,7 @@ describe('SummonerInfoService', function () {
             "revisionDate": 1432585859000
         };
 
-    beforeEach(module('leagueApp.service'));
+    beforeEach(module('analyzedggApp.service'));
     beforeEach(inject(function (_SummonerInfoService_, $httpBackend, _ENV_) {
         summonerInfoService = _SummonerInfoService_;
         httpBackend = $httpBackend;

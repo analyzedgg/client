@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="leagueAppDev" class="no-js">
+<html lang="en" ng-app="analyzedggAppDev" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,6 +56,7 @@
     <script src="lib/angularjs-slider/dist/rzslider.min.js"></script>
 
     <script src="lib/moment/min/moment.min.js"></script>
+    <script src="lib/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
 
     <!-- Base app.js !-->
     <script src="app/main.module.js"></script>
@@ -102,8 +103,12 @@
     <script src="app/statistics/bestTeam/bestTeam.service.js"></script>
     <script src="app/statistics/bestTeam/bestTeam.controller.js"></script>
 
+    <script src="app/statistics/bestTimePeriod/bestTimePeriod.module.js"></script>
+    <script src="app/statistics/bestTimePeriod/bestTimePeriod.service.js"></script>
+    <script src="app/statistics/bestTimePeriod/bestTimePeriod.controller.js"></script>
+
     <script>
-        var app = angular.module('leagueAppDev', ['leagueApp', 'constants']);
+        var app = angular.module('analyzedggAppDev', ['analyzedggApp', 'constants']);
     </script>
 </head>
 <body>

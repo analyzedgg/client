@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('leagueApp.statistics.matchSlider', ['rzModule'])
+angular.module('analyzedggApp.statistics.matchSlider', ['rzModule'])
     .controller('MatchSliderCtrl', matchSliderController);
 
 matchSliderController.$inject = ['$scope', '$state', '$stateParams', 'ENV', '$window'];
