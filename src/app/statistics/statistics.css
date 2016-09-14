@@ -5,14 +5,16 @@ div#statistics div.sticky-bar {
     position: fixed;
 }
 
-.header-statistics {
-    opacity: 0.5;
-    background-color: #000000;
+div.sticky-bar {
+    background: url(achtergrond.png) no-repeat center center fixed;
     border-bottom: groove;
     border-bottom-color: #ffffff;
     height: 100px;
 }
 
+.header-statistics {
+    height: 100px;
+}
 
 div#statistics div.sticky-bar a .landingspage-logo {
     width: 40px;
@@ -20,11 +22,13 @@ div#statistics div.sticky-bar a .landingspage-logo {
     margin-top: 10px;
     margin-left: 10px;
 }
+
 div#statistics div.sticky-bar div#filter-text {
     line-height: 60px;
     color: #fff;
     text-align: right;
 }
+
 div#statistics div.sticky-bar div#filter-text a {
     color: #fff;
 }
@@ -33,8 +37,8 @@ div#statistics div.sticky-bar div#summoner-select {
     padding-top: 13px;
 }
 
-.margin-25 {
-    margin-top: 25px;
+.margin-top-20 {
+    margin-top: 20px;
 }
 
 div#statistics .statistics-container {
