@@ -1,10 +1,40 @@
+h1.title {
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
 #landingspage #top-bar {
-    background: #337ab7;
+    opacity: 0.5;
+    background-color: #000000;
+    border-bottom: groove;
+    border-bottom-color: #ffffff;
     height: 100px;
 }
 
+.header {
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+    opacity: 1;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    background: url(achtergrond.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 #landingspage #summoner-select {
-    background: #EEE url('Logo_AGG_big.png') center no-repeat;
+    background: url('Logo_AGG_big.png') center no-repeat;
     background-size: 475px 475px;
     background-position-y: 50px;
     height: 625px;
@@ -17,8 +47,38 @@
 }
 
 #landingspage #text-content {
-    height: 300px;
-    background: #337ab7;
-    color: #fff;
+    text-align: center;
+    height: 175px;
+    border: 5px solid #333333;
+    border-top: 0;
+    background: #FFFFFF;
+    color: #000;
     font-size: 35px;
+    font-family: "Cinzel", serif;
+}
+
+#text-content-center-top {
+    background: white;
+    height: 20px;
+    border-top: solid;
+    border-width: 5px;
+}
+
+#text-content-top {
+    background-size: 20px;
+    height: 20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-image: url('/app/landingspage/textbox_corner_left.png'), url('/app/landingspage/textbox_corner_right.png');
+    background-position: left top, right top;
+    background-repeat: no-repeat;
+}
+
+footer {
+    bottom: 0;
+    min-height: 100px;
+    position: absolute;
+    width: 100%;
 }

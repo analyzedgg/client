@@ -1,9 +1,19 @@
 div#statistics div.sticky-bar {
-    background: #337ab7;
     top: 0;
     width: 100%;
     z-index: 100;
     position: fixed;
+}
+
+div.sticky-bar {
+    background: url(achtergrond.png) no-repeat center center fixed;
+    border-bottom: groove;
+    border-bottom-color: #ffffff;
+    height: 100px;
+}
+
+.header-statistics {
+    height: 100px;
 }
 
 div#statistics div.sticky-bar a .landingspage-logo {
@@ -12,11 +22,13 @@ div#statistics div.sticky-bar a .landingspage-logo {
     margin-top: 10px;
     margin-left: 10px;
 }
+
 div#statistics div.sticky-bar div#filter-text {
     line-height: 60px;
     color: #fff;
     text-align: right;
 }
+
 div#statistics div.sticky-bar div#filter-text a {
     color: #fff;
 }
@@ -25,8 +37,8 @@ div#statistics div.sticky-bar div#summoner-select {
     padding-top: 13px;
 }
 
-div#statistics div.sticky-bar-height {
-    height: 60px;
+.margin-top-20 {
+    margin-top: 20px;
 }
 
 div#statistics .statistics-container {
@@ -37,6 +49,7 @@ div#statistics .statistics-container {
 div#statistics div.loading {
     background: url('loading.gif') no-repeat center;
     background-size: 250px 250px;
+    margin-top: 50px;
     height: 250px;
 }
 
