@@ -13,9 +13,16 @@ div#statistics div.sticky-bar a .landingspage-logo {
     margin-left: 10px;
 }
 div#statistics div.sticky-bar div#filter-text {
-    line-height: 60px;
     color: #fff;
     text-align: right;
+}
+div#statistics div.sticky-bar div#filter-text > div {
+    display: table;
+    width: 100%;
+}
+div#statistics div.sticky-bar div#filter-text > div > span {
+    display: table-cell;
+    vertical-align: middle;
 }
 div#statistics div.sticky-bar div#filter-text a {
     color: #fff;
