@@ -3,18 +3,18 @@
     <div class="sticky-bar sticky-bar-height">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-sm-4 hidden-xs">
                     <a ui-sref='landingspage'>
                         <img class="landingspage-logo" src="app/statistics/logo_100px.png" width="40px" height="40px" />
                     </a>
                 </div>
-                <div class="col-sm-4" id="summoner-select">
+                <div class="col-sm-4 col-xs-8" id="summoner-select">
                     <div ng-include="'app/shared/summoner-select.html'" ng-controller="SummonerPageCtrl as summoner"></div>
                 </div>
-                <div class="col-sm-4" id="filter-text">
-                    <div ng-if="statistics.rawMatchDetails.length !== 0">
+                <div class="col-sm-4 col-xs-4" id="filter-text">
+                    <div class="sticky-bar-height" ng-if="statistics.rawMatchDetails.length !== 0">
                         <span ng-if="statistics.rawMatchDetails.length !== statistics.matchDetails.length">
-                            {{ statistics.matchDetails.length }} out of {{ statistics.rawMatchDetails.length }} games shown: <a ui-sref="soloStatistics(statistics.summonerSelection)" ui-sref-opts="{inherit: false}">reset filters</a>
+                            {{ statistics.matchDetails.length }}/{{ statistics.rawMatchDetails.length }} games shown: <a ui-sref="soloStatistics(statistics.summonerSelection)" ui-sref-opts="{inherit: false}">reset</a>
                         </span>
                         <span ng-if="statistics.rawMatchDetails.length === statistics.matchDetails.length">
                             {{ statistics.matchDetails.length }} games shown
