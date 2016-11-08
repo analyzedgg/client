@@ -3,9 +3,9 @@
 angular.module('leagueApp.service')
     .service('MatchesFilterService', matchesFilterService);
 
-matchesFilterService.$inject = ['$stateParams', 'ChampionInfoService'];
+matchesFilterService.$inject = ['$stateParams', 'ChampionInfoService', 'DataFormatService'];
 
-function matchesFilterService($stateParams, championInfoService) {
+function matchesFilterService($stateParams, championInfoService, dataFormatService) {
     return {
         filter: filter
     };
@@ -45,6 +45,16 @@ function matchesFilterService($stateParams, championInfoService) {
         return true;
     }
 
+    function laneFilter(match) {
+        var lane = $stateParams.lane;
+
+        if (lane) {
+            return dataFormatService.simplifyLane(match.lane, match.role) === lane;
+        }
+
+        return true;
+    }
+
     function winFilter(match) {
         var win = $stateParams.win;
 
@@ -65,6 +75,7 @@ function matchesFilterService($stateParams, championInfoService) {
             .slice(limit.min - 1, limit.max)
             .filter(championFilter)
             .filter(patchFilter)
+            .filter(laneFilter)
             .filter(winFilter);
     }
 }

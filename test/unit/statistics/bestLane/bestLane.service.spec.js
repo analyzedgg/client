@@ -25,11 +25,11 @@ describe('BestLaneService', function () {
 
         var lanesData = seriesData[0];
         expect(lanesData[0]).toEqual({
-            name: "SUPPORT",
+            name: "Support",
             y: 43
         });
         expect(lanesData[1]).toEqual({
-            name: "AD CARRY",
+            name: "AD Carry",
             y: 7
         });
     });
@@ -61,7 +61,7 @@ describe('BestLaneService', function () {
 
         var lanesData = bestLaneService.getSeriesData(matchDetails)[0];
 
-        expect(lanesData[0].name).toBe('AD CARRY');
-        expect(lanesData[1].name).toBe('SUPPORT');
+        expect(lanesData[0].name).toBe('AD Carry');
+        expect(lanesData[1].name).toBe('Support');
     });
 });

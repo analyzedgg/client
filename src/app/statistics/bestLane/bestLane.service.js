@@ -3,16 +3,15 @@
 angular.module('leagueApp.statistics.bestLane')
     .service('BestLaneService', bestLaneService);
 
-function bestLaneService() {
+bestLaneService.$inject = ["DataFormatService"];
+
+function bestLaneService(dataFormatService) {
     return {
         getSeriesData: function(matchDetails) {
             var winsAndLossesPerLane = {};
 
             angular.forEach(matchDetails, function (match) {
-                var lane = match.lane;
-                if (lane === 'BOTTOM') {
-                    lane = (match.role === 'DUO_CARRY') ? 'AD CARRY' : 'SUPPORT';
-                }
+                var lane = dataFormatService.simplifyLane(match.lane, match.role);
 
                 if (!winsAndLossesPerLane[lane]) {
                     winsAndLossesPerLane[lane] = {
